@@ -14,3 +14,9 @@ airflow.db
 .astro/*.local.yaml
 test_api.py 
 .spectra/
+
+# Agent working folder (plans, trackers, scratch) - not submitted
+.agent_plan/
+.venv/
+venv/
+include/staging/
