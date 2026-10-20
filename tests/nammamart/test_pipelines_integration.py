@@ -18,6 +18,8 @@ They prove the client's acceptance criteria:
 
 from __future__ import annotations
 
+import re
+
 import pandas as pd
 import pytest
 
@@ -285,3 +287,36 @@ def test_every_run_is_recorded_in_pipeline_runs(warehouse_path):
     assert set(runs["status"]) == {"SUCCESS"}
     assert (runs["rows_extracted"] > 0).all()
     assert runs["dag_id"].nunique() == 2
+
+
+# ---------------------------------------------------------------------------
+# Submission rule: "no unmasked customer data in the repo outside include/data/"
+# ---------------------------------------------------------------------------
+UNMASKED_EMAIL = re.compile(r"[a-z]{3,}\.[a-z]+[0-9]*@")
+# The lookbehind also excludes letters so a gateway reference such as
+# GW7909341632 is not mistaken for a phone number.
+UNMASKED_PHONE = re.compile(r"(?<![0-9*A-Za-z])[6-9][0-9]{9}(?![0-9*])")
+
+
+def test_quarantine_files_do_not_contain_unmasked_personal_data(september_runs, quarantine_dir):
+    """A rejected customer row must still be recognisable, but never readable.
+
+    The unmasked original stays in the source file and in the ELT raw layer,
+    both of which are access controlled; the quarantine file that lives in the
+    repository is masked.
+    """
+    files = list(quarantine_dir.glob("*.csv"))
+    assert files, "expected quarantine files to exist"
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        assert not UNMASKED_EMAIL.search(text), f"unmasked email in {path.name}"
+        assert not UNMASKED_PHONE.search(text), f"unmasked phone number in {path.name}"
+
+
+def test_quarantined_customer_row_keeps_its_key_and_reason(september_runs, quarantine_dir):
+    files = list(quarantine_dir.glob("customers_failed_*.csv"))
+    assert files
+    rejected = pd.read_csv(files[0], dtype=str)
+    assert rejected["customer_id"].notna().all(), "the key must survive masking"
+    assert rejected["failure_reason"].str.contains("RULE-").all()
+    assert rejected["email"].str.contains(r"\*\*\*@").all()

@@ -147,6 +147,18 @@ PY
 Or point VS Code's SQLTools (or any DuckDB client) at
 `include/warehouse_waseem.duckdb`.
 
+> The warehouse file and the quarantine folder are **gitignored on purpose**:
+> the ELT raw layer stores the source rows unmasked, and the assignment forbids
+> unmasked customer data in the repository outside `include/data/`. Rebuild them
+> in about two seconds:
+>
+> ```bash
+> python scripts/run_elt_local.py --run-id rebuild_elt
+> python scripts/run_etl_local.py --run-id rebuild_etl
+> ```
+>
+> Masked samples of every artifact are committed under `docs/evidence/`.
+
 Key tables:
 
 | Table | Contents |

@@ -534,10 +534,10 @@ not lost from the total, but the problem is visible in `dq_results` and in this 
 | Evidence | Location | Status |
 | --- | --- | --- |
 | Both DAGs parse with no import errors | `tests/nammamart/test_dag_structure.py` (real Airflow 3.3 DagBag) | automated |
-| Quality scorecard | `dq_results` table | automated |
-| Run audit | `pipeline_runs` table | automated |
-| Quarantine with reasons | `include/quarantine/waseem/*.csv`, `etl_quarantine` | automated |
-| Payment reconciliation | `etl_payment_reconciliation`, `mart_payment_reconciliation` | automated |
+| Quality scorecard | `dq_results` table, snapshot in `docs/evidence/dq_results_snapshot.csv` | automated |
+| Run audit | `pipeline_runs` table, snapshot in `docs/evidence/pipeline_runs_snapshot.csv` | automated |
+| Quarantine with reasons | `docs/evidence/sample_quarantine_*.csv` (masked samples; the full folder and the warehouse file are gitignored because the raw layer holds unmasked personal data - rebuild with the two runner scripts) | automated |
+| Payment reconciliation | `etl_payment_reconciliation`, `mart_payment_reconciliation`, sample in `docs/evidence/payment_reconciliation_sample.csv` | automated |
 | Six business questions | `docs/evidence/business_questions.md` | automated |
 | Ten observability experiments | `docs/evidence/observability_results.md` | automated |
 | Test run | `docs/TEST_REPORT.md` | automated |

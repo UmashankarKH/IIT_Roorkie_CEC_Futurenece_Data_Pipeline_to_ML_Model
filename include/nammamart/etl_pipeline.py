@@ -173,6 +173,11 @@ def quarantine(results: dict[str, dq_rules.ValidationResult], run_id: str,
     Rows are never silently dropped (client acceptance criterion 4): every
     rejected row keeps all its original columns plus ``failure_reason``,
     ``run_id`` and ``source_file``.
+
+    Personal data is masked before the file is written, because quarantine
+    files live in the repository and the client's rule is that no unmasked
+    customer data may leave ``include/data/``.  The untouched original is still
+    available in the source file and in the ELT raw layer.
     """
     target_dir = Path(quarantine_dir or config.QUARANTINE_DIR)
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -183,7 +188,7 @@ def quarantine(results: dict[str, dq_rules.ValidationResult], run_id: str,
             logger.info("[Quarantine] %s: no rejected rows", dataset)
             continue
         path = target_dir / f"{dataset}_failed_{run_id}.csv"
-        result.failed.to_csv(path, index=False)
+        masking.mask_pii_in_place(result.failed).to_csv(path, index=False)
         written[dataset] = str(path)
         logger.info("[Quarantine] %s: %s rows -> %s", dataset, len(result.failed), path.name)
     return written
@@ -196,6 +201,7 @@ def quarantine_frame(results: dict[str, dq_rules.ValidationResult]) -> pd.DataFr
         if result.failed.empty:
             continue
         key_column = config.PRIMARY_KEYS[dataset]
+        safe_rows = masking.mask_pii_in_place(result.failed)
         frame = pd.DataFrame({
             "run_id": result.failed["run_id"],
             "dag_id": result.failed["dag_id"],
@@ -203,7 +209,8 @@ def quarantine_frame(results: dict[str, dq_rules.ValidationResult]) -> pd.DataFr
             "source_file": result.failed["source_file"],
             "row_key": result.failed[key_column].astype("string"),
             "failure_reason": result.failed["failure_reason"].astype("string"),
-            "raw_record": result.failed.drop(
+            # the record as received, with personal data masked
+            "raw_record": safe_rows.drop(
                 columns=["failure_reason", "dq_status", "source_file", "run_id", "dag_id",
                          "quarantined_at", "dq_warnings"], errors="ignore"
             ).astype("string").apply(lambda r: r.to_json(), axis=1),

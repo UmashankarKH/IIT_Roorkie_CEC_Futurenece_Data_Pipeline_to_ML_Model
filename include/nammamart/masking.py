@@ -108,3 +108,30 @@ def mask_customer_frame(df: pd.DataFrame) -> pd.DataFrame:
     if "full_name" in masked.columns:
         masked["customer_name_masked"] = masked["full_name"].map(mask_name)
     return masked.drop(columns=[c for c in ("email", "phone", "full_name") if c in masked.columns])
+
+
+#: How each known personal-data column is masked when a record has to keep its
+#: original shape (for example a quarantine file, which must stay comparable to
+#: the source row).
+_COLUMN_MASKERS = {
+    "email": mask_email,
+    "phone": mask_phone,
+    "full_name": mask_name,
+    "manager_name": mask_name,
+    "customer_name": mask_name,
+}
+
+
+def mask_pii_in_place(df: pd.DataFrame) -> pd.DataFrame:
+    """Mask personal data while keeping the original column names and order.
+
+    Used for quarantine output: a rejected row must stay recognisable to the
+    team that has to fix it, but the repository must never contain an unmasked
+    email address or phone number.  The untouched original always remains in the
+    source file and in the access-controlled ELT raw layer.
+    """
+    masked = df.copy()
+    for column, masker in _COLUMN_MASKERS.items():
+        if column in masked.columns:
+            masked[column] = masked[column].map(masker)
+    return masked
