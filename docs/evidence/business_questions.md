@@ -1,6 +1,6 @@
 # Six business questions - answered from both pipelines
 
-Generated: 2026-10-20 13:41 by `scripts/run_business_questions.py` against `warehouse_waseem.duckdb`.
+Generated: 2026-10-20 14:06 by `scripts/run_business_questions.py` against `warehouse_waseem.duckdb`.
 
 Each question is answered twice: once from the **ETL** star schema (`etl_fact_orders` and its dimensions) and once from the **ELT** mart (`mart_*` tables built with SQL only).
 
@@ -26,16 +26,16 @@ LIMIT 10;
 
 | order_date | zone | store_id | store_name | delivered_orders | net_revenue |
 | --- | --- | --- | --- | --- | --- |
-| 2026-09-30 00:00:00 | East | S11 | NammaMart HSR Layout | 7 | 5056.8 |
-| 2026-09-30 00:00:00 | South | S05 | NammaMart JP Nagar | 6 | 3823.35 |
-| 2026-09-30 00:00:00 | East | S10 | NammaMart Marathahalli | 7 | 3073.7 |
-| 2026-09-30 00:00:00 | South | S06 | NammaMart Banashankari | 5 | 2493.5 |
-| 2026-09-30 00:00:00 | South | S04 | NammaMart Jayanagar | 6 | 2322.1 |
-| 2026-09-30 00:00:00 | North | S02 | NammaMart Yelahanka | 6 | 2279.55 |
-| 2026-09-30 00:00:00 | West | S12 | NammaMart Rajajinagar | 6 | 2271.05 |
-| 2026-09-30 00:00:00 | North | S01 | NammaMart Hebbal | 2 | 1976.0 |
-| 2026-09-30 00:00:00 | West | S14 | NammaMart Vijayanagar | 3 | 1760.45 |
-| 2026-09-30 00:00:00 | Unknown | S07 | NammaMart BTM Layout | 6 | 1702.1 |
+| 2026-10-01 00:00:00 | North | S01 | NammaMart Hebbal | 13 | 8958.35 |
+| 2026-10-01 00:00:00 | South | S05 | NammaMart JP Nagar | 13 | 8785.2 |
+| 2026-10-01 00:00:00 | East | S11 | NammaMart HSR Layout | 18 | 8571.1 |
+| 2026-10-01 00:00:00 | East | S08 | NammaMart Whitefield | 15 | 6569.9 |
+| 2026-10-01 00:00:00 | West | S14 | NammaMart Vijayanagar | 15 | 6214.8 |
+| 2026-10-01 00:00:00 | East | S10 | NammaMart Marathahalli | 13 | 6020.9 |
+| 2026-10-01 00:00:00 | West | S12 | NammaMart Rajajinagar | 6 | 5554.25 |
+| 2026-10-01 00:00:00 | South | S06 | NammaMart Banashankari | 6 | 4893.55 |
+| 2026-10-01 00:00:00 | North | S02 | NammaMart Yelahanka | 11 | 4726.35 |
+| 2026-10-01 00:00:00 | West | S13 | NammaMart Malleshwaram | 9 | 4498.65 |
 
 ### ELT
 
@@ -55,16 +55,16 @@ LIMIT 10;
 
 | order_date | zone | store_id | store_name | delivered_orders | net_revenue |
 | --- | --- | --- | --- | --- | --- |
-| 2026-09-30 00:00:00 | East | S11 | NammaMart HSR Layout | 7 | 5056.8 |
-| 2026-09-30 00:00:00 | South | S05 | NammaMart JP Nagar | 6 | 3823.35 |
-| 2026-09-30 00:00:00 | East | S10 | NammaMart Marathahalli | 7 | 3073.7 |
-| 2026-09-30 00:00:00 | South | S06 | NammaMart Banashankari | 5 | 2493.5 |
-| 2026-09-30 00:00:00 | South | S04 | NammaMart Jayanagar | 6 | 2322.1 |
-| 2026-09-30 00:00:00 | North | S02 | NammaMart Yelahanka | 6 | 2279.55 |
-| 2026-09-30 00:00:00 | West | S12 | NammaMart Rajajinagar | 6 | 2271.05 |
-| 2026-09-30 00:00:00 | North | S01 | NammaMart Hebbal | 2 | 1976.0 |
-| 2026-09-30 00:00:00 | West | S14 | NammaMart Vijayanagar | 3 | 1760.45 |
-| 2026-09-30 00:00:00 | Unknown | S07 | NammaMart BTM Layout | 6 | 1702.1 |
+| 2026-10-01 00:00:00 | North | S01 | NammaMart Hebbal | 13 | 8958.35 |
+| 2026-10-01 00:00:00 | South | S05 | NammaMart JP Nagar | 13 | 8785.2 |
+| 2026-10-01 00:00:00 | East | S11 | NammaMart HSR Layout | 18 | 8571.1 |
+| 2026-10-01 00:00:00 | East | S08 | NammaMart Whitefield | 15 | 6569.9 |
+| 2026-10-01 00:00:00 | West | S14 | NammaMart Vijayanagar | 15 | 6214.8 |
+| 2026-10-01 00:00:00 | East | S10 | NammaMart Marathahalli | 13 | 6020.9 |
+| 2026-10-01 00:00:00 | West | S12 | NammaMart Rajajinagar | 6 | 5554.25 |
+| 2026-10-01 00:00:00 | South | S06 | NammaMart Banashankari | 6 | 4893.55 |
+| 2026-10-01 00:00:00 | North | S02 | NammaMart Yelahanka | 11 | 4726.35 |
+| 2026-10-01 00:00:00 | West | S13 | NammaMart Malleshwaram | 9 | 4498.65 |
 
 ## Question 2: Revenue and gross margin by product category (margin = revenue - quantity x cost_price)
 
@@ -85,13 +85,13 @@ ORDER BY net_revenue DESC;
 
 | category | delivered_orders | net_revenue | cost_of_goods | gross_margin | margin_pct |
 | --- | --- | --- | --- | --- | --- |
-| Staples | 306 | 266500.9 | 207772.68 | 58728.22 | 22.04 |
-| Personal Care | 320 | 202398.1 | 158134.32 | 44263.78 | 21.87 |
-| Household | 339 | 199699.45 | 148554.12 | 51145.33 | 25.61 |
-| Dairy & Bakery | 380 | 169528.75 | 124736.91 | 44791.84 | 26.42 |
-| Snacks & Beverages | 322 | 161886.95 | 124162.46 | 37724.49 | 23.3 |
-| Fruits & Vegetables | 370 | 93284.3 | 73683.68 | 19600.62 | 21.01 |
-| Unknown | 51 | 42330.35 | 35147.7 | 7182.65 | 16.97 |
+| Staples | 336 | 287601.45 | 225423.36 | 62178.09 | 21.62 |
+| Personal Care | 337 | 212148.05 | 165497.72 | 46650.33 | 21.99 |
+| Household | 363 | 212105.05 | 157638.9 | 54466.15 | 25.68 |
+| Dairy & Bakery | 405 | 179568.95 | 131935.95 | 47633.0 | 26.53 |
+| Snacks & Beverages | 341 | 174988.6 | 133558.93 | 41429.67 | 23.68 |
+| Fruits & Vegetables | 392 | 99566.2 | 79054.82 | 20511.38 | 20.6 |
+| Unknown | 54 | 45109.0 | 36968.36 | 8140.64 | 18.05 |
 
 ### ELT
 
@@ -109,13 +109,13 @@ ORDER BY net_revenue DESC;
 
 | category | delivered_orders | net_revenue | cost_of_goods | gross_margin | margin_pct |
 | --- | --- | --- | --- | --- | --- |
-| Staples | 306 | 266500.9 | 207772.68 | 58728.22 | 22.04 |
-| Personal Care | 320 | 202398.1 | 158134.32 | 44263.78 | 21.87 |
-| Household | 339 | 199699.45 | 148554.12 | 51145.33 | 25.61 |
-| Dairy & Bakery | 380 | 169528.75 | 124736.91 | 44791.84 | 26.42 |
-| Snacks & Beverages | 322 | 161886.95 | 124162.46 | 37724.49 | 23.3 |
-| Fruits & Vegetables | 370 | 93284.3 | 73683.68 | 19600.62 | 21.01 |
-| Unknown | 51 | 42330.35 | 35147.7 | 7182.65 | 16.97 |
+| Staples | 336 | 287601.45 | 225423.36 | 62178.09 | 21.62 |
+| Personal Care | 337 | 212148.05 | 165497.72 | 46650.33 | 21.99 |
+| Household | 363 | 212105.05 | 157638.9 | 54466.15 | 25.68 |
+| Dairy & Bakery | 405 | 179568.95 | 131935.95 | 47633.0 | 26.53 |
+| Snacks & Beverages | 341 | 174988.6 | 133558.93 | 41429.67 | 23.68 |
+| Fruits & Vegetables | 392 | 99566.2 | 79054.82 | 20511.38 | 20.6 |
+| Unknown | 54 | 45109.0 | 36968.36 | 8140.64 | 18.05 |
 
 ## Question 3: Average delivery time per store, and the % of delivered orders within 15 minutes
 
@@ -140,16 +140,16 @@ ORDER BY pct_within_15_min DESC;
 
 | store_id | store_name | zone | delivered_orders | avg_delivery_minutes | orders_within_15_min | pct_within_15_min |
 | --- | --- | --- | --- | --- | --- | --- |
-| S08 | NammaMart Whitefield | East | 150 | 20.55 | 54.0 | 36.0 |
-| S07 | NammaMart BTM Layout | Unknown | 145 | 21.34 | 47.0 | 32.41 |
-| S01 | NammaMart Hebbal | North | 136 | 20.71 | 42.0 | 30.88 |
-| S03 | NammaMart RT Nagar | North | 138 | 20.63 | 42.0 | 30.43 |
-| S14 | NammaMart Vijayanagar | West | 152 | 21.91 | 46.0 | 30.26 |
-| S05 | NammaMart JP Nagar | South | 130 | 21.45 | 39.0 | 30.0 |
-| S11 | NammaMart HSR Layout | East | 143 | 21.09 | 41.0 | 28.67 |
-| S02 | NammaMart Yelahanka | North | 141 | 21.4 | 40.0 | 28.37 |
-| S13 | NammaMart Malleshwaram | West | 141 | 21.88 | 39.0 | 27.66 |
-| S09 | NammaMart Indiranagar | East | 129 | 21.26 | 35.0 | 27.13 |
+| S08 | NammaMart Whitefield | East | 164 | 20.61 | 58.0 | 35.37 |
+| S07 | NammaMart BTM Layout | Unknown | 150 | 21.13 | 49.0 | 32.67 |
+| S01 | NammaMart Hebbal | North | 149 | 20.47 | 48.0 | 32.21 |
+| S14 | NammaMart Vijayanagar | West | 166 | 21.51 | 52.0 | 31.33 |
+| S02 | NammaMart Yelahanka | North | 150 | 20.93 | 47.0 | 31.33 |
+| S05 | NammaMart JP Nagar | South | 142 | 21.19 | 42.0 | 29.58 |
+| S03 | NammaMart RT Nagar | North | 143 | 20.65 | 42.0 | 29.37 |
+| S11 | NammaMart HSR Layout | East | 161 | 20.82 | 46.0 | 28.57 |
+| S04 | NammaMart Jayanagar | South | 138 | 21.31 | 38.0 | 27.54 |
+| S13 | NammaMart Malleshwaram | West | 150 | 21.87 | 41.0 | 27.33 |
 
 _15 rows in total, first 10 shown._
 
@@ -165,16 +165,16 @@ ORDER BY pct_within_15_min DESC;
 
 | store_id | store_name | zone | delivered_orders | avg_delivery_minutes | orders_within_15_min | pct_within_15_min |
 | --- | --- | --- | --- | --- | --- | --- |
-| S08 | NammaMart Whitefield | East | 150 | 20.55 | 54.0 | 36.0 |
-| S07 | NammaMart BTM Layout | Unknown | 145 | 21.34 | 47.0 | 32.41 |
-| S01 | NammaMart Hebbal | North | 136 | 20.71 | 42.0 | 30.88 |
-| S03 | NammaMart RT Nagar | North | 138 | 20.63 | 42.0 | 30.43 |
-| S14 | NammaMart Vijayanagar | West | 152 | 21.91 | 46.0 | 30.26 |
-| S05 | NammaMart JP Nagar | South | 130 | 21.45 | 39.0 | 30.0 |
-| S11 | NammaMart HSR Layout | East | 143 | 21.09 | 41.0 | 28.67 |
-| S02 | NammaMart Yelahanka | North | 141 | 21.4 | 40.0 | 28.37 |
-| S13 | NammaMart Malleshwaram | West | 141 | 21.88 | 39.0 | 27.66 |
-| S09 | NammaMart Indiranagar | East | 129 | 21.26 | 35.0 | 27.13 |
+| S08 | NammaMart Whitefield | East | 164 | 20.61 | 58.0 | 35.37 |
+| S07 | NammaMart BTM Layout | Unknown | 150 | 21.13 | 49.0 | 32.67 |
+| S01 | NammaMart Hebbal | North | 149 | 20.47 | 48.0 | 32.21 |
+| S02 | NammaMart Yelahanka | North | 150 | 20.93 | 47.0 | 31.33 |
+| S14 | NammaMart Vijayanagar | West | 166 | 21.51 | 52.0 | 31.33 |
+| S05 | NammaMart JP Nagar | South | 142 | 21.19 | 42.0 | 29.58 |
+| S03 | NammaMart RT Nagar | North | 143 | 20.65 | 42.0 | 29.37 |
+| S11 | NammaMart HSR Layout | East | 161 | 20.82 | 46.0 | 28.57 |
+| S04 | NammaMart Jayanagar | South | 138 | 21.31 | 38.0 | 27.54 |
+| S13 | NammaMart Malleshwaram | West | 150 | 21.87 | 41.0 | 27.33 |
 
 _15 rows in total, first 10 shown._
 
@@ -206,11 +206,11 @@ ORDER BY r.net_revenue DESC;
 
 | payment_mode | delivered_orders | net_revenue | mismatch_rows | unreconciled_amount |
 | --- | --- | --- | --- | --- |
-| UPI | 1169 | 620387.85 | 180 | 131331.05 |
-| Card | 415 | 230913.9 | 180 | 131331.05 |
-| Cash on Delivery | 284 | 160022.25 | 180 | 131331.05 |
-| Wallet | 218 | 123638.8 | 180 | 131331.05 |
-| Cashh | 2 | 666.0 | 180 | 131331.05 |
+| UPI | 1205 | 638752.15 | 340 | 210983.25 |
+| Card | 457 | 251882.3 | 340 | 210983.25 |
+| Cash on Delivery | 318 | 181668.4 | 340 | 210983.25 |
+| Wallet | 246 | 138118.45 | 340 | 210983.25 |
+| Cashh | 2 | 666.0 | 340 | 210983.25 |
 
 ### ELT
 
@@ -237,11 +237,11 @@ ORDER BY r.net_revenue DESC;
 
 | payment_mode | delivered_orders | net_revenue | mismatch_rows | unreconciled_amount |
 | --- | --- | --- | --- | --- |
-| UPI | 1169 | 620387.85 | 180 | 131331.05 |
-| Card | 415 | 230913.9 | 180 | 131331.05 |
-| Cash on Delivery | 284 | 160022.25 | 180 | 131331.05 |
-| Wallet | 218 | 123638.8 | 180 | 131331.05 |
-| Cashh | 2 | 666.0 | 180 | 131331.05 |
+| UPI | 1205 | 638752.15 | 2355 | 211768.25 |
+| Card | 457 | 251882.3 | 2355 | 211768.25 |
+| Cash on Delivery | 318 | 181668.4 | 2355 | 211768.25 |
+| Wallet | 246 | 138118.45 | 2355 | 211768.25 |
+| Cashh | 2 | 666.0 | 2355 | 211768.25 |
 
 ## Question 5: Top 10 customers by spend, with loyalty tier (no raw email or phone shown)
 
@@ -269,15 +269,15 @@ LIMIT 10;
 | customer_id | customer_name_masked | email_masked | phone_masked | loyalty_tier | delivered_orders | total_spend |
 | --- | --- | --- | --- | --- | --- | --- |
 | C00136 | Sanjay B. | sa***@example.com | 96******88 | BRONZE | 9 | 8738.1 |
+| C00115 | Sanjay K. | sa***@example.com | 96******85 | BRONZE | 8 | 8037.7 |
 | C00283 | Nikhil R. | ni***@example.com | 91******43 | BRONZE | 8 | 7934.6 |
-| C00071 | Mahesh P. | ma***@example.com | 91******42 | SILVER | 12 | 7349.3 |
+| C00236 | Sneha N. | sn***@example.com | 90******01 | PLATINUM | 12 | 7831.8 |
 | C00310 | Kiran P. | ki***@example | 91******35 | BRONZE | 8 | 7258.95 |
-| C00236 | Sneha N. | sn***@example.com | 90******01 | PLATINUM | 11 | 7016.4 |
+| C00265 | Vikram H. | vi***@example.com | 91******69 | GOLD | 8 | 7151.3 |
+| C00071 | Mahesh P. | ma***@example.com | 91******42 | SILVER | 11 | 6933.3 |
 | C00338 | Bhavana I. | bh***@example.com | 94******05 | SILVER | 9 | 6848.55 |
+| C00357 | Arjun N. | ar***@example.com | 93*****12 | BRONZE | 11 | 6637.9 |
 | C00209 | Kavya P. | ka***@example.com | 98******97 | PLATINUM | 8 | 6519.4 |
-| C00115 | Sanjay K. | sa***@example.com | 96******85 | BRONZE | 7 | 6483.7 |
-| C00036 | Deepa D. | de***@example.com | 98******57 | BRONZE | 8 | 6466.5 |
-| C00072 | Nandini M. | na***@example.com | 98******05 | SILVER | 11 | 6433.95 |
 
 ### ELT
 
@@ -293,15 +293,15 @@ ORDER BY spend_rank;
 | customer_id | customer_name_masked | email_masked | phone_masked | loyalty_tier | delivered_orders | total_spend |
 | --- | --- | --- | --- | --- | --- | --- |
 | C00136 | Sanjay B. | sa***@example.com | 96******88 | BRONZE | 9 | 8738.1 |
+| C00115 | Sanjay K. | sa***@example.com | 96******85 | BRONZE | 8 | 8037.7 |
 | C00283 | Nikhil R. | ni***@example.com | 91******43 | BRONZE | 8 | 7934.6 |
-| C00071 | Mahesh P. | ma***@example.com | 91******42 | SILVER | 12 | 7349.3 |
+| C00236 | Sneha N. | sn***@example.com | 90******01 | PLATINUM | 12 | 7831.8 |
 | C00310 | Kiran P. | ki***@example | 91******35 | BRONZE | 8 | 7258.95 |
-| C00236 | Sneha N. | sn***@example.com | 90******01 | PLATINUM | 11 | 7016.4 |
+| C00265 | Vikram H. | vi***@example.com | 91******69 | GOLD | 8 | 7151.3 |
+| C00071 | Mahesh P. | ma***@example.com | 91******42 | SILVER | 11 | 6933.3 |
 | C00338 | Bhavana I. | bh***@example.com | 94******05 | SILVER | 9 | 6848.55 |
+| C00357 | Arjun N. | ar***@example.com | 93*****12 | BRONZE | 11 | 6637.9 |
 | C00209 | Kavya P. | ka***@example.com | 98******97 | PLATINUM | 8 | 6519.4 |
-| C00115 | Sanjay K. | sa***@example.com | 96******85 | BRONZE | 7 | 6483.7 |
-| C00036 | Deepa D. | de***@example.com | 98******57 | BRONZE | 8 | 6466.5 |
-| C00072 | Nandini M. | na***@example.com | 98******05 | SILVER | 11 | 6433.95 |
 
 ## Question 6: Number of rows rejected today, by file and by reason
 

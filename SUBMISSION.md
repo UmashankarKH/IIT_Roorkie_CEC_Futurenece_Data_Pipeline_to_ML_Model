@@ -163,6 +163,13 @@ into staging with `include/sql/staging/stg_orders_merge.sql`:
 
 **150 new orders inserted, 10 corrections updated, no duplicates** - the fact
 table and `stg_orders` both hold 2,460 distinct `order_id` values afterwards.
+
+One honest difference in the run audit: on the increment run the ELT pipeline
+records `rows_extracted = 5,372` and the ETL pipeline `5,362`. The ELT raw layer
+appends every row of both files, while the ETL extract drops the 10 superseded
+September rows before validation, because for ETL a repeated `order_id` in a
+later file is a correction rather than a duplicate. The loaded totals are
+identical (2,460).
 The 10 September versions remain in staging with `dq_status = 'SUPERSEDED'`, so
 the change history is still visible.
 

@@ -1,105 +1,209 @@
 run_id,dag_id,rule_id,dataset,check_name,dimension,severity,rows_checked,rows_failed,status,detail,checked_at
-elt_sep,nammamart_elt_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows",2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2412,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2412,12,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2412,1,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2412,5,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2412,7,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2412,18,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2412,9,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2412,5,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2412,10,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2412,3,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2412,18,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2412,3,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2412,2,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2412,8,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2412,6,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2412,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2412,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2412,0,PASS,"expected~2412 rows, received 2412 rows",2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2310,1,WARN,"latest order_ts = 2026-09-30 23:46, 19.6 day(s) old",2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows",2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows",2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:04:27.570147
-elt_sep,nammamart_elt_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows",2026-10-20 14:04:27.570147
-etl_sep,nammamart_etl_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows (0.0% below baseline)",2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2412,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2412,12,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2412,1,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2412,5,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2412,7,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2412,18,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2412,9,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2412,5,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2412,10,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2412,3,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2412,18,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2412,3,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2412,2,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2412,8,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2412,6,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2412,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2412,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2412,0,PASS,"expected~2412 rows, received 2412 rows (0.0% below baseline)",2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2412,1,WARN,"latest order_ts = 2026-09-30 23:46, 19.6 day(s) old",2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows (0.0% below baseline)",2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows (0.0% below baseline)",2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:04:28.000000
-etl_sep,nammamart_etl_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows (0.0% below baseline)",2026-10-20 14:04:28.000000
+elt_inc,nammamart_elt_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows",2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2572,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2572,12,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2572,1,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2572,5,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2572,7,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2572,18,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2572,9,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2572,5,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2572,10,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2572,3,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2572,18,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2572,3,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2572,2,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2572,8,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2572,6,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2572,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2572,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2572,0,PASS,"expected~2412 rows, received 2572 rows",2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2460,1,WARN,"latest order_ts = 2026-10-01 22:33, 18.6 day(s) old",2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows",2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows",2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:06:54.197858
+elt_inc,nammamart_elt_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows",2026-10-20 14:06:54.197858
+elt_sep,nammamart_elt_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows",2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2412,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2412,12,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2412,1,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2412,5,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2412,7,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2412,18,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2412,9,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2412,5,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2412,10,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2412,3,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2412,18,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2412,3,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2412,2,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2412,8,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2412,6,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2412,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2412,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2412,0,PASS,"expected~2412 rows, received 2412 rows",2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2310,1,WARN,"latest order_ts = 2026-09-30 23:46, 19.6 day(s) old",2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows",2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows",2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:06:52.878099
+elt_sep,nammamart_elt_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows",2026-10-20 14:06:52.878099
+etl_inc,nammamart_etl_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows (0.0% below baseline)",2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2562,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2562,12,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2562,1,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2562,5,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2562,7,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2562,18,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2562,9,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2562,5,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2562,10,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2562,3,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2562,18,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2562,3,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2562,2,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2562,8,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2562,6,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2562,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2562,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2562,0,PASS,"expected~2412 rows, received 2562 rows (-6.2% below baseline)",2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2562,1,WARN,"latest order_ts = 2026-10-01 22:33, 18.6 day(s) old",2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows (0.0% below baseline)",2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows (0.0% below baseline)",2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:06:54.000000
+etl_inc,nammamart_etl_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows (0.0% below baseline)",2026-10-20 14:06:54.000000
+etl_sep,nammamart_etl_waseem,RULE-021,customers,customer_id must be unique (superseded copies quarantined),Uniqueness,Critical,405,5,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-022,customers,city should not be blank,Completeness,Warning,405,6,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-023,customers,signup_date must not be future-dated,Timeliness,Warning,405,3,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-024,customers,loyalty_tier must be in the approved list,Validity,Warning,405,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-040,customers,email must look like name@domain.tld,Validity,Warning,405,12,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-041,customers,phone must contain 10 digits,Validity,Warning,405,7,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-042,customers,pincode must contain 6 digits,Validity,Warning,405,3,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-043,customers,customer_id must be present,Completeness,Critical,405,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-050,customers,customers row count must not drop more than 90% vs baseline,Volume,Warning,405,0,PASS,"expected~405 rows, received 405 rows (0.0% below baseline)",2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-001,orders,order_id must be present,Completeness,Critical,2412,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-002,orders,order_id must be unique (redundant copies quarantined),Uniqueness,Critical,2412,12,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-003,orders,order_ts must be present,Completeness,Critical,2412,1,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-004,orders,order_ts must parse as a valid timestamp,Validity,Critical,2412,5,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-005,orders,order_ts must not be future-dated,Timeliness,Critical,2412,7,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-006,orders,customer_id must be present,Completeness,Critical,2412,18,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-007,orders,product_id must exist in products.csv,Consistency,Critical,2412,9,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-008,orders,store_id must exist in stores.csv,Consistency,Critical,2412,5,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-009,orders,quantity must be greater than zero,Accuracy,Critical,2412,10,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-010,orders,discount_pct must be between 0 and 100,Validity,Critical,2412,3,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-011,orders,order_amount must match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,2412,18,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-012,orders,order_status must be in the approved list,Validity,Critical,2412,3,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-013,orders,payment_mode must be in the approved list,Validity,Warning,2412,2,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-014,orders,DELIVERED orders must have delivery_minutes,Completeness,Critical,2412,8,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-015,orders,delivery_minutes must be between 0 and 120,Accuracy,Critical,2412,6,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-032,orders,customer_id must exist in customers.csv,Consistency,Critical,2412,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-033,orders,channel must be in the approved list,Validity,Warning,2412,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-034,orders,orders row count must not drop more than 90% vs baseline,Volume,Warning,2412,0,PASS,"expected~2412 rows, received 2412 rows (0.0% below baseline)",2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-035,orders,latest order_ts must not be older than 1 day,Timeliness,Warning,2412,1,WARN,"latest order_ts = 2026-09-30 23:46, 19.6 day(s) old",2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-016,payments,payment_id must be unique (redundant copies quarantined),Uniqueness,Critical,2228,4,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-017,payments,order_id must exist in orders.csv,Consistency,Critical,2228,8,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-018,payments,SUCCESS payment amount must equal the order amount,Consistency,Critical,2228,14,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-019,payments,payment_ts must not be future-dated,Timeliness,Critical,2228,7,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-020,payments,gateway_ref must be present for non-Cash-on-Delivery payments,Completeness,Warning,2228,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-036,payments,payment_mode must be in the approved list,Validity,Warning,2228,2,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-037,payments,payment_status must be in the approved list,Validity,Warning,2228,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-038,payments,SUCCESS payments must have amount_paid greater than zero,Accuracy,Critical,2228,10,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-039,payments,payment_id and order_id must be present,Completeness,Critical,2228,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-049,payments,payments row count must not drop more than 90% vs baseline,Volume,Warning,2228,0,PASS,"expected~2228 rows, received 2228 rows (0.0% below baseline)",2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-025,products,product_id must be unique (superseded copies quarantined),Uniqueness,Critical,152,2,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-026,products,category must not be blank,Completeness,Warning,152,3,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-027,products,mrp must be greater than zero,Accuracy,Critical,152,1,FAIL,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-028,products,cost_price should not exceed mrp,Accuracy,Warning,152,5,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-044,products,product_id must be present,Completeness,Critical,152,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-047,products,launch_date must not be future-dated,Timeliness,Warning,152,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-051,products,products row count must not drop more than 90% vs baseline,Volume,Warning,152,0,PASS,"expected~152 rows, received 152 rows (0.0% below baseline)",2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-029,stores,store_id must be unique (superseded copies quarantined),Uniqueness,Critical,15,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-030,stores,zone should not be blank,Completeness,Warning,15,1,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-031,stores,capacity_orders_per_day must be greater than zero,Accuracy,Warning,15,1,WARN,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-045,stores,zone must be one of North/South/East/West,Validity,Warning,15,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-046,stores,store_id must be present,Completeness,Critical,15,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-048,stores,open_date must not be future-dated,Timeliness,Warning,15,0,PASS,,2026-10-20 14:06:53.000000
+etl_sep,nammamart_etl_waseem,RULE-052,stores,stores row count must not drop more than 90% vs baseline,Volume,Warning,15,0,PASS,"expected~15 rows, received 15 rows (0.0% below baseline)",2026-10-20 14:06:53.000000
