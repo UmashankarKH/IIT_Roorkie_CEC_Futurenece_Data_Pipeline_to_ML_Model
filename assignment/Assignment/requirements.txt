@@ -1,0 +1,6 @@
+pandas==2.3.3
+duckdb==1.5.6
+graphviz==0.21
+pyarrow==22.0.0
+great_expectations==1.24.0
+PyYAML>=6.0.3

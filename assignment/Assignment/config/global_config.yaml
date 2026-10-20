@@ -1,0 +1,12 @@
+DATA_DIR: include/data
+WAREHOUSE_DB_ELT: include/warehouse/warehouse_elt.duckdb
+WAREHOUSE_DB_ETL: include/warehouse/warehouse_etl.duckdb
+QUARANTINE_DIR: include/quarantine
+
+RETRIES: 2
+RETRY_DELAY: 5
+SCHEDULE: 0 9 * * 1-6
+EXECUTION_TIMEOUT: 30
+TIMEZONE: Asia/Kolkata
+START_DATE: 2026-01-01
+catchup: false
