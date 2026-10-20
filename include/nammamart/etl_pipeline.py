@@ -71,11 +71,15 @@ def extract(dataset: str, data_dir: Path | None = None, include_increment: bool 
         increment = read_source_csv(increment_file)
         increment["_source_file"] = config.INCREMENT_FILE
         frame["_source_file"] = config.SOURCE_FILES["orders"]
-        # The increment file wins for order_id values present in both files,
-        # because it carries the late status corrections (for example RETURNED).
-        frame = pd.concat([frame, increment], ignore_index=True)
-        frame = frame.drop_duplicates(subset=["order_id"], keep="last").reset_index(drop=True)
-        logger.info("[Extract] orders + increment -> %s rows after applying corrections", len(frame))
+        # An order_id that appears in a later file is a *correction*, not a
+        # duplicate: the newer row replaces the older one. Duplicates *inside*
+        # one file are left untouched so the uniqueness rule still reports them.
+        corrected = set(tf.clean_text(increment["order_id"]).dropna())
+        superseded = tf.clean_text(frame["order_id"]).isin(corrected)
+        frame = pd.concat([frame.loc[~superseded], increment], ignore_index=True)
+        logger.info("[Extract] orders + increment -> %s rows (%s corrections applied, "
+                    "%s new orders)", len(frame), int(superseded.sum()),
+                    len(increment) - int(superseded.sum()))
     return frame
 
 
@@ -320,13 +324,18 @@ def add_unknown_members(dimension: pd.DataFrame, key: str, referenced_keys: Iter
     return pd.concat([dimension, placeholder], ignore_index=True)
 
 
-def transform(results: dict[str, dq_rules.ValidationResult], run_id: str) -> dict[str, pd.DataFrame]:
-    """Build the star schema from the validated frames."""
-    dim_customer = build_dim_customer(results["customers"].passed)
-    dim_product = build_dim_product(results["products"].passed)
-    dim_store = build_dim_store(results["stores"].passed)
+def transform(clean: dict[str, pd.DataFrame], run_id: str) -> dict[str, pd.DataFrame]:
+    """Build the star schema from the validated (clean) frames.
 
-    clean_orders = results["orders"].passed
+    ``clean`` maps a dataset name to the rows that passed validation, so this
+    function can be called from the DAG, from the local runner or from a test
+    without needing the full validation objects.
+    """
+    dim_customer = build_dim_customer(clean["customers"])
+    dim_product = build_dim_product(clean["products"])
+    dim_store = build_dim_store(clean["stores"])
+
+    clean_orders = clean["orders"]
     dim_product = add_unknown_members(
         dim_product, "product_id", tf.clean_text(clean_orders["product_id"]).dropna(),
         {"product_name": "UNKNOWN (master row quarantined)", "category": "Unknown",
@@ -357,6 +366,29 @@ def transform(results: dict[str, dq_rules.ValidationResult], run_id: str) -> dic
 # ---------------------------------------------------------------------------
 # Load
 # ---------------------------------------------------------------------------
+STAGE_PREFIX = "etl_stage_"
+STAR_TABLES = ("etl_fact_orders", "etl_dim_customer", "etl_dim_product", "etl_dim_store")
+
+
+def stage_transformed(con, tables: dict[str, pd.DataFrame]) -> dict[str, int]:
+    """Park the transformed tables in the warehouse between two Airflow tasks.
+
+    Passing a whole DataFrame through XCom would be slow and fragile, and a CSV
+    hand-off would lose the column types.  Writing to ``etl_stage_*`` tables
+    keeps the types and makes the intermediate result inspectable with SQL.
+    """
+    counts = {}
+    for name, frame in tables.items():
+        counts[name] = warehouse.replace_table(con, f"{STAGE_PREFIX}{name}", frame)
+    return counts
+
+
+def read_staged(con) -> dict[str, pd.DataFrame]:
+    """Read the tables written by :func:`stage_transformed`."""
+    return {name: warehouse.query(con, f'SELECT * FROM "{STAGE_PREFIX}{name}"')
+            for name in STAR_TABLES}
+
+
 def load(con, tables: dict[str, pd.DataFrame]) -> dict[str, int]:
     """Load the star schema.
 
@@ -455,13 +487,21 @@ def reconcile_payments(fact_orders: pd.DataFrame, payments_raw: pd.DataFrame,
             "mismatch_reason": "PAYMENT_FOR_NON_REVENUE",
         }))
 
-    # 5. duplicate successful payments for one order
-    duplicates = matched[matched.duplicated(subset=["order_id"], keep=False)]
+    # 5. the same payment sent twice, or one order paid by two different payments
+    duplicate_ids = set(payments.loc[payments["payment_id"].duplicated(keep=False)
+                                     & payments["payment_id"].notna(), "payment_id"])
+    unique_successful = successful.drop_duplicates(subset=["payment_id"])
+    repeat_orders = set(unique_successful.loc[
+        unique_successful.duplicated(subset=["order_id"], keep=False), "order_id"].dropna())
+    duplicates = unique_successful[unique_successful["payment_id"].isin(duplicate_ids)
+                                   | unique_successful["order_id"].isin(repeat_orders)]
     if not duplicates.empty:
+        duplicates = duplicates.merge(orders, on="order_id", how="left")
         rows.append(pd.DataFrame({
             "order_id": duplicates["order_id"], "payment_id": duplicates["payment_id"],
             "order_amount": duplicates["order_amount"], "amount_paid": duplicates["amount_paid"],
-            "difference": duplicates["difference"], "order_status": duplicates["order_status"],
+            "difference": (duplicates["amount_paid"] - duplicates["order_amount"]).round(2),
+            "order_status": duplicates["order_status"],
             "payment_status": duplicates["payment_status"],
             "mismatch_reason": "DUPLICATE_PAYMENT",
         }))
@@ -552,7 +592,7 @@ def run_etl(run_id: str | None = None, data_dir: Path | None = None,
 
         results = validate_all(frames, run_id, DAG_ID, now=now)
         quarantine_files = quarantine(results, run_id, quarantine_dir)
-        tables = transform(results, run_id)
+        tables = transform({name: result.passed for name, result in results.items()}, run_id)
 
         with warehouse.connect(db_path) as con:
             warehouse.ensure_audit_tables(con)

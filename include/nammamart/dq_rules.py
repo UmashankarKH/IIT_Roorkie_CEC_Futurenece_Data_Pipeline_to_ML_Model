@@ -358,9 +358,12 @@ def _freshness_check(column: str):
     def _evaluate(df: pd.DataFrame, ctx: ValidationContext) -> tuple[int, int, str]:
         if column not in df.columns or df.empty:
             return len(df), 1, f"{column} missing or file empty"
-        latest = tf.to_timestamp(df[column]).max()
+        parsed = tf.to_timestamp(df[column])
+        # Future-dated rows are themselves a data error; if they were included
+        # here they would make a stale file look fresh.
+        latest = parsed[parsed <= ctx.now].max()
         if pd.isna(latest):
-            return len(df), 1, f"no parsable {column} value found"
+            return len(df), 1, f"no usable {column} value found"
         age_days = (ctx.now - latest).total_seconds() / 86400
         failed = 1 if age_days > config.MAX_DATA_AGE_DAYS else 0
         detail = f"latest {column} = {latest:%Y-%m-%d %H:%M}, {age_days:.1f} day(s) old"
