@@ -24,7 +24,10 @@ SELECT
                                                                        AS pct_within_15_min,
     max(s.capacity_orders_per_day)                                     AS capacity_orders_per_day,
     -- bonus check: did the store take more orders than it can handle?
-    (count(*) > max(s.capacity_orders_per_day))                        AS over_capacity
+    -- A capacity of zero or null means the store master is wrong (RULE-031),
+    -- not that the store is overloaded, so those rows are not flagged here.
+    (max(s.capacity_orders_per_day) > 0
+     AND count(*) > max(s.capacity_orders_per_day))                    AS over_capacity
 FROM stg_orders o
 LEFT JOIN (SELECT * FROM stg_stores WHERE dq_status = 'PASS') s ON s.store_id = o.store_id
 LEFT JOIN (SELECT * FROM stg_products WHERE dq_status = 'PASS') p ON p.product_id = o.product_id

@@ -1,5 +1,7 @@
 pandas
-duckdb
+duckdb>=1.4.0   # MERGE INTO, used by the ELT staging upsert
+pendulum        # timezone-aware DAG start_date (Asia/Kolkata)
+pytest          # test suite in tests/nammamart
 scikit-learn
 langgraph
 langchain
