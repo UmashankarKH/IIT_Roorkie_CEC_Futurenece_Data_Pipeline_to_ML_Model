@@ -1,0 +1,11 @@
+source_file,run_id,failure_reason,payment_id,order_id,payment_ts,payment_mode,amount_paid,payment_status,gateway_ref,payment_ts_parsed
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0001651,ORD000188,2026-09-03 13:23:25,Card,94.5,SUCCESS,GW7909341632,2026-09-03 13:23:25
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0000755,ORD000094,2026-09-02 10:58:26,Card,403.2,SUCCESS,GW2899060380,2026-09-02 10:58:26
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0000509,ORD002122,2026-09-27 14:57:42,UPI,148.8,SUCCESS,GW5719011844,2026-09-27 14:57:42
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0000509,ORD002122,2026-09-27 14:57:42,UPI,148.8,SUCCESS,GW5719011844,2026-09-27 14:57:42
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0002000,ORD000513,2026-09-07 23:16:17,Wallet,684.0,SUCCESS,GW2663042309,2026-09-07 23:16:17
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,invalid payment_mode,PAY0000522,ORD001414,2026-09-19 07:48:38,Cashh,288.0,SUCCESS,GW3918166452,2026-09-19 07:48:38
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,invalid payment_mode,PAY0000044,ORD001812,2026-09-23 21:12:03,Cashh,353.0,SUCCESS,GW4259899045,2026-09-23 21:12:03
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0001651,ORD000188,2026-09-03 13:23:25,Card,94.5,SUCCESS,GW7909341632,2026-09-03 13:23:25
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0002000,ORD000513,2026-09-07 23:16:17,Wallet,684.0,SUCCESS,GW2663042309,2026-09-07 23:16:17
+payments.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate payment_id; duplicate payment order_id,PAY0000755,ORD000094,2026-09-02 10:58:26,Card,403.2,SUCCESS,GW2899060380,2026-09-02 10:58:26

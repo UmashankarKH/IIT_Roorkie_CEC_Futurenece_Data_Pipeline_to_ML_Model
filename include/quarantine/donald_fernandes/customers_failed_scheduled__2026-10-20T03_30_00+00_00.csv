@@ -1,0 +1,6 @@
+source_file,run_id,failure_reason,customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active
+customers.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate customer_id,C00103,Ganesh Naidu,ganesh.naidu103@example.com,9184787005,Bengaluru,BTM Layout,560076,2025-12-30,Bronze,Y
+customers.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate customer_id,C00252,Shreya Rao,shreya.rao252@example.com,9157399305,Bengaluru,Whitefield,560066,2025-06-26,Gold,N
+customers.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate customer_id,C00036,Deepa Desai,deepa.desai36@example.com,9094024455,Bengaluru,Marathahalli,560037,2024-06-07,Bronze,Y
+customers.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate customer_id,C00226,Prakash Reddy,prakash.reddy226@example.com,9891411739,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y
+customers.csv,scheduled__2026-10-20T03_30_00+00_00,duplicate customer_id,C00313,Prakash Hegde,prakash.hegde313@example.com,9506138782,Bengaluru,Hebbal,560024,2025-09-15,Silver,Y
