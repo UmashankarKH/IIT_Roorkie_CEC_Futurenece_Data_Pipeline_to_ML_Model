@@ -1,0 +1,3 @@
+store_id,store_name,zone,area,pincode,open_date,capacity_orders_per_day,failure_reason,warning_reason,dq_status
+S07,NammaMart BTM Layout,,BTM Layout,560076,2024-06-12,500,"zone is required; zone must be North, South, East or West",,FAIL
+S12,NammaMart Rajajinagar,West,Rajajinagar,560010,2025-01-22,0,capacity_orders_per_day must be greater than zero,,FAIL
