@@ -13,3 +13,8 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# NammaMart local warehouse and generated run artifacts
+include/warehouse_nammamart.duckdb*
+include/quarantine/Rajan_Gupta/
+include/data/nammamart/.runtime/
