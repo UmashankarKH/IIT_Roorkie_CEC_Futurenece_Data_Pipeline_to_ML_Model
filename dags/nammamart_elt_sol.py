@@ -40,7 +40,7 @@ DEFAULT_ARGS = {
 }
 
 
-def _run_sql_file(connection, filename: str) -> None:
+def _run_sql_file(connection, filename: str, replacements: dict[str, str] | None = None) -> None:
     sql_path = SQL_DIR / filename
     if not sql_path.is_file():
         raise FileNotFoundError(f"Required ELT SQL file not found: {sql_path}")
@@ -48,6 +48,8 @@ def _run_sql_file(connection, filename: str) -> None:
     # Semicolons also appear inside the failure_reason delimiter and prose
     # literals, so split only on semicolons outside quoted SQL strings.
     sql = sql_path.read_text(encoding="utf-8")
+    for marker, value in (replacements or {}).items():
+        sql = sql.replace(marker, value)
     statements = []
     current = []
     quote = None
@@ -165,6 +167,19 @@ def nammamart_elt_sol():
                 ).fetchone()
                 stats[table] = {"rows": count, "failed": failed}
                 print(f"[Staging] {table}: {count} rows, {failed} failed")
+            _run_sql_file(
+                connection,
+                "dq_results.sql",
+                {
+                    "{{RUN_ID}}": _quoted(raw_result["run_id"]),
+                    "{{DAG_ID}}": _quoted("nammamart_elt_sol"),
+                },
+            )
+            dq_count = connection.execute(
+                "SELECT COUNT(*) FROM dq_results WHERE run_id = ? AND dag_id = ?",
+                [raw_result["run_id"], "nammamart_elt_sol"],
+            ).fetchone()[0]
+            print(f"[DQ] Recorded {dq_count} ELT checks for run {raw_result['run_id']}")
         finally:
             connection.close()
         return {"run_id": raw_result["run_id"], "tables": stats}

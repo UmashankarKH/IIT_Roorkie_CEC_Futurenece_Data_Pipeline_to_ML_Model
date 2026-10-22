@@ -151,16 +151,46 @@ def validate_file(
 ) -> dict[str, Any]:
     """Apply row-level checks and save pass/fail sets outside XCom."""
     filename = manifest["file"]
-    frame = _normalise(_read_frame(manifest["source_path"]), filename)
+    source_frame = _read_frame(manifest["source_path"])
+    frame = _normalise(source_frame, filename)
     key = KEYS[filename]
     reasons: list[list[str]] = [[] for _ in range(len(frame))]
     warnings: list[list[str]] = [[] for _ in range(len(frame))]
+    checks: list[dict[str, Any]] = []
+
+    def dimension_for(message: str) -> str:
+        text = message.casefold()
+        if any(token in text for token in ("future", "stale", "older than one day")):
+            return "Timeliness"
+        if any(token in text for token in ("duplicate", "unique")):
+            return "Uniqueness"
+        if any(token in text for token in ("present in", "present to", "does not match the validated", "does not equal the validated", "match order", "validated orders", "dimension", "casing")):
+            return "Consistency"
+        if any(token in text for token in ("required", "requires", "missing", "is missing")):
+            return "Completeness"
+        if any(token in text for token in ("amount", "quantity", "price", "discount", "delivery_minutes", "pincode", "phone", "email", "plausible", "outside the normal", "non-negative", "greater than", "exceeds")):
+            return "Accuracy" if any(token in text for token in ("amount", "quantity", "price", "delivery_minutes", "plausible", "normal", "non-negative", "greater than", "exceeds")) else "Validity"
+        return "Validity"
+
+    def log_check(mask: pd.Series, message: str, severity: str) -> None:
+        checked_mask = mask.fillna(False).astype(bool)
+        failed_rows = int(checked_mask.sum())
+        checks.append({
+            "check_name": f"{filename}:{message}",
+            "dimension": dimension_for(message),
+            "severity": severity,
+            "rows_checked": int(len(frame)),
+            "rows_failed": failed_rows,
+            "status": "PASS" if failed_rows == 0 else ("FAIL" if severity == "Critical" else "WARN"),
+        })
 
     def fail(mask: pd.Series, message: str) -> None:
+        log_check(mask, message, "Critical")
         for index in frame.index[mask.fillna(False)]:
             reasons[index].append(message)
 
     def warn(mask: pd.Series, message: str) -> None:
+        log_check(mask, message, "Warning")
         for index in frame.index[mask.fillna(False)]:
             warnings[index].append(message)
 
@@ -209,6 +239,8 @@ def validate_file(
         today = pendulum.now("Asia/Kolkata").date()
         future = parsed.map(lambda value: False if pd.isna(value) else value.date() > today)
         fail(future, f"order_ts is after the current business date {today}")
+        stale = parsed.map(lambda value: False if pd.isna(value) else value.date() < today - pd.Timedelta(days=1))
+        warn(stale, "order_ts is older than one day (stale)")
 
         delivery = frame["delivery_minutes"].map(_decimal)
         delivered = frame["order_status"].eq("DELIVERED")
@@ -267,6 +299,7 @@ def validate_file(
         fail(parsed.isna(), "signup_date is missing or invalid")
         today = pendulum.now("Asia/Kolkata").date()
         fail(parsed.map(lambda value: False if pd.isna(value) else value.date() > today), f"signup_date is after the current business date {today}")
+        warn(source_frame["loyalty_tier"].str.strip().ne(frame["loyalty_tier"]), "loyalty_tier casing or whitespace was standardised")
         email_bad = frame["email"].ne("") & ~frame["email"].str.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
         warn(email_bad, "email does not match a basic email address format")
         phone_digits = frame["phone"].str.replace(r"\D", "", regex=True)
@@ -319,6 +352,7 @@ def validate_file(
         "passed_count": len(passed),
         "failed_count": len(failed),
         "warning_count": warning_count,
+        "checks": checks,
     }
 
 
@@ -559,6 +593,26 @@ def reconcile_payments(load_result: dict[str, Any], payment_manifest: dict[str, 
 def build_reports(reconcile_result: dict[str, Any], validation_results: list[dict[str, Any]]) -> dict[str, Any]:
     connection = duckdb.connect(str(WAREHOUSE_PATH))
     try:
+        connection.execute("""
+            CREATE TABLE IF NOT EXISTS dq_results (
+                run_id VARCHAR, dag_id VARCHAR, check_name VARCHAR, dimension VARCHAR,
+                severity VARCHAR, rows_checked BIGINT, rows_failed BIGINT,
+                status VARCHAR, checked_at TIMESTAMP
+            )
+        """)
+        run_id = reconcile_result["run_id"]
+        dag_id = "nammamart_etl_sol"
+        connection.execute("DELETE FROM dq_results WHERE run_id = ? AND dag_id = ?", [run_id, dag_id])
+        check_rows = [
+            (run_id, dag_id, check["check_name"], check["dimension"], check["severity"],
+             check["rows_checked"], check["rows_failed"], check["status"])
+            for result in validation_results for check in result.get("checks", [])
+        ]
+        if check_rows:
+            connection.executemany(
+                "INSERT INTO dq_results VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)",
+                check_rows,
+            )
         connection.execute("""
             CREATE OR REPLACE TABLE etl_daily_zone_revenue AS
             SELECT f.order_date, s.zone, s.store_id, s.store_name,

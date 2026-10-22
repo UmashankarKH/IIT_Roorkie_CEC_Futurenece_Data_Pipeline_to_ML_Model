@@ -28,3 +28,9 @@ CREATE TABLE IF NOT EXISTS raw_stores (
     open_date VARCHAR, manager_name VARCHAR, capacity_orders_per_day VARCHAR,
     _loaded_at TIMESTAMP, _source_file VARCHAR, _run_id VARCHAR
 );
+
+CREATE TABLE IF NOT EXISTS dq_results (
+    run_id VARCHAR, dag_id VARCHAR, check_name VARCHAR, dimension VARCHAR,
+    severity VARCHAR, rows_checked BIGINT, rows_failed BIGINT,
+    status VARCHAR, checked_at TIMESTAMP
+);

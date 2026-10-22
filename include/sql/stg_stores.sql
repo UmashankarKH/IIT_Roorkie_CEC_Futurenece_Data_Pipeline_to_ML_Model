@@ -23,7 +23,7 @@ WITH batch_ranked AS (
         NULLIF(CONCAT_WS('; ',
             CASE WHEN store_id IS NULL THEN 'store_id is missing' END,
             CASE WHEN zone IS NULL THEN 'zone is missing' END,
-            CASE WHEN zone IS NOT NULL AND zone NOT IN ('North', 'South', 'East', 'West') THEN 'invalid zone' END,
+            CASE WHEN zone IS NOT NULL AND zone NOT IN ('NORTH', 'SOUTH', 'EAST', 'WEST') THEN 'invalid zone' END,
             CASE WHEN open_date IS NULL THEN 'open_date is missing or invalid' END
         ), '') AS critical_reason,
         NULLIF(CONCAT_WS('; ',
