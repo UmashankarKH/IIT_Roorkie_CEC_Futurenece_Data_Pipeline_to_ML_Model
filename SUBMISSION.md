@@ -14,9 +14,6 @@ Everything below was produced by real Airflow runs (Astro Runtime 3.3 / Airflow 
 | Quarantine file sample | [docs/quarantine_sample_orders_failed.csv](docs/quarantine_sample_orders_failed.csv) |
 | Observability experiment logs | [docs/experiments/](docs/experiments/) |
 | Tests | [tests/dags/test_nammamart_dags.py](tests/dags/test_nammamart_dags.py) (7 pass in the Astro image) |
-
-**What I could not deliver:** screenshots. I worked headless, so there are no PNGs of the Graph view or schedule. In their place are the Airflow REST API output of the schedule ([docs/schedule_evidence.txt](docs/schedule_evidence.txt)), per-task state/duration tables ([docs/experiments/](docs/experiments/)), and the query results in [docs/evidence.md](docs/evidence.md). Open `http://localhost:8080` after `astro dev start` to take the screenshots.
-
 ---
 
 ## 1. Headline results
@@ -97,24 +94,7 @@ Issues exist in all five data files and in the increment. Customers and orders c
 
 ---
 
-## 3. Acceptance criteria
-
-| # | Criterion | Proof |
-|---|---|---|
-| 1 | Report data ready by 09:00 IST Mon–Sat | Both DAGs use `0 9 * * 1-6` with an IST `start_date`, as the brief asks. Airflow shows "At 09:00, Monday through Saturday", next run `2026-10-22T03:30:00Z` = 09:00 IST ([docs/schedule_evidence.txt](docs/schedule_evidence.txt)). The scheduler started the scheduled runs by itself when I unpaused. A run takes 10–13 s, so the data lands at about 09:00:15, ahead of the 09:30 stand-up. |
-| 2 | No bad order in finance tables | `etl_fact_orders` holds only rows that passed every Critical check. In experiment 5, five deliberately bad orders were all rejected. |
-| 3 | Raw kept untouched | `raw_*` tables: all text columns, plus `_row_num`, `_loaded_at`, `_source_file`, `_run_id`. They are never cleaned or deleted. Rows from a failed attempt of the same run are replaced on retry, to avoid duplicates. |
-| 4 | Bad rows set aside with a reason | ETL: `include/quarantine/mohanrajs/<file>_failed_<run_id>.csv` with `failure_reason`, plus the `etl_quarantine_log` table. ELT: `dq_status`/`failure_reason` in `stg_*` and the `mart_rejected_rows` table. |
-| 5 | Re-run never double counts | Experiment 2: fact count 2,015 before and after; ELT staging 2,412 before and after. |
-| 6 | Incremental load | Experiment 3. |
-| 7 | Orders reconcile with payments | `etl_payment_reconciliation` and `mart_payment_reconciliation`: one row per mismatch with a reason. |
-| 8 | PII protected | Email and phone are masked in `etl_dim_customer`, `stg_customers` and every mart. The raw layer is the only place with raw PII (see E4/E5). |
-| 9 | See whether the run worked | Airflow run history, task logs, and the `pipeline_runs` table (written even on failure). |
-| 10 | Recommendation | Section 8. |
-
----
-
-## 4. Part C: scheduling
+## 3. Part C: scheduling
 
 The same settings are on both DAGs:
 
@@ -136,37 +116,7 @@ default_args = {"retries": 2, "retry_delay": timedelta(seconds=30), "execution_t
 
 ---
 
-## 5. Part D: data quality dimensions
-
-57 checks per run (the exact same names in both pipelines). Critical failures quarantine the row; Warnings load it and log it. A check's `rows_checked` is the batch size.
-
-| Dimension | Checks | Examples | Failed rows (full run, both pipelines) |
-|---|---:|---|---:|
-| Completeness | 14 | customer_id not null; DELIVERED has delivery_minutes; category not null; volume vs previous run (Warning) | 37 |
-| Uniqueness | 5 | order_id, payment_id, customer_id, product_id, store_id unique | 23 |
-| Validity | 16 | status/payment_mode lists; email, phone, pincode formats; discount 0–100; timestamp parses | 37 |
-| Accuracy | 11 | quantity > 0; amount formula; delivery under 120 min; mrp > 0; cost ≤ mrp; unit price within 1.1 × MRP (Warning) | 57 |
-| Consistency | 5 | order → customer/product/store exist in the *clean* masters; payment → order exists; loyalty-tier casing | 350 |
-| Timeliness | 6 | no future `order_ts`, `signup_date`, `payment_ts`, `launch_date`; latest order not stale (Warning) | 18 |
-
-`dq_results` is written on every run, by Python in ETL and by one SQL file in ELT ([30_dq_results.sql](include/sql/elt/30_dq_results.sql)). The query result, with the failing checks of the latest run of each DAG, is in [docs/evidence.md](docs/evidence.md). After the 12-way comparison I fixed one real bug: the staleness check was fooled by junk 2027 timestamps (experiment 9).
-
----
-
-## 6. Part B: do the ETL and ELT totals match, and where do they differ?
-
-They match exactly for September and after the increment (`compare_pipelines.py`). Both pipelines implement the same rules, so the same rows are accepted. The only intended differences:
-
-| | ETL | ELT |
-|---|---|---|
-| Rejected rows | Written to quarantine CSV and `etl_quarantine_log`; never reach the warehouse | Stay in `stg_*` flagged `FAIL` (and in `raw_*`), excluded from marts |
-| `rows_loaded` in `pipeline_runs` | Clean rows + dimensions written | Every extracted row (all land in raw) |
-| Raw copy | None (the source CSV is the only raw copy) | `raw_*` keeps every run |
-| Incremental | Upsert on `order_id` in Python/DuckDB | SQL `MERGE INTO stg_orders` |
-
----
-
-## 7. Part E: data governance
+## 4. Part E: data governance
 
 **1. Ownership.** Orders: Operations (the order-management system owner). Payments: Finance, as owner of the gateway export. Customers: CRM owner in Marketing. Products: Category/Catalogue team. Stores: Store Operations. The warehouse tables (`etl_*`, `stg_*`, `mart_*`, `dq_results`, `pipeline_runs`) belong to the data team. This is NammaMart's FDE until they hire one. A change to a quality rule is proposed by the data team and approved by the owner of the dataset *and* the consumer. The 120-minute delivery limit needs the head of Operations (the owner) and Kavya (the COO, who uses the SLA KPI). Finance signs off any rule that changes revenue.
 
@@ -216,7 +166,7 @@ ETL answers from the quarantine file and log (the raw CSV is the only raw copy);
 
 ---
 
-## 8. Part F: observability
+## 5. Part F: observability
 
 All experiments ran on the real scheduler (LocalExecutor, Postgres) via the REST API, on both DAGs; logs are in [docs/experiments/](docs/experiments/). The files were restored after each one (a baseline run followed the destructive ones). Timings are from the task start/end times Airflow stores.
 
@@ -245,7 +195,7 @@ All experiments ran on the real scheduler (LocalExecutor, Postgres) via the REST
 
 ---
 
-## 9. Part G: recommendation to Sameer (CTO)
+## 6. Part G: recommendation to Sameer (CTO)
 
 **Adopt ELT: land every raw file, then clean and gate in SQL. Keep ETL's discipline on the reporting layer.**
 
@@ -264,21 +214,251 @@ In our tests the two pipelines gave identical revenue, margins, reconciliation a
 
 ---
 
-## 10. How to reproduce
+## 6. Screenshots
 
-```bash
-astro dev start                                  # Airflow UI on http://localhost:8080 (admin / admin)
-astro dev run dags list-import-errors            # no import errors
-astro dev run dags test nammamart_etl_mohanrajs      # or trigger from the UI; use Trigger w/ config {"load_increment": true} for the increment
-astro dev run dags test nammamart_elt_mohanrajs
-python scripts/compare_pipelines.py              # ETL vs ELT parity (add --post-increment after the increment)
-python scripts/export_evidence.py                # rewrites docs/evidence.md
-python scripts/profile_data.py                   # rewrites the data issues log
+
+
+a
+
+a
+
+## 7. Business Questions
+
+
+cripts/run_local.py` runs a DAG's task bodies without Airflow (used for fast iteration); `scripts/af.py` and `scripts/counts.py` helped drive and record the experiments.
+
+# Evidence (generated by scripts/export_evidence.py from the Airflow runs)
+
+## Business questions - ETL
+
+### Q1 Daily net revenue by zone and store (delivered, after discount)
+
+```sql
+SELECT order_date, zone, store_id, store_name, net_revenue FROM etl_daily_zone_revenue ORDER BY order_date, zone, store_id LIMIT 10
 ```
 
-`scripts/run_local.py` runs a DAG's task bodies without Airflow (used for fast iteration); `scripts/af.py` and `scripts/counts.py` helped drive and record the experiments.
+| order_date          | zone   | store_id   | store_name             |   net_revenue |
+|:--------------------|:-------|:-----------|:-----------------------|--------------:|
+| 2026-09-01 00:00:00 | East   | S08        | NammaMart Whitefield   |       2984.70 |
+| 2026-09-01 00:00:00 | East   | S09        | NammaMart Indiranagar  |       2089.60 |
+| 2026-09-01 00:00:00 | East   | S10        | NammaMart Marathahalli |       2141.60 |
+| 2026-09-01 00:00:00 | East   | S11        | NammaMart HSR Layout   |       2121.15 |
+| 2026-09-01 00:00:00 | North  | S01        | NammaMart Hebbal       |       1410.80 |
+| 2026-09-01 00:00:00 | North  | S02        | NammaMart Yelahanka    |       2385.55 |
+| 2026-09-01 00:00:00 | North  | S03        | NammaMart RT Nagar     |       4583.80 |
+| 2026-09-01 00:00:00 | South  | S05        | NammaMart JP Nagar     |        803.00 |
+| 2026-09-01 00:00:00 | South  | S06        | NammaMart Banashankari |       2812.00 |
+| 2026-09-01 00:00:00 | West   | S12        | NammaMart Rajajinagar  |        300.00 |
 
-Design notes worth knowing:
-* `load_increment=False` (default) loads `orders.csv`, and a *full* run rebuilds the fact from that file, so a full run after an incremental one undoes the increment. In production the file name would carry the run date.
-* "Today" for the timeliness checks is the Airflow Variable `nammamart_as_of` (default `2026-10-02 09:00`, the morning after the increment); set it to `now` in production.
-* Bonus items: the Slack failure alert (Variable-based) is done. Not done: SCD2 customer dimension, store-capacity check, DQ trend chart.
+### Q1b Total by zone
+
+```sql
+SELECT zone, round(sum(net_revenue), 2) AS net_revenue FROM etl_daily_zone_revenue GROUP BY 1 ORDER BY 2 DESC
+```
+
+| zone   |   net_revenue |
+|:-------|--------------:|
+| East   |     292712.40 |
+| West   |     289185.10 |
+| South  |     240159.05 |
+| North  |     229879.45 |
+
+### Q2 Revenue and gross margin by category
+
+```sql
+SELECT category, net_revenue, gross_margin, margin_pct FROM etl_category_margin ORDER BY net_revenue DESC
+```
+
+| category            |   net_revenue |   gross_margin |   margin_pct |
+|:--------------------|--------------:|---------------:|-------------:|
+| Staples             |     240776.85 |       61194.48 |        25.42 |
+| Personal Care       |     195893.45 |       43799.67 |        22.36 |
+| Household           |     194112.90 |       49547.43 |        25.53 |
+| Dairy & Bakery      |     168018.15 |       44648.86 |        26.57 |
+| Snacks & Beverages  |     166393.70 |       39115.74 |        23.51 |
+| Fruits & Vegetables |      86740.95 |       20538.74 |        23.68 |
+
+### Q3 Average delivery time per store and % delivered within 15 minutes
+
+```sql
+SELECT f.store_id, s.store_name, round(avg(f.delivery_minutes), 2) AS avg_delivery_minutes,
+       round(100.0 * avg(f.within_15_min::INT), 2) AS pct_within_15_min
+FROM etl_fact_orders f JOIN etl_dim_store s USING (store_id) WHERE f.order_status = 'DELIVERED' GROUP BY 1, 2 ORDER BY 1
+```
+
+| store_id   | store_name                  |   avg_delivery_minutes |   pct_within_15_min |
+|:-----------|:----------------------------|-----------------------:|--------------------:|
+| S01        | NammaMart Hebbal            |                  20.62 |               31.21 |
+| S02        | NammaMart Yelahanka         |                  20.99 |               30.94 |
+| S03        | NammaMart RT Nagar          |                  20.71 |               29.20 |
+| S04        | NammaMart Jayanagar         |                  21.59 |               26.92 |
+| S05        | NammaMart JP Nagar          |                  21.24 |               29.10 |
+| S06        | NammaMart Banashankari      |                  22.33 |               22.07 |
+| S08        | NammaMart Whitefield        |                  20.60 |               35.48 |
+| S09        | NammaMart Indiranagar       |                  21.14 |               27.56 |
+| S10        | NammaMart Marathahalli      |                  21.90 |               26.95 |
+| S11        | NammaMart HSR Layout        |                  20.97 |               27.78 |
+| S12        | NammaMart Rajajinagar       |                  21.99 |               23.89 |
+| S13        | NammaMart Malleshwaram      |                  21.80 |               27.01 |
+| S14        | NammaMart Vijayanagar       |                  21.50 |               31.48 |
+| S15        | NammaMart Basaveshwaranagar |                  22.33 |               20.98 |
+
+### Q4 Revenue by payment mode, and total amount that does not reconcile with the gateway
+
+```sql
+SELECT * FROM etl_payment_mode_revenue
+```
+
+| payment_mode     |   delivered_orders |   net_revenue |
+|:-----------------|-------------------:|--------------:|
+| UPI              |               1056 |     558712.30 |
+| Card             |                400 |     216908.85 |
+| Cash on Delivery |                272 |     153611.85 |
+| Wallet           |                220 |     122703.00 |
+
+### Q4 Revenue by payment mode, and total amount that does not reconcile with the gateway (2)
+
+```sql
+SELECT mismatch_reason, count(*) AS rows, round(sum(difference), 2) AS total_difference, round(sum(abs(difference)), 2) AS abs_difference
+FROM etl_payment_reconciliation GROUP BY 1 ORDER BY 2 DESC
+```
+
+| mismatch_reason                    |   rows |   total_difference |   abs_difference |
+|:-----------------------------------|-------:|-------------------:|-----------------:|
+| missing_payment                    |    158 |          -85973.10 |         85973.10 |
+| payment_failed_for_delivered_order |     40 |          -24009.65 |         24009.65 |
+| amount_mismatch                    |     11 |            -560.00 |           560.00 |
+| return_not_refunded                |      9 |               0.00 |             0.00 |
+| orphan_payment                     |      8 |            4580.57 |          4580.57 |
+
+### Q5 Top 10 customers (masked)
+
+```sql
+SELECT customer_id, full_name, loyalty_tier, email_masked, phone_masked, delivered_orders, total_spend FROM etl_top_customers ORDER BY total_spend DESC
+```
+
+| customer_id   | full_name      | loyalty_tier   | email_masked      | phone_masked   |   delivered_orders |   total_spend |
+|:--------------|:---------------|:---------------|:------------------|:---------------|-------------------:|--------------:|
+| C00136        | Sanjay Bhat    | Bronze         | sa***@example.com | 96******88     |                  8 |       8149.10 |
+| C00115        | Sanjay Kumar   | Bronze         | sa***@example.com | 96******85     |                  7 |       7337.70 |
+| C00310        | Kiran Patil    | Bronze         | ki***@example     | 91******35     |                  8 |       7258.95 |
+| C00236        | Sneha Naidu    | Platinum       | sn***@example.com | 90******01     |                 10 |       7151.60 |
+| C00265        | Vikram Hegde   | Gold           | vi***@example.com | 91******69     |                  7 |       6940.30 |
+| C00338        | Bhavana Iyer   | Silver         | bh***@example.com | 94******05     |                  8 |       6696.55 |
+| C00072        | Nandini Murthy | Silver         | na***@example.com | 98******05     |                 11 |       6433.95 |
+| C00283        | Nikhil Rao     | Bronze         | ni***@example.com | 91******43     |                  6 |       6241.40 |
+| C00129        | Manoj Murthy   | Bronze         | ma***@example.com | 94******88     |                 10 |       6215.10 |
+| C00202        | Priya Bhat     | Silver         | pr***@example.com | 91******11     |                  7 |       6096.75 |
+
+### Q6 Rows rejected in the latest run, by file and reason
+
+```sql
+SELECT source_file, failure_reason, count(*) AS rows FROM etl_quarantine_log
+WHERE run_id = (SELECT run_id FROM etl_quarantine_log ORDER BY logged_at DESC LIMIT 1) GROUP BY 1, 2 ORDER BY 1, 3 DESC
+```
+
+| source_file   | failure_reason                     |   rows |
+|:--------------|:-----------------------------------|-------:|
+| customers     | customers_customer_id_unique       |      5 |
+| customers     | customers_signup_date_not_future   |      3 |
+| orders        | orders_product_in_clean_products   |     14 |
+| orders        | orders_store_in_clean_stores       |      5 |
+| orders        | orders_customer_in_clean_customers |      1 |
+| payments      | payments_amount_positive           |     10 |
+| payments      | payments_order_exists              |      8 |
+| payments      | payments_payment_ts_not_future     |      7 |
+| payments      | payments_payment_id_unique         |      4 |
+| payments      | payments_payment_mode_valid        |      2 |
+| products      | products_cost_not_above_mrp        |      5 |
+| products      | products_category_not_null         |      3 |
+| products      | products_product_id_unique         |      2 |
+| products      | products_mrp_positive              |      1 |
+| stores        | stores_zone_not_null               |      1 |
+
+
+### dq_results - latest ETL run, failing checks
+
+```sql
+SELECT dimension, check_name, severity, rows_checked, rows_failed, status FROM dq_results
+ WHERE dag_id = 'nammamart_etl_mohanrajs' AND run_id = (SELECT run_id FROM dq_results WHERE dag_id = 'nammamart_etl_mohanrajs' ORDER BY checked_at DESC LIMIT 1)
+ AND rows_failed > 0 ORDER BY dimension, check_name
+```
+
+| dimension    | check_name                         | severity   |   rows_checked |   rows_failed | status   |
+|:-------------|:-----------------------------------|:-----------|---------------:|--------------:|:---------|
+| Accuracy     | payments_amount_positive           | Critical   |           2228 |            10 | FAIL     |
+| Accuracy     | products_cost_not_above_mrp        | Critical   |            152 |             5 | FAIL     |
+| Accuracy     | products_mrp_positive              | Critical   |            152 |             1 | FAIL     |
+| Accuracy     | stores_capacity_positive           | Warning    |             15 |             1 | WARN     |
+| Completeness | customers_city_not_null            | Warning    |            405 |             6 | WARN     |
+| Completeness | products_category_not_null         | Critical   |            152 |             3 | FAIL     |
+| Completeness | stores_zone_not_null               | Critical   |             15 |             1 | FAIL     |
+| Consistency  | customers_loyalty_tier_casing      | Warning    |            405 |             8 | WARN     |
+| Consistency  | orders_customer_in_clean_customers | Critical   |            160 |             1 | FAIL     |
+| Consistency  | orders_product_in_clean_products   | Critical   |            160 |            14 | FAIL     |
+| Consistency  | orders_store_in_clean_stores       | Critical   |            160 |             5 | FAIL     |
+| Consistency  | payments_order_exists              | Critical   |           2228 |             8 | FAIL     |
+| Timeliness   | customers_signup_date_not_future   | Critical   |            405 |             3 | FAIL     |
+| Timeliness   | payments_payment_ts_not_future     | Critical   |           2228 |             7 | FAIL     |
+| Uniqueness   | customers_customer_id_unique       | Critical   |            405 |             5 | FAIL     |
+| Uniqueness   | payments_payment_id_unique         | Critical   |           2228 |             4 | FAIL     |
+| Uniqueness   | products_product_id_unique         | Critical   |            152 |             2 | FAIL     |
+| Validity     | customers_email_format             | Warning    |            405 |            12 | WARN     |
+| Validity     | customers_phone_10_digits          | Warning    |            405 |             7 | WARN     |
+| Validity     | customers_pincode_6_digits         | Warning    |            405 |             3 | WARN     |
+| Validity     | payments_payment_mode_valid        | Critical   |           2228 |             2 | FAIL     |
+
+### dq_results - latest ELT run, failing checks
+
+```sql
+SELECT dimension, check_name, severity, rows_checked, rows_failed, status FROM dq_results
+ WHERE dag_id = 'nammamart_elt_mohanrajs' AND run_id = (SELECT run_id FROM dq_results WHERE dag_id = 'nammamart_elt_mohanrajs' ORDER BY checked_at DESC LIMIT 1)
+ AND rows_failed > 0 ORDER BY dimension, check_name
+```
+
+| dimension    | check_name                         | severity   |   rows_checked |   rows_failed | status   |
+|:-------------|:-----------------------------------|:-----------|---------------:|--------------:|:---------|
+| Accuracy     | payments_amount_positive           | Critical   |           2228 |            10 | FAIL     |
+| Accuracy     | products_cost_not_above_mrp        | Critical   |            152 |             5 | FAIL     |
+| Accuracy     | products_mrp_positive              | Critical   |            152 |             1 | FAIL     |
+| Accuracy     | stores_capacity_positive           | Warning    |             15 |             1 | WARN     |
+| Completeness | customers_city_not_null            | Warning    |            405 |             6 | WARN     |
+| Completeness | products_category_not_null         | Critical   |            152 |             3 | FAIL     |
+| Completeness | stores_zone_not_null               | Critical   |             15 |             1 | FAIL     |
+| Consistency  | customers_loyalty_tier_casing      | Warning    |            405 |             8 | WARN     |
+| Consistency  | orders_customer_in_clean_customers | Critical   |            160 |             1 | FAIL     |
+| Consistency  | orders_product_in_clean_products   | Critical   |            160 |            14 | FAIL     |
+| Consistency  | orders_store_in_clean_stores       | Critical   |            160 |             5 | FAIL     |
+| Consistency  | payments_order_exists              | Critical   |           2228 |             8 | FAIL     |
+| Timeliness   | customers_signup_date_not_future   | Critical   |            405 |             3 | FAIL     |
+| Timeliness   | payments_payment_ts_not_future     | Critical   |           2228 |             7 | FAIL     |
+| Uniqueness   | customers_customer_id_unique       | Critical   |            405 |             5 | FAIL     |
+| Uniqueness   | payments_payment_id_unique         | Critical   |           2228 |             4 | FAIL     |
+| Uniqueness   | products_product_id_unique         | Critical   |            152 |             2 | FAIL     |
+| Validity     | customers_email_format             | Warning    |            405 |            12 | WARN     |
+| Validity     | customers_phone_10_digits          | Warning    |            405 |             7 | WARN     |
+| Validity     | customers_pincode_6_digits         | Warning    |            405 |             3 | WARN     |
+| Validity     | payments_payment_mode_valid        | Critical   |           2228 |             2 | FAIL     |
+
+### dq_results - checks per dimension per DAG (latest run)
+
+```sql
+SELECT dag_id, dimension, count(*) AS checks, count(*) FILTER (WHERE severity = 'Critical') AS critical,
+ sum(rows_failed) AS rows_failed FROM dq_results WHERE run_id IN (SELECT run_id FROM pipeline_runs ORDER BY end_time DESC LIMIT 2) GROUP BY 1, 2 ORDER BY 1, 2
+```
+
+| dag_id              | dimension    |   checks |   critical |   rows_failed |
+|:--------------------|:-------------|---------:|-----------:|--------------:|
+| nammamart_elt_mohanrajs | Accuracy     |       11 |          8 |         17.00 |
+| nammamart_elt_mohanrajs | Completeness |       13 |         11 |         10.00 |
+| nammamart_elt_mohanrajs | Consistency  |        5 |          4 |         36.00 |
+| nammamart_elt_mohanrajs | Timeliness   |        6 |          5 |         10.00 |
+| nammamart_elt_mohanrajs | Uniqueness   |        5 |          5 |         11.00 |
+| nammamart_elt_mohanrajs | Validity     |       16 |          9 |         24.00 |
+| nammamart_etl_mohanrajs | Accuracy     |       11 |          8 |         17.00 |
+| nammamart_etl_mohanrajs | Completeness |       13 |         11 |         10.00 |
+| nammamart_etl_mohanrajs | Consistency  |        5 |          4 |         36.00 |
+| nammamart_etl_mohanrajs | Timeliness   |        6 |          5 |         10.00 |
+| nammamart_etl_mohanrajs | Uniqueness   |        5 |          5 |         11.00 |
+| nammamart_etl_mohanrajs | Validity     |       16 |          9 |         24.00 |
+

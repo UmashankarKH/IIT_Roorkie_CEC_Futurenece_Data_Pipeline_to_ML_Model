@@ -5,6 +5,7 @@ airflow_settings.yaml
 __pycache__/
 astro
 .venv
+venv/
 .astro/standalone/
 airflow-webserver.pid
 webserver_config.py
