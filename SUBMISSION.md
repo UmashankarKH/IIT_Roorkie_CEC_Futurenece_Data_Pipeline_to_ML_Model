@@ -184,3 +184,21 @@ The experiments below were run on 22 October 2026 with `astro dev run dags test`
 - **Schema:** ETL validates exact CSV headers; ELT now validates headers before raw insertion.
 - **Distribution:** weakest coverage. The pipelines catch amount-formula mismatches, but do not yet track per-store price/revenue distributions or detect internally consistent outliers.
 - **Lineage:** strongest coverage in ELT because raw rows retain `_source_file` and `_run_id`, and staging retains row-level failure reasons; add a source row number for exact physical-line lineage. ETL can trace accepted/rejected keys through fact/quarantine outputs but does not persist source row numbers.
+
+## Part G: Recommendation to the client
+
+**To: Sameer, CTO — Recommendation: adopt ELT, with a gated finance mart.**
+
+Keep every source record in the restricted raw layer, transform and validate it in SQL, and publish finance tables only from passing, reconciled staging rows. The gate must prevent critical DQ failures and unresolved payment mismatches from entering the finance mart; the reconciliation table should still expose those exceptions for Finance to resolve.
+
+The run results show why the raw history matters. ELT retained 5,372 rows per ingestion, including the 160-row increment, and staging marked 813 rows as failed. The increment corrected ten existing order statuses to `RETURNED` and added 150 orders. ETL produced a clean 2,007-row fact snapshot and quarantined 817 rows, but it reads only the September `orders.csv`; it therefore continued to count those ten orders as delivered. ELT can recalculate the current view while preserving both source versions for audit and replay. For finance assurance, ETL currently has the simpler guarantee because it loads only rows that pass Python validation. ELT should replace that assurance only after its mart promotion gate is explicit, tested, and blocks bad rows by construction.
+
+ELT is also easier to adapt: raw values remain available while rules and business logic change in modular SQL. That proved useful when the schema experiment exposed silent acceptance of a renamed column; a header check now fails the load before raw insertion. The experiment also showed that catching formula errors does not catch internally consistent price drift, so distribution checks remain a needed improvement. On this assignment-sized dataset, ELT finished in about 8 seconds and ETL in about 11 seconds. That small difference is not a meaningful 1,000× forecast. SQL transformations avoid moving every row through Python, but the current local DuckDB file and CSV inputs are still single-machine components. Benchmark growth before committing to a production layout; partition raw files in open formats and move the warehouse to an appropriately sized open-source SQL platform if local DuckDB stops meeting the SLA.
+
+Both designs use open-source tools and have no license fee. ELT adds storage, backup, retention, and access-control costs because raw history—including unmasked customer data—is kept. At scale, compute, storage, and operating the privacy controls will cost more than the software licenses; keeping only the useful audit history and automating retention will help manage that cost.
+
+**Top three risks of the recommended design**
+
+1. **A bad row reaches Finance if a mart query bypasses DQ or reconciliation status.** Require a central promotion gate, test it with rejected rows, and alert on every critical failure and unresolved mismatch.
+2. **Raw-layer PII is exposed or retained too long.** Restrict raw access to approved operators, encrypt storage and backups, audit access, and enforce the retention and deletion policy.
+3. **Single-node performance or storage misses the SLA as volume grows.** Track run duration and volume, load-test at projected scale, and set a migration threshold for partitioned storage and a larger open-source SQL engine.
