@@ -10,7 +10,7 @@ WITH batch_ranked AS (
     SELECT
         NULLIF(TRIM(store_id), '') AS store_id,
         NULLIF(TRIM(store_name), '') AS store_name,
-        INITCAP(TRIM(zone)) AS zone,
+        UPPER(TRIM(zone)) AS zone,
         NULLIF(TRIM(area), '') AS area,
         NULLIF(TRIM(pincode), '') AS pincode,
         TRY_CAST(NULLIF(TRIM(open_date), '') AS DATE) AS open_date,

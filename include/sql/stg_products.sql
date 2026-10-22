@@ -16,8 +16,8 @@ WITH batch_ranked AS (
     SELECT
         NULLIF(TRIM(product_id), '') AS product_id,
         NULLIF(TRIM(product_name), '') AS product_name,
-        INITCAP(TRIM(category)) AS category,
-        INITCAP(TRIM(sub_category)) AS sub_category,
+        UPPER(TRIM(category)) AS category,
+        UPPER(TRIM(sub_category)) AS sub_category,
         TRIM(brand) AS brand,
         TRY_CAST(NULLIF(TRIM(mrp), '') AS DOUBLE) AS mrp,
         TRY_CAST(NULLIF(TRIM(cost_price), '') AS DOUBLE) AS cost_price,

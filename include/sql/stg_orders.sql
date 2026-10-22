@@ -46,7 +46,7 @@ WITH batch_ranked AS (
             WHEN 'wallet' THEN 'Wallet' ELSE TRIM(payment_mode)
         END AS payment_mode,
         UPPER(TRIM(order_status)) AS order_status,
-        INITCAP(TRIM(channel)) AS channel,
+        UPPER(TRIM(channel)) AS channel,
         TRY_CAST(NULLIF(TRIM(delivery_minutes), '') AS DOUBLE) AS delivery_minutes,
         source_key_count, _source_file, _run_id
     FROM chosen
