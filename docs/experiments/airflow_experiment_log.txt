@@ -1,0 +1,551 @@
+################ EXP1 happy path
+RUN nammamart_etl_sbonagiri v4e1_happy -> success
+extract_orders success  2026-10-22T08:39:14.091069+00:00   2026-10-22T08:39:15.443670+00:00
+extract_payments success  2026-10-22T08:39:14.094030+00:00   2026-10-22T08:39:15.656697+00:00
+extract_customers success  2026-10-22T08:39:14.084637+00:00   2026-10-22T08:39:15.468627+00:00
+extract_products success  2026-10-22T08:39:14.093891+00:00   2026-10-22T08:39:15.459110+00:00
+extract_stores success  2026-10-22T08:39:14.093834+00:00   2026-10-22T08:39:15.442779+00:00
+extract_increment success  2026-10-22T08:39:14.097324+00:00   2026-10-22T08:39:15.647356+00:00
+validate_customers success  2026-10-22T08:39:16.150296+00:00   2026-10-22T08:39:17.295928+00:00
+validate_products success  2026-10-22T08:39:16.150415+00:00   2026-10-22T08:39:17.291542+00:00
+validate_stores success  2026-10-22T08:39:16.151603+00:00   2026-10-22T08:39:17.288152+00:00
+validate_orders success  2026-10-22T08:39:18.014402+00:00   2026-10-22T08:39:19.108505+00:00
+validate_increment success  2026-10-22T08:39:18.013671+00:00   2026-10-22T08:39:19.074861+00:00
+validate_payments success  2026-10-22T08:39:16.151861+00:00   2026-10-22T08:39:17.305351+00:00
+load_warehouse success  2026-10-22T08:39:20.069568+00:00   2026-10-22T08:39:21.155659+00:00
+reconcile success  2026-10-22T08:39:22.133139+00:00   2026-10-22T08:39:23.106547+00:00
+report success  2026-10-22T08:39:23.343160+00:00   2026-10-22T08:39:24.265709+00:00
+run_audit success  2026-10-22T08:39:24.372182+00:00   2026-10-22T08:39:25.325112+00:00
+audit : [('SUCCESS', 5212, 4984, 228)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+tables: fact (2222, 1099593.6) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (75380.95, 125)
+RUN nammamart_elt_sbonagiri v4e1_happy -> success
+extract_orders success  2026-10-22T08:39:30.076931+00:00   2026-10-22T08:39:31.221481+00:00
+extract_payments success  2026-10-22T08:39:30.081643+00:00   2026-10-22T08:39:31.196965+00:00
+extract_customers success  2026-10-22T08:39:30.083415+00:00   2026-10-22T08:39:31.218827+00:00
+extract_products success  2026-10-22T08:39:30.089238+00:00   2026-10-22T08:39:31.226765+00:00
+extract_stores success  2026-10-22T08:39:30.080172+00:00   2026-10-22T08:39:31.193152+00:00
+extract_increment success  2026-10-22T08:39:30.086249+00:00   2026-10-22T08:39:31.223277+00:00
+load_raw success  2026-10-22T08:39:32.164237+00:00   2026-10-22T08:39:33.030590+00:00
+stg_customers success  2026-10-22T08:39:33.206017+00:00   2026-10-22T08:39:38.198441+00:00
+stg_products success  2026-10-22T08:39:33.203417+00:00   2026-10-22T08:39:36.154978+00:00
+stg_stores success  2026-10-22T08:39:33.205168+00:00   2026-10-22T08:39:34.139909+00:00
+stg_payments success  2026-10-22T08:39:33.205573+00:00   2026-10-22T08:39:40.191201+00:00
+stg_orders_incoming success  2026-10-22T08:39:39.092196+00:00   2026-10-22T08:39:39.901535+00:00
+stg_orders_merge success  2026-10-22T08:39:40.137150+00:00   2026-10-22T08:39:40.923623+00:00
+mart_kpis success  2026-10-22T08:39:41.184980+00:00   2026-10-22T08:39:46.118998+00:00
+mart_payment_reconciliation success  2026-10-22T08:39:41.185126+00:00   2026-10-22T08:39:42.067450+00:00
+mart_rejected_rows success  2026-10-22T08:39:41.185205+00:00   2026-10-22T08:39:44.083745+00:00
+report success  2026-10-22T08:39:46.324232+00:00   2026-10-22T08:39:47.283599+00:00
+run_audit success  2026-10-22T08:39:47.348851+00:00   2026-10-22T08:39:48.127606+00:00
+audit : [('SUCCESS', 5212, 4984, 228)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+raw rows: {'raw_customers': 405, 'raw_orders': 2412, 'raw_payments': 2228, 'raw_products': 152, 'raw_stores': 15}
+stg_orders: (2400, 2400, 2222) | mart revenue (1099593.6,)
+rejected ORD0090xx: []
+S05 revenue: (75380.95,)
+################ EXP2 re-run
+RUN nammamart_etl_sbonagiri v4e2_rerun -> success
+extract_orders success  2026-10-22T08:39:58.104301+00:00   2026-10-22T08:39:59.594764+00:00
+extract_payments success  2026-10-22T08:39:58.099909+00:00   2026-10-22T08:39:59.571537+00:00
+extract_customers success  2026-10-22T08:39:58.104542+00:00   2026-10-22T08:39:59.588978+00:00
+extract_products success  2026-10-22T08:39:58.101648+00:00   2026-10-22T08:39:59.590863+00:00
+extract_stores success  2026-10-22T08:39:58.105138+00:00   2026-10-22T08:39:59.597182+00:00
+extract_increment success  2026-10-22T08:39:58.099824+00:00   2026-10-22T08:39:59.583983+00:00
+validate_customers success  2026-10-22T08:40:00.323687+00:00   2026-10-22T08:40:01.513963+00:00
+validate_products success  2026-10-22T08:40:00.322889+00:00   2026-10-22T08:40:01.503547+00:00
+validate_stores success  2026-10-22T08:40:00.323414+00:00   2026-10-22T08:40:01.514827+00:00
+validate_orders success  2026-10-22T08:40:02.388146+00:00   2026-10-22T08:40:03.470523+00:00
+validate_increment success  2026-10-22T08:40:02.388578+00:00   2026-10-22T08:40:03.446072+00:00
+validate_payments success  2026-10-22T08:40:00.327320+00:00   2026-10-22T08:40:01.528143+00:00
+load_warehouse success  2026-10-22T08:40:04.426681+00:00   2026-10-22T08:40:05.454807+00:00
+reconcile success  2026-10-22T08:40:06.289192+00:00   2026-10-22T08:40:07.254820+00:00
+report success  2026-10-22T08:40:07.322316+00:00   2026-10-22T08:40:08.263853+00:00
+run_audit success  2026-10-22T08:40:09.149603+00:00   2026-10-22T08:40:10.153937+00:00
+audit : [('SUCCESS', 5212, 4984, 228)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+tables: fact (2222, 1099593.6) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (75380.95, 125)
+RUN nammamart_elt_sbonagiri v4e2_rerun -> success
+extract_orders success  2026-10-22T08:40:13.225789+00:00   2026-10-22T08:40:14.395205+00:00
+extract_payments success  2026-10-22T08:40:13.224157+00:00   2026-10-22T08:40:14.415467+00:00
+extract_customers success  2026-10-22T08:40:13.230417+00:00   2026-10-22T08:40:14.417605+00:00
+extract_products success  2026-10-22T08:40:13.226174+00:00   2026-10-22T08:40:14.398293+00:00
+extract_stores success  2026-10-22T08:40:13.241333+00:00   2026-10-22T08:40:14.430171+00:00
+extract_increment success  2026-10-22T08:40:13.224990+00:00   2026-10-22T08:40:14.413219+00:00
+load_raw success  2026-10-22T08:40:15.296299+00:00   2026-10-22T08:40:16.160044+00:00
+stg_customers success  2026-10-22T08:40:16.338027+00:00   2026-10-22T08:40:23.351470+00:00
+stg_products success  2026-10-22T08:40:16.340313+00:00   2026-10-22T08:40:17.313813+00:00
+stg_stores success  2026-10-22T08:40:16.341521+00:00   2026-10-22T08:40:19.328601+00:00
+stg_payments success  2026-10-22T08:40:16.338629+00:00   2026-10-22T08:40:21.350664+00:00
+stg_orders_incoming success  2026-10-22T08:40:23.409828+00:00   2026-10-22T08:40:24.307433+00:00
+stg_orders_merge success  2026-10-22T08:40:24.439460+00:00   2026-10-22T08:40:25.302909+00:00
+mart_kpis success  2026-10-22T08:40:25.474139+00:00   2026-10-22T08:40:30.602497+00:00
+mart_payment_reconciliation success  2026-10-22T08:40:25.474545+00:00   2026-10-22T08:40:28.597805+00:00
+mart_rejected_rows success  2026-10-22T08:40:25.476122+00:00   2026-10-22T08:40:26.577370+00:00
+report success  2026-10-22T08:40:31.218864+00:00   2026-10-22T08:40:32.304390+00:00
+run_audit success  2026-10-22T08:40:33.266028+00:00   2026-10-22T08:40:34.098350+00:00
+audit : [('SUCCESS', 5212, 4984, 228)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+raw rows: {'raw_customers': 810, 'raw_orders': 4824, 'raw_payments': 4456, 'raw_products': 304, 'raw_stores': 30}
+stg_orders: (2400, 2400, 2222) | mart revenue (1099593.6,)
+rejected ORD0090xx: []
+S05 revenue: (75380.95,)
+################ EXP3 incremental
+RUN nammamart_etl_sbonagiri v4e3_incr -> success
+extract_orders success  2026-10-22T08:40:42.265939+00:00   2026-10-22T08:40:43.682317+00:00
+extract_payments success  2026-10-22T08:40:42.264906+00:00   2026-10-22T08:40:43.650829+00:00
+extract_customers success  2026-10-22T08:40:42.264418+00:00   2026-10-22T08:40:43.672155+00:00
+extract_products success  2026-10-22T08:40:42.263102+00:00   2026-10-22T08:40:43.684266+00:00
+extract_stores success  2026-10-22T08:40:42.264008+00:00   2026-10-22T08:40:43.632007+00:00
+extract_increment success  2026-10-22T08:40:42.268887+00:00   2026-10-22T08:40:43.662301+00:00
+validate_customers success  2026-10-22T08:40:44.329250+00:00   2026-10-22T08:40:45.449123+00:00
+validate_products success  2026-10-22T08:40:44.329140+00:00   2026-10-22T08:40:45.443716+00:00
+validate_stores success  2026-10-22T08:40:44.329448+00:00   2026-10-22T08:40:45.428345+00:00
+validate_orders success  2026-10-22T08:40:46.394703+00:00   2026-10-22T08:40:47.424203+00:00
+validate_increment success  2026-10-22T08:40:46.395068+00:00   2026-10-22T08:40:47.411443+00:00
+validate_payments success  2026-10-22T08:40:44.329856+00:00   2026-10-22T08:40:45.453208+00:00
+load_warehouse success  2026-10-22T08:40:48.205814+00:00   2026-10-22T08:40:49.275416+00:00
+reconcile success  2026-10-22T08:40:50.264159+00:00   2026-10-22T08:40:51.221767+00:00
+report success  2026-10-22T08:40:51.298976+00:00   2026-10-22T08:40:52.254323+00:00
+run_audit success  2026-10-22T08:40:52.330657+00:00   2026-10-22T08:40:53.302552+00:00
+audit : [('SUCCESS', 5372, 5133, 239)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5), ('customer_exists', 1), ('product_exists', 10)]
+volume check: [(2412, 0, 'PASS')]
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e3_incr -> success
+extract_orders success  2026-10-22T08:40:58.234417+00:00   2026-10-22T08:40:59.350687+00:00
+extract_payments success  2026-10-22T08:40:58.232386+00:00   2026-10-22T08:40:59.330387+00:00
+extract_customers success  2026-10-22T08:40:58.237605+00:00   2026-10-22T08:40:59.331863+00:00
+extract_products success  2026-10-22T08:40:58.235561+00:00   2026-10-22T08:40:59.359230+00:00
+extract_stores success  2026-10-22T08:40:58.238076+00:00   2026-10-22T08:40:59.341670+00:00
+extract_increment success  2026-10-22T08:40:58.239931+00:00   2026-10-22T08:40:59.346869+00:00
+load_raw success  2026-10-22T08:41:00.307387+00:00   2026-10-22T08:41:01.176775+00:00
+stg_customers success  2026-10-22T08:41:01.355736+00:00   2026-10-22T08:41:08.340202+00:00
+stg_products success  2026-10-22T08:41:01.355084+00:00   2026-10-22T08:41:04.288599+00:00
+stg_stores success  2026-10-22T08:41:01.354440+00:00   2026-10-22T08:41:02.279783+00:00
+stg_payments success  2026-10-22T08:41:01.351864+00:00   2026-10-22T08:41:06.316133+00:00
+stg_orders_incoming success  2026-10-22T08:41:09.292925+00:00   2026-10-22T08:41:10.117566+00:00
+stg_orders_merge success  2026-10-22T08:41:10.323798+00:00   2026-10-22T08:41:11.141823+00:00
+mart_kpis success  2026-10-22T08:41:11.354632+00:00   2026-10-22T08:41:12.220857+00:00
+mart_payment_reconciliation success  2026-10-22T08:41:11.352792+00:00   2026-10-22T08:41:16.247508+00:00
+mart_rejected_rows success  2026-10-22T08:41:11.352687+00:00   2026-10-22T08:41:14.236354+00:00
+report success  2026-10-22T08:41:16.481345+00:00   2026-10-22T08:41:17.445136+00:00
+run_audit success  2026-10-22T08:41:17.512344+00:00   2026-10-22T08:41:18.283740+00:00
+audit : [('SUCCESS', 5372, 5133, 239)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5), ('customer_exists', 1), ('product_exists', 10)]
+volume check: [(2412, 0, 'PASS')]
+raw rows: {'raw_customers': 1215, 'raw_orders': 7396, 'raw_payments': 6684, 'raw_products': 456, 'raw_stores': 45}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+################ EXP4 missing products.csv (both DAGs in parallel, retries 2 x 2 min)
+RUN nammamart_etl_sbonagiri v4e4_missing -> success
+extract_orders success  2026-10-22T08:41:26.503224+00:00   2026-10-22T08:41:28.119001+00:00
+extract_payments success  2026-10-22T08:41:26.502678+00:00   2026-10-22T08:41:28.186890+00:00
+extract_customers success  2026-10-22T08:41:26.501367+00:00   2026-10-22T08:41:28.005482+00:00
+extract_products failed  2026-10-22T08:45:30.016059+00:00   2026-10-22T08:45:30.955962+00:00
+extract_stores success  2026-10-22T08:41:26.501322+00:00   2026-10-22T08:41:28.099781+00:00
+extract_increment success  2026-10-22T08:41:26.503697+00:00   2026-10-22T08:41:28.186222+00:00
+validate_customers success  2026-10-22T08:41:28.298788+00:00   2026-10-22T08:41:29.587200+00:00
+validate_products upstream_failed  2026-10-22T08:45:31.043196+00:00   2026-10-22T08:45:31.043196+00:00
+validate_stores success  2026-10-22T08:41:28.300143+00:00   2026-10-22T08:41:29.594254+00:00
+validate_orders upstream_failed  2026-10-22T08:45:31.059921+00:00   2026-10-22T08:45:31.059921+00:00
+validate_increment upstream_failed  2026-10-22T08:45:31.059673+00:00   2026-10-22T08:45:31.059673+00:00
+validate_payments success  2026-10-22T08:41:28.303529+00:00   2026-10-22T08:41:29.601341+00:00
+load_warehouse upstream_failed  2026-10-22T08:45:31.058886+00:00   2026-10-22T08:45:31.058886+00:00
+reconcile upstream_failed  2026-10-22T08:45:32.083116+00:00   2026-10-22T08:45:32.083116+00:00
+report upstream_failed  2026-10-22T08:45:33.119879+00:00   2026-10-22T08:45:33.119879+00:00
+run_audit success  2026-10-22T08:45:34.174547+00:00   2026-10-22T08:45:35.173173+00:00
+audit : [('FAILED', 5060, 0, 31)]
+dq (orders checks failing): []
+volume check: []
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e4_missing -> success
+extract_orders success  2026-10-22T08:41:27.565504+00:00   2026-10-22T08:41:29.049307+00:00
+extract_payments success  2026-10-22T08:41:27.565867+00:00   2026-10-22T08:41:29.050300+00:00
+extract_customers success  2026-10-22T08:41:27.568826+00:00   2026-10-22T08:41:29.024737+00:00
+extract_products failed  2026-10-22T08:45:31.054758+00:00   2026-10-22T08:45:31.837544+00:00
+extract_stores success  2026-10-22T08:41:27.553407+00:00   2026-10-22T08:41:29.045515+00:00
+extract_increment success  2026-10-22T08:41:27.567123+00:00   2026-10-22T08:41:28.953828+00:00
+load_raw upstream_failed  2026-10-22T08:45:32.080388+00:00   2026-10-22T08:45:32.080388+00:00
+stg_customers upstream_failed  2026-10-22T08:45:33.112380+00:00   2026-10-22T08:45:33.112380+00:00
+stg_products upstream_failed  2026-10-22T08:45:33.114418+00:00   2026-10-22T08:45:33.114418+00:00
+stg_stores upstream_failed  2026-10-22T08:45:33.114801+00:00   2026-10-22T08:45:33.114801+00:00
+stg_payments upstream_failed  2026-10-22T08:45:33.113904+00:00   2026-10-22T08:45:33.113904+00:00
+stg_orders_incoming upstream_failed  2026-10-22T08:45:33.113400+00:00   2026-10-22T08:45:33.113400+00:00
+stg_orders_merge upstream_failed  2026-10-22T08:45:34.149484+00:00   2026-10-22T08:45:34.149484+00:00
+mart_kpis upstream_failed  2026-10-22T08:45:34.171933+00:00   2026-10-22T08:45:34.171933+00:00
+mart_payment_reconciliation upstream_failed  2026-10-22T08:45:34.172773+00:00   2026-10-22T08:45:34.172773+00:00
+mart_rejected_rows upstream_failed  2026-10-22T08:45:34.173066+00:00   2026-10-22T08:45:34.173066+00:00
+report upstream_failed  2026-10-22T08:45:34.173338+00:00   2026-10-22T08:45:34.173338+00:00
+run_audit success  2026-10-22T08:45:35.204962+00:00   2026-10-22T08:45:35.970046+00:00
+audit : [('FAILED', 0, 5133, 239)]
+dq (orders checks failing): []
+volume check: []
+raw rows: {'raw_customers': 1215, 'raw_orders': 7396, 'raw_payments': 6684, 'raw_products': 456, 'raw_stores': 45}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+-- attempts log for nammamart_etl_sbonagiri extract_products
+attempt=1.log
+attempt=2.log
+attempt=3.log
+{"timestamp":"2026-10-22T08:41:28.144741Z","level":"error","event":"Task failed with exception","dag_id":"nammamart_etl_sbonagiri","ti_id":"01a162c5-af78-73f5-832d-eaa3808446ae","try_number":1,"map_index":-1,"run_id":"v4e4_missing","task_id":"extract_products"
+{"timestamp":"2026-10-22T08:43:29.659363Z","level":"error","event":"Task failed with exception","task_id":"extract_products","try_number":2,"run_id":"v4e4_missing","dag_id":"nammamart_etl_sbonagiri","map_index":-1,"ti_id":"01a162c5-bb6b-7946-bd69-8777d6bae9fb"
+-- attempts log for nammamart_elt_sbonagiri extract_products
+attempt=1.log
+attempt=2.log
+attempt=3.log
+{"timestamp":"2026-10-22T08:41:29.002130Z","level":"error","event":"Task failed with exception","task_id":"extract_products","run_id":"v4e4_missing","map_index":-1,"ti_id":"01a162c5-b3bc-7098-bfce-9e6b80e78d84","dag_id":"nammamart_elt_sbonagiri","try_number":1
+{"timestamp":"2026-10-22T08:43:30.468379Z","level":"error","event":"Task failed with exception","try_number":2,"ti_id":"01a162c5-beb3-75f2-910e-d835b84105c7","task_id":"extract_products","map_index":-1,"run_id":"v4e4_missing","dag_id":"nammamart_elt_sbonagiri"
+################ EXP5 new bad data
+RUN nammamart_etl_sbonagiri v4e5_baddata -> success
+extract_orders success  2026-10-22T08:45:42.043959+00:00   2026-10-22T08:45:43.622995+00:00
+extract_payments success  2026-10-22T08:45:42.091605+00:00   2026-10-22T08:45:43.606498+00:00
+extract_customers success  2026-10-22T08:45:42.043982+00:00   2026-10-22T08:45:43.575142+00:00
+extract_products success  2026-10-22T08:45:42.044283+00:00   2026-10-22T08:45:43.587720+00:00
+extract_stores success  2026-10-22T08:45:42.092833+00:00   2026-10-22T08:45:43.617510+00:00
+extract_increment success  2026-10-22T08:45:42.068042+00:00   2026-10-22T08:45:43.577588+00:00
+validate_customers success  2026-10-22T08:45:44.107373+00:00   2026-10-22T08:45:45.237084+00:00
+validate_products success  2026-10-22T08:45:44.107488+00:00   2026-10-22T08:45:45.235922+00:00
+validate_stores success  2026-10-22T08:45:44.111587+00:00   2026-10-22T08:45:45.234256+00:00
+validate_orders success  2026-10-22T08:45:46.185320+00:00   2026-10-22T08:45:47.237134+00:00
+validate_increment success  2026-10-22T08:45:46.184987+00:00   2026-10-22T08:45:47.210159+00:00
+validate_payments success  2026-10-22T08:45:44.109696+00:00   2026-10-22T08:45:45.247785+00:00
+load_warehouse success  2026-10-22T08:45:48.258341+00:00   2026-10-22T08:45:49.290288+00:00
+reconcile success  2026-10-22T08:45:50.020866+00:00   2026-10-22T08:45:50.943602+00:00
+report success  2026-10-22T08:45:51.053835+00:00   2026-10-22T08:45:51.977391+00:00
+run_audit success  2026-10-22T08:45:52.088325+00:00   2026-10-22T08:45:53.064916+00:00
+audit : [('SUCCESS', 5217, 4984, 233)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 19), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 4), ('order_ts_not_future', 8), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 11), ('store_exists', 6)]
+volume check: [(2417, 0, 'PASS')]
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: [('ORD009001', 'customer_id missing'), ('ORD009002', 'quantity not positive'), ('ORD009003', 'store_id not in validated stores'), ('ORD009004', 'order_status not in allowed list'), ('ORD009005', 'order_ts in the future')]
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e5_baddata -> failed
+extract_orders success  2026-10-22T08:45:58.042210+00:00   2026-10-22T08:45:59.180470+00:00
+extract_payments success  2026-10-22T08:45:58.039861+00:00   2026-10-22T08:45:59.154231+00:00
+extract_customers success  2026-10-22T08:45:58.039756+00:00   2026-10-22T08:45:59.236391+00:00
+extract_products success  2026-10-22T08:45:58.040129+00:00   2026-10-22T08:45:59.217699+00:00
+extract_stores success  2026-10-22T08:45:58.044975+00:00   2026-10-22T08:45:59.224440+00:00
+extract_increment success  2026-10-22T08:45:58.043058+00:00   2026-10-22T08:45:59.209997+00:00
+load_raw failed  2026-10-22T08:50:02.663281+00:00   2026-10-22T08:50:03.533340+00:00
+stg_customers upstream_failed  2026-10-22T08:50:03.658876+00:00   2026-10-22T08:50:03.658876+00:00
+stg_products upstream_failed  2026-10-22T08:50:03.660402+00:00   2026-10-22T08:50:03.660402+00:00
+stg_stores upstream_failed  2026-10-22T08:50:03.660772+00:00   2026-10-22T08:50:03.660772+00:00
+stg_payments upstream_failed  2026-10-22T08:50:03.660114+00:00   2026-10-22T08:50:03.660114+00:00
+stg_orders_incoming upstream_failed  2026-10-22T08:50:03.659723+00:00   2026-10-22T08:50:03.659723+00:00
+stg_orders_merge upstream_failed  2026-10-22T08:50:04.689498+00:00   2026-10-22T08:50:04.689498+00:00
+mart_kpis upstream_failed  2026-10-22T08:50:05.721532+00:00   2026-10-22T08:50:05.721532+00:00
+mart_payment_reconciliation upstream_failed  2026-10-22T08:50:05.722513+00:00   2026-10-22T08:50:05.722513+00:00
+mart_rejected_rows upstream_failed  2026-10-22T08:50:05.722966+00:00   2026-10-22T08:50:05.722966+00:00
+report upstream_failed  2026-10-22T08:50:05.723366+00:00   2026-10-22T08:50:05.723366+00:00
+run_audit failed  2026-10-22T08:50:06.748711+00:00   2026-10-22T08:50:07.529592+00:00
+audit : [('FAILED', 0, 5133, 239)]
+dq (orders checks failing): []
+volume check: []
+raw rows: {'raw_customers': 1215, 'raw_orders': 7396, 'raw_payments': 6684, 'raw_products': 456, 'raw_stores': 45}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+################ EXP6 schema change
+RUN nammamart_etl_sbonagiri v4e6_schema -> failed
+extract_orders failed  2026-10-22T08:50:12.632932+00:00   2026-10-22T08:50:14.393151+00:00
+extract_payments success  2026-10-22T08:50:12.639711+00:00   2026-10-22T08:50:14.440658+00:00
+extract_customers success  2026-10-22T08:50:12.633022+00:00   2026-10-22T08:50:14.387996+00:00
+extract_products success  2026-10-22T08:50:12.631417+00:00   2026-10-22T08:50:14.356627+00:00
+extract_stores success  2026-10-22T08:50:12.632395+00:00   2026-10-22T08:50:14.397293+00:00
+extract_increment success  2026-10-22T08:50:12.639334+00:00   2026-10-22T08:50:14.443570+00:00
+validate_customers success  2026-10-22T08:50:14.756720+00:00   2026-10-22T08:50:16.035340+00:00
+validate_products success  2026-10-22T08:50:14.758311+00:00   2026-10-22T08:50:16.046760+00:00
+validate_stores success  2026-10-22T08:50:14.760992+00:00   2026-10-22T08:50:16.003437+00:00
+validate_orders upstream_failed  2026-10-22T08:50:14.736388+00:00   2026-10-22T08:50:14.736388+00:00
+validate_increment success  2026-10-22T08:50:16.840926+00:00   2026-10-22T08:50:17.766507+00:00
+validate_payments success  2026-10-22T08:50:14.763685+00:00   2026-10-22T08:50:16.066357+00:00
+load_warehouse upstream_failed  2026-10-22T08:50:14.773890+00:00   2026-10-22T08:50:14.773890+00:00
+reconcile upstream_failed  2026-10-22T08:50:15.793016+00:00   2026-10-22T08:50:15.793016+00:00
+report upstream_failed  2026-10-22T08:50:16.821553+00:00   2026-10-22T08:50:16.821553+00:00
+run_audit failed  2026-10-22T08:50:17.879936+00:00   2026-10-22T08:50:18.937814+00:00
+audit : [('FAILED', 2800, 0, 38)]
+dq (orders checks failing): []
+volume check: []
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+{"timestamp":"2026-10-22T08:50:14.385589Z","level":"error","event":"Task failed with exception","ti_id":"01a162cd-b660-779b-bce4-b640fbf3ebcb","task_id":"extract_orders","try_number":1,"run_id":"v4e6_schema","dag_id":"nammamart_etl_sbonagiri","map_index":-1,"logger":"task","filename":"task_runner.py
+RUN nammamart_elt_sbonagiri v4e6_schema -> failed
+extract_orders failed  2026-10-22T08:50:13.734623+00:00   2026-10-22T08:50:15.263366+00:00
+extract_payments success  2026-10-22T08:50:13.718578+00:00   2026-10-22T08:50:15.205606+00:00
+extract_customers success  2026-10-22T08:50:13.739322+00:00   2026-10-22T08:50:15.235095+00:00
+extract_products success  2026-10-22T08:50:13.739752+00:00   2026-10-22T08:50:15.249464+00:00
+extract_stores success  2026-10-22T08:50:13.754653+00:00   2026-10-22T08:50:15.271317+00:00
+extract_increment success  2026-10-22T08:50:13.746286+00:00   2026-10-22T08:50:15.218360+00:00
+load_raw upstream_failed  2026-10-22T08:50:15.789572+00:00   2026-10-22T08:50:15.789572+00:00
+stg_customers upstream_failed  2026-10-22T08:50:16.814922+00:00   2026-10-22T08:50:16.814922+00:00
+stg_products upstream_failed  2026-10-22T08:50:16.816790+00:00   2026-10-22T08:50:16.816790+00:00
+stg_stores upstream_failed  2026-10-22T08:50:16.817304+00:00   2026-10-22T08:50:16.817304+00:00
+stg_payments upstream_failed  2026-10-22T08:50:16.816388+00:00   2026-10-22T08:50:16.816388+00:00
+stg_orders_incoming upstream_failed  2026-10-22T08:50:16.815865+00:00   2026-10-22T08:50:16.815865+00:00
+stg_orders_merge upstream_failed  2026-10-22T08:50:16.841597+00:00   2026-10-22T08:50:16.841597+00:00
+mart_kpis upstream_failed  2026-10-22T08:50:17.866580+00:00   2026-10-22T08:50:17.866580+00:00
+mart_payment_reconciliation upstream_failed  2026-10-22T08:50:17.867081+00:00   2026-10-22T08:50:17.867081+00:00
+mart_rejected_rows upstream_failed  2026-10-22T08:50:17.867331+00:00   2026-10-22T08:50:17.867331+00:00
+report upstream_failed  2026-10-22T08:50:17.867533+00:00   2026-10-22T08:50:17.867533+00:00
+run_audit failed  2026-10-22T08:50:17.894748+00:00   2026-10-22T08:50:18.761305+00:00
+audit : [('FAILED', 0, 5133, 239)]
+dq (orders checks failing): []
+volume check: []
+raw rows: {'raw_customers': 1215, 'raw_orders': 7396, 'raw_payments': 6684, 'raw_products': 456, 'raw_stores': 45}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+{"timestamp":"2026-10-22T08:50:15.257936Z","level":"error","event":"Task failed with exception","task_id":"extract_orders","dag_id":"nammamart_elt_sbonagiri","run_id":"v4e6_schema","map_index":-1,"ti_id":"01a162cd-bac9-7741-865c-526d1c70ba75","try_number":1,"logger":"task","filename":"task_runner.py
+################ EXP7 volume anomaly
+RUN nammamart_etl_sbonagiri v4e7_volume -> success
+extract_orders success  2026-10-22T08:50:25.460927+00:00   2026-10-22T08:50:27.022037+00:00
+extract_payments success  2026-10-22T08:50:25.469993+00:00   2026-10-22T08:50:26.987835+00:00
+extract_customers success  2026-10-22T08:50:25.464793+00:00   2026-10-22T08:50:27.006280+00:00
+extract_products success  2026-10-22T08:50:25.463414+00:00   2026-10-22T08:50:27.027624+00:00
+extract_stores success  2026-10-22T08:50:25.460394+00:00   2026-10-22T08:50:26.998592+00:00
+extract_increment success  2026-10-22T08:50:25.482048+00:00   2026-10-22T08:50:27.003984+00:00
+validate_customers success  2026-10-22T08:50:27.513677+00:00   2026-10-22T08:50:28.710686+00:00
+validate_products success  2026-10-22T08:50:27.518630+00:00   2026-10-22T08:50:28.706160+00:00
+validate_stores success  2026-10-22T08:50:27.514123+00:00   2026-10-22T08:50:28.708214+00:00
+validate_orders success  2026-10-22T08:50:29.593068+00:00   2026-10-22T08:50:30.627933+00:00
+validate_increment success  2026-10-22T08:50:29.595249+00:00   2026-10-22T08:50:30.617990+00:00
+validate_payments success  2026-10-22T08:50:27.515847+00:00   2026-10-22T08:50:28.717121+00:00
+load_warehouse success  2026-10-22T08:50:31.648418+00:00   2026-10-22T08:50:32.718011+00:00
+reconcile success  2026-10-22T08:50:33.702328+00:00   2026-10-22T08:50:34.729658+00:00
+report success  2026-10-22T08:50:35.713162+00:00   2026-10-22T08:50:36.705694+00:00
+run_audit success  2026-10-22T08:50:36.758897+00:00   2026-10-22T08:50:37.734341+00:00
+audit : [('SUCCESS', 2850, 2810, 40)]
+dq (orders checks failing): [('customer_id_present', 1), ('payment_mode_allowed', 1), ('volume_vs_previous_run', 1)]
+volume check: [(50, 1, 'WARN')]
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e7_volume -> success
+extract_orders success  2026-10-22T08:50:41.652646+00:00   2026-10-22T08:50:42.751945+00:00
+extract_payments success  2026-10-22T08:50:41.650774+00:00   2026-10-22T08:50:42.807929+00:00
+extract_customers success  2026-10-22T08:50:41.651612+00:00   2026-10-22T08:50:42.805186+00:00
+extract_products success  2026-10-22T08:50:41.648109+00:00   2026-10-22T08:50:42.783141+00:00
+extract_stores success  2026-10-22T08:50:41.652582+00:00   2026-10-22T08:50:42.810917+00:00
+extract_increment success  2026-10-22T08:50:41.649663+00:00   2026-10-22T08:50:42.785773+00:00
+load_raw success  2026-10-22T08:50:43.733962+00:00   2026-10-22T08:50:44.595122+00:00
+stg_customers success  2026-10-22T08:50:44.778513+00:00   2026-10-22T08:50:47.720134+00:00
+stg_products success  2026-10-22T08:50:44.783230+00:00   2026-10-22T08:50:45.715624+00:00
+stg_stores success  2026-10-22T08:50:44.779430+00:00   2026-10-22T08:50:45.693712+00:00
+stg_payments success  2026-10-22T08:50:44.779490+00:00   2026-10-22T08:50:49.758248+00:00
+stg_orders_incoming success  2026-10-22T08:50:47.870493+00:00   2026-10-22T08:50:48.686583+00:00
+stg_orders_merge success  2026-10-22T08:50:48.915631+00:00   2026-10-22T08:50:51.793766+00:00
+mart_kpis success  2026-10-22T08:50:52.721161+00:00   2026-10-22T08:50:55.727662+00:00
+mart_payment_reconciliation success  2026-10-22T08:50:52.722386+00:00   2026-10-22T08:50:53.684253+00:00
+mart_rejected_rows success  2026-10-22T08:50:52.719007+00:00   2026-10-22T08:50:57.730406+00:00
+report success  2026-10-22T08:50:58.572444+00:00   2026-10-22T08:50:59.529149+00:00
+run_audit success  2026-10-22T08:50:59.605877+00:00   2026-10-22T08:51:00.489683+00:00
+audit : [('SUCCESS', 2850, 2810, 40)]
+dq (orders checks failing): [('customer_id_present', 1), ('payment_mode_allowed', 1), ('volume_vs_previous_run', 1)]
+volume check: [(50, 1, 'WARN')]
+raw rows: {'raw_customers': 1620, 'raw_orders': 7446, 'raw_payments': 8912, 'raw_products': 608, 'raw_stores': 60}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+################ EXP8 distribution drift
+RUN nammamart_etl_sbonagiri v4e8_drift -> success
+extract_orders success  2026-10-22T08:51:09.475323+00:00   2026-10-22T08:51:10.751021+00:00
+extract_payments success  2026-10-22T08:51:09.476302+00:00   2026-10-22T08:51:10.753670+00:00
+extract_customers success  2026-10-22T08:51:09.473100+00:00   2026-10-22T08:51:10.746819+00:00
+extract_products success  2026-10-22T08:51:09.473103+00:00   2026-10-22T08:51:10.742981+00:00
+extract_stores success  2026-10-22T08:51:09.475323+00:00   2026-10-22T08:51:10.745659+00:00
+extract_increment success  2026-10-22T08:51:09.476202+00:00   2026-10-22T08:51:10.784378+00:00
+validate_customers success  2026-10-22T08:51:11.731985+00:00   2026-10-22T08:51:12.740487+00:00
+validate_products success  2026-10-22T08:51:11.733625+00:00   2026-10-22T08:51:12.744164+00:00
+validate_stores success  2026-10-22T08:51:11.733195+00:00   2026-10-22T08:51:12.737515+00:00
+validate_orders success  2026-10-22T08:51:13.801189+00:00   2026-10-22T08:51:14.748141+00:00
+validate_increment success  2026-10-22T08:51:13.801168+00:00   2026-10-22T08:51:14.726502+00:00
+validate_payments success  2026-10-22T08:51:11.734877+00:00   2026-10-22T08:51:12.758339+00:00
+load_warehouse success  2026-10-22T08:51:14.835325+00:00   2026-10-22T08:51:15.818691+00:00
+reconcile success  2026-10-22T08:51:15.866154+00:00   2026-10-22T08:51:16.737899+00:00
+report success  2026-10-22T08:51:16.902488+00:00   2026-10-22T08:51:17.775392+00:00
+run_audit success  2026-10-22T08:51:17.942910+00:00   2026-10-22T08:51:18.825032+00:00
+audit : [('SUCCESS', 5212, 4850, 362)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 162), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+tables: fact (2361, 1170322.2) | payments (2205,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e8_drift -> success
+extract_orders success  2026-10-22T08:51:24.488949+00:00   2026-10-22T08:51:25.458230+00:00
+extract_payments success  2026-10-22T08:51:24.492702+00:00   2026-10-22T08:51:25.440258+00:00
+extract_customers success  2026-10-22T08:51:24.489840+00:00   2026-10-22T08:51:25.422629+00:00
+extract_products success  2026-10-22T08:51:24.490183+00:00   2026-10-22T08:51:25.449151+00:00
+extract_stores success  2026-10-22T08:51:24.487518+00:00   2026-10-22T08:51:25.409047+00:00
+extract_increment success  2026-10-22T08:51:24.488006+00:00   2026-10-22T08:51:25.457828+00:00
+load_raw success  2026-10-22T08:51:25.521649+00:00   2026-10-22T08:51:26.258279+00:00
+stg_customers success  2026-10-22T08:51:26.574898+00:00   2026-10-22T08:51:27.444349+00:00
+stg_products success  2026-10-22T08:51:26.574830+00:00   2026-10-22T08:51:31.496702+00:00
+stg_stores success  2026-10-22T08:51:26.574276+00:00   2026-10-22T08:51:29.464767+00:00
+stg_payments success  2026-10-22T08:51:26.574496+00:00   2026-10-22T08:51:27.417092+00:00
+stg_orders_incoming success  2026-10-22T08:51:31.751943+00:00   2026-10-22T08:51:32.481965+00:00
+stg_orders_merge success  2026-10-22T08:51:32.809496+00:00   2026-10-22T08:51:33.514517+00:00
+mart_kpis success  2026-10-22T08:51:33.864134+00:00   2026-10-22T08:51:38.721151+00:00
+mart_payment_reconciliation success  2026-10-22T08:51:33.862870+00:00   2026-10-22T08:51:34.665859+00:00
+mart_rejected_rows success  2026-10-22T08:51:33.863066+00:00   2026-10-22T08:51:36.674527+00:00
+report success  2026-10-22T08:51:39.535476+00:00   2026-10-22T08:51:40.405083+00:00
+run_audit success  2026-10-22T08:51:40.759537+00:00   2026-10-22T08:51:41.478344+00:00
+audit : [('SUCCESS', 5212, 4850, 362)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('order_amount_formula', 162), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+raw rows: {'raw_customers': 2025, 'raw_orders': 9858, 'raw_payments': 11140, 'raw_products': 760, 'raw_stores': 75}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+################ EXP9 freshness (as_of 2026-10-30)
+RUN nammamart_etl_sbonagiri v4e9_fresh -> success
+extract_orders success  2026-10-22T08:51:45.897191+00:00   2026-10-22T08:51:47.067708+00:00
+extract_payments success  2026-10-22T08:51:45.898705+00:00   2026-10-22T08:51:47.064638+00:00
+extract_customers success  2026-10-22T08:51:45.898546+00:00   2026-10-22T08:51:47.046665+00:00
+extract_products success  2026-10-22T08:51:45.897504+00:00   2026-10-22T08:51:47.056190+00:00
+extract_stores success  2026-10-22T08:51:45.899195+00:00   2026-10-22T08:51:47.068367+00:00
+extract_increment success  2026-10-22T08:51:45.898661+00:00   2026-10-22T08:51:47.044655+00:00
+validate_customers success  2026-10-22T08:51:47.981051+00:00   2026-10-22T08:51:48.983660+00:00
+validate_products success  2026-10-22T08:51:47.981854+00:00   2026-10-22T08:51:48.987775+00:00
+validate_stores success  2026-10-22T08:51:47.980436+00:00   2026-10-22T08:51:48.989874+00:00
+validate_orders success  2026-10-22T08:51:49.758218+00:00   2026-10-22T08:51:50.702810+00:00
+validate_increment success  2026-10-22T08:51:49.758229+00:00   2026-10-22T08:51:50.679232+00:00
+validate_payments success  2026-10-22T08:51:47.982245+00:00   2026-10-22T08:51:48.985064+00:00
+load_warehouse success  2026-10-22T08:51:50.789474+00:00   2026-10-22T08:51:51.784532+00:00
+reconcile success  2026-10-22T08:51:51.820199+00:00   2026-10-22T08:51:52.680400+00:00
+report success  2026-10-22T08:51:52.849467+00:00   2026-10-22T08:51:53.728475+00:00
+run_audit success  2026-10-22T08:51:54.550490+00:00   2026-10-22T08:51:55.425380+00:00
+audit : [('SUCCESS', 5212, 4986, 226)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('latest_order_within_1_day', 1), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+tables: fact (2361, 1170322.2) | payments (2207,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e9_fresh -> success
+extract_orders success  2026-10-22T08:52:00.823363+00:00   2026-10-22T08:52:01.725252+00:00
+extract_payments success  2026-10-22T08:52:00.822224+00:00   2026-10-22T08:52:01.733602+00:00
+extract_customers success  2026-10-22T08:52:00.820359+00:00   2026-10-22T08:52:01.705669+00:00
+extract_products success  2026-10-22T08:52:00.820439+00:00   2026-10-22T08:52:01.702847+00:00
+extract_stores success  2026-10-22T08:52:00.824193+00:00   2026-10-22T08:52:01.736810+00:00
+extract_increment success  2026-10-22T08:52:00.821416+00:00   2026-10-22T08:52:01.734134+00:00
+load_raw success  2026-10-22T08:52:01.861103+00:00   2026-10-22T08:52:02.622079+00:00
+stg_customers success  2026-10-22T08:52:02.916507+00:00   2026-10-22T08:52:05.753923+00:00
+stg_products success  2026-10-22T08:52:02.914851+00:00   2026-10-22T08:52:03.735994+00:00
+stg_stores success  2026-10-22T08:52:02.915213+00:00   2026-10-22T08:52:07.792438+00:00
+stg_payments success  2026-10-22T08:52:02.917319+00:00   2026-10-22T08:52:09.795535+00:00
+stg_orders_incoming success  2026-10-22T08:52:07.847019+00:00   2026-10-22T08:52:08.571237+00:00
+stg_orders_merge success  2026-10-22T08:52:09.572396+00:00   2026-10-22T08:52:10.290300+00:00
+mart_kpis success  2026-10-22T08:52:10.830664+00:00   2026-10-22T08:52:13.681314+00:00
+mart_payment_reconciliation success  2026-10-22T08:52:10.830138+00:00   2026-10-22T08:52:11.635333+00:00
+mart_rejected_rows success  2026-10-22T08:52:10.829247+00:00   2026-10-22T08:52:15.678623+00:00
+report success  2026-10-22T08:52:16.081654+00:00   2026-10-22T08:52:16.942773+00:00
+run_audit success  2026-10-22T08:52:17.108749+00:00   2026-10-22T08:52:17.857374+00:00
+audit : [('SUCCESS', 5212, 4986, 226)]
+dq (orders checks failing): [('customer_exists', 18), ('customer_id_present', 18), ('delivered_has_delivery_minutes', 8), ('delivery_minutes_below_120', 6), ('discount_pct_0_100', 3), ('latest_order_within_1_day', 1), ('order_amount_formula', 18), ('order_id_unique', 12), ('order_status_allowed', 3), ('order_ts_not_future', 7), ('order_ts_parses', 5), ('order_ts_present', 1), ('payment_mode_allowed', 2), ('product_exists', 87), ('quantity_positive', 10), ('store_exists', 5)]
+volume check: [(2412, 0, 'PASS')]
+raw rows: {'raw_customers': 2430, 'raw_orders': 12270, 'raw_payments': 13368, 'raw_products': 912, 'raw_stores': 90}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+################ EXP10 recovery: restore products.csv, clear failed tasks of exp4 run
+-- before clear (nammamart_etl_sbonagiri)
+extract_orders success  2026-10-22T08:41:26.503224+00:00 
+extract_payments success  2026-10-22T08:41:26.502678+00:00 
+extract_customers success  2026-10-22T08:41:26.501367+00:00 
+extract_products failed  2026-10-22T08:45:30.016059+00:00 
+extract_stores success  2026-10-22T08:41:26.501322+00:00 
+extract_increment success  2026-10-22T08:41:26.503697+00:00 
+validate_customers success  2026-10-22T08:41:28.298788+00:00 
+validate_products upstream_failed  2026-10-22T08:45:31.043196+00:00 
+validate_stores success  2026-10-22T08:41:28.300143+00:00 
+validate_orders upstream_failed  2026-10-22T08:45:31.059921+00:00 
+validate_increment upstream_failed  2026-10-22T08:45:31.059673+00:00 
+validate_payments success  2026-10-22T08:41:28.303529+00:00 
+load_warehouse upstream_failed  2026-10-22T08:45:31.058886+00:00 
+reconcile upstream_failed  2026-10-22T08:45:32.083116+00:00 
+report upstream_failed  2026-10-22T08:45:33.119879+00:00 
+run_audit success  2026-10-22T08:45:34.174547+00:00 
+-- before clear (nammamart_elt_sbonagiri)
+extract_orders success  2026-10-22T08:41:27.565504+00:00 
+extract_payments success  2026-10-22T08:41:27.565867+00:00 
+extract_customers success  2026-10-22T08:41:27.568826+00:00 
+extract_products failed  2026-10-22T08:45:31.054758+00:00 
+extract_stores success  2026-10-22T08:41:27.553407+00:00 
+extract_increment success  2026-10-22T08:41:27.567123+00:00 
+load_raw upstream_failed  2026-10-22T08:45:32.080388+00:00 
+stg_customers upstream_failed  2026-10-22T08:45:33.112380+00:00 
+stg_products upstream_failed  2026-10-22T08:45:33.114418+00:00 
+stg_stores upstream_failed  2026-10-22T08:45:33.114801+00:00 
+stg_payments upstream_failed  2026-10-22T08:45:33.113904+00:00 
+stg_orders_incoming upstream_failed  2026-10-22T08:45:33.113400+00:00 
+stg_orders_merge upstream_failed  2026-10-22T08:45:34.149484+00:00 
+mart_kpis upstream_failed  2026-10-22T08:45:34.171933+00:00 
+mart_payment_reconciliation upstream_failed  2026-10-22T08:45:34.172773+00:00 
+mart_rejected_rows upstream_failed  2026-10-22T08:45:34.173066+00:00 
+report upstream_failed  2026-10-22T08:45:34.173338+00:00 
+run_audit success  2026-10-22T08:45:35.204962+00:00 
+RUN nammamart_etl_sbonagiri v4e4_missing -> success
+extract_orders success  2026-10-22T08:41:26.503224+00:00   2026-10-22T08:41:28.119001+00:00
+extract_payments success  2026-10-22T08:41:26.502678+00:00   2026-10-22T08:41:28.186890+00:00
+extract_customers success  2026-10-22T08:41:26.501367+00:00   2026-10-22T08:41:28.005482+00:00
+extract_products failed  2026-10-22T08:45:30.016059+00:00   2026-10-22T08:45:30.955962+00:00
+extract_stores success  2026-10-22T08:41:26.501322+00:00   2026-10-22T08:41:28.099781+00:00
+extract_increment success  2026-10-22T08:41:26.503697+00:00   2026-10-22T08:41:28.186222+00:00
+validate_customers success  2026-10-22T08:41:28.298788+00:00   2026-10-22T08:41:29.587200+00:00
+validate_products upstream_failed  2026-10-22T08:45:31.043196+00:00   2026-10-22T08:45:31.043196+00:00
+validate_stores success  2026-10-22T08:41:28.300143+00:00   2026-10-22T08:41:29.594254+00:00
+validate_orders upstream_failed  2026-10-22T08:45:31.059921+00:00   2026-10-22T08:45:31.059921+00:00
+validate_increment upstream_failed  2026-10-22T08:45:31.059673+00:00   2026-10-22T08:45:31.059673+00:00
+validate_payments success  2026-10-22T08:41:28.303529+00:00   2026-10-22T08:41:29.601341+00:00
+load_warehouse upstream_failed  2026-10-22T08:45:31.058886+00:00   2026-10-22T08:45:31.058886+00:00
+reconcile upstream_failed  2026-10-22T08:45:32.083116+00:00   2026-10-22T08:45:32.083116+00:00
+report upstream_failed  2026-10-22T08:45:33.119879+00:00   2026-10-22T08:45:33.119879+00:00
+run_audit success  2026-10-22T08:45:34.174547+00:00   2026-10-22T08:45:35.173173+00:00
+audit : [('FAILED', 5060, 0, 31)]
+dq (orders checks failing): []
+volume check: []
+tables: fact (2361, 1170322.2) | payments (2207,)
+quarantine ORD0090xx: []
+S05 revenue: (82456.15, 135)
+RUN nammamart_elt_sbonagiri v4e4_missing -> success
+extract_orders success  2026-10-22T08:41:27.565504+00:00   2026-10-22T08:41:29.049307+00:00
+extract_payments success  2026-10-22T08:41:27.565867+00:00   2026-10-22T08:41:29.050300+00:00
+extract_customers success  2026-10-22T08:41:27.568826+00:00   2026-10-22T08:41:29.024737+00:00
+extract_products failed  2026-10-22T08:45:31.054758+00:00   2026-10-22T08:45:31.837544+00:00
+extract_stores success  2026-10-22T08:41:27.553407+00:00   2026-10-22T08:41:29.045515+00:00
+extract_increment success  2026-10-22T08:41:27.567123+00:00   2026-10-22T08:41:28.953828+00:00
+load_raw upstream_failed  2026-10-22T08:45:32.080388+00:00   2026-10-22T08:45:32.080388+00:00
+stg_customers upstream_failed  2026-10-22T08:45:33.112380+00:00   2026-10-22T08:45:33.112380+00:00
+stg_products upstream_failed  2026-10-22T08:45:33.114418+00:00   2026-10-22T08:45:33.114418+00:00
+stg_stores upstream_failed  2026-10-22T08:45:33.114801+00:00   2026-10-22T08:45:33.114801+00:00
+stg_payments upstream_failed  2026-10-22T08:45:33.113904+00:00   2026-10-22T08:45:33.113904+00:00
+stg_orders_incoming upstream_failed  2026-10-22T08:45:33.113400+00:00   2026-10-22T08:45:33.113400+00:00
+stg_orders_merge upstream_failed  2026-10-22T08:45:34.149484+00:00   2026-10-22T08:45:34.149484+00:00
+mart_kpis upstream_failed  2026-10-22T08:45:34.171933+00:00   2026-10-22T08:45:34.171933+00:00
+mart_payment_reconciliation upstream_failed  2026-10-22T08:45:34.172773+00:00   2026-10-22T08:45:34.172773+00:00
+mart_rejected_rows upstream_failed  2026-10-22T08:45:34.173066+00:00   2026-10-22T08:45:34.173066+00:00
+report upstream_failed  2026-10-22T08:45:34.173338+00:00   2026-10-22T08:45:34.173338+00:00
+run_audit success  2026-10-22T08:45:35.204962+00:00   2026-10-22T08:45:35.970046+00:00
+audit : [('FAILED', 0, 5133, 239)]
+dq (orders checks failing): []
+volume check: []
+raw rows: {'raw_customers': 2430, 'raw_orders': 12270, 'raw_payments': 13368, 'raw_products': 912, 'raw_stores': 90}
+stg_orders: (2550, 2550, 2361) | mart revenue (1170322.2,)
+rejected ORD0090xx: []
+S05 revenue: (82456.15,)
+ALL_DONE
