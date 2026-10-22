@@ -97,6 +97,12 @@ AMOUNT_TOLERANCE = 0.01               # rupee tolerance when comparing money val
 
 # Timeliness thresholds (Part D)
 MAX_DATA_AGE_DAYS = 1                 # latest order should not be older than this at run time
+
+# Reference date for every "must not be in the future" rule. The extract covers
+# September plus the 1 October increment, so anything after the end of 1 October
+# is future-dated. A fixed date keeps results identical on any day the pipeline
+# is run; the freshness rule (RULE-035) deliberately still uses the real clock.
+AS_OF: str = os.getenv("NAMMAMART_AS_OF", "2026-10-02 00:00:00")
 # Volume check (Part F experiment 7): warn when a file drops by more than this share.
 VOLUME_DROP_WARN_PCT = 90.0
 EXPECTED_ROW_COUNTS: dict[str, int] = {

@@ -57,6 +57,8 @@ class ValidationContext:
     run_id: str
     dag_id: str
     now: pd.Timestamp = field(default_factory=lambda: pd.Timestamp.now())
+    # Cut-off for the "future-dated" rules; see config.AS_OF.
+    as_of: pd.Timestamp = field(default_factory=lambda: pd.Timestamp(config.AS_OF))
     # Keys present in the *source* master files. Foreign-key rules check against
     # these, so an order is only rejected when its key genuinely does not exist,
     # not because the master row failed an unrelated quality rule.
@@ -154,7 +156,7 @@ def _future(df: pd.DataFrame, column: str, ctx: ValidationContext) -> pd.Series:
     if column not in df.columns:
         return pd.Series(False, index=df.index)
     parsed = tf.to_timestamp(df[column])
-    return parsed.notna() & (parsed > ctx.now)
+    return parsed.notna() & (parsed > ctx.as_of)
 
 
 def _missing_fk(df: pd.DataFrame, column: str, valid: set[str]) -> pd.Series:
@@ -359,9 +361,9 @@ def _freshness_check(column: str):
         if column not in df.columns or df.empty:
             return len(df), 1, f"{column} missing or file empty"
         parsed = tf.to_timestamp(df[column])
-        # Future-dated rows are themselves a data error; if they were included
-        # here they would make a stale file look fresh.
-        latest = parsed[parsed <= ctx.now].max()
+        # Future-dated rows (after the as-of cut-off) are themselves a data error;
+        # if they were included here they would make a stale file look fresh.
+        latest = parsed[parsed <= ctx.as_of].max()
         if pd.isna(latest):
             return len(df), 1, f"no usable {column} value found"
         age_days = (ctx.now - latest).total_seconds() / 86400

@@ -43,7 +43,7 @@ checked AS (
         (mrp IS NULL OR mrp <= 0)                                    AS chk_rule_027,
         (cost_price IS NOT NULL AND mrp IS NOT NULL AND cost_price > mrp)
                                                                      AS chk_rule_028,
-        (launch_date IS NOT NULL AND launch_date > current_date)     AS chk_rule_047
+        (launch_date IS NOT NULL AND launch_date > as_of()::DATE) AS chk_rule_047
     FROM typed
 )
 SELECT

@@ -1,13 +1,13 @@
 # Part F - Observability experiment results
 
-Generated: 2026-10-20 13:39 - produced by `scripts/run_observability_experiments.py`.
+Generated: 2026-10-22 18:57 - produced by `scripts/run_observability_experiments.py`.
 
 Every experiment ran against **both** pipelines on a throw-away copy of the dataset and a throw-away DuckDB file, so the original files were never modified.
 
 ## Experiment 1: Happy path
 
 - **Expected:** Both DAGs succeed; every file is counted; rejected rows are quarantined with a reason.
-- **Observed:** ETL 0.195s loaded 2310 fact rows and quarantined 152; ELT 0.236s loaded 2310 PASS rows. Revenue is identical in both marts.
+- **Observed:** ETL 0.179s loaded 2310 fact rows and quarantined 152; ELT 0.226s loaded 2310 PASS rows. Revenue is identical in both marts.
 - **Where I saw it:** pipeline_runs table, dq_results table, task logs, quarantine CSV files
 - **What I would change:** Publish the per-file counts as an Airflow metric so a drop is visible without opening the table.
 
@@ -63,7 +63,7 @@ Every experiment ran against **both** pipelines on a throw-away copy of the data
 ## Experiment 9: Freshness (newest order 30 days old)
 
 - **Expected:** The timeliness check warns that the data is stale.
-- **Observed:** RULE-035 returned status WARN in both pipelines. ETL detail: "latest order_ts = 2026-10-11 00:07, 9.6 day(s) old". ELT detail: "latest order_ts = 2026-10-11 00:07, 9.6 day(s) old".
+- **Observed:** RULE-035 returned status WARN in both pipelines. ETL detail: "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old". ELT detail: "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old".
 - **Where I saw it:** dq_results rows where rule_id = 'RULE-035'
 - **What I would change:** Fail the DAG (not just warn) when the newest order is more than 2 days old, because a stale 9 AM report is worse than no report.
 

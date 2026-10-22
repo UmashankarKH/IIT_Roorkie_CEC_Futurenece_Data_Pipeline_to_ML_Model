@@ -166,6 +166,16 @@ def test_future_dated_order_is_quarantined():
     assert "RULE-005" in result.failed.iloc[0]["failure_reason"]
 
 
+def test_future_rule_uses_the_fixed_as_of_date_not_the_wall_clock():
+    # 21 Oct 2026 is after the extract's cut-off (config.AS_OF), so it is
+    # future-dated even when the pipeline happens to run on 1 Dec 2026.
+    late_run = make_context(now=pd.Timestamp("2026-12-01 09:00:00"))
+    result = run_orders([order_row(order_ts="2026-10-21 10:15:00")], late_run)
+    assert "RULE-005" in result.failed.iloc[0]["failure_reason"]
+    # The 1 October increment is inside the cut-off and must stay valid.
+    assert run_orders([order_row(order_ts="2026-10-01 22:33:00")], late_run).rows_failed == 0
+
+
 def test_freshness_check_ignores_future_rows():
     rows = [order_row(order_ts="2026-09-10 10:00:00"),
             order_row(order_id="ORD2", order_ts="2027-01-05 10:00:00")]

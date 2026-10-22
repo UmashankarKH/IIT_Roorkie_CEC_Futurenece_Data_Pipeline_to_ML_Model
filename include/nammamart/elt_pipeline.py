@@ -105,6 +105,7 @@ def build_staging(con, full_refresh: bool = False) -> dict[str, int]:
       that every order row enters staging through one upsert path.
     """
     counts: dict[str, int] = {}
+    warehouse.run_sql_file(con, "staging/stg_as_of_macro.sql", {"as_of": config.AS_OF})
     # The payments view reads stg_orders, so it is created later by
     # build_staging_payments() once the orders table exists.
     for dataset in ("orders", "customers", "products", "stores"):
@@ -123,6 +124,7 @@ def build_staging(con, full_refresh: bool = False) -> dict[str, int]:
 
 def build_staging_payments(con) -> int:
     """Build ``stg_payments`` after ``stg_orders`` (it reads the clean orders)."""
+    warehouse.run_sql_file(con, "staging/stg_as_of_macro.sql", {"as_of": config.AS_OF})
     warehouse.run_sql_file(con, STAGING_VIEW_SQL["payments"])
     warehouse.run_sql_file(con, STAGING_TABLE_SQL["payments"])
     rows = warehouse.row_count(con, "stg_payments")

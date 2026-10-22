@@ -3,7 +3,7 @@
     "number": 1,
     "experiment": "Happy path",
     "expected": "Both DAGs succeed; every file is counted; rejected rows are quarantined with a reason.",
-    "observed": "ETL 0.195s loaded 2310 fact rows and quarantined 152; ELT 0.236s loaded 2310 PASS rows. Revenue is identical in both marts.",
+    "observed": "ETL 0.179s loaded 2310 fact rows and quarantined 152; ELT 0.226s loaded 2310 PASS rows. Revenue is identical in both marts.",
     "where_i_saw_it": "pipeline_runs table, dq_results table, task logs, quarantine CSV files",
     "what_i_would_change": "Publish the per-file counts as an Airflow metric so a drop is visible without opening the table.",
     "detail": {
@@ -46,7 +46,7 @@
           "rows_loaded": 2310,
           "rows_quarantined": 152,
           "status": "SUCCESS",
-          "seconds": 0.173
+          "seconds": 0.159
         },
         {
           "dag_id": "nammamart_elt_waseem",
@@ -54,11 +54,11 @@
           "rows_loaded": 2310,
           "rows_quarantined": 136,
           "status": "SUCCESS",
-          "seconds": 0.181
+          "seconds": 0.171
         }
       ],
-      "etl_seconds": 0.195,
-      "elt_seconds": 0.236,
+      "etl_seconds": 0.179,
+      "elt_seconds": 0.226,
       "parallel_tasks": "ETL extract_orders/payments/customers/products/stores run in parallel; ELT raw loads are chained because DuckDB allows one writer"
     }
   },
@@ -162,14 +162,14 @@
         "error_type": "FileNotFoundError",
         "error_message": "Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv",
         "failed_step": "read_source_csv",
-        "seconds": 0.022
+        "seconds": 0.019
       },
       "elt": {
         "status": "FAILED",
         "error_type": "FileNotFoundError",
         "error_message": "Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv",
         "failed_step": "load_raw",
-        "seconds": 0.093
+        "seconds": 0.088
       },
       "pipeline_runs": [
         {
@@ -288,14 +288,14 @@
         "error_type": "SchemaError",
         "error_message": "orders: missing expected column(s) ['order_amount']. Columns received: ['channel', 'customer_id', 'delivery_minutes', 'discount_pct', 'order_id', 'order_status', 'order_ts', 'payment_mode', 'product_id', 'quantity', 'store_id', 'total', 'unit_price']",
         "failed_step": "assert_schema",
-        "seconds": 0.042
+        "seconds": 0.039
       },
       "elt": {
         "status": "FAILED",
         "error_type": "BinderException",
         "error_message": "Binder Error: Referenced column \"order_amount\" not found in FROM clause!",
         "failed_step": "run_sql_file",
-        "seconds": 0.037
+        "seconds": 0.034
       }
     }
   },
@@ -355,7 +355,7 @@
     "number": 9,
     "experiment": "Freshness (newest order 30 days old)",
     "expected": "The timeliness check warns that the data is stale.",
-    "observed": "RULE-035 returned status WARN in both pipelines. ETL detail: \"latest order_ts = 2026-10-11 00:07, 9.6 day(s) old\". ELT detail: \"latest order_ts = 2026-10-11 00:07, 9.6 day(s) old\".",
+    "observed": "RULE-035 returned status WARN in both pipelines. ETL detail: \"latest order_ts = 2026-09-22 18:57, 30.0 day(s) old\". ELT detail: \"latest order_ts = 2026-09-22 18:57, 30.0 day(s) old\".",
     "where_i_saw_it": "dq_results rows where rule_id = 'RULE-035'",
     "what_i_would_change": "Fail the DAG (not just warn) when the newest order is more than 2 days old, because a stale 9 AM report is worse than no report.",
     "detail": {
@@ -364,13 +364,13 @@
           "dag_id": "nammamart_elt_waseem",
           "status": "WARN",
           "rows_failed": 1,
-          "detail": "latest order_ts = 2026-10-11 00:07, 9.6 day(s) old"
+          "detail": "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old"
         },
         {
           "dag_id": "nammamart_etl_waseem",
           "status": "WARN",
           "rows_failed": 1,
-          "detail": "latest order_ts = 2026-10-11 00:07, 9.6 day(s) old"
+          "detail": "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old"
         }
       ]
     }

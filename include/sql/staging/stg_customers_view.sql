@@ -60,7 +60,7 @@ checked AS (
         (loyalty_tier IS NOT NULL
          AND loyalty_tier NOT IN ('BRONZE', 'SILVER', 'GOLD', 'PLATINUM'))
                                                                      AS chk_rule_024,
-        (signup_date IS NOT NULL AND signup_date > current_date)      AS chk_rule_023
+        (signup_date IS NOT NULL AND signup_date > as_of()::DATE) AS chk_rule_023
     FROM typed
 )
 SELECT

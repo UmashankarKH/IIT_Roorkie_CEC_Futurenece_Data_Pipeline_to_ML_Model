@@ -1,6 +1,6 @@
 # Six business questions - answered from both pipelines
 
-Generated: 2026-10-20 14:06 by `scripts/run_business_questions.py` against `warehouse_waseem.duckdb`.
+Generated: 2026-10-22 18:55 by `scripts/run_business_questions.py` against `warehouse_waseem.duckdb`.
 
 Each question is answered twice: once from the **ETL** star schema (`etl_fact_orders` and its dimensions) and once from the **ELT** mart (`mart_*` tables built with SQL only).
 
@@ -143,8 +143,8 @@ ORDER BY pct_within_15_min DESC;
 | S08 | NammaMart Whitefield | East | 164 | 20.61 | 58.0 | 35.37 |
 | S07 | NammaMart BTM Layout | Unknown | 150 | 21.13 | 49.0 | 32.67 |
 | S01 | NammaMart Hebbal | North | 149 | 20.47 | 48.0 | 32.21 |
-| S14 | NammaMart Vijayanagar | West | 166 | 21.51 | 52.0 | 31.33 |
 | S02 | NammaMart Yelahanka | North | 150 | 20.93 | 47.0 | 31.33 |
+| S14 | NammaMart Vijayanagar | West | 166 | 21.51 | 52.0 | 31.33 |
 | S05 | NammaMart JP Nagar | South | 142 | 21.19 | 42.0 | 29.58 |
 | S03 | NammaMart RT Nagar | North | 143 | 20.65 | 42.0 | 29.37 |
 | S11 | NammaMart HSR Layout | East | 161 | 20.82 | 46.0 | 28.57 |
@@ -356,8 +356,8 @@ ORDER BY rows_rejected DESC, f.dataset;
 
 | dataset | rule_id | check_name | severity | rows_rejected |
 | --- | --- | --- | --- | --- |
-| orders | RULE-011 | order_amount must match quantity x unit_price x (1 - discount_pct/100) | Critical | 18 |
 | orders | RULE-006 | customer_id must be present | Critical | 18 |
+| orders | RULE-011 | order_amount must match quantity x unit_price x (1 - discount_pct/100) | Critical | 18 |
 | payments | RULE-018 | SUCCESS payment amount must equal the order amount | Critical | 14 |
 | orders | RULE-002 | order_id must be unique (redundant copies quarantined) | Critical | 12 |
 | orders | RULE-009 | quantity must be greater than zero | Critical | 10 |

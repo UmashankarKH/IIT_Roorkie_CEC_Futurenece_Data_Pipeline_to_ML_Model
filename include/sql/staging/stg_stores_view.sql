@@ -40,7 +40,7 @@ checked AS (
                                                                      AS chk_rule_045,
         (capacity_orders_per_day IS NOT NULL AND capacity_orders_per_day <= 0)
                                                                      AS chk_rule_031,
-        (open_date IS NOT NULL AND open_date > current_date)         AS chk_rule_048
+        (open_date IS NOT NULL AND open_date > as_of()::DATE) AS chk_rule_048
     FROM typed
 )
 SELECT

@@ -428,9 +428,11 @@ def experiment_9(results: list) -> None:
     data_dir, db_path, quarantine_dir = fresh_workspace("exp09_freshness")
     orders = pd.read_csv(data_dir / "orders.csv", dtype=str, keep_default_na=False)
     parsed = pd.to_datetime(orders["order_ts"], errors="coerce", format="mixed")
-    newest = parsed[parsed <= pd.Timestamp.now()].max()
+    newest = parsed[parsed <= pd.Timestamp(config.AS_OF)].max()
     shift = (pd.Timestamp.now() - pd.Timedelta(days=30)) - newest
-    orders["order_ts"] = (parsed + shift).dt.strftime("%Y-%m-%d %H:%M:%S").fillna(orders["order_ts"])
+    # Shift only genuine rows; planted future-dated rows stay future-dated.
+    shifted = parsed.where(parsed > pd.Timestamp(config.AS_OF), parsed + shift)
+    orders["order_ts"] = shifted.dt.strftime("%Y-%m-%d %H:%M:%S").fillna(orders["order_ts"])
     orders.to_csv(data_dir / "orders.csv", index=False)
     run_both("exp09", data_dir, db_path, quarantine_dir)
 

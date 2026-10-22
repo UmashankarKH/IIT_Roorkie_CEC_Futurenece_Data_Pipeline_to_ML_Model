@@ -65,7 +65,7 @@ checked AS (
             WHERE nullif(trim(r.order_id), '') = p.order_id))        AS chk_rule_017,
         (p.payment_status = 'SUCCESS' AND o.order_amount IS NOT NULL
          AND abs(p.amount_paid - o.order_amount) > 0.01)             AS chk_rule_018,
-        (p.payment_ts IS NOT NULL AND p.payment_ts > now())          AS chk_rule_019
+        (p.payment_ts IS NOT NULL AND p.payment_ts > as_of())        AS chk_rule_019
     FROM typed p
     LEFT JOIN (SELECT order_id, order_amount FROM stg_orders WHERE dq_status = 'PASS') o
            ON o.order_id = p.order_id

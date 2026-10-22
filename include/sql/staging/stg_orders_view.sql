@@ -116,7 +116,7 @@ checked AS (
             WHERE nullif(trim(s.store_id), '') = orders_typed.store_id))
                                                                      AS chk_rule_008,
         -- Timeliness
-        (order_ts IS NOT NULL AND order_ts > now())                  AS chk_rule_005
+        (order_ts IS NOT NULL AND order_ts > as_of())              AS chk_rule_005
     FROM typed AS orders_typed
 )
 SELECT
