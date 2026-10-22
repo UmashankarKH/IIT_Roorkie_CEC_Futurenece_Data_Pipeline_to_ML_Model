@@ -33,7 +33,7 @@ python scripts/run_etl_local.py --run-id demo_etl          # ETL: validate -> st
 python scripts/run_etl_local.py --run-id demo_inc --increment   # next-day file
 python scripts/run_business_questions.py                   # six business questions
 python scripts/run_observability_experiments.py            # the ten Part F experiments
-pytest tests/nammamart                                     # 62 tests
+pytest tests/nammamart                                     # 65 tests
 ```
 
 ---
@@ -407,6 +407,11 @@ written even when an upstream task failed. `pipeline_runs` holds `run_id`, `dag_
 `start_time`, `end_time`, `duration_seconds`, `rows_extracted`, `rows_loaded`,
 `rows_quarantined`, `status` and `notes`.
 
+One limit of this design, seen in the screenshots: because the audit task runs even after a
+failure, the Airflow *run* can end green while a task inside it is red. The failure shows on
+the task and as a `FAILED` row in `pipeline_runs`, but not in the run state; alerting should
+read `pipeline_runs`, not the run colour.
+
 ### The ten experiments
 
 Full detail, including the raw numbers for each one:
@@ -416,7 +421,7 @@ produced by `scripts/run_observability_experiments.py` on both pipelines.
 
 | # | Experiment | Expected | Observed | Where I saw it | What I would change |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Happy path | Both DAGs succeed, counts recorded | ETL 0.20 s, 2,310 fact rows, 152 quarantined; ELT 0.24 s, 2,310 PASS rows; identical revenue | `pipeline_runs`, `dq_results`, task logs | publish per-file counts as a metric |
+| 1 | Happy path | Both DAGs succeed, counts recorded | ETL 0.18 s, 2,310 fact rows, 152 quarantined; ELT 0.23 s, 2,310 PASS rows; identical revenue | `pipeline_runs`, `dq_results`, task logs | publish per-file counts as a metric |
 | 2 | Re-run (idempotency) | Totals unchanged | ETL 0 inserted / 2,310 updated; ELT MERGE 0 inserted; `raw_orders` grew 2,412 → 4,824 **by design** (append-only audit) | row counts, MERGE log line | fail the DAG if a pure re-run changes the fact count |
 | 3 | Incremental load | 150 new, 10 corrected, no duplicates | ELT MERGE: **150 inserted, 10 updated**; ETL upsert: 150 inserted; 2,460 rows / 2,460 distinct ids; the 10 orders are now RETURNED with zero revenue | MERGE log, `stg_orders` SUPERSEDED rows | keep an SCD Type 2 history in the ETL fact too |
 | 4 | Missing source file (`products.csv` renamed) | Loud failure, no partial load | ETL failed in `read_source_csv()` with `FileNotFoundError`; ELT failed in `load_raw()`; both wrote a FAILED audit row. In Airflow the task retries twice, 2 minutes apart, then `failed`, downstream `upstream_failed` | task log, `pipeline_runs.status`, Grid view | add a "five files present" sensor before the extracts |
@@ -428,9 +433,8 @@ produced by `scripts/run_observability_experiments.py` on both pipelines.
 | 10 | Recovery (fix cause, Clear task) | Only the failed and downstream tasks re-run | With `stores.csv` missing both failed and wrote FAILED rows; after restoring it both succeeded with exactly the clean-run numbers (2,310 / 2,310) because the loads are idempotent. In the UI, Clear re-runs the cleared task and everything downstream; the successful extracts are not repeated | `pipeline_runs` FAILED then SUCCESS, Grid view | keep quarantine and audit keyed by `run_id` so a bad day can be replayed without deleting evidence |
 
 > Experiments 4 and 10 include one Airflow-UI-only element (retry states and the Clear
-> button). Those are listed as manual screenshot evidence in
-> `docs/SUBMISSION_CHECKLIST.md`; everything else above was executed and recorded
-> automatically.
+> button). Those are evidenced by screenshots in `docs/screenshots/` where captured;
+> everything else above was executed and recorded automatically.
 
 ### The five pillars of data observability
 
@@ -548,8 +552,10 @@ not lost from the total, but the problem is visible in `dq_results` and in this 
 | Six business questions | `docs/evidence/business_questions.md` | automated |
 | Ten observability experiments | `docs/evidence/observability_results.md` | automated |
 | Test run | `docs/TEST_REPORT.md` | automated |
-| Airflow UI screenshots | `docs/SUBMISSION_CHECKLIST.md` lists each one | **manual - still to capture** |
+| Airflow UI screenshots | `docs/screenshots/` - `s1`/`s2` graphs, `s3` schedule, `s4` quarantine file, `s5` `dq_results`, `s6` `pipeline_runs`, `s7` reconciliation, `s8` MERGE log, `s9a`/`s9b` retries, `s10` Clear | captured from Astro on Podman; Slack delivery not verified (no webhook) |
 
-Study material for repeating this work: `docs/PART_B_STUDY_GUIDE.md` through
-`docs/PART_G_STUDY_GUIDE.md`, `docs/PIPELINE_DEEP_DIVE.md` and
-`docs/HANDS_ON_REBUILD_GUIDE.md`.
+How the evidence was produced: the pipelines run identically from the local scripts and
+inside Airflow. Results are independent of the day they are run, because "future-dated"
+means after a fixed as-of date (`NAMMAMART_AS_OF`, default `2026-10-02`) rather than after
+`now()`. The setup notes for running the DAGs are in `HOW_TO_RUN.md`; the limits of the
+evidence are listed in `docs/TEST_REPORT.md` section 4.

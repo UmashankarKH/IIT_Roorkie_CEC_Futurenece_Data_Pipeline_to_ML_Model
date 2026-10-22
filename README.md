@@ -4,7 +4,8 @@ FDAIE Module 2 assignment (IIT Roorkee / Futurense). Two Apache Airflow
 pipelines over the same six CSV exports, producing reconciled operations
 numbers before 9:00 AM IST, Monday to Saturday.
 
-**Start here:** [`SUBMISSION.md`](SUBMISSION.md) - the assignment submission.
+**Start here:** [`HOW_TO_RUN.md`](HOW_TO_RUN.md) - one-page review and run guide, then
+[`SUBMISSION.md`](SUBMISSION.md) - the assignment submission.
 
 ---
 
@@ -35,8 +36,6 @@ six CSV exports ─┬─► ETL DAG ─► validate ─► quarantine ─► tr
                                                   pipeline_runs (one row per run)
 ```
 
-Diagrams and a full walkthrough: [`docs/PIPELINE_DEEP_DIVE.md`](docs/PIPELINE_DEEP_DIVE.md).
-
 ## 3. Prerequisites
 
 | For the Airflow experience | For running and testing without Docker |
@@ -56,7 +55,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # Option B - full Airflow
-astro dev start          # http://localhost:8080  (admin / admin)
+astro dev start          # prints the Airflow UI address (usually http://localhost:8080)
 ```
 
 The six source files are already in `include/data/nammamart/`. They must never
@@ -83,6 +82,7 @@ Optional environment overrides (all have sensible defaults):
 | `NAMMAMART_DATA_DIR` | `include/data/nammamart` | source folder |
 | `NAMMAMART_WAREHOUSE` | `include/warehouse_waseem.duckdb` | warehouse file |
 | `NAMMAMART_QUARANTINE_DIR` | `include/quarantine/waseem` | rejected rows |
+| `NAMMAMART_AS_OF` | `2026-10-02 00:00:00` | cut-off for the "future-dated" rules, so results do not depend on the run date |
 
 ## 6. How to start the local environment
 
@@ -113,7 +113,7 @@ python scripts/run_etl_local.py --run-id demo_inc --increment
 ## 8. How to run the tests
 
 ```bash
-pytest tests/nammamart -q            # 62 tests
+pytest tests/nammamart -q            # 65 tests
 pytest tests/nammamart -q -k dag     # DAG parsing and structure only
 ```
 
@@ -212,9 +212,9 @@ Outputs land in `docs/evidence/`.
    fact. The ELT side keeps both versions.
 3. **Raw holds unmasked personal data** and grows on every run; it needs
    separate credentials and an enforced retention policy in production.
-4. **Airflow UI evidence is manual.** Docker and the Astro CLI are not installed
-   on the machine used to build this, so retry behaviour and the Clear button
-   need screenshots - see `docs/SUBMISSION_CHECKLIST.md`.
+4. **Airflow UI evidence is partly manual.** Retry states and the Clear button are
+   scheduler behaviour that is only visible in the Airflow UI, so they are evidenced
+   by screenshots in `docs/screenshots/` where captured.
 5. **DuckDB is single-writer**, so the ELT raw loads run sequentially rather
    than in parallel.
 
@@ -222,28 +222,17 @@ Outputs land in `docs/evidence/`.
 
 | Document | What it covers |
 | --- | --- |
+| [`HOW_TO_RUN.md`](HOW_TO_RUN.md) | one-page guide: where to start and how to run on Docker or Podman |
 | [`SUBMISSION.md`](SUBMISSION.md) | the assignment submission: issues log, Part C answers, governance, observability, recommendation |
-| [`docs/PIPELINE_DEEP_DIVE.md`](docs/PIPELINE_DEEP_DIVE.md) | end-to-end walkthrough with diagrams |
-| [`docs/PART_B_STUDY_GUIDE.md`](docs/PART_B_STUDY_GUIDE.md) | the ELT pipeline |
-| [`docs/PART_C_STUDY_GUIDE.md`](docs/PART_C_STUDY_GUIDE.md) | scheduling, cron and timezones |
-| [`docs/PART_D_STUDY_GUIDE.md`](docs/PART_D_STUDY_GUIDE.md) | the six quality dimensions |
-| [`docs/PART_E_STUDY_GUIDE.md`](docs/PART_E_STUDY_GUIDE.md) | governance, PII and the DPDP Act |
-| [`docs/PART_F_STUDY_GUIDE.md`](docs/PART_F_STUDY_GUIDE.md) | observability and the ten experiments |
-| [`docs/PART_G_STUDY_GUIDE.md`](docs/PART_G_STUDY_GUIDE.md) | writing the recommendation |
-| [`docs/HANDS_ON_REBUILD_GUIDE.md`](docs/HANDS_ON_REBUILD_GUIDE.md) | 15 exercises to rebuild this yourself |
 | [`docs/TEST_REPORT.md`](docs/TEST_REPORT.md) | what was tested, what failed and how it was fixed |
-| [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md) | every deliverable and screenshot |
 | [`docs/EVALUATION_MAPPING.md`](docs/EVALUATION_MAPPING.md) | rubric criterion mapped to evidence |
-| [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md) | how to demonstrate the work |
-| [`docs/FINAL_REVIEW_REPORT.md`](docs/FINAL_REVIEW_REPORT.md) | honest self-assessment |
-
 ---
 
 ### About this Astro project
 
 The repository was generated with `astro dev init`. `astro dev start` runs five
 containers (Postgres, Scheduler, DAG Processor, API Server, Triggerer) and opens
-the Airflow UI at http://localhost:8080. The original Astronomer readme is kept
+the Airflow UI (the address is printed when it starts). The original Astronomer readme is kept
 at [`docs/ASTRO_DEFAULT_README.md`](docs/ASTRO_DEFAULT_README.md). The trainer's
 demo DAG (`dags/meridian_pipeline.py`) and its helper modules are left
 untouched, as the assignment requires.

@@ -1,11 +1,11 @@
 # Test report
 
-**Run date:** 2026-10-20 · **Command:** `pytest tests/nammamart -q`
-**Result: 62 passed, 0 failed.**
+**Run date:** 2026-10-22 · **Command:** `pytest tests/nammamart -q`
+**Result: 65 passed, 0 failed.**
 
-Environment used for these results (a local virtual environment, because Docker
-Desktop and the Astro CLI are not installed on this machine - see
-"Requires manual verification" below):
+Environment used for these results (a local virtual environment). The Airflow UI
+evidence in `docs/screenshots/` was captured separately, from the same code running
+in Astro containers (see section 4):
 
 | Component | Version |
 | --- | --- |
@@ -19,7 +19,7 @@ Desktop and the Astro CLI are not installed on this machine - see
 
 ## 1. Automatically tested and passed
 
-### 1.1 Unit tests - quality rules, masking, transforms (32 tests)
+### 1.1 Unit tests - quality rules, masking, transforms (33 tests)
 
 `tests/nammamart/test_quality_rules.py`
 
@@ -31,14 +31,14 @@ Desktop and the Astro CLI are not installed on this machine - see
 | Validity | `SHIPPED` status, unparsable timestamp and out-of-range discount are quarantined; an unknown payment mode is a Warning that still loads; `" upi "` is standardised before the check so it does not warn |
 | Accuracy | negative quantity, wrong `order_amount`, 240-minute delivery are quarantined |
 | Consistency | unknown `customer_id`, `product_id`, `store_id` are quarantined with the right rule |
-| Timeliness | a 2027 timestamp is quarantined; the freshness check ignores future rows and reports the September file as stale |
+| Timeliness | a 2027 timestamp is quarantined; future-dated means *after the fixed as-of date*, so results do not change with the day the test runs; the freshness check ignores future rows and reports the September file as stale |
 | Volume | a shrunken file produces a WARN scorecard row |
 | Schema guard | renaming `order_amount` raises `SchemaError` naming the missing column |
 | Scorecard | every dataset covers at least four dimensions; `dq_results` rows contain all the columns the assignment requires |
 | Masking | `pr***@example.com`, `97******21`, `Priya H.`; nulls handled; original columns dropped |
 | Transforms | payment-mode variants standardised, `order_amount` formula, `within_15_min` only for DELIVERED |
 
-### 1.2 Integration tests - both pipelines end to end (16 tests)
+### 1.2 Integration tests - both pipelines end to end (18 tests)
 
 `tests/nammamart/test_pipelines_integration.py` (runs ETL and ELT against the
 real dataset in a temporary DuckDB file)
@@ -90,6 +90,8 @@ real dataset in a temporary DuckDB file)
 | 8 | ETL and ELT disagreed on `RULE-035` (freshness) | the Python check used `max(order_ts)`, which included future-dated 2027 rows, so a stale file looked fresh | exclude future rows from the freshness calculation | identical, pass |
 | 9 | ETL and ELT disagreed on `DUPLICATE_PAYMENT` (8 vs 0) | ETL counted every copy of a repeated payment; ELT collapsed identical copies in staging | both now report one row per affected payment, using `_raw_copies` on the ELT side | identical (4 vs 4), pass |
 | 10 | ETL and ELT disagreed on duplicate counts after the increment | ETL pre-deduplicated across files; ELT counted a repeated `order_id` across files as a duplicate | both now treat a repeated key in a *later file* as a correction and in the *same file* as a duplicate | identical, pass |
+| 11 | Results changed with the calendar date: a run on 22 Oct loaded 2,312 orders and quarantined 148 (ETL) / 132 (ELT) instead of 2,310 / 152 / 136 | the "future-dated" rules compared against `now()` / `current_date`; two orders and two payments dated 21 Oct 2026 stopped being "future" on 21 Oct, and others would do the same on 2 Nov | one fixed as-of date (`NAMMAMART_AS_OF`, default `2026-10-02 00:00`, the end of the 1 October increment) used by the Python rules and by an `as_of()` macro in the staging SQL; the freshness rule ignores rows after it; regression test added | back to 2,310 / 152 / 136, pass |
+| 12 | Every warehouse test failed with `ResourceInUseException` (`warehouse.py`, line 74) after `pip install` resolved `duckdb 2.0.0` | DuckDB 2.0 refuses new work on a connection that still has an unfinished result; the code was written and tested against 1.x | `requirements.txt` pins `duckdb>=1.4,<2`. The code itself was **not** changed to support 2.0 | pass on 1.5.6 |
 
 ---
 
@@ -108,23 +110,39 @@ real dataset in a temporary DuckDB file)
 
 ## 4. Requires manual verification (Airflow UI, needs Docker)
 
-Docker Desktop and the Astro CLI are **not installed on this machine**, so the
-pipelines were executed through the local runner scripts and the DAGs were
-validated with a real Airflow 3.3 `DagBag`. The following still need a screenshot
-from a machine running `astro dev start`:
+The DAGs are validated twice: with a real Airflow 3.3 `DagBag` in the tests above, and
+by running them in Astro containers (Astro Runtime 3.3, Podman on an Apple M-series
+Mac). The Airflow UI behaviour is evidenced by screenshots in `docs/screenshots/`:
 
-| # | What to verify | Why it cannot be automated here |
+| # | File | What it shows |
 | --- | --- | --- |
-| 1 | Both DAGs green in Graph view | needs the Airflow UI |
-| 2 | Schedule field showing `0 9 * * 1-6` and the next run time | needs the Airflow UI |
-| 3 | Retry behaviour in experiment 4 (`up_for_retry` → `failed` → `upstream_failed`) | retries are a scheduler behaviour, not a library call |
-| 4 | Recovery in experiment 10 using the **Clear** button | Clear is a UI action |
-| 5 | Slack alert actually delivered | needs a real webhook URL in an Airflow Variable |
+| S1 | `s1_etl_graph_green.png` | ETL DAG, every task green |
+| S2 | `s2_elt_graph_green.png` | ELT DAG, every task green |
+| S3 | `s3_schedule_9am_ist.png` | schedule `0 9 * * 1-6` and the next run, both DAGs |
+| S4 | `s4_quarantine_file.png` | a quarantine file with the `failure_reason` column |
+| S5 | `s5_dq_results.png` | `dq_results` rows |
+| S6 | `s6_pipeline_runs.png` | `pipeline_runs`, one row per run |
+| S7a / S7b | `s7a_reconciliation.png`, `s7b_reconciliation.png` | `etl_payment_reconciliation`: missing payments, then amount mismatches |
+| S8 | `s8_increment_merge_log.png` | `MERGE ...: 150 inserted, 10 updated` |
+| S9a / S9b | `s9a_up_for_retry.png`, `s9b_retry_and_upstream_failed.png` | experiment 4: retries, then `failed` with downstream tasks not run |
+| S10 | `s10_clear_recovery.png` | experiment 10: Clear re-runs only the failed task and what follows it |
 
-The underlying behaviour of items 3 and 4 *was* exercised locally (missing file
-→ `FileNotFoundError` → FAILED audit row; restore the file → identical numbers,
-because loads are idempotent). Only the UI evidence is outstanding.
-See `docs/SUBMISSION_CHECKLIST.md` for the exact screenshots to capture.
+Not verified:
+
+* **Slack alert delivery** - needs a real webhook in an Airflow Variable; the code path
+  and its fallback when the Variable is missing are tested, delivery is not.
+* **Docker** - the containers were run with Podman, not Docker Desktop.
+* **A real run date** - the screenshots show October 2026 runs on a laptop whose clock
+  had to be re-synchronised with the container VM once (a skewed clock keeps tasks in
+  "no status" because the logical date lies in the future).
+* **A reviewer's environment** - to run on this Mac the base image's `cryptography` had
+  to be pinned to 44.0.3 in a local, uncommitted Dockerfile line (the image's 48.0.1
+  crashes with "Illegal instruction" under the Podman VM). That is a laptop issue, not
+  part of the submission.
+
+One honest limit of the Airflow evidence: in S9b the *run* is green although a task
+failed, because `write_run_audit` uses `trigger_rule="all_done"` and succeeds. The failure
+is visible on the task and in `pipeline_runs`, but not in the run state.
 
 ---
 
@@ -143,8 +161,8 @@ See `docs/SUBMISSION_CHECKLIST.md` for the exact screenshots to capture.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt            # pandas, duckdb, pendulum, pytest
-pytest tests/nammamart -q                  # 62 tests
+pip install -r requirements.txt            # pandas, duckdb (<2), pendulum, pytest
+pytest tests/nammamart -q                  # 65 tests
 python scripts/run_elt_local.py --run-id reproduce_elt
 python scripts/run_etl_local.py --run-id reproduce_etl
 python scripts/run_business_questions.py
