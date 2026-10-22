@@ -1,5 +1,5 @@
 pandas
-duckdb>=1.4.0   # MERGE INTO, used by the ELT staging upsert
+duckdb>=1.4,<2   # 2.0 raises ResourceInUseException on unfinished results
 pendulum        # timezone-aware DAG start_date (Asia/Kolkata)
 pytest          # test suite in tests/nammamart
 scikit-learn

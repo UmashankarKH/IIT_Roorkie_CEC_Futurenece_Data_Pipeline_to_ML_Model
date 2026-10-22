@@ -14,6 +14,8 @@ airflow.db
 .astro/*.local.yaml
 test_api.py 
 .spectra/
+.airflow_local/
+.temp/
 
 # Agent working folder (plans, trackers, scratch) - not submitted
 .agent_plan/
@@ -25,3 +27,4 @@ include/staging/
 # (the warehouse raw layer and quarantine rows contain source personal data)
 include/warehouse_waseem.duckdb
 include/quarantine/waseem/
+study_material/
