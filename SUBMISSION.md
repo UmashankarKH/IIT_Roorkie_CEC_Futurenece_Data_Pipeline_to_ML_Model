@@ -1,4 +1,4 @@
-# NammaMart Data Pipeline Submission
+# NammaMart Data Pipeline Submission.
 
 **Prepared for:** Sameer, CTO, NammaMart Quick Commerce
 **Assignment:** FDAIE Module 2 — Data Engineering Foundations
