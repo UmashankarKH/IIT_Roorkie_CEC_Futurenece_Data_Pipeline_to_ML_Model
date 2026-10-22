@@ -3,6 +3,7 @@
 .DS_Store
 airflow_settings.yaml
 __pycache__/
+.nammamart_etl_work/
 astro
 .venv
 .astro/standalone/

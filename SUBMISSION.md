@@ -130,3 +130,57 @@ ELT retains the exact row in `raw_orders` with `_source_file`/`_run_id`; `stg_or
 After the Oct 1 increment, ELT upserts the order’s current status to RETURNED, so September delivered revenue is restated downward by that order’s `order_amount`; the raw base export and increment remain available in `raw_orders`. ETL currently reads the September `orders.csv` snapshot only, so it still counts the order as delivered and its September revenue remains as originally reported.
 
 Finance should use the corrected/restated figure for current net revenue, while preserving the originally reported figure for audit. Keep both with a dated revenue snapshot and an append-only order-status history (effective time, loaded time, prior/new status, run id), or equivalent SCD Type 2 history; extend ETL to consume the increment if the ETL view must also restate.
+
+## Part F: Observability tests
+
+Both DAGs now finish with an `audit_run` task using `trigger_rule="all_done"`. It writes one `pipeline_runs` row per `run_id` and `dag_id`, including start/end timestamps, extracted/loaded/quarantined row counts, and status. Re-running the audit for the same DAG run replaces that row instead of duplicating it. When upstream work failed, the audit writes `status='failed'` and then fails without retrying, so the Airflow run is visibly failed too. ELT raw-row counts include every CSV appended on that run; ETL loaded counts are the fact-table snapshot size. ELT quarantine counts are failed staging rows tagged with that run ID.
+
+The experiments below were run on 22 October 2026 with `astro dev run dags test` against both DAGs. Test inputs were temporary replacements of files under `include/data/nammamart/`; each was restored from a byte-for-byte backup after its experiment. Airflow task logs and run history were inspected; recovery was exercised with Airflow's Clear action in the UI and its equivalent `airflow tasks clear` command.
+
+### 1. Happy path
+
+**Expected →** both DAGs finish successfully; the five ETL extracts can run concurrently; source, passed, and rejected counts are visible. **Observed →** ETL: 5,212 source rows, 2,007 fact rows, 817 rejected across all five files (orders 2,412/405, payments 2,228/393, customers 405/8, products 152/10, stores 15/1; values are rows in/quarantined). ELT appended 5,372 rows including the increment, with 813 failed staging rows. ETL completed in about 11 seconds and ELT in about 8 seconds; extract task timelines show the ETL fan-out. **Where →** Airflow task-instance timeline/logs and `pipeline_runs`. **Change →** retain these source-volume baselines as assignment-specific alert thresholds and calibrate them to a real daily feed before production.
+
+### 2. Re-run / idempotency
+
+**Expected →** ETL fact count stays fixed; ELT raw grows because it preserves each ingestion run, while staging and marts do not double-count orders. **Observed →** ETL fact count remained 2,007 after the second run. ELT appended another 5,372 raw rows (2,572 of those were orders from the base and increment files); staging still had one current row per `order_id`, including the 10 corrections. **Where →** `etl_fact_orders`, `raw_orders`, `stg_orders`, and the DAG logs. **Change →** keep append-only raw history and ensure all consumer marts use deduplicated staging keys.
+
+### 3. Incremental load
+
+**Expected →** ELT appends the 160-row increment, updates the 10 corrected order statuses, and adds 150 new orders; ETL should reflect those corrections only if it consumes the increment. **Observed →** ELT staged the ten corrected orders as `RETURNED` and the 150 new orders as `DELIVERED`, with no duplicate staged order IDs. ETL still reads `orders.csv` only and therefore does not apply the increment. **Where →** ELT `raw_orders` by `_source_file`/`_run_id`, `stg_orders`, and ETL `etl_fact_orders`. **Change →** add incremental extraction and an order-key upsert to ETL if Finance needs its report restated too.
+
+### 4. Missing source file
+
+**Expected →** the source-reading task retries, then fails; dependent tasks are marked `upstream_failed`, with the reason visible. **Observed →** ETL `extract_products` and ELT `load_raw_layer` each raised `FileNotFoundError` for `products.csv`, retried twice at the configured two-minute interval, then failed; the audit task still ran and recorded `status='failed'`. **Where →** task logs, Airflow run/task history, and `pipeline_runs` (ETL extracted 5,060 rows before failure; ELT 0 because its raw load is one transaction). **Change →** add an alert on failed or delayed runs; retries alone do not notify the owner.
+
+### 5. Five new bad order rows
+
+**Expected →** missing customer, negative quantity, unknown store, `SHIPPED`, and a future timestamp each receive a specific reason; ETL quarantines them and ELT marks them failed in staging and records the relevant checks. **Observed →** both DAGs completed, each with five additional source rows; all five appeared with `dq_status='FAIL'` and reasons in `stg_orders`, and ETL quarantine increased by five. The relevant required-field, quantity, store-key, status, and future-date checks were present in `dq_results`. **Where →** run-specific ETL quarantine CSVs, ELT `stg_orders`, `dq_results`, and `pipeline_runs`. **Change →** retain these isolated fixtures as regression cases; `dq_results` is check-level, so use staging/quarantine for the individual row reason.
+
+### 6. Schema change
+
+**Expected →** renaming `order_amount` to `total` should stop ingestion with a clear schema error, not silently load null amounts. **Observed →** ETL failed at `extract_orders` with `ValueError: Schema mismatch`. The first ELT trial showed a gap: DuckDB accepted the missing column and staging marked many rows failed instead of rejecting the changed header. I added an explicit CSV-header check to `load_raw_layer`; the rerun then failed loudly with the same schema mismatch before committing any raw rows. **Where →** ETL/ELT task logs and the failed `pipeline_runs` rows. **Change →** alert on schema mismatch and require an approved mapping before accepting a renamed field.
+
+### 7. Volume anomaly
+
+**Expected →** a 50-order input (over 90% below the 2,412-row assignment baseline) should warn without hiding the row counts. **Observed →** the new orders volume check recorded `WARN` with one failed file-level check in both `dq_results` tables. ETL loaded 47 valid order rows; ELT appended the 50-row orders file plus the other source files (3,010 raw rows on that run). **Where →** `dq_results`, `pipeline_runs`, and the DAG task logs. **Change →** replace the fixed 2,412 baseline with a rolling baseline or a client-approved daily range for production.
+
+### 8. Distribution drift
+
+**Expected →** multiplying S01 `unit_price` values by 100 should produce an outlier alert or visibly change store revenue. **Observed →** no dedicated distribution-drift check exists. Because `order_amount` was left unchanged, the existing amount-formula accuracy check rejected the affected rows: ETL's load fell from 2,007 to 1,859 rows, and S01 delivered revenue would fall by ₹72,996.75 (129 delivered orders in the valid fact snapshot). ELT likewise marked affected rows failed and excluded them from marts. **Where →** ETL formula check in `dq_results`, failed ELT rows in `stg_orders`, and `mart_daily_store_kpis` / ETL report logs. **Change →** add per-store price/revenue distribution thresholds that detect extreme but internally consistent values too.
+
+### 9. Freshness
+
+**Expected →** a feed whose latest `order_ts` is 30 days old should warn on timeliness. **Observed →** ETL's `order_ts is older than one day (stale)` check warned for all 2,412 modified order rows; ELT's `orders.not_stale_over_one_day` also warned (2,554 of 2,555 staged rows were stale in that run, including the unchanged increment feed). **Where →** `dq_results` and validation/staging task logs. **Change →** alert on the freshness warning and report the newest source timestamp in the mart/run audit for faster diagnosis.
+
+### 10. Recovery after failure
+
+**Expected →** after restoring the source, Clear should rerun the failed task and its downstream tasks, not unrelated upstream work. **Observed →** on the failed ELT schema-change run, I restored the original CSV and used Airflow UI **Clear** on `load_raw_layer` with downstream tasks selected. The five tasks (`load_raw_layer`, `build_staging_layer`, `build_mart_layer`, `compare_september_totals`, `audit_run`) reran and succeeded; the run's audit record was updated to `success`. For ETL, I cleared `validate_orders_task` with downstream selected after a successful baseline run; the failed validation and its downstream tasks reran successfully while the five source extracts and three master validations stayed at their original attempt. **Where →** Airflow run graph/task-instance history and `pipeline_runs`. **Change →** ETL intermediate pass/fail files now live in the shared, gitignored `include/.nammamart_etl_work/` directory and are retained per run, so cleared tasks can read upstream outputs across worker containers. Keep that directory access restricted because it contains source PII.
+
+### Five observability pillars
+
+- **Freshness:** covered by the one-day `order_ts` timeliness checks and run start/end times.
+- **Volume:** covered by the new warning when the base orders file is more than 90% below the assignment baseline.
+- **Schema:** ETL validates exact CSV headers; ELT now validates headers before raw insertion.
+- **Distribution:** weakest coverage. The pipelines catch amount-formula mismatches, but do not yet track per-store price/revenue distributions or detect internally consistent outliers.
+- **Lineage:** strongest coverage in ELT because raw rows retain `_source_file` and `_run_id`, and staging retains row-level failure reasons; add a source row number for exact physical-line lineage. ETL can trace accepted/rejected keys through fact/quarantine outputs but does not persist source row numbers.

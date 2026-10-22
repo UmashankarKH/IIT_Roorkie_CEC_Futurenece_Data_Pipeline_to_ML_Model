@@ -2,12 +2,20 @@
 
 from pathlib import Path
 import re
+import sys
+import csv
 from datetime import timedelta
 
 import duckdb
 import pendulum
 from airflow.decorators import dag, task
+from airflow.exceptions import AirflowException
 from airflow.sdk import get_current_context
+from airflow.utils.trigger_rule import TriggerRule
+
+sys.path.insert(0, "/usr/local/airflow/include")
+
+from pipeline_audit import record_pipeline_run
 
 
 INCLUDE_DIR = Path("/usr/local/airflow/include")
@@ -118,6 +126,12 @@ def nammamart_elt_sol():
                 if not path.is_file():
                     raise FileNotFoundError(f"Required raw source is missing: {path}")
                 columns = RAW_COLUMNS[source]
+                with path.open("r", newline="", encoding="utf-8-sig") as source_stream:
+                    actual_columns = next(csv.reader(source_stream), [])
+                if actual_columns != columns:
+                    raise ValueError(
+                        f"Schema mismatch for {filename}. Expected {columns}; got {actual_columns}"
+                    )
                 columns_sql = "{" + ", ".join(
                     f"{_quoted(column)}: {_quoted('VARCHAR')}" for column in columns
                 ) + "}"
@@ -245,10 +259,61 @@ def nammamart_elt_sol():
         print(result.to_string(index=False))
         return {"run_id": raw_result["run_id"], "status": "compared", "mart_tables": mart_result["tables"]}
 
+    @task(trigger_rule=TriggerRule.ALL_DONE, retries=0)
+    def audit_run():
+        context = get_current_context()
+        dag_run = context["dag_run"]
+        ti = context["ti"]
+        raw_result = ti.xcom_pull(task_ids="load_raw_layer")
+        staging_result = ti.xcom_pull(task_ids="build_staging_layer")
+        comparison_result = ti.xcom_pull(task_ids="compare_september_totals")
+        rows_extracted = sum(
+            int(value) for value in (raw_result or {}).get("rows_by_file", {}).values()
+        )
+        rows_loaded = rows_extracted
+        rows_quarantined = 0
+        if isinstance(staging_result, dict):
+            connection = duckdb.connect(str(WAREHOUSE_PATH), read_only=True)
+            try:
+                rows_quarantined = sum(
+                    int(connection.execute(
+                        f"SELECT COUNT(*) FROM {table} WHERE dq_status = 'FAIL' AND _run_id = ?",
+                        [raw_result["run_id"]],
+                    ).fetchone()[0])
+                    for table in [
+                        "stg_orders", "stg_payments", "stg_customers",
+                        "stg_products", "stg_stores",
+                    ]
+                )
+            finally:
+                connection.close()
+        # The comparison is the terminal business task and depends on all
+        # preceding ELT layers, so its XCom indicates those layers completed.
+        status = "success" if isinstance(comparison_result, dict) else "failed"
+        audit = record_pipeline_run(
+            warehouse_path=WAREHOUSE_PATH,
+            dag_id=dag_run.dag_id,
+            run_id=dag_run.run_id,
+            start_time=dag_run.start_date,
+            end_time=pendulum.now("UTC"),
+            rows_extracted=rows_extracted,
+            rows_loaded=rows_loaded,
+            rows_quarantined=rows_quarantined,
+            status=status,
+        )
+        if status != "success":
+            raise AirflowException(
+                "ELT run failed before compare_september_totals completed; see upstream task logs and pipeline_runs."
+            )
+        return audit
+
     raw = load_raw_layer()
     staging = build_staging_layer(raw)
     marts = build_mart_layer(staging)
-    compare_september_totals(raw, marts)
+    comparison = compare_september_totals(raw, marts)
+
+    audit = audit_run()
+    [raw, staging, marts, comparison] >> audit
 
 
 nammamart_elt_sol()

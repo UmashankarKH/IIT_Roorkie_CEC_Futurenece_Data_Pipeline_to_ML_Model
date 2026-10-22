@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import re
-import shutil
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any
@@ -16,9 +15,11 @@ import pendulum
 INCLUDE_DIR = Path("/usr/local/airflow/include")
 DATA_DIR = INCLUDE_DIR / "data" / "nammamart"
 QUARANTINE_DIR = INCLUDE_DIR / "quarantine" / "sol"
-# Intermediate pass/fail sets can contain source PII, so keep them outside the
-# checked-out repository tree and remove them after a successful reporting run.
-WORK_DIR = Path("/tmp/nammamart_etl_sol")
+# TaskFlow tasks may run in different Airflow containers, so intermediates must
+# live on Astro's shared include volume rather than a worker-local /tmp folder.
+# Keep per-run intermediates so a cleared task can reuse successful upstream
+# outputs. The directory is gitignored because it can contain source PII.
+WORK_DIR = INCLUDE_DIR / ".nammamart_etl_work"
 WAREHOUSE_PATH = INCLUDE_DIR / "warehouse_sol.duckdb"
 
 SCHEMAS = {
@@ -203,6 +204,18 @@ def validate_file(
     fail(duplicate, f"duplicate {key}; a canonical dimension row is retained where applicable")
 
     if filename == "orders.csv":
+        # Alert when the complete daily export is more than 90% below its
+        # assignment baseline (2,412 September orders). This is a file-level
+        # warning and does not reject otherwise valid order rows.
+        volume_below_threshold = len(frame) < 242
+        checks.append({
+            "check_name": "orders.csv:source volume dropped more than 90% from 2412-row baseline",
+            "dimension": "Volume",
+            "severity": "Warning",
+            "rows_checked": 1,
+            "rows_failed": int(volume_below_threshold),
+            "status": "WARN" if volume_below_threshold else "PASS",
+        })
         required = [
             "customer_id", "store_id", "product_id", "order_ts", "quantity",
             "unit_price", "discount_pct", "order_amount", "payment_mode", "order_status",
@@ -649,7 +662,5 @@ def build_reports(reconcile_result: dict[str, Any], validation_results: list[dic
     print(revenue.to_string(index=False))
     print("[Report] etl_category_margin")
     print(margin.to_string(index=False))
-    work_dir = WORK_DIR / safe_run_id(reconcile_result["run_id"])
-    shutil.rmtree(work_dir, ignore_errors=True)
     print(f"[Report] run counts: {counts}")
     return {"counts": counts, "mismatches": reconcile_result["mismatch_rows"]}

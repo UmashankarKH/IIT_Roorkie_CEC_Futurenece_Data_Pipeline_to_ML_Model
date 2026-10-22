@@ -132,6 +132,11 @@ WITH checks AS (
                WHEN 'GOLD' THEN 'Gold' WHEN 'PLATINUM' THEN 'Platinum'
                ELSE TRIM(loyalty_tier) END)
     FROM raw_customers WHERE _run_id = {{RUN_ID}}
+    UNION ALL
+    SELECT 'orders.source_volume_baseline', 'Volume', 'Warning', 1,
+           CASE WHEN COUNT(*) < 242 THEN 1 ELSE 0 END
+    FROM raw_orders
+    WHERE _run_id = {{RUN_ID}} AND _source_file = 'orders.csv'
 ), scored AS (
     SELECT {{RUN_ID}} AS run_id, {{DAG_ID}} AS dag_id, check_name, dimension, severity,
            rows_checked, rows_failed,
