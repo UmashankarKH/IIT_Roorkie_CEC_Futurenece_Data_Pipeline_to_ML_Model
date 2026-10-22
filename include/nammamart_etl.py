@@ -271,6 +271,41 @@ def validate_file(
                 valid_ids = set(master[KEYS[master_file]])
                 fail(frame[column].ne("") & ~frame[column].isin(valid_ids), f"{column} is not present in the validated {master_file} dimension")
 
+            stores = _read_frame(master_manifests["stores.csv"]["passed_path"])
+            capacities = {
+                str(row.store_id): _decimal(row.capacity_orders_per_day)
+                for row in stores.itertuples(index=False)
+            }
+            eligible = pd.Series([not row_reasons for row_reasons in reasons], index=frame.index)
+            order_dates = pd.to_datetime(frame["order_ts"], errors="coerce", format="mixed").dt.date
+            daily_orders = (
+                frame.loc[eligible, ["store_id"]]
+                .assign(order_date=order_dates.loc[eligible])
+                .dropna(subset=["order_date"])
+                .groupby(["store_id", "order_date"])
+                .size()
+            )
+            checked_groups = [
+                (store_id, order_date, int(order_count), capacities.get(str(store_id)))
+                for (store_id, order_date), order_count in daily_orders.items()
+                if capacities.get(str(store_id)) is not None
+            ]
+            over_capacity = [
+                row for row in checked_groups
+                if Decimal(row[2]) > row[3]
+            ]
+            checks.append({
+                "check_name": "orders.csv:valid daily orders exceed stores.capacity_orders_per_day",
+                "dimension": "Volume",
+                "severity": "Warning",
+                "rows_checked": len(checked_groups),
+                "rows_failed": len(over_capacity),
+                "status": "WARN" if over_capacity else "PASS",
+            })
+            print(
+                f"[Capacity] {len(over_capacity)} of {len(checked_groups)} valid store-days exceed capacity"
+            )
+
     elif filename == "payments.csv":
         for column in ["order_id", "payment_ts", "payment_mode", "amount_paid", "payment_status"]:
             fail(frame[column].eq(""), f"{column} is required")

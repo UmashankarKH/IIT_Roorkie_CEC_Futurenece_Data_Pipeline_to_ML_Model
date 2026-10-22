@@ -20,6 +20,7 @@ from nammamart_etl import (
     transform_files,
     validate_file,
 )
+from observability import generate_dq_trend_svg, slack_dag_failure_alert
 from pipeline_audit import record_pipeline_run
 
 
@@ -39,6 +40,7 @@ DEFAULT_ARGS = {
     catchup=False,
     max_active_runs=1,
     default_args=DEFAULT_ARGS,
+    on_failure_callback=slack_dag_failure_alert,
     tags=["nammamart", "etl", "assignment"],
 )
 def nammamart_etl_sol():
@@ -126,6 +128,14 @@ def nammamart_etl_sol():
         results = [order_result, payment_result, customer_result, product_result, store_result]
         return build_reports(reconciliation, results)
 
+    @task
+    def dq_trend_chart():
+        return generate_dq_trend_svg(
+            "/usr/local/airflow/include/warehouse_sol.duckdb",
+            "nammamart_etl_sol",
+            "/usr/local/airflow/include/reports/dq_trend_etl.svg",
+        )
+
     @task(trigger_rule=TriggerRule.ALL_DONE, retries=0)
     def audit_run():
         context = get_current_context()
@@ -144,6 +154,7 @@ def nammamart_etl_sol():
         quarantine_result = ti.xcom_pull(task_ids="quarantine_task")
         load_result = ti.xcom_pull(task_ids="load_task")
         report_result = ti.xcom_pull(task_ids="report_task")
+        chart_result = ti.xcom_pull(task_ids="dq_trend_chart")
         rows_extracted = sum(
             int(item.get("rows", 0)) for item in manifests if isinstance(item, dict)
         )
@@ -158,7 +169,7 @@ def nammamart_etl_sol():
 
         # report_task is downstream of every required ETL operation; with
         # all_success dependencies it only has an XCom when the run succeeded.
-        status = "success" if isinstance(report_result, dict) else "failed"
+        status = "success" if isinstance(report_result, dict) and chart_result else "failed"
         audit = record_pipeline_run(
             warehouse_path="/usr/local/airflow/include/warehouse_sol.duckdb",
             dag_id=dag_run.dag_id,
@@ -206,6 +217,8 @@ def nammamart_etl_sol():
         clean_products,
         clean_stores,
     )
+    chart = dq_trend_chart()
+    report >> chart
 
     # Do not load a successful fact snapshot until rejected rows have been
     # published to the run-specific quarantine files.
@@ -216,7 +229,7 @@ def nammamart_etl_sol():
     [
         order_source, payment_source, customer_source, product_source, store_source,
         clean_customers, clean_products, clean_stores, clean_orders, clean_payments,
-        quarantine, transformed, loaded, reconciled, report,
+        quarantine, transformed, loaded, reconciled, report, chart,
     ] >> audit
 
 

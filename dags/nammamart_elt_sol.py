@@ -16,6 +16,7 @@ from airflow.utils.trigger_rule import TriggerRule
 sys.path.insert(0, "/usr/local/airflow/include")
 
 from pipeline_audit import record_pipeline_run
+from observability import generate_dq_trend_svg, slack_dag_failure_alert
 
 
 INCLUDE_DIR = Path("/usr/local/airflow/include")
@@ -101,6 +102,7 @@ def _quoted(value: str) -> str:
     catchup=False,
     max_active_runs=1,
     default_args=DEFAULT_ARGS,
+    on_failure_callback=slack_dag_failure_alert,
     tags=["nammamart", "elt", "assignment"],
 )
 def nammamart_elt_sol():
@@ -194,6 +196,11 @@ def nammamart_elt_sol():
                 [raw_result["run_id"], "nammamart_elt_sol"],
             ).fetchone()[0]
             print(f"[DQ] Recorded {dq_count} ELT checks for run {raw_result['run_id']}")
+            _run_sql_file(connection, "scd2_customer_loyalty.sql")
+            history_count = connection.execute(
+                "SELECT COUNT(*) FROM dim_customer_loyalty_history"
+            ).fetchone()[0]
+            print(f"[SCD2] Customer loyalty history now has {history_count} versions")
         finally:
             connection.close()
         return {"run_id": raw_result["run_id"], "tables": stats}
@@ -259,6 +266,14 @@ def nammamart_elt_sol():
         print(result.to_string(index=False))
         return {"run_id": raw_result["run_id"], "status": "compared", "mart_tables": mart_result["tables"]}
 
+    @task
+    def dq_trend_chart():
+        return generate_dq_trend_svg(
+            WAREHOUSE_PATH,
+            "nammamart_elt_sol",
+            INCLUDE_DIR / "reports" / "dq_trend_elt.svg",
+        )
+
     @task(trigger_rule=TriggerRule.ALL_DONE, retries=0)
     def audit_run():
         context = get_current_context()
@@ -267,6 +282,7 @@ def nammamart_elt_sol():
         raw_result = ti.xcom_pull(task_ids="load_raw_layer")
         staging_result = ti.xcom_pull(task_ids="build_staging_layer")
         comparison_result = ti.xcom_pull(task_ids="compare_september_totals")
+        chart_result = ti.xcom_pull(task_ids="dq_trend_chart")
         rows_extracted = sum(
             int(value) for value in (raw_result or {}).get("rows_by_file", {}).values()
         )
@@ -289,7 +305,7 @@ def nammamart_elt_sol():
                 connection.close()
         # The comparison is the terminal business task and depends on all
         # preceding ELT layers, so its XCom indicates those layers completed.
-        status = "success" if isinstance(comparison_result, dict) else "failed"
+        status = "success" if isinstance(comparison_result, dict) and chart_result else "failed"
         audit = record_pipeline_run(
             warehouse_path=WAREHOUSE_PATH,
             dag_id=dag_run.dag_id,
@@ -311,9 +327,11 @@ def nammamart_elt_sol():
     staging = build_staging_layer(raw)
     marts = build_mart_layer(staging)
     comparison = compare_september_totals(raw, marts)
+    chart = dq_trend_chart()
+    staging >> chart
 
     audit = audit_run()
-    [raw, staging, marts, comparison] >> audit
+    [raw, staging, marts, comparison, chart] >> audit
 
 
 nammamart_elt_sol()

@@ -133,6 +133,20 @@ WITH checks AS (
                ELSE TRIM(loyalty_tier) END)
     FROM raw_customers WHERE _run_id = {{RUN_ID}}
     UNION ALL
+    SELECT 'orders.store_daily_capacity', 'Volume', 'Warning', COUNT(*),
+           COUNT(*) FILTER (WHERE daily_orders > capacity_orders_per_day)
+    FROM (
+        SELECT orders.store_id, orders.order_date,
+               COUNT(*) AS daily_orders,
+               MAX(stores.capacity_orders_per_day) AS capacity_orders_per_day
+        FROM stg_orders AS orders
+        JOIN stg_stores AS stores USING (store_id)
+        WHERE orders.dq_status <> 'FAIL'
+          AND stores.dq_status <> 'FAIL'
+          AND stores.capacity_orders_per_day IS NOT NULL
+        GROUP BY orders.store_id, orders.order_date
+    ) AS store_day_capacity
+    UNION ALL
     SELECT 'orders.source_volume_baseline', 'Volume', 'Warning', 1,
            CASE WHEN COUNT(*) < 242 THEN 1 ELSE 0 END
     FROM raw_orders

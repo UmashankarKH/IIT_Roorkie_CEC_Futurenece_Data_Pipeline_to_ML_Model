@@ -202,3 +202,10 @@ Both designs use open-source tools and have no license fee. ELT adds storage, ba
 1. **A bad row reaches Finance if a mart query bypasses DQ or reconciliation status.** Require a central promotion gate, test it with rejected rows, and alert on every critical failure and unresolved mismatch.
 2. **Raw-layer PII is exposed or retained too long.** Restrict raw access to approved operators, encrypt storage and backups, audit access, and enforce the retention and deletion policy.
 3. **Single-node performance or storage misses the SLA as volume grows.** Track run duration and volume, load-test at projected scale, and set a migration threshold for partitioned storage and a larger open-source SQL engine.
+
+## Bonus features
+
+- **Failure alert:** both DAGs use a DAG-level failure callback that reads `SLACK_WEBHOOK_URL` from an Airflow Variable and posts the DAG/run ID to Slack. Configure it with `astro dev run variables set SLACK_WEBHOOK_URL '<incoming-webhook-url>'`. No webhook is configured in this local setup, so the callback logs that the alert was skipped; no credential is stored in the repository.
+- **Customer loyalty SCD Type 2:** ELT writes `dim_customer_loyalty_history` with `customer_id`, `loyalty_tier`, `valid_from`, `valid_to`, `is_current`, and `source_run_id`. A changed tier closes the current version and inserts a new one; replaying an unchanged batch creates no extra version. A synthetic Bronze → Silver change and replay produced two versions with exactly one current row. The populated warehouse currently has one current version for each of 397 valid customer keys.
+- **Store capacity:** both pipelines compare valid daily orders per store with `capacity_orders_per_day`, recording an over-capacity store-day as a Volume/Warning check without rejecting its orders. The latest test run flagged 30 of 418 ETL store-days and 31 of 432 ELT store-days; ELT includes the additional increment file.
+- **DQ trend chart:** each DAG writes a dependency-free SVG from its `dq_results` history: [ETL chart](./include/reports/dq_trend_etl.svg) and [ELT chart](./include/reports/dq_trend_elt.svg). The latest runs generated both files successfully.
