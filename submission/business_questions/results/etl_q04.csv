@@ -1,0 +1,6 @@
+result_type,payment_mode,delivered_revenue,unreconciled_amount
+BY_PAYMENT_MODE,Card,196960.5,
+BY_PAYMENT_MODE,Cash on Delivery,136157.55,
+BY_PAYMENT_MODE,UPI,538921.2,
+BY_PAYMENT_MODE,Wallet,109105.9,
+TOTAL_UNRECONCILED,ALL MODES,,314002.4

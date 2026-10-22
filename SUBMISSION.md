@@ -1,5 +1,106 @@
 ﻿# NammaMart Pipeline Submission Notes
 
+## Part 0: Discovery and data profiling
+
+Profiled the six untouched CSVs in `include/data/nammamart/` on 2026-10-22. Counts below refer to source rows. Null counts list every non-zero column; all unlisted columns have zero null/blank values. Duplicate counts are repeated rows beyond the first occurrence of a key.
+
+### File profile
+
+| File | Rows | Null/blank counts by column | Duplicate key rows |
+|---|---:|---|---|
+| `orders.csv` | 2,412 | `order_ts`: 1; `customer_id`: 18; `delivery_minutes`: 164 | `order_id`: 12 |
+| `payments.csv` | 2,228 | `gateway_ref`: 301 | `payment_id`: 4 |
+| `customers.csv` | 405 | `city`: 6 | `customer_id`: 5 |
+| `products.csv` | 152 | `category`: 3 | `product_id`: 2 |
+| `stores.csv` | 15 | `zone`: 1 | `store_id`: 0 |
+| `orders_2026-10-01_increment.csv` | 160 | None | `order_id`: 0 in this file; 10 IDs match existing orders as expected updates |
+
+### Numeric and date ranges
+
+Ranges are min–max over parseable, non-null values. Invalid counts are non-empty values that could not be parsed.
+
+| File | Numeric columns: min–max (invalid) | Date columns: min–max (invalid) |
+|---|---|---|
+| `orders.csv` | `quantity`: -3–5 (0); `unit_price`: 10–883 (0); `discount_pct`: 0–250 (0); `order_amount`: -1,593–9,576 (0); `delivery_minutes`: 8–1,440 (0) | `order_ts`: 2026-09-01 06:30:15–2027-01-01 09:00:00 (5 invalid; 1 null) |
+| `payments.csv` | `amount_paid`: -1,593–9,576 (0) | `payment_ts`: 2026-09-01 06:30:24–2027-01-01 09:01:46 (0) |
+| `customers.csv` | No numeric columns | `signup_date`: 2024-06-01–2027-01-05 (0) |
+| `products.csv` | `mrp`: -203–883 (0); `cost_price`: 6.79–631.79 (0) | `launch_date`: 2023-01-03–2025-09-20 (0) |
+| `stores.csv` | `capacity_orders_per_day`: 0–600 (0) | `open_date`: 2024-02-14–2025-07-28 (0) |
+| `orders_2026-10-01_increment.csv` | `quantity`: 1–4 (0); `unit_price`: 10–883 (0); `discount_pct`: 0–20 (0); `order_amount`: 11–2,052 (0); `delivery_minutes`: 8–34 (0) | `order_ts`: 2026-09-01 09:38:13–2026-10-01 22:33:00 (0) |
+
+### Distinct business categories
+
+| Column | Distinct source values |
+|---|---|
+| `orders.csv.order_status` | `CANCELLED`, `DELIVERED`, `Pending??`, `RETURNED`, `delivered` |
+| `orders.csv.payment_mode` | `CARD`, `Card`, `Cash on Delivery`, `Cashh`, `UPI`, `Wallet`, `cod`, `upi` |
+| `customers.csv.loyalty_tier` | `BRONZE`, `Bronze`, `Gold`, `Platinum`, `SILVER`, `Silver`, `bronze` |
+| `stores.csv.zone` | blank, `East`, `North`, `South`, `West` |
+| `products.csv.category` | blank, `Dairy & Bakery`, `Fruits & Vegetables`, `Household`, `Personal Care`, `Snacks & Beverages`, `Staples` |
+| Increment `order_status` | `DELIVERED`, `RETURNED` |
+| Increment `payment_mode` | `Card`, `Cash on Delivery`, `UPI`, `Wallet` |
+
+### Referential integrity and business-rule checks
+
+| Check | Result |
+|---|---|
+| Orders → customers | 18 September order rows reference a missing/blank customer key. |
+| Orders → products | 9 September order rows reference an unknown product key. |
+| Orders → stores | 5 September order rows reference an unknown store key. |
+| Payments → orders | 8 payment rows reference an order absent from the September orders file. |
+| Cancelled orders have no payment | Pass: no cancelled September order had a matching payment. |
+| `order_amount = quantity × unit_price × (1 − discount_pct/100)`, rounded to cents | 18 September order rows disagree with the formula. |
+| Allowed statuses / payment modes | 3 invalid September order statuses, 3 invalid order payment modes, and 3 invalid payment-file modes after case normalization. |
+| Delivered order has a duration; plausible duration ≤120 minutes | 8 delivered orders lack a duration; 6 order durations are outside 0–120 minutes. The usual 8–35 minute range is a monitoring target, not the hard cutoff. |
+| Successful payment amount equals the matched order amount | 14 payment rows disagree. |
+| Positive quantity, discount 0–100, positive MRP, cost ≤ MRP | 10 orders have non-positive quantity; 3 exceed the discount range; 1 product has non-positive MRP; 5 products have cost above MRP. |
+| Future timestamps/dates | 5 September order timestamps and 3 customer signup dates are future-dated relative to 2026-10-22. |
+| Increment feed behavior | 10 increment rows match existing order IDs (corrections); 150 are new IDs. All increment rows pass the order-file key, value, and amount-formula checks; the increment contains no payment records to reconcile. |
+
+### Data Issues Log
+
+Row keys are representative examples, not an exhaustive listing. Customer keys are pseudonymous source IDs; no customer names, emails, or phone numbers are included. Critical issues quarantine/block promotion; Warning issues load only with a recorded warning.
+
+| File | Row key(s) | Column | Problem / count | Quality dimension | Proposed rule | Severity |
+|---|---|---|---|---|---|---|
+| `orders.csv` | `ORD001462`, `ORD001441`, `ORD001692` | `order_id` | 12 duplicate key rows | Uniqueness | Enforce unique `order_id`; quarantine duplicates and retain only an approved canonical record. | Critical |
+| `orders.csv` | `ORD002255`, `ORD000701`, `ORD000997` | `customer_id` | 18 missing keys and 18 unmatched customer references | Completeness / Consistency | Require a known customer key before finance-fact promotion. | Critical |
+| `orders.csv` | `ORD000403`, `ORD001610`, `ORD000534` | `order_ts` | 1 null and 5 unparseable values | Completeness / Validity | Require a parseable timestamp. | Critical |
+| `orders.csv` | `ORD000500`, `ORD001970`, `ORD001637` | `order_status` | 3 values outside the allowed set | Validity | Normalize case, then allow only DELIVERED, CANCELLED, RETURNED. | Critical |
+| `orders.csv` | `ORD001812`, `ORD001414`, `ORD001640` | `payment_mode` | 3 unsupported values, including `Cashh` / `cod` | Validity | Normalize known casing/whitespace; reject values outside the four approved modes. | Critical |
+| `orders.csv` | `ORD000469`, `ORD001296`, `ORD001459` | `quantity` | 10 non-positive values | Accuracy | Require numeric quantity greater than zero. | Critical |
+| `orders.csv` | `ORD002103`, `ORD001468`, `ORD001237` | `discount_pct` | 3 values outside 0–100 | Accuracy | Require discount in the inclusive range 0–100. | Critical |
+| `orders.csv` | `ORD001554`, `ORD001800`, `ORD000731` | `delivery_minutes` | 8 delivered rows have no numeric duration | Completeness | Require a numeric duration for DELIVERED orders. | Critical |
+| `orders.csv` | `ORD001037`, `ORD002101`, `ORD000455` | `delivery_minutes` | 6 values outside 0–120 minutes; maximum is 1,440 | Accuracy | Reject negative or >120 minute values; monitor the ordinary 8–35 minute band separately. | Critical |
+| `orders.csv` | `ORD002103`, `ORD002305`, `ORD002004` | `order_amount` | 18 values disagree with the formula | Accuracy | Recompute and compare after rounding to two decimals. | Critical |
+| `orders.csv` | `ORD000986`, `ORD001058`, `ORD001685` | `product_id` | 9 unknown product references | Consistency | Require a matching product master key. | Critical |
+| `orders.csv` | `ORD001799`, `ORD001046`, `ORD001492` | `store_id` | 5 unknown store references | Consistency | Require a matching store master key. | Critical |
+| `orders.csv` | `ORD002119`, `ORD001121`, `ORD001765` | `order_ts` | 5 future-dated timestamps | Timeliness | Reject timestamps later than the run’s business date/time policy. | Critical |
+| `orders.csv` | `ORD001913`, `ORD001791`, `ORD002203` | `order_ts` | 2,399 rows are more than one day old on the profiling date | Timeliness | Warn on stale feeds using the agreed business calendar; historical September data is expected for this assignment. | Warning |
+| `payments.csv` | `PAY0000509`, `PAY0001651`, `PAY0002000` | `payment_id` | 4 duplicate key rows | Uniqueness | Enforce unique `payment_id`; quarantine duplicate records. | Critical |
+| `payments.csv` | `PAY0002219`, `PAY0002220`, `PAY0002223` | `order_id` | 8 payment references have no September order | Consistency | Require a matching order or route unmatched gateway events to reconciliation. | Critical |
+| `payments.csv` | `PAY0001954`, `PAY0000522`, `PAY0000044` | `payment_mode` | 3 unsupported values | Validity | Normalize then validate against the approved payment modes. | Critical |
+| `payments.csv` | `PAY0001568`, `PAY0000354`, `PAY0000779` | `amount_paid` | 14 successful payments differ from the matched order amount | Consistency | Successful payment must equal its order amount; expose mismatches to Finance. | Critical |
+| `payments.csv` | `PAY0001568`, `PAY0002175`, `PAY0000751` | `amount_paid` | 6 rows have a negative amount | Accuracy | Require a numeric, non-negative paid amount. | Critical |
+| `customers.csv` | `C00103`, `C00252`, `C00226` | `customer_id` | 5 duplicate key rows | Uniqueness | Enforce one canonical customer row per key; preserve source history for audit. | Critical |
+| `customers.csv` | `C00400`, `C00398`, `C00038` | `signup_date` | 3 future signup dates | Timeliness | Signup date must not be after the business date. | Critical |
+| `customers.csv` | `C00199`, `C00171`, `C00133` | `loyalty_tier` | 8 values have inconsistent case/whitespace | Consistency | Standardize known tier labels and retain raw values in restricted raw storage. | Warning |
+| `customers.csv` | `C00337`, `C00307`, `C00063` | `email` | 12 values fail basic email format | Validity | Validate format; mask in reporting and warn rather than discard customer history. | Warning |
+| `customers.csv` | `C00151`, `C00240`, `C00095` | `phone` | 7 values are not exactly 10 digits | Validity | Validate expected format and mask in reporting. | Warning |
+| `customers.csv` | `C00132`, `C00083`, `C00166` | `pincode` | 3 values are not six digits | Validity | Validate six-digit postal code; retain customer with a warning. | Warning |
+| `customers.csv` | `C00355`, `C00394`, `C00233` | `city` | 6 missing values | Completeness | Treat city as optional for customer retention, but flag missing location where city-level analysis is required. | Warning |
+| `products.csv` | `P0030`, `P0140` | `product_id` | 2 duplicate key rows | Uniqueness | Enforce a unique product key and resolve duplicate catalogue records. | Critical |
+| `products.csv` | `P0051`, `P0060`, `P0068` | `category` | 3 missing categories | Completeness | Require a category before including the product in category reporting. | Critical |
+| `products.csv` | `P0109` | `mrp` | MRP is non-positive | Accuracy | Require numeric MRP greater than zero. | Critical |
+| `products.csv` | `P0019`, `P0073`, `P0074` | `cost_price` | 5 products have cost above MRP | Accuracy | Require non-negative cost no greater than MRP; review margin inputs. | Critical |
+| `stores.csv` | `S07` | `zone` | Zone is blank | Completeness / Validity | Require one of North, South, East, West before zone-level reporting. | Critical |
+
+### Questions for the client
+
+1. Should `cod` be accepted as an alias for “Cash on Delivery,” or treated as invalid until the source system fixes it?
+2. Should the 120-minute delivery threshold be a hard rejection, and should the 8–35 minute normal range only trigger a warning?
+3. For conflicting duplicate customer/product/order keys and missing payment gateway references, which source system or timestamp identifies the canonical record?
+
 ## Part C: Schedule
 
 - **Cron:** `0 9 * * 1-6` (09:00, Monday through Saturday).
@@ -202,6 +303,31 @@ Both designs use open-source tools and have no license fee. ELT adds storage, ba
 1. **A bad row reaches Finance if a mart query bypasses DQ or reconciliation status.** Require a central promotion gate, test it with rejected rows, and alert on every critical failure and unresolved mismatch.
 2. **Raw-layer PII is exposed or retained too long.** Restrict raw access to approved operators, encrypt storage and backups, audit access, and enforce the retention and deletion policy.
 3. **Single-node performance or storage misses the SLA as volume grows.** Track run duration and volume, load-test at projected scale, and set a migration threshold for partitioned storage and a larger open-source SQL engine.
+
+## Business Questions: queries and results
+
+The six business-question queries and complete CSV outputs from the latest successful ETL and ELT runs are provided here:
+
+- [ETL queries](./submission/business_questions/etl_queries.sql)
+- [ELT queries](./submission/business_questions/elt_queries.sql)
+- [Query results index and run context](./submission/business_questions/results/README.md), with links to all 12 CSV result files.
+
+## Screenshots
+
+Screenshots below capture the successful Airflow run graphs and the query evidence from the latest recorded runs. The quarantine screenshot shows the product quarantine CSV with `failure_reason`; the query screenshots include the SQL and results from both warehouses.
+
+- **ETL graph, successful run:** [etl_graph_success.png](./submission/screenshots/etl_graph_success.png)
+- **ELT graph, successful run:** [elt_graph_success.jpg](./submission/screenshots/elt_graph_success.jpg)
+- **ETL schedule:** [etl_schedule.jpg](./submission/screenshots/etl_schedule.jpg)
+- **ELT schedule:** [elt_schedule.jpg](./submission/screenshots/elt_schedule.jpg)
+- **Quarantine file example:** [quarantine_evidence.jpg](./submission/screenshots/quarantine_evidence.jpg)
+- **Latest ETL `dq_results`:** [dq_results_etl.jpg](./submission/screenshots/dq_results_etl.jpg)
+- **Latest ELT `dq_results`:** [dq_results_elt.jpg](./submission/screenshots/dq_results_elt.jpg)
+- **Latest `pipeline_runs` rows from both pipelines:** [pipeline_runs.jpg](./submission/screenshots/pipeline_runs.jpg)
+- **ETL payment reconciliation results:** [payment_reconciliation.jpg](./submission/screenshots/payment_reconciliation.jpg)
+- **ELT payment reconciliation results:** [payment_reconciliation_elt.jpg](./submission/screenshots/payment_reconciliation_elt.jpg)
+
+The schedule screenshots show `0 9 * * 1-6` with the Airflow UI set to `+05:30`; both DAG definitions use the `Asia/Kolkata` timezone. Both DAGs were paused when these screenshots were captured, so Airflow did not show a next-run time. Unpause them in the UI if the evaluator needs the upcoming scheduled time displayed.
 
 ## Bonus features
 
