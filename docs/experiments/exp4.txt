@@ -1,0 +1,43 @@
+t+  0.1s nammamart_etl_mohanrajs extract_products state=None try_number=0
+t+  0.1s nammamart_elt_mohanrajs extract_products state=None try_number=0
+t+  4.2s nammamart_etl_mohanrajs extract_products state=up_for_retry try_number=1
+t+  4.3s nammamart_elt_mohanrajs extract_products state=up_for_retry try_number=1
+t+ 33.3s nammamart_etl_mohanrajs extract_products state=running try_number=2
+t+ 33.4s nammamart_elt_mohanrajs extract_products state=running try_number=2
+t+ 37.5s nammamart_etl_mohanrajs extract_products state=up_for_retry try_number=2
+t+ 37.6s nammamart_elt_mohanrajs extract_products state=up_for_retry try_number=2
+t+ 66.5s nammamart_etl_mohanrajs extract_products state=failed try_number=3
+t+ 66.6s nammamart_elt_mohanrajs extract_products state=failed try_number=3
+nammamart_etl_mohanrajs failed
+   extract_stores success tries= 1
+   extract_payments success tries= 1
+   extract_customers success tries= 1
+   extract_orders success tries= 1
+   validate_customers success tries= 1
+   validate_stores success tries= 1
+   validate_payments success tries= 1
+   extract_products failed tries= 3
+   validate_products upstream_failed tries= 0
+   load upstream_failed tries= 0
+   transform upstream_failed tries= 0
+   validate_orders upstream_failed tries= 0
+   reconcile upstream_failed tries= 0
+   report upstream_failed tries= 0
+   run_audit failed tries= 3
+nammamart_elt_mohanrajs failed
+   extract_payments success tries= 1
+   extract_orders success tries= 1
+   extract_stores success tries= 1
+   extract_customers success tries= 1
+   extract_products failed tries= 3
+   load_raw upstream_failed tries= 0
+   check_schema upstream_failed tries= 0
+   stg_stores upstream_failed tries= 0
+   stg_products upstream_failed tries= 0
+   stg_customers upstream_failed tries= 0
+   stg_orders upstream_failed tries= 0
+   stg_payments upstream_failed tries= 0
+   dq_results upstream_failed tries= 0
+   build_marts upstream_failed tries= 0
+   report upstream_failed tries= 0
+   run_audit failed tries= 3

@@ -1,0 +1,3 @@
+etl_fact_orders=2146 etl_dim_customer=397 etl_quarantine_log=1505 etl_payment_reconciliation=226 raw_orders=7396 raw_payments=6684 raw_customers=1215 stg_orders=2562 mart_daily_store_kpis=428 mart_payment_reconciliation=226 mart_rejected_rows=497 dq_results=445 pipeline_runs=8
+etl_fact_orders 1051936.0
+mart_payment_mode_revenue 1051936.0

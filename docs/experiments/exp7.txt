@@ -1,0 +1,3 @@
+[('exp7_etl_volume', 'orders_volume_vs_previous_run', 'Warning', 1, 1, 'WARN'), ('exp7_elt_volume', 'orders_volume_vs_previous_run', 'Warning', 1, 1, 'WARN')]
+fact rows after 50-order run: (47,) revenue (23047.4,)  stg_orders clean rows: (47,)
+[('exp7_elt_volume', 'SUCCESS', 2850), ('exp7_etl_volume', 'SUCCESS', 2850)]

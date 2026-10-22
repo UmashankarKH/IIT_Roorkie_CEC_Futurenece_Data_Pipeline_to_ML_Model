@@ -1,0 +1,6 @@
+baseline ETL fact S10 rev: (75450.55, 130) | ELT mart S10 rev: (75450.55, 130) | total ETL (986063.9,) | formula-check failures ETL/ELT None None
+S10 rows modified: 157
+variantA(price x100, amount untouched) ETL fact S10 rev: (None, 0) | ELT mart S10 rev: (None, None) | total ETL (910613.35,) | formula-check failures ETL/ELT (174,) (174,)
+S10 rows modified: 157
+variantB(price x100 and amount recomputed) ETL fact S10 rev: (7545055.0, 130) | ELT mart S10 rev: (7545055.0, 130) | total ETL (8455668.35,) | formula-check failures ETL/ELT (17,) (17,)
+after adding orders_unit_price_within_mrp (variant B again): [('nammamart_etl_mohanrajs', 'orders_unit_price_within_mrp', 'Warning', 152, 'WARN'), ('nammamart_elt_mohanrajs', 'orders_unit_price_within_mrp', 'Warning', 152, 'WARN')]

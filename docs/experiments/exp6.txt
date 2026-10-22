@@ -1,0 +1,2 @@
+[('exp6b_etl_schema', 'nammamart_etl_mohanrajs', 2800, 0, 19, 'FAILED'), ('exp6b_elt_schema', 'nammamart_elt_mohanrajs', 0, 0, 0, 'FAILED')]
+fact rows still: (2015,)

@@ -1,0 +1,6 @@
+('exp9_elt_stale', 'nammamart_elt_mohanrajs', 'Warning', 0, 'PASS')
+('exp9_etl_stale', 'nammamart_etl_mohanrajs', 'Warning', 0, 'PASS')
+('exp9_restore_elt', 'nammamart_elt_mohanrajs', 'Warning', 0, 'PASS')
+('exp9_restore_etl', 'nammamart_etl_mohanrajs', 'Warning', 0, 'PASS')
+('exp9b_elt_stale', 'nammamart_elt_mohanrajs', 'Warning', 1, 'WARN')
+('exp9b_etl_stale', 'nammamart_etl_mohanrajs', 'Warning', 1, 'WARN')

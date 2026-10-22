@@ -1,0 +1,16 @@
+store_id,store_name,zone,area,pincode,open_date,manager_name,capacity_orders_per_day
+S01,NammaMart Hebbal,North,Hebbal,560024,2024-04-24,Arjun Hegde,400
+S02,NammaMart Yelahanka,North,Yelahanka,560064,2024-08-16,Kiran Reddy,300
+S03,NammaMart RT Nagar,North,RT Nagar,560032,2025-03-08,Priya Rao,300
+S04,NammaMart Jayanagar,South,Jayanagar,560041,2024-08-11,Ananya Kulkarni,300
+S05,NammaMart JP Nagar,South,JP Nagar,560078,2025-07-28,Vikram Desai,600
+S06,NammaMart Banashankari,South,Banashankari,560070,2024-08-13,Manoj Hegde,300
+S07,NammaMart BTM Layout,,BTM Layout,560076,2024-06-12,Sanjay Bhat,500
+S08,NammaMart Whitefield,East,Whitefield,560066,2024-10-11,Kiran Kumar,500
+S09,NammaMart Indiranagar,East,Indiranagar,560038,2024-04-14,Rahul Joshi,300
+S10,NammaMart Marathahalli,East,Marathahalli,560037,2025-01-02,Swathi Murthy,500
+S11,NammaMart HSR Layout,East,HSR Layout,560102,2024-02-14,Ritu Pillai,300
+S12,NammaMart Rajajinagar,West,Rajajinagar,560010,2025-01-22,Rahul Desai,0
+S13,NammaMart Malleshwaram,West,Malleshwaram,560003,2025-01-05,Ganesh Kumar,300
+S14,NammaMart Vijayanagar,West,Vijayanagar,560040,2024-02-16,Deepa Shetty,500
+S15,NammaMart Basaveshwaranagar,West,Basaveshwaranagar,560079,2024-03-22,Swathi Shetty,300
