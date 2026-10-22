@@ -1,9 +1,0 @@
-customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active,failure_reason
-C00103,***,ga***@example.com,91******67,Bengaluru,Rajajinagar,560010,2025-12-30,Bronze,true,duplicate customer_id; a canonical dimension row is retained where applicable
-C00400,***,de***@example.com,95******91,Bengaluru,Yelahanka,560064,2027-01-05,Gold,true,signup_date is after the current business date 2026-10-22
-C00398,***,pr***@example.com,98******41,Bengaluru,HSR Layout,560102,2026-11-12,Silver,true,signup_date is after the current business date 2026-10-22
-C00252,***,sh***@example.com,97******37,Bengaluru,Yelahanka,560064,2025-06-26,Gold,false,duplicate customer_id; a canonical dimension row is retained where applicable
-C00038,***,ga***@example.com,90******76,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,true,signup_date is after the current business date 2026-10-22
-C00226,***,pr***@example.com,90******43,Bengaluru,BTM Layout,560076,2024-12-22,Silver,true,duplicate customer_id; a canonical dimension row is retained where applicable
-C00036,***,de***@example.com,98******57,Bengaluru,RT Nagar,560032,2024-06-07,Bronze,true,duplicate customer_id; a canonical dimension row is retained where applicable
-C00313,***,pr***@example.com,96******03,Bengaluru,Basaveshwaranagar,560079,2025-09-15,Silver,true,duplicate customer_id; a canonical dimension row is retained where applicable
