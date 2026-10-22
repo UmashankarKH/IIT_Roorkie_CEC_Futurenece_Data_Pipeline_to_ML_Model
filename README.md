@@ -34,6 +34,20 @@ When all five containers are ready the command will open the browser to the Airf
 
 Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
 
+Run the NammaMart dashboard
+===========================
+
+After at least one NammaMart DAG run has completed successfully, open a
+PowerShell terminal at the project root and run:
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run dashboard_surender_singh.py
+```
+
+Open the local URL printed by Streamlit (normally http://localhost:8501).
+The dashboard reads `include/warehouse_surender_singh.duckdb` and lets you
+switch between ETL and ELT marts. To stop it, press Ctrl+C in the terminal.
+
 Deploy Your Project to Astronomer
 =================================
 

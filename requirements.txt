@@ -3,9 +3,10 @@ duckdb
 scikit-learn
 langgraph
 langchain
-langchain-openai
+pip
 slack_sdk
 apache-airflow-providers-slack
+streamlit
+plotly
 
 # Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
-
