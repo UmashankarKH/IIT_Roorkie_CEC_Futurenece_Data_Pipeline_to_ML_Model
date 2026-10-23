@@ -1,0 +1,16 @@
+{
+  "failed_count": 5,
+  "passed_count": 55,
+  "summary": {
+    "revenue": [
+      "negative revenue in 1 rows"
+    ],
+    "order_id": [
+      "duplicate order_id in 2 rows"
+    ],
+    "customer_id": [
+      "null/empty customer_id in 2 rows"
+    ]
+  },
+  "checked_at": "2026-10-23T13:39:51.009556"
+}
