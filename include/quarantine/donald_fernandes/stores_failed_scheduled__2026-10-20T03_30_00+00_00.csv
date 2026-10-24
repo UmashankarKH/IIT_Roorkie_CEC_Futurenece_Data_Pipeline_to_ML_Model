@@ -1,0 +1,2 @@
+source_file,run_id,failure_reason,store_id,store_name,zone,area,pincode,open_date,manager_name,capacity_orders_per_day
+stores.csv,scheduled__2026-10-20T03_30_00+00_00,missing zone,S07,NammaMart BTM Layout,,BTM Layout,560076,2024-06-12,Sanjay Bhat,500

@@ -1,0 +1,2 @@
+issue_id,dag_name,issue_type,description,timestamp
+1,nammamart_etl,data_quarantine,Invalid record formatted and moved to quarantine,2026-10-20
