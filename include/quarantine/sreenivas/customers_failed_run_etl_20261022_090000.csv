@@ -1,0 +1,9 @@
+customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active,failure_reason
+C00103,Ganesh Naidu,ganesh.naidu103@example.com,9187072867,Bengaluru,Rajajinagar,560010,2025-12-30,Bronze,Y,DUPLICATE_CUSTOMER_ID
+C00400,Deepa Pillai,deepa.pillai400@example.com,9534430091,Bengaluru,Yelahanka,560064,2027-01-05,Gold,Y,FUTURE_SIGNUP_DATE(2027-01-05)
+C00398,Priya Reddy,priya.reddy398@example.com,9856945441,Bengaluru,HSR Layout,560102,2026-11-12,Silver,Y,FUTURE_SIGNUP_DATE(2026-11-12)
+C00252,Shreya Rao,shreya.rao252@example.com,9732030937,Bengaluru,Yelahanka,560064,2025-06-26,Gold,N,DUPLICATE_CUSTOMER_ID
+C00038,Ganesh Gowda,ganesh.gowda38@example.com,9022901476,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,Y,FUTURE_SIGNUP_DATE(2026-12-20)
+C00226,Prakash Reddy,prakash.reddy226@example.com,9015851743,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y,DUPLICATE_CUSTOMER_ID
+C00036,Deepa Desai,deepa.desai36@example.com,9806346157,Bengaluru,RT Nagar,560032,2024-06-07,Bronze,Y,DUPLICATE_CUSTOMER_ID
+C00313,Prakash Hegde,prakash.hegde313@example.com,9601367303,Bengaluru,Basaveshwaranagar,560079,2025-09-15,Silver,Y,DUPLICATE_CUSTOMER_ID

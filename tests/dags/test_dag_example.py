@@ -18,15 +18,23 @@ def suppress_logging(namespace):
         logger.disabled = old_value
 
 
+def get_dag_bag():
+    import inspect
+    kwargs = {}
+    if "include_examples" in inspect.signature(DagBag.__init__).parameters:
+        kwargs["include_examples"] = False
+    return DagBag(dag_folder="dags", **kwargs)
+
+
 def get_import_errors():
     """
     Generate a tuple for import errors in the dag bag
     """
     with suppress_logging("airflow"):
-        dag_bag = DagBag(include_examples=False)
+        dag_bag = get_dag_bag()
 
         def strip_path_prefix(path):
-            return os.path.relpath(path, os.environ.get("AIRFLOW_HOME"))
+            return os.path.relpath(path, os.environ.get("AIRFLOW_HOME", os.getcwd()))
 
         # prepend "(None,None)" to ensure that a test object is always created even if it's a no op.
         return [(None, None)] + [
@@ -39,10 +47,10 @@ def get_dags():
     Generate a tuple of dag_id, <DAG objects> in the DagBag
     """
     with suppress_logging("airflow"):
-        dag_bag = DagBag(include_examples=False)
+        dag_bag = get_dag_bag()
 
-    def strip_path_prefix(path):
-        return os.path.relpath(path, os.environ.get("AIRFLOW_HOME"))
+        def strip_path_prefix(path):
+            return os.path.relpath(path, os.environ.get("AIRFLOW_HOME", os.getcwd()))
 
     return [(k, v, strip_path_prefix(v.fileloc)) for k, v in dag_bag.dags.items()]
 
