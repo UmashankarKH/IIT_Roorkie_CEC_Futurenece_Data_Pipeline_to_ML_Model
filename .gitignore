@@ -13,3 +13,13 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# Generated pipeline outputs may contain raw or sensitive records. Keep them
+# outside version control; only approved input data under include/data/ belongs
+# in the repository.
+assignment/quarantine_samy*/
+assignment/step11_business_questions/
+assignment/step12_governance_audit/
+
+# Restricted raw-PII warehouse files (unmasked customer contact data).
+*_pii.duckdb

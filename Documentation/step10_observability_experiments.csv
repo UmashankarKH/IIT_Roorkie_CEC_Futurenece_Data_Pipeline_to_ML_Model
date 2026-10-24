@@ -1,0 +1,59 @@
+experiment,dag,expected,observed,where_seen,what_to_change
+1,ETL,Both DAG implementations complete and publish observable row counts.,"{'run_id': 'step10-exp01-etl', 'rows_extracted': 5372, 'rows_loaded': 1851, 'rows_quarantined': 201, 'issue_rows': 524, 'quarantine_files': ['/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl_quarantine/orders_failed_step10-exp01-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl_quarantine/payments_failed_step10-exp01-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl_quarantine/customers_failed_step10-exp01-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl_quarantine/products_failed_step10-exp01-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl_quarantine/stores_failed_step10-exp01-etl.csv'], 'warehouse_path': '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_etl.duckdb', 'reconciliation_rows': 674, 'reports': {'daily_zone_revenue':      order_date   zone store_id  daily_net_revenue
+0    2026-09-01   East      S08            2984.70
+1    2026-09-01   East      S09            2089.60
+2    2026-09-01   East      S10            2141.60
+3    2026-09-01   East      S11            1757.15
+4    2026-09-01  North      S01            1410.80
+..          ...    ...      ...                ...
+379  2026-09-30  South      S06            2493.50
+380  2026-09-30   West      S13            1301.60
+381  2026-09-30   West      S14            1760.45
+382  2026-09-30   West      S15             357.00
+383  2026-10-21  North      S03             986.85
+
+[384 rows x 4 columns], 'category_margin':               category    revenue  gross_margin
+0       Dairy & Bakery  144905.95      38049.03
+1  Fruits & Vegetables   73361.55      17361.26
+2            Household  157142.85      39443.20
+3        Personal Care  177256.90      39165.15
+4   Snacks & Beverages  146377.65      33604.86
+5              Staples  209387.05      53787.24}, 'increment_inserted': 0, 'increment_updated': 0}","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep the happy-path audit and row-count checks.
+1,ELT,Both DAG implementations complete and publish observable row counts.,"{'warehouse_path': '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp01_elt.duckdb', 'raw_orders': 2412, 'stg_orders': 2400, 'passing_orders': 2318, 'mart_store_rows': 387, 'mart_category_rows': 6, 'reconciliation_rows': 204}","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep the happy-path audit and row-count checks.
+2,ETL,Fact row count does not change after a rerun.,1851 -> 1851,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep replace/upsert semantics and add an automated row-count assertion.
+2,ELT,Raw and staging counts remain stable for a base-data rerun.,2412 -> 2412; staging 2400 -> 2400,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep raw replacement for a rerun and use append only for the increment feed.
+3,ETL,"150 new orders inserted, 10 corrected orders updated, and no duplicate staged order IDs.","inserted=150, updated=10, fact_rows=1982","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep the order_id upsert and monitor inserted/updated counts.
+3,ELT,"150 new orders inserted, 10 corrected orders updated, and no duplicate staged order IDs.","inserted=150, updated=10, raw_rows=2572, staged_rows=2550","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep append-only raw storage and latest-row SQL upsert.
+4,ETL,Both pipelines fail loudly on the missing products file; Airflow retries and marks the source task failed.,FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_yno2wnn3/nammamart/products.csv',"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a source-file preflight check and alert on the failed extract task.
+4,ELT,Both pipelines fail loudly on the missing products file; Airflow retries and marks the source task failed.,FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_yno2wnn3/nammamart/products.csv',"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add the same preflight check before raw loading.
+5,ETL,The five added rows are rejected or marked FAIL with the matching reasons.,"quarantined=208, issue_rows=531","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Keep row-level reasons and add assertions for every injected defect.
+5,ELT,The five added rows are rejected or marked FAIL with the matching reasons.,"passing_staging=2318, failed_staging=87","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Expose failure_reason and dq_status in the staging audit query.
+6,ETL,Both pipelines fail loudly because the required order_amount column is absent.,KeyError: 'order_amount',"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add an explicit schema contract before validation.
+6,ELT,Both pipelines fail loudly because the required order_amount column is absent.,"BinderException: Binder Error: Column ""order_amount"" referenced that exists in the SELECT clause - but this column cannot be referenced before it is defined","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add SQL schema checks and alert on the failed transform task.
+7,ETL,A greater-than-90% volume drop is detected and reported.,Pipeline completed; current implementation has no explicit volume threshold check. loaded=39,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a run-over-run volume check to dq_results and alert when volume drops below 10%.
+7,ELT,A greater-than-90% volume drop is detected and reported.,Pipeline completed; current implementation has no explicit volume threshold check. passing_staging=49,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a SQL volume check and persist it in the observability scorecard.
+8,ETL,The price/amount consistency rule catches affected rows and the store metric changes.,"quarantined=357, affected_store=S10","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a distribution baseline so extreme price shifts are caught even when amount is updated too.
+8,ELT,The price/amount consistency rule catches affected rows and the store metric changes.,"failed_staging=232, affected_store=S10","Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add SQL distribution thresholds and trend them by store.
+9,ETL,A timeliness check warns that the latest order is 30 days old.,Pipeline completes; current implementation checks future dates but does not check stale latest-order age. loaded=1854,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a latest-order freshness warning to dq_results.
+9,ELT,A timeliness check warns that the latest order is 30 days old.,Pipeline completes; current implementation checks future dates but does not check stale latest-order age. passing_staging=2329,"Local pipeline return value, DuckDB audit/quality tables, or captured exception",Add a SQL freshness query and alert when the latest order is older than one day.
+10,ETL,"After fixing the source, clearing the failed task reruns it and downstream tasks successfully.","failure=FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_0g98h_fb/nammamart/products.csv'; recovery={'run_id': 'step10-exp10-recovered-etl', 'rows_extracted': 5372, 'rows_loaded': 1851, 'rows_quarantined': 201, 'issue_rows': 524, 'quarantine_files': ['/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl_quarantine/orders_failed_step10-exp10-recovered-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl_quarantine/payments_failed_step10-exp10-recovered-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl_quarantine/customers_failed_step10-exp10-recovered-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl_quarantine/products_failed_step10-exp10-recovered-etl.csv', '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl_quarantine/stores_failed_step10-exp10-recovered-etl.csv'], 'warehouse_path': '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_etl.duckdb', 'reconciliation_rows': 674, 'reports': {'daily_zone_revenue':      order_date   zone store_id  daily_net_revenue
+0    2026-09-01   East      S08            2984.70
+1    2026-09-01   East      S09            2089.60
+2    2026-09-01   East      S10            2141.60
+3    2026-09-01   East      S11            1757.15
+4    2026-09-01  North      S01            1410.80
+..          ...    ...      ...                ...
+379  2026-09-30  South      S06            2493.50
+380  2026-09-30   West      S13            1301.60
+381  2026-09-30   West      S14            1760.45
+382  2026-09-30   West      S15             357.00
+383  2026-10-21  North      S03             986.85
+
+[384 rows x 4 columns], 'category_margin':               category    revenue  gross_margin
+0       Dairy & Bakery  144905.95      38049.03
+1  Fruits & Vegetables   73361.55      17361.26
+2            Household  157142.85      39443.20
+3        Personal Care  177256.90      39165.15
+4   Snacks & Beverages  146377.65      33604.86
+5              Staples  209387.05      53787.24}, 'increment_inserted': 0, 'increment_updated': 0}","Local pipeline return value, DuckDB audit/quality tables, or captured exception","In Airflow, use Clear on the failed extract and downstream tasks; keep the audit row for the failed attempt."
+10,ELT,"After fixing the source, clearing the failed load/transform path reruns successfully.","failure=FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_0g98h_fb/nammamart/products.csv'; recovery={'warehouse_path': '/var/folders/__/qj33dz2j597328xc8zxkh8_h0000gn/T/nammamart_step10_work_4hikzzco/exp10-recovered_elt.duckdb', 'raw_orders': 2412, 'stg_orders': 2400, 'passing_orders': 2318, 'mart_store_rows': 387, 'mart_category_rows': 6, 'reconciliation_rows': 204}","Local pipeline return value, DuckDB audit/quality tables, or captured exception","In Airflow, clear only the failed task and its downstream dependants, then verify pipeline_runs."

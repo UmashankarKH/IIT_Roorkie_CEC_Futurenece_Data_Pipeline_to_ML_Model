@@ -1,0 +1,38 @@
+run_id,dag_id,check_name,dimension,severity,rows_checked,rows_failed,status,checked_at
+step4-local-test,nammamart_quality_helpers_test,orders.csv:customer_id:Missing customer_id,Completeness,Critical,2412,18,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_id:Duplicate order_id,Uniqueness,Critical,2412,24,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_status:Invalid order status,Validity,Critical,2412,3,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:payment_mode:Invalid payment mode,Validity,Critical,2412,0,PASS,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:quantity:Quantity is not positive,Accuracy,Critical,2412,10,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_amount:Amount does not match pricing formula,Accuracy,Critical,2412,18,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:delivery_minutes:Delivered order has no delivery time,Completeness,Critical,2412,8,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:delivery_minutes:Delivery time exceeds 120 minutes,Accuracy,Critical,2412,6,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:discount_pct:Discount outside 0-100,Validity,Critical,2412,3,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_ts:order_ts is not a valid timestamp,Validity,Critical,2412,6,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_ts:Future-dated order,Timeliness,Critical,2412,7,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:customer_id:Unknown customer_id,Consistency,Critical,2412,18,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:product_id:Unknown product_id,Consistency,Critical,2412,9,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:store_id:Unknown store_id,Consistency,Critical,2412,5,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders.csv:order_ts:Latest order older than 1 day,Timeliness,Warning,2412,1,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,payments.csv:payment_id:Duplicate payment_id,Uniqueness,Critical,2228,8,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,payments.csv:gateway_ref:Missing gateway reference,Completeness,Warning,2228,301,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,payments.csv:amount_paid:Payment amount is not positive,Accuracy,Critical,2228,10,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,payments.csv:order_id:Unknown order_id,Consistency,Critical,2228,8,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,payments.csv:amount_paid:Successful payment does not equal order amount,Consistency,Critical,2240,14,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:customer_id:Duplicate customer_id,Uniqueness,Critical,405,10,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:email:Invalid email format,Validity,Warning,405,12,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:phone:Phone is not a 10-digit number,Validity,Warning,405,7,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:loyalty_tier:Loyalty tier casing is not standard,Consistency,Warning,405,8,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:signup_date:Future signup_date,Timeliness,Warning,405,3,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,customers.csv:pincode:Pincode is not six digits,Validity,Warning,405,3,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,products.csv:product_id:Duplicate product_id,Uniqueness,Critical,152,4,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,products.csv:category:Missing category,Completeness,Critical,152,3,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,products.csv:mrp:MRP is not positive,Accuracy,Critical,152,1,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,products.csv:cost_price:Cost price exceeds MRP,Accuracy,Critical,152,5,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,stores.csv:store_id:Duplicate store_id,Uniqueness,Critical,15,0,PASS,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,stores.csv:zone:Missing zone,Completeness,Critical,15,1,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,stores.csv:pincode:Pincode is not six digits,Validity,Warning,15,0,PASS,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,stores.csv:capacity_orders_per_day:Store capacity is not positive,Accuracy,Critical,15,1,FAIL,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,stores.csv:capacity_orders_per_day:Daily orders exceed store capacity,Accuracy,Warning,425,0,PASS,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders_2026-10-01_increment.csv:order_amount:Amount does not match pricing formula,Accuracy,Critical,160,0,PASS,2026-10-22T13:50:26.019769+00:00
+step4-local-test,nammamart_quality_helpers_test,orders_2026-10-01_increment.csv:order_status:Invalid order status,Validity,Critical,160,0,PASS,2026-10-22T13:50:26.019769+00:00

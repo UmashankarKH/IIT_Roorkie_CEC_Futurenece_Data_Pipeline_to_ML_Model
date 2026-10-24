@@ -1,0 +1,534 @@
+order_id,order_ts,customer_id,store_id,product_id,quantity,unit_price,discount_pct,order_amount,payment_mode,order_status,channel,delivery_minutes,failure_reason
+ORD001462,2026-09-19 15:32:55,C00265,S05,P0129,3,666.0,15,1698.3,Card,DELIVERED,App,8.0,Duplicate order_id
+ORD000385,2026-09-06 10:02:54,C00136,S07,P0064,1,620.0,5,589.0,UPI,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD002073,2026-09-26 19:28:54,C00077,S12,P0082,1,338.0,10,304.2,Cash on Delivery,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD001334,2026-09-18 06:14:12,C00036,S12,P0032,2,332.0,5,630.8,UPI,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000682,2026-09-10 08:15:17,C00070,S12,P0002,1,105.0,10,94.5,Wallet,CANCELLED,Web,,store_id failed quality checks in stores.csv
+ORD000164,2026-09-03 08:01:41,C00093,S12,P0052,1,299.0,0,299.0,Card,DELIVERED,Web,9.0,store_id failed quality checks in stores.csv
+ORD001898,2026-09-24 19:25:42,C00009,S12,P0099,2,303.0,0,606.0,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD002255,2026-09-29 10:33:19,,S08,P0016,1,224.0,0,224.0,UPI,DELIVERED,App,33.0,Missing customer_id; Unknown customer_id
+ORD002196,2026-09-28 14:25:06,C00106,S12,P0150,3,337.0,10,909.9,UPI,DELIVERED,Web,21.0,store_id failed quality checks in stores.csv
+ORD002225,2026-09-28 21:49:35,C00391,S09,P0117,2,77.0,15,130.9,UPI,DELIVERED,App,21.0,product_id failed quality checks in products.csv
+ORD000894,2026-09-12 20:03:40,C00101,S01,P0060,2,531.0,20,849.6,UPI,DELIVERED,App,12.0,product_id failed quality checks in products.csv
+ORD002103,2026-09-27 09:31:35,C00025,S03,P0093,1,492.0,250,492.0,UPI,DELIVERED,App,23.0,Amount does not match pricing formula; Discount outside 0-100
+ORD001113,2026-09-15 09:34:03,C00102,S08,P0051,1,283.0,0,283.0,UPI,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD001972,2026-09-25 16:59:53,C00015,S06,P0068,3,649.0,10,1752.3,Card,DELIVERED,App,35.0,product_id failed quality checks in products.csv
+ORD000432,2026-09-06 21:27:58,C00247,S11,P0074,3,350.0,0,1050.0,UPI,DELIVERED,App,13.0,product_id failed quality checks in products.csv
+ORD001758,2026-09-23 10:14:54,C00066,S12,P0034,1,205.0,5,194.75,Cash on Delivery,DELIVERED,App,30.0,store_id failed quality checks in stores.csv
+ORD001938,2026-09-25 10:54:27,C00380,S07,P0062,2,421.0,5,799.9,Cash on Delivery,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD000975,2026-09-13 17:40:21,C00077,S07,P0023,1,222.0,10,199.8,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000348,2026-09-05 20:31:42,C00351,S12,P0010,1,77.0,0,77.0,UPI,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD000891,2026-09-12 19:40:50,C00271,S07,P0074,1,350.0,15,297.5,Cash on Delivery,DELIVERED,Web,18.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001295,2026-09-17 15:45:14,C00268,S07,P0109,4,203.0,0,812.0,Wallet,RETURNED,App,14.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000469,2026-09-07 11:52:46,C00076,S02,P0041,0,444.0,10,0.0,UPI,DELIVERED,App,18.0,Quantity is not positive
+ORD002192,2026-09-28 13:55:12,C00175,S07,P0140,5,364.0,10,1638.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000379,2026-09-06 08:44:10,C00239,S15,P0073,2,279.0,0,558.0,Card,DELIVERED,App,29.0,product_id failed quality checks in products.csv
+ORD002119,2027-01-01 09:00:00,C00396,S05,P0103,2,300.0,0,600.0,Cash on Delivery,DELIVERED,App,9.0,Future-dated order
+ORD000157,2026-09-03 07:00:25,C00156,S13,P0074,5,350.0,10,1575.0,Card,DELIVERED,App,26.0,product_id failed quality checks in products.csv
+ORD000027,2026-09-01 10:49:42,C00187,S07,P0065,1,190.0,5,180.5,Cash on Delivery,DELIVERED,App,16.0,store_id failed quality checks in stores.csv
+ORD000189,2026-09-03 13:26:35,C00126,S07,P0072,1,396.0,15,336.6,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD001601,2026-09-21 08:29:57,C00152,S12,P0126,3,416.0,20,998.4,UPI,DELIVERED,App,30.0,store_id failed quality checks in stores.csv
+ORD001554,2026-09-20 14:50:05,C00097,S09,P0092,3,297.0,0,891.0,Wallet,DELIVERED,App,,Delivered order has no delivery time
+ORD000115,2026-09-02 16:50:40,C00244,S04,P0019,1,220.0,0,220.0,UPI,DELIVERED,App,27.0,product_id failed quality checks in products.csv
+ORD001701,2026-09-22 13:09:48,C00220,S07,P0136,1,360.0,0,360.0,Wallet,DELIVERED,Web,35.0,store_id failed quality checks in stores.csv
+ORD000999,2026-09-13 22:54:22,C00303,S12,P0107,1,567.0,5,538.65,Card,DELIVERED,Web,28.0,store_id failed quality checks in stores.csv
+ORD001971,2026-09-25 16:54:23,C00304,S07,P0069,1,228.0,10,205.2,UPI,DELIVERED,App,34.0,store_id failed quality checks in stores.csv
+ORD002308,2026-09-29 22:23:31,C00270,S12,P0133,1,267.0,0,267.0,UPI,DELIVERED,Web,23.0,store_id failed quality checks in stores.csv
+ORD000986,2026-09-13 19:12:18,C00312,S08,P9455,1,152.0,10,136.8,UPI,DELIVERED,App,9.0,Unknown product_id
+ORD000152,2026-09-02 23:50:57,C00144,S07,P0081,2,10.0,0,20.0,Cash on Delivery,DELIVERED,Web,12.0,store_id failed quality checks in stores.csv
+ORD001736,2026-09-22 22:18:26,C00156,S12,P0103,4,300.0,15,1020.0,Card,DELIVERED,Web,8.0,store_id failed quality checks in stores.csv
+ORD002366,2026-09-30 15:56:05,C00219,S12,P0108,3,161.0,5,458.85,Wallet,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD001359,2026-09-18 12:50:07,C00291,S13,P0073,2,279.0,10,502.2,Cash on Delivery,CANCELLED,Web,,product_id failed quality checks in products.csv
+ORD001326,2026-09-17 22:32:55,C00379,S12,P0146,1,337.0,15,286.45,Card,DELIVERED,App,24.0,Duplicate order_id; store_id failed quality checks in stores.csv
+ORD000885,2026-09-12 18:49:12,C00372,S12,P0078,1,399.0,10,359.1,Card,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD000701,2026-09-10 11:51:18,,S01,P0080,1,518.0,5,492.1,Cash on Delivery,DELIVERED,App,8.0,Missing customer_id; Unknown customer_id
+ORD002235,2026-09-29 06:04:06,C00272,S12,P0085,1,137.0,0,137.0,Card,DELIVERED,App,9.0,store_id failed quality checks in stores.csv
+ORD001800,2026-09-23 19:08:16,C00377,S11,P0147,1,242.0,0,242.0,UPI,DELIVERED,App,,Delivered order has no delivery time
+ORD000928,2026-09-13 08:33:58,C00130,S12,P0049,4,152.0,0,608.0,UPI,DELIVERED,Web,29.0,store_id failed quality checks in stores.csv
+ORD001558,2026-09-20 15:46:10,C00158,S07,P0134,2,219.0,15,372.3,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000103,2026-09-02 14:00:27,C00031,S12,P0119,1,515.0,20,412.0,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD001462,2026-09-19 15:32:55,C00265,S05,P0129,3,666.0,15,1698.3,Card,DELIVERED,App,8.0,Duplicate order_id
+ORD000403,,C00152,S08,P0046,1,197.0,0,197.0,UPI,DELIVERED,App,27.0,order_ts is not a valid timestamp
+ORD001037,2026-09-14 13:29:58,C00385,S13,P0104,1,525.0,10,472.5,UPI,DELIVERED,App,480.0,Delivery time exceeds 120 minutes
+ORD002386,2026-09-30 21:02:57,C00287,S07,P0024,2,36.0,15,61.2,Wallet,CANCELLED,Web,,store_id failed quality checks in stores.csv
+ORD002324,2026-09-30 06:47:36,C00195,S07,P0005,1,167.0,0,167.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000777,2026-09-11 11:42:26,C00136,S12,P0061,4,819.0,5,3112.2,Cash on Delivery,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD001693,2026-10-21 10:15:00,C00392,S03,P0045,3,387.0,15,986.85,UPI,DELIVERED,App,18.0,Future-dated order
+ORD001726,2026-09-22 19:59:45,C00245,S04,P0068,2,649.0,0,1298.0,UPI,DELIVERED,App,12.0,product_id failed quality checks in products.csv
+ORD000870,2026-09-12 16:48:43,C00392,S07,P0057,2,820.0,15,1394.0,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001197,2026-09-16 12:36:26,C00231,S07,P0022,5,46.0,0,230.0,Wallet,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD001944,2026-09-25 12:34:35,C00343,S07,P0021,2,142.0,5,269.8,UPI,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD001739,2026-09-22 22:38:10,C00223,S07,P0108,3,161.0,0,483.0,UPI,RETURNED,App,10.0,store_id failed quality checks in stores.csv
+ORD001058,2026-09-14 18:13:11,C00296,S15,P9212,3,224.0,5,638.4,Wallet,DELIVERED,Web,8.0,Unknown product_id
+ORD000138,2026-09-02 19:57:42,C00268,S07,P0008,3,150.0,10,405.0,Card,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002305,2026-09-29 21:58:50,C00033,S14,P0141,3,265.0,15,6757.5,Cash on Delivery,DELIVERED,App,29.0,Amount does not match pricing formula
+ORD002259,2026-09-29 11:14:30,C00391,S07,P0147,1,242.0,15,205.7,UPI,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD000061,2026-09-01 18:29:53,C00139,S07,P0142,1,115.0,0,115.0,UPI,DELIVERED,Web,33.0,store_id failed quality checks in stores.csv
+ORD000331,2026-09-05 16:47:45,C00359,S03,P0109,2,203.0,20,324.8,UPI,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD002334,2026-09-30 10:04:16,C00273,S07,P0015,1,218.0,0,218.0,UPI,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD000780,2026-09-11 12:06:13,C00244,S12,P0045,1,387.0,0,387.0,Cash on Delivery,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001434,2026-09-19 10:55:15,C00307,S11,P0019,1,220.0,0,220.0,Card,DELIVERED,Web,20.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD002135,2026-09-27 18:12:46,C00040,S05,P0019,1,220.0,5,209.0,UPI,DELIVERED,App,10.0,product_id failed quality checks in products.csv
+ORD001089,2026-10-21 10:15:00,C00255,S07,P0079,1,227.0,15,192.95,UPI,DELIVERED,App,22.0,Future-dated order; store_id failed quality checks in stores.csv
+ORD000459,2026-09-07 09:25:01,C00040,S02,P0051,2,283.0,15,481.1,Card,DELIVERED,Web,31.0,product_id failed quality checks in products.csv
+ORD001352,2026-09-18 11:39:43,C00135,S12,P0013,2,164.0,0,328.0,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000329,2026-09-05 15:16:57,C00107,S07,P0047,1,304.0,5,288.8,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000957,2026-09-13 14:37:31,C00251,S12,P0109,5,203.0,15,862.75,Wallet,CANCELLED,App,,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000972,2026-09-13 17:17:57,C00092,S08,P0074,1,350.0,15,297.5,UPI,DELIVERED,Web,24.0,product_id failed quality checks in products.csv
+ORD000854,2026-09-12 11:29:47,C00392,S12,P0017,2,120.0,0,240.0,Wallet,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD001650,2026-09-21 19:16:57,C00015,S12,P0088,1,277.0,10,249.3,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD001036,2026-09-14 13:27:34,C00045,S12,P0135,4,248.0,15,843.2,Card,DELIVERED,Web,33.0,store_id failed quality checks in stores.csv
+ORD000350,2026-09-05 20:59:09,C00346,S07,P0128,3,211.0,0,633.0,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD000023,2026-09-01 10:11:07,C00363,S09,P0109,2,203.0,20,324.8,UPI,DELIVERED,App,24.0,product_id failed quality checks in products.csv
+ORD001121,2026-11-02 18:40:00,C00133,S15,P0016,2,224.0,20,358.4,Cash on Delivery,DELIVERED,App,27.0,Future-dated order
+ORD001501,2026-09-19 22:24:43,C00206,S07,P0117,1,77.0,15,65.45,Cash on Delivery,CANCELLED,App,,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000783,2026-09-11 12:43:06,C00267,S13,P0110,4,42.0,10,151.2,Card,DELIVERED,App,32.0,Duplicate order_id
+ORD001325,2026-09-17 22:25:52,C00170,S07,P0136,2,360.0,5,684.0,Card,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD001529,2026-09-20 09:56:14,C00260,S07,P0026,5,205.0,0,1025.0,UPI,DELIVERED,Web,8.0,store_id failed quality checks in stores.csv
+ORD000104,2026-09-02 14:08:22,C00394,S09,P0073,3,279.0,10,753.3,UPI,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD002004,2026-09-26 06:10:38,C00290,S01,P0071,2,336.0,0,6720.0,Cash on Delivery,DELIVERED,App,31.0,Amount does not match pricing formula
+ORD000710,2026-09-10 13:27:25,C00291,S07,P0058,1,292.0,15,248.2,UPI,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD000185,2026-09-03 12:57:49,C00181,S13,P0019,1,220.0,0,220.0,Card,DELIVERED,App,15.0,product_id failed quality checks in products.csv
+ORD000073,2026-09-01 21:44:45,C00330,S07,P0072,1,396.0,10,356.4,UPI,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD001915,2026-09-25 06:05:46,C00035,S07,P0126,1,416.0,0,416.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002101,2026-09-27 08:47:38,C00313,S03,P0041,2,444.0,5,843.6,UPI,DELIVERED,Web,480.0,Delivery time exceeds 120 minutes
+ORD001610,2026-13-05 11:00:00,C00359,S08,P0030,1,50.0,0,50.0,UPI,DELIVERED,App,12.0,order_ts is not a valid timestamp
+ORD001607,2026-09-21 10:02:08,C00129,S12,P0062,2,421.0,0,842.0,Wallet,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD001947,2026-09-25 13:10:25,C00112,S07,P0076,2,11.0,10,19.8,UPI,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001551,2026-09-20 14:07:02,C00016,S15,P0019,1,220.0,0,220.0,UPI,DELIVERED,App,22.0,product_id failed quality checks in products.csv
+ORD001207,2026-09-16 14:39:47,C00280,S07,P0096,1,395.0,15,335.75,UPI,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD000384,2026-09-06 09:53:56,C00021,S07,P0009,1,111.0,0,111.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001323,2026-09-17 21:34:20,C00179,S12,P0027,3,448.0,10,1209.6,Card,DELIVERED,Web,34.0,store_id failed quality checks in stores.csv
+ORD000997,2026-09-13 22:07:46,,S10,P0106,1,380.0,20,304.0,Card,DELIVERED,App,28.0,Missing customer_id; Unknown customer_id
+ORD000245,2026-09-04 12:51:19,C00243,S02,P0060,1,531.0,10,477.9,UPI,DELIVERED,App,29.0,product_id failed quality checks in products.csv
+ORD000358,2026-09-05 23:48:01,C00340,S02,P0073,3,279.0,0,837.0,Wallet,CANCELLED,Web,,product_id failed quality checks in products.csv
+ORD001414,2026-09-19 07:47:25,C00316,S12,P0084,1,288.0,0,288.0,Cashh,DELIVERED,Web,18.0,store_id failed quality checks in stores.csv
+ORD001167,2026-09-15 23:05:42,C00380,S07,P0026,4,205.0,10,738.0,UPI,RETURNED,App,29.0,store_id failed quality checks in stores.csv
+ORD002032,2026-09-26 11:04:22,C00251,S12,P0135,3,248.0,10,669.6,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001902,2026-09-24 20:33:08,C00062,S08,P0117,1,77.0,0,77.0,Cash on Delivery,DELIVERED,App,10.0,product_id failed quality checks in products.csv
+ORD001685,2026-09-22 08:45:36,C00274,S03,P9816,2,883.0,0,1766.0,Cash on Delivery,DELIVERED,App,20.0,Unknown product_id
+ORD001065,2026-09-14 19:09:01,C00298,S05,P0073,1,279.0,10,251.1,UPI,DELIVERED,App,29.0,product_id failed quality checks in products.csv
+ORD000352,2026-09-05 21:26:13,C00053,S05,P0109,1,203.0,20,162.4,Card,DELIVERED,App,22.0,product_id failed quality checks in products.csv
+ORD002284,2026-09-29 17:36:29,C00301,S12,P0062,5,421.0,20,1684.0,Wallet,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000478,2026-09-07 13:38:49,C00254,S12,P0046,3,197.0,0,591.0,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD000455,2026-09-07 08:19:57,C00025,S09,P0147,2,242.0,15,411.4,UPI,DELIVERED,Web,1440.0,Delivery time exceeds 120 minutes
+ORD002397,2026-09-30 23:17:20,C00144,S12,P0041,1,444.0,20,355.2,Cash on Delivery,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000580,2026-09-08 19:46:54,,S04,P0110,5,42.0,20,168.0,Wallet,DELIVERED,App,23.0,Missing customer_id; Unknown customer_id
+ORD001922,2026-09-25 07:13:07,C00273,S13,P0060,2,531.0,10,955.8,Wallet,DELIVERED,App,13.0,product_id failed quality checks in products.csv
+ORD000470,2026-09-07 11:52:47,C00023,S07,P0126,1,416.0,10,374.4,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD000808,2026-09-11 18:22:59,C00170,S13,P0073,1,279.0,5,265.05,UPI,DELIVERED,Web,17.0,product_id failed quality checks in products.csv
+ORD000731,2026-09-10 16:54:06,C00021,S11,P0018,1,186.0,20,148.8,Cash on Delivery,DELIVERED,App,,Delivered order has no delivery time
+ORD000772,2026-09-11 09:27:50,C00148,S02,P0117,2,77.0,20,123.2,Wallet,DELIVERED,App,29.0,product_id failed quality checks in products.csv
+ORD000984,2026-09-13 19:06:08,C00351,S12,P0135,1,248.0,0,248.0,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD001762,2026-09-23 10:53:30,C00130,S07,P0027,1,448.0,5,425.6,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001912,2026-09-24 22:33:12,C00224,S12,P0139,1,405.0,20,324.0,Cash on Delivery,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001094,2026-09-15 06:28:38,C00022,S07,P0132,3,497.0,0,1491.0,Cash on Delivery,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD000394,2026-09-06 12:06:11,C00221,S07,P0058,1,292.0,0,292.0,Card,DELIVERED,Web,9.0,store_id failed quality checks in stores.csv
+ORD001741,2026-09-22 23:15:15,C00055,S07,P0055,1,684.0,15,581.4,Wallet,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD000619,2026-09-09 11:23:47,C00236,S07,P0006,1,197.0,0,197.0,Card,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001772,2026-09-23 13:55:57,C00337,S07,P0016,5,224.0,20,896.0,UPI,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD001673,2026-09-22 06:24:50,C00290,S12,P0065,3,190.0,10,513.0,Card,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD000258,2026-09-04 17:00:20,C00294,S12,P0005,2,167.0,20,267.2,UPI,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD000290,2026-09-05 06:18:00,C00334,S07,P0150,1,337.0,0,337.0,UPI,DELIVERED,App,9.0,store_id failed quality checks in stores.csv
+ORD001565,2026-09-20 17:09:07,C00209,S07,P0127,2,602.0,0,1204.0,UPI,DELIVERED,Web,21.0,store_id failed quality checks in stores.csv
+ORD000077,2026-09-01 22:19:21,C00288,S07,P0011,2,119.0,15,202.3,UPI,DELIVERED,Web,19.0,store_id failed quality checks in stores.csv
+ORD001634,2026-09-21 16:02:28,C00392,S08,P0073,1,279.0,20,223.2,Card,DELIVERED,App,22.0,product_id failed quality checks in products.csv
+ORD001277,2026-09-17 11:27:29,C00221,S14,P0108,1,161.0,10,144.9,UPI,DELIVERED,App,,Delivered order has no delivery time
+ORD001573,2026-09-20 18:58:04,C00155,S07,P0059,1,883.0,0,883.0,UPI,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD002148,2026-09-27 20:53:23,C00055,S07,P0126,1,416.0,0,416.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001239,2026-09-16 21:34:44,C00355,S10,P0042,5,432.0,5,2052.0,UPI,DELIVERED,App,33.0,Duplicate order_id
+ORD001799,2026-09-23 19:04:13,C00244,S99,P0133,1,267.0,5,253.65,Card,DELIVERED,Web,22.0,Unknown store_id
+ORD001235,2026-09-16 20:44:25,C00185,S12,P0125,1,609.0,20,487.2,Card,RETURNED,App,20.0,store_id failed quality checks in stores.csv
+ORD001046,2026-09-14 15:20:37,C00136,S17,P0117,3,77.0,5,219.45,Wallet,DELIVERED,Web,13.0,Unknown store_id; product_id failed quality checks in products.csv
+ORD000500,2026-09-07 18:11:10,C00197,S10,P0032,1,332.0,0,332.0,Card,Pending??,App,19.0,Invalid order status
+ORD002357,2026-09-30 13:30:31,C00305,S07,P0047,1,304.0,20,243.2,Wallet,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000909,2026-09-12 22:47:06,C00005,S07,P0142,2,115.0,15,195.5,UPI,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001471,2026-09-19 17:14:45,C00298,S07,P0031,1,244.0,20,195.2,UPI,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD002210,2026-09-28 17:54:29,C00098,S07,P0089,2,492.0,0,984.0,UPI,DELIVERED,Web,8.0,store_id failed quality checks in stores.csv
+ORD000845,2026-09-12 09:30:35,C00238,S12,P0101,2,248.0,5,4712.0,UPI,DELIVERED,Web,20.0,Amount does not match pricing formula; store_id failed quality checks in stores.csv
+ORD001616,2026-09-21 11:29:59,C00222,S07,P0103,1,300.0,0,300.0,UPI,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD001692,2026-09-22 10:27:56,C00032,S10,P0145,1,315.0,15,267.75,UPI,DELIVERED,Web,29.0,Duplicate order_id
+ORD000098,2026-09-02 11:38:39,C00221,S07,P0016,1,224.0,15,190.4,Cash on Delivery,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002294,2026-09-29 19:44:40,C00128,S12,P0073,3,279.0,5,795.15,UPI,DELIVERED,App,8.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001296,2026-09-17 16:07:59,C00305,S03,P0046,-2,197.0,0,-394.0,UPI,DELIVERED,App,35.0,Quantity is not positive
+ORD000964,2026-09-13 15:34:18,C00062,S07,P0073,3,279.0,0,8370.0,Cash on Delivery,DELIVERED,Web,10.0,Amount does not match pricing formula; product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001459,2026-09-19 14:49:06,C00266,S15,P0060,-3,531.0,0,-1593.0,UPI,DELIVERED,App,21.0,Quantity is not positive; product_id failed quality checks in products.csv
+ORD002019,2026-09-26 09:36:06,,S12,P0031,5,244.0,0,1220.0,Wallet,DELIVERED,App,20.0,Missing customer_id; Unknown customer_id; store_id failed quality checks in stores.csv
+ORD000534,2026-13-05 11:00:00,C00043,S15,P0073,4,279.0,0,1116.0,UPI,DELIVERED,App,21.0,order_ts is not a valid timestamp; product_id failed quality checks in products.csv
+ORD002246,2026-09-29 08:52:55,C00165,S12,P0007,1,93.0,15,79.05,UPI,DELIVERED,Web,32.0,store_id failed quality checks in stores.csv
+ORD001492,2026-09-19 20:39:41,C00142,S17,P0049,3,152.0,20,364.8,UPI,DELIVERED,Web,31.0,Unknown store_id
+ORD001869,2026-09-24 14:06:44,C00032,S07,P0135,4,248.0,20,793.6,Card,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD001926,2026-09-25 08:02:49,C00063,S12,P0091,1,468.0,5,444.6,Card,DELIVERED,App,9.0,store_id failed quality checks in stores.csv
+ORD002338,2026-09-30 10:42:28,C00397,S12,P0060,1,531.0,5,504.45,UPI,CANCELLED,App,,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001100,2026-09-15 07:32:10,C00141,S07,P0031,1,244.0,10,219.6,UPI,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD000171,2026-09-03 09:08:40,C00099,S12,P0031,1,244.0,15,207.4,UPI,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD001840,2026-09-24 06:35:30,C00221,S12,P0014,1,108.0,5,102.6,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD000867,2026-09-12 15:43:47,C00290,S13,P0090,-1,527.0,5,-500.65,UPI,DELIVERED,App,29.0,Quantity is not positive
+ORD001733,2026-09-22 21:11:47,C00360,S07,P0005,5,167.0,20,668.0,UPI,DELIVERED,App,34.0,store_id failed quality checks in stores.csv
+ORD000551,2026-09-08 13:06:34,C00190,S08,P0019,2,220.0,0,440.0,Card,DELIVERED,App,30.0,product_id failed quality checks in products.csv
+ORD001834,2026-09-23 23:25:14,C00107,S12,P0147,2,242.0,0,484.0,Cash on Delivery,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001542,2026-09-20 12:17:26,C00275,S12,P0118,2,217.0,0,434.0,Card,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD002199,2026-09-28 15:19:19,C00133,S12,P0040,1,230.0,0,230.0,Card,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD000362,,C00114,S15,P0106,3,380.0,15,969.0,UPI,DELIVERED,App,26.0,order_ts is not a valid timestamp
+ORD002158,2026-09-27 23:15:56,C00164,S07,P0030,3,50.0,0,150.0,UPI,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD001349,2026-09-18 10:56:08,C00373,S07,P0006,1,197.0,20,157.6,Cash on Delivery,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD000483,2026-09-07 14:19:43,C00261,S13,P0073,1,279.0,10,251.1,Card,DELIVERED,App,30.0,product_id failed quality checks in products.csv
+ORD001776,2026-09-23 14:33:01,C00342,S01,P0051,2,283.0,20,452.8,Card,RETURNED,Web,29.0,product_id failed quality checks in products.csv
+ORD001329,2026-09-17 23:30:02,C00307,S12,P0044,1,228.0,15,193.8,Card,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD001238,2026-09-16 21:18:18,C00141,S07,P0026,5,205.0,5,973.75,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD002164,2026-09-28 07:18:10,C00048,S12,P0039,2,380.0,0,760.0,UPI,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD000571,2026-09-08 17:48:36,C00080,S07,P0128,2,211.0,0,422.0,Cash on Delivery,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD002262,2026-09-29 11:56:29,,S12,P0004,1,188.0,5,178.6,Wallet,DELIVERED,App,12.0,Missing customer_id; Unknown customer_id; store_id failed quality checks in stores.csv
+ORD000889,2026-09-12 19:36:34,C00373,S11,P0019,1,220.0,15,187.0,UPI,DELIVERED,App,14.0,product_id failed quality checks in products.csv
+ORD000941,2026-09-13 10:58:36,C00190,S07,P0140,4,364.0,20,1164.8,UPI,DELIVERED,Web,10.0,store_id failed quality checks in stores.csv
+ORD002371,2026-09-30 18:11:25,C00398,S02,P0117,1,77.0,5,73.15,UPI,DELIVERED,App,12.0,product_id failed quality checks in products.csv
+ORD001687,2026-09-22 08:52:57,C00181,S06,P0068,2,649.0,5,1233.1,UPI,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD002149,2026-09-27 21:33:46,,S07,P0146,3,337.0,0,1011.0,UPI,DELIVERED,App,12.0,Missing customer_id; Unknown customer_id; store_id failed quality checks in stores.csv
+ORD001754,2026-09-23 08:00:27,C00165,S11,P0060,1,531.0,15,451.35,UPI,DELIVERED,App,14.0,product_id failed quality checks in products.csv
+ORD001360,2026-09-18 12:54:24,C00065,S09,P0109,1,203.0,0,203.0,Card,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD002390,2026-09-30 22:43:34,C00233,S04,P0068,1,649.0,0,649.0,UPI,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD000752,2026-09-10 22:06:09,C00286,S11,P0073,1,279.0,0,279.0,UPI,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD002367,2026-09-30 15:56:38,,S11,P0135,1,248.0,10,223.2,UPI,DELIVERED,Web,10.0,Missing customer_id; Unknown customer_id
+ORD001000,2026-09-13 23:02:47,C00150,S03,P0019,4,220.0,10,792.0,UPI,DELIVERED,App,14.0,product_id failed quality checks in products.csv
+ORD001362,2026-09-18 13:49:29,C00248,S07,P0097,1,302.0,10,271.8,Card,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD002159,2026-09-27 23:51:44,C00223,S08,P0068,1,649.0,0,649.0,Card,CANCELLED,App,,product_id failed quality checks in products.csv
+ORD002398,2026-09-30 23:32:04,C00354,S12,P0023,2,222.0,0,444.0,Card,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD000765,2026-09-11 08:44:45,C00301,S11,P0060,1,531.0,15,451.35,UPI,DELIVERED,App,9.0,product_id failed quality checks in products.csv
+ORD001814,2026-09-23 21:15:47,C00304,S12,P0098,2,93.0,5,176.7,UPI,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD001275,2026-09-17 11:21:20,C00326,S17,P0058,2,292.0,15,496.4,Cash on Delivery,DELIVERED,App,12.0,Unknown store_id
+ORD001744,2026-09-22 23:54:18,C00040,S12,P0018,1,186.0,0,186.0,UPI,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD000443,2026-09-07 06:11:53,C00071,S07,P0068,4,649.0,0,2596.0,Card,DELIVERED,Web,18.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001747,2026-09-23 06:46:03,C00176,S07,P0017,2,120.0,0,240.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000462,2026-09-07 09:54:28,C00303,S04,P0050,-3,449.0,5,-1279.65,Card,DELIVERED,App,29.0,Quantity is not positive
+ORD001870,2026-09-24 14:09:09,C00113,S01,P0051,1,283.0,5,268.85,UPI,DELIVERED,App,12.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD000498,2026-09-07 17:29:09,C00223,S07,P0062,1,421.0,15,357.85,UPI,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD002298,2026-09-29 19:58:53,C00398,S02,P0067,2,339.0,10,305.1,Cash on Delivery,DELIVERED,App,28.0,Amount does not match pricing formula
+ORD002031,2026-09-26 11:03:30,C00223,S03,P0001,3,107.0,0,3210.0,Card,DELIVERED,App,35.0,Amount does not match pricing formula
+ORD002360,2026-09-30 14:04:41,C00313,S01,P0044,0,228.0,0,0.0,Card,DELIVERED,App,22.0,Quantity is not positive
+ORD000639,2026-09-09 16:06:22,C00225,S04,P0073,1,279.0,0,279.0,Cash on Delivery,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD002087,2026-09-26 22:49:58,C00211,S03,P0068,2,649.0,0,1298.0,UPI,DELIVERED,App,28.0,product_id failed quality checks in products.csv
+ORD001498,2026-09-19 21:44:21,C00379,S12,P0016,1,224.0,10,201.6,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000211,2026-09-03 17:53:10,C00097,S07,P0058,2,292.0,10,525.6,Card,DELIVERED,App,28.0,store_id failed quality checks in stores.csv
+ORD001255,2026-09-17 06:49:02,C00057,S12,P0071,1,336.0,15,285.6,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001604,2026-09-21 09:24:44,C00396,S07,P0079,1,227.0,10,204.3,Cash on Delivery,DELIVERED,Web,19.0,store_id failed quality checks in stores.csv
+ORD001026,2026-09-14 10:28:55,C00045,S07,P0065,1,190.0,20,152.0,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001214,2026-09-16 16:09:57,C00277,S07,P0140,1,364.0,0,364.0,Card,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD000326,2026-09-05 14:32:14,C00088,S13,P0083,1,125.0,0,125.0,Card,DELIVERED,App,,Delivered order has no delivery time
+ORD000967,2026-09-13 15:53:35,C00275,S13,P0117,1,77.0,10,69.3,UPI,DELIVERED,App,26.0,product_id failed quality checks in products.csv
+ORD001080,2026-09-14 21:07:31,C00148,S12,P0089,1,492.0,5,467.4,UPI,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD002012,31/09/2026 10:00,C00003,S07,P0138,1,507.0,5,481.65,Card,DELIVERED,Web,16.0,order_ts is not a valid timestamp; store_id failed quality checks in stores.csv
+ORD002264,2026-09-29 12:04:46,C00376,S12,P0149,2,144.0,0,288.0,Cash on Delivery,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD000415,2026-09-06 17:47:18,C00175,S12,P0096,2,395.0,0,790.0,UPI,DELIVERED,Web,35.0,store_id failed quality checks in stores.csv
+ORD001844,2026-09-24 07:34:39,C00143,S12,P0137,1,168.0,10,151.2,UPI,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD001441,2026-09-19 12:15:53,C00206,S02,P0090,1,527.0,0,527.0,Card,DELIVERED,App,29.0,Duplicate order_id
+ORD001748,2026-09-23 06:56:39,C00014,S01,P0109,1,203.0,20,162.4,Card,DELIVERED,App,31.0,product_id failed quality checks in products.csv
+ORD001441,2026-09-19 12:15:53,C00206,S02,P0090,1,527.0,0,527.0,Card,DELIVERED,App,29.0,Duplicate order_id
+ORD001765,2027-01-01 09:00:00,C00253,S03,P0102,1,369.0,0,369.0,Card,DELIVERED,App,26.0,Future-dated order
+ORD000616,2026-09-09 10:46:39,C00333,S15,P0109,1,203.0,0,203.0,UPI,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD000855,2026-09-12 11:56:29,C00195,S15,P0068,1,649.0,5,616.55,UPI,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD000970,2026-09-13 17:04:35,C00299,S07,P0089,2,492.0,0,984.0,Cash on Delivery,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD001499,2026-09-19 21:46:11,C00202,S11,P0073,1,279.0,0,279.0,Card,DELIVERED,App,10.0,product_id failed quality checks in products.csv
+ORD002129,2026-09-27 16:33:43,C00338,S04,P0106,1,380.0,10,342.0,Cash on Delivery,DELIVERED,Web,12.0,Duplicate order_id
+ORD002094,2026-09-27 06:23:00,C00149,S08,P0019,1,220.0,10,198.0,UPI,DELIVERED,App,32.0,product_id failed quality checks in products.csv
+ORD001549,2026-09-20 13:07:35,C00394,S01,P0058,1,292.0,0,292.0,Cash on Delivery,DELIVERED,App,12.0,Duplicate order_id
+ORD000302,2026-09-05 08:32:52,C00374,S02,P0117,1,77.0,15,65.45,UPI,DELIVERED,App,13.0,product_id failed quality checks in products.csv
+ORD001857,2026-09-24 11:23:56,C00157,S07,P0029,3,260.0,0,780.0,Card,DELIVERED,Web,16.0,store_id failed quality checks in stores.csv
+ORD000014,2026-09-01 08:29:22,C00225,S12,P0008,2,150.0,0,300.0,UPI,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD001686,2026-09-22 08:45:40,C00081,S07,P0075,5,157.0,5,745.75,UPI,DELIVERED,App,34.0,store_id failed quality checks in stores.csv
+ORD000035,2026-09-01 12:17:18,C00393,S07,P0110,2,42.0,0,84.0,Wallet,DELIVERED,App,28.0,store_id failed quality checks in stores.csv
+ORD001332,2026-09-17 23:49:07,,S13,P0035,1,67.0,10,60.3,UPI,RETURNED,App,9.0,Missing customer_id; Unknown customer_id
+ORD001724,2026-09-22 19:40:18,C00046,S11,P0026,0,205.0,20,0.0,UPI,DELIVERED,Web,11.0,Quantity is not positive
+ORD000308,2026-09-05 09:53:11,C00058,S12,P0020,1,55.0,0,55.0,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD001887,2026-09-24 17:46:35,C00236,S07,P0097,2,302.0,20,483.2,Cash on Delivery,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000222,2026-09-03 22:40:36,C00368,S07,P0137,1,168.0,15,142.8,Card,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002353,2026-09-30 13:06:07,C00101,S11,P0019,1,220.0,10,198.0,UPI,DELIVERED,App,34.0,product_id failed quality checks in products.csv
+ORD001233,2026-09-16 19:48:35,C00149,S12,P0037,2,143.0,10,257.4,Wallet,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD001668,2026-09-21 22:27:21,C00024,S07,P0056,2,663.0,0,1326.0,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD000070,2026-09-01 21:14:53,C00111,S03,P9893,1,820.0,0,820.0,UPI,DELIVERED,App,8.0,Unknown product_id
+ORD000697,2026-09-10 11:25:02,C00092,S13,P0060,5,531.0,0,2655.0,UPI,DELIVERED,App,22.0,product_id failed quality checks in products.csv
+ORD002190,2026-09-28 13:43:12,C00376,S08,P0068,1,649.0,5,616.55,UPI,DELIVERED,App,10.0,product_id failed quality checks in products.csv
+ORD000304,2026-09-05 09:23:58,C00366,S09,P0019,1,220.0,15,187.0,Wallet,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD000746,2026-09-10 20:41:09,C00187,S07,P0130,1,406.0,0,406.0,Wallet,DELIVERED,Web,24.0,store_id failed quality checks in stores.csv
+ORD001810,2026-09-23 20:43:40,C00390,S04,P0060,3,531.0,15,1354.05,UPI,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD001020,2026-09-14 10:09:30,C00125,S07,P0042,3,432.0,20,1036.8,Cash on Delivery,RETURNED,App,20.0,store_id failed quality checks in stores.csv
+ORD002285,2026-09-29 18:01:08,C00187,S01,P0051,1,283.0,0,283.0,UPI,DELIVERED,Web,29.0,product_id failed quality checks in products.csv
+ORD000811,2026-09-11 19:04:26,C00133,S13,P0019,3,220.0,5,627.0,UPI,DELIVERED,App,27.0,product_id failed quality checks in products.csv
+ORD001568,2026-09-20 18:10:25,C00227,S07,P0141,1,265.0,0,265.0,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD001107,2026-09-15 09:05:11,C00103,S07,P0028,4,76.0,5,288.8,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD000281,2026-09-04 23:11:22,C00283,S07,P0104,1,525.0,0,525.0,UPI,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD001908,2026-09-24 22:05:09,C00233,S07,P0002,2,105.0,0,210.0,UPI,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD000656,2026-09-09 21:02:33,C00221,S07,P0004,1,188.0,10,169.2,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000769,2026-09-11 09:14:14,C00148,S12,P0005,2,167.0,0,334.0,Card,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD000285,2026-09-04 23:45:25,C00135,S07,P0095,1,354.0,15,300.9,Wallet,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD000801,2026-09-11 17:38:41,C00246,S11,P0063,5,729.0,0,5467.5,UPI,DELIVERED,App,16.0,Amount does not match pricing formula
+ORD001093,2026-09-15 06:25:12,C00267,S07,P0105,2,109.0,15,185.3,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000391,2026-09-06 11:27:49,C00121,S07,P0042,2,432.0,5,820.8,UPI,DELIVERED,App,14.0,store_id failed quality checks in stores.csv
+ORD000648,2026-09-09 19:29:19,C00166,S12,P0028,2,76.0,0,152.0,Wallet,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD002318,2026-09-29 23:57:17,C00086,S12,P0081,4,10.0,0,40.0,UPI,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD000595,2026-09-08 23:48:49,C00128,S07,P0143,3,455.0,0,1365.0,Wallet,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD000625,2026-09-09 12:57:05,C00128,S07,P0134,3,219.0,0,657.0,Cash on Delivery,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001674,2026-09-22 06:53:39,C00335,S11,P0060,3,531.0,0,1593.0,Cash on Delivery,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD001692,2026-09-22 10:27:56,C00032,S10,P0145,1,315.0,15,267.75,UPI,DELIVERED,Web,29.0,Duplicate order_id
+ORD001142,2026-09-15 17:21:20,C00112,S12,P0103,1,300.0,10,270.0,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001994,2026-09-25 22:19:58,C00137,S13,P0068,4,649.0,20,2076.8,Wallet,DELIVERED,App,32.0,product_id failed quality checks in products.csv
+ORD000072,2026-09-01 21:30:54,C00296,S07,P0089,1,492.0,20,393.6,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD002069,2026-09-26 18:26:08,C00296,S07,P0105,1,109.0,0,109.0,Wallet,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD001853,2026-09-24 09:50:39,C00314,S07,P0127,1,602.0,0,602.0,UPI,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD001918,2026-09-25 06:53:30,,S10,P0088,1,277.0,20,221.6,Wallet,DELIVERED,App,10.0,Missing customer_id; Unknown customer_id
+ORD000871,2026-09-12 16:54:37,C00341,S11,P0109,1,203.0,0,203.0,UPI,DELIVERED,App,31.0,product_id failed quality checks in products.csv
+ORD000484,2026-09-07 14:57:21,C00094,S07,P0092,1,297.0,5,282.15,Card,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001131,2026-09-15 15:01:47,C00275,S07,P0033,2,198.0,15,336.6,UPI,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001252,2026-09-17 06:25:41,C00027,S12,P0048,2,159.0,20,254.4,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD000088,2026-09-02 09:27:17,C00350,S05,P0073,5,279.0,0,1395.0,Cash on Delivery,DELIVERED,App,25.0,product_id failed quality checks in products.csv
+ORD000834,2026-09-12 06:20:31,C00327,S13,P0051,3,283.0,0,849.0,UPI,DELIVERED,Web,33.0,product_id failed quality checks in products.csv
+ORD000519,2026-09-08 07:01:23,C00175,S07,P0028,2,76.0,15,129.2,UPI,DELIVERED,Web,20.0,store_id failed quality checks in stores.csv
+ORD000028,2026-09-01 10:55:53,C00388,S09,P0060,1,531.0,0,531.0,Cash on Delivery,DELIVERED,App,34.0,product_id failed quality checks in products.csv
+ORD001606,2026-09-21 10:01:39,C00013,S12,P0140,4,364.0,0,1456.0,Card,DELIVERED,Web,28.0,store_id failed quality checks in stores.csv
+ORD001560,2026-09-20 16:02:45,C00258,S12,P0149,1,144.0,20,115.2,Card,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD000289,2026-09-05 06:17:48,C00254,S12,P0072,1,396.0,0,396.0,Card,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD002187,2026-09-28 13:14:44,C00143,S02,P0117,1,77.0,10,69.3,Card,DELIVERED,App,10.0,product_id failed quality checks in products.csv
+ORD002156,2026-09-27 22:51:50,,S02,P0050,1,449.0,0,449.0,UPI,DELIVERED,App,8.0,Missing customer_id; Unknown customer_id
+ORD001240,2026-09-16 21:35:57,C00357,S12,P0138,1,507.0,5,481.65,Card,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD000583,2026-09-08 19:54:57,,S03,P0093,5,492.0,15,2091.0,UPI,DELIVERED,App,24.0,Missing customer_id; Unknown customer_id
+ORD000309,2026-09-05 10:15:20,C00002,S12,P0010,1,77.0,15,65.45,Wallet,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD000278,2026-09-04 22:50:41,C00031,S07,P0114,1,505.0,0,505.0,Card,DELIVERED,App,34.0,store_id failed quality checks in stores.csv
+ORD002380,2026-09-30 19:15:13,C00357,S12,P0058,1,292.0,0,292.0,UPI,DELIVERED,App,30.0,store_id failed quality checks in stores.csv
+ORD001247,2026-09-16 23:04:35,C00324,S09,P0117,1,77.0,10,69.3,UPI,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD001392,2026-09-18 19:54:12,C00268,S07,P0072,1,396.0,5,376.2,Cash on Delivery,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000472,2026-09-07 12:04:03,C00347,S15,P0068,2,649.0,10,1168.2,Wallet,DELIVERED,App,28.0,product_id failed quality checks in products.csv
+ORD000270,2026-09-04 20:34:16,C00294,S12,P0048,2,159.0,15,270.3,Cash on Delivery,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD002193,2026-09-28 14:07:53,C00332,S07,P0057,1,820.0,20,656.0,Cash on Delivery,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD000130,2026-09-02 18:40:03,C00018,S14,P0051,5,283.0,0,1415.0,Cash on Delivery,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD000099,2026-09-02 12:22:47,C00203,S13,P0130,0,406.0,0,0.0,UPI,DELIVERED,App,32.0,Quantity is not positive
+ORD001380,2026-09-18 18:07:12,C00238,S07,P0121,5,334.0,0,1670.0,Wallet,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000880,2026-09-12 18:22:46,C00135,S06,P0130,1,406.0,15,517.65,UPI,DELIVERED,Web,33.0,Amount does not match pricing formula
+ORD001797,2026-09-23 18:51:59,C00061,S12,P0138,2,507.0,0,1014.0,UPI,DELIVERED,App,22.0,store_id failed quality checks in stores.csv
+ORD000790,2026-09-11 14:12:53,,S06,P0148,1,105.0,0,105.0,UPI,DELIVERED,App,11.0,Missing customer_id; Unknown customer_id
+ORD000715,2026-09-10 14:27:33,C00157,S07,P0059,1,883.0,20,706.4,Cash on Delivery,DELIVERED,App,28.0,store_id failed quality checks in stores.csv
+ORD002023,2026-09-26 09:59:47,C00006,S02,P0109,1,203.0,15,172.55,UPI,DELIVERED,App,16.0,product_id failed quality checks in products.csv
+ORD000437,2026-09-06 23:23:07,C00284,S04,P0074,1,350.0,10,315.0,UPI,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD000107,2026-09-02 15:17:36,C00076,S12,P0111,3,169.0,5,481.65,Card,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001880,2026-09-24 15:51:42,C00111,S07,P0037,1,143.0,15,121.55,Card,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000288,2026-09-05 06:16:50,C00022,S12,P0072,2,396.0,0,792.0,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001211,2026-09-16 15:39:54,C00026,S07,P0146,1,337.0,5,320.15,Card,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000315,2026-09-05 11:19:53,C00003,S12,P0119,1,515.0,10,463.5,UPI,DELIVERED,Web,24.0,store_id failed quality checks in stores.csv
+ORD000866,2026-09-12 15:23:19,C00302,S07,P0076,1,11.0,20,8.8,UPI,DELIVERED,Web,17.0,store_id failed quality checks in stores.csv
+ORD001315,2026-09-17 19:40:24,C00012,S15,P0073,2,279.0,0,558.0,UPI,DELIVERED,Web,23.0,product_id failed quality checks in products.csv
+ORD000158,2026-09-03 07:02:53,C00338,S07,P0065,1,190.0,20,152.0,Cash on Delivery,DELIVERED,Web,22.0,store_id failed quality checks in stores.csv
+ORD001353,2026-09-18 11:43:06,C00316,S07,P0073,1,279.0,20,223.2,UPI,DELIVERED,App,30.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001091,2026-09-14 23:57:59,C00020,S07,P0103,3,300.0,0,900.0,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001515,2026-09-20 07:31:37,C00060,S14,P0055,2,684.0,10,1231.2,UPI,DELIVERED,Web,,Delivered order has no delivery time
+ORD000730,2026-09-10 16:51:03,C00205,S05,P0019,2,220.0,10,396.0,UPI,DELIVERED,Web,35.0,product_id failed quality checks in products.csv
+ORD002154,2026-09-27 22:36:29,C00312,S12,P0011,1,119.0,0,119.0,Card,DELIVERED,Web,20.0,store_id failed quality checks in stores.csv
+ORD001245,2026-09-16 22:17:09,C00119,S11,P0117,1,77.0,0,77.0,Wallet,DELIVERED,App,31.0,product_id failed quality checks in products.csv
+ORD001225,2026-09-16 18:58:18,C00006,S07,P0120,4,344.0,0,1376.0,Card,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD000789,2026-09-11 14:03:57,C00107,S15,P9989,1,238.0,5,226.1,UPI,DELIVERED,App,24.0,Unknown product_id
+ORD002374,2026-09-30 18:30:26,C00271,S07,P0036,1,131.0,0,131.0,Card,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD002394,2026-09-30 23:01:54,C00148,S15,P0019,1,220.0,0,220.0,Cash on Delivery,DELIVERED,Web,15.0,product_id failed quality checks in products.csv
+ORD000954,2026-09-13 14:31:21,C00138,S12,P0117,1,77.0,15,65.45,Cash on Delivery,DELIVERED,Web,28.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000725,2026-09-10 16:08:28,C00223,S07,P0051,1,283.0,15,240.55,UPI,DELIVERED,App,11.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001974,2026-09-25 17:32:45,C00334,S07,P0126,2,416.0,0,832.0,Wallet,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD000987,2026-09-13 19:28:09,C00330,S12,P0014,1,108.0,10,97.2,UPI,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD000764,2026-09-11 07:45:21,,S12,P0139,1,405.0,20,324.0,Card,DELIVERED,App,29.0,Missing customer_id; Unknown customer_id; store_id failed quality checks in stores.csv
+ORD001782,2026-09-23 15:31:19,C00204,S12,P0045,3,387.0,15,986.85,UPI,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD001154,2026-09-15 20:29:13,C00260,S12,P0053,4,609.0,5,2314.2,Wallet,DELIVERED,Web,20.0,store_id failed quality checks in stores.csv
+ORD002219,2026-09-28 21:05:16,,S05,P0098,2,93.0,0,186.0,Card,DELIVERED,App,15.0,Missing customer_id; Unknown customer_id
+ORD001709,2026-09-22 15:13:56,C00212,S07,P0070,1,792.0,0,792.0,UPI,DELIVERED,Web,34.0,store_id failed quality checks in stores.csv
+ORD000720,2026-09-10 15:03:41,C00371,S12,P0120,4,344.0,0,1376.0,Wallet,DELIVERED,Web,17.0,store_id failed quality checks in stores.csv
+ORD001965,2026-11-02 18:40:00,C00306,S01,P0073,1,279.0,0,279.0,Cash on Delivery,DELIVERED,App,25.0,Future-dated order; product_id failed quality checks in products.csv
+ORD000167,2026-09-03 08:35:06,C00142,S07,P0082,2,338.0,15,574.6,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002359,2026-09-30 13:48:59,C00296,S07,P0130,1,406.0,5,385.7,Card,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD001194,2026-09-16 11:40:51,C00215,S07,P0135,1,248.0,15,210.8,UPI,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD000566,2026-09-08 17:13:02,C00275,S12,P0112,4,183.0,10,658.8,UPI,DELIVERED,Web,21.0,store_id failed quality checks in stores.csv
+ORD000532,2026-09-08 09:49:51,C00384,S12,P0081,1,10.0,10,9.0,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD000121,2026-09-02 17:28:16,C00286,S07,P0068,1,649.0,10,584.1,UPI,DELIVERED,App,32.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD002347,2026-09-30 12:19:18,C00091,S12,P0099,3,303.0,15,772.65,UPI,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD000782,2026-09-11 12:38:33,C00065,S07,P0049,5,152.0,10,684.0,UPI,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD000596,2026-09-08 23:48:53,C00376,S04,P9784,1,332.0,20,265.6,Card,DELIVERED,App,18.0,Unknown product_id
+ORD001274,2026-09-17 11:18:10,C00398,S12,P0100,1,220.0,0,110.0,UPI,DELIVERED,App,10.0,Amount does not match pricing formula; store_id failed quality checks in stores.csv
+ORD002129,2026-09-27 16:33:43,C00338,S04,P0106,1,380.0,10,342.0,Cash on Delivery,DELIVERED,Web,12.0,Duplicate order_id
+ORD000677,2026-09-10 07:18:14,C00375,S08,P0058,1,292.0,10,394.2,Card,DELIVERED,App,12.0,Amount does not match pricing formula
+ORD000430,2026-09-06 20:27:31,C00060,S12,P0021,1,142.0,5,134.9,Cash on Delivery,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD001034,2026-09-14 13:01:50,C00038,S07,P0061,4,819.0,10,2948.4,Card,DELIVERED,Web,17.0,store_id failed quality checks in stores.csv
+ORD000066,2026-09-01 20:02:13,C00157,S01,P0073,3,279.0,0,837.0,UPI,DELIVERED,App,8.0,product_id failed quality checks in products.csv
+ORD001727,2026-09-22 20:09:55,C00210,S07,P0084,1,288.0,10,259.2,UPI,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD001712,2026-09-22 16:11:34,C00176,S07,P0087,2,49.0,5,93.1,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD002174,2026-09-28 10:17:46,C00114,S12,P0030,5,50.0,20,200.0,UPI,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD000575,2026-09-08 19:07:11,C00357,S07,P0119,5,515.0,15,2188.75,Card,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD002286,2026-09-29 18:19:34,C00115,S10,P0074,2,350.0,0,700.0,UPI,DELIVERED,App,35.0,product_id failed quality checks in products.csv
+ORD002062,2026-09-26 16:43:28,C00042,S06,P0060,2,531.0,5,1008.9,UPI,DELIVERED,Web,23.0,product_id failed quality checks in products.csv
+ORD001321,2026-09-17 20:58:03,C00358,S07,P0147,1,242.0,0,242.0,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD001169,2026-09-15 23:26:55,C00003,S12,P0033,3,198.0,0,594.0,Cash on Delivery,RETURNED,App,10.0,store_id failed quality checks in stores.csv
+ORD000663,2026-09-09 22:36:26,C00251,S10,P0051,1,283.0,5,268.85,UPI,DELIVERED,App,18.0,product_id failed quality checks in products.csv
+ORD002206,2026-09-28 16:21:15,C00352,S12,P0053,2,609.0,15,1035.3,Card,RETURNED,App,20.0,store_id failed quality checks in stores.csv
+ORD000541,2026-09-08 10:45:02,C00037,S11,P0060,5,531.0,15,2256.75,UPI,DELIVERED,Web,16.0,product_id failed quality checks in products.csv
+ORD001670,2026-09-21 23:27:40,C00223,S07,P0041,3,444.0,20,1065.6,Cash on Delivery,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001544,2026-09-20 12:48:49,C00127,S07,P0063,1,729.0,0,729.0,Wallet,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD002223,2026-09-28 21:38:40,C00332,S13,P0117,1,77.0,5,36.58,UPI,DELIVERED,App,19.0,Amount does not match pricing formula; product_id failed quality checks in products.csv
+ORD002128,2026-09-27 16:27:38,C00043,S13,P0003,1,177.0,0,265.5,UPI,DELIVERED,App,31.0,Amount does not match pricing formula
+ORD000797,2026-09-11 16:10:39,C00044,S12,P0129,3,666.0,0,1998.0,Cash on Delivery,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD000268,2026-09-04 20:08:09,C00297,S04,P0019,1,220.0,0,220.0,Card,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD001525,2026-09-20 08:23:55,C00006,S13,P0051,1,283.0,0,283.0,Wallet,DELIVERED,App,32.0,product_id failed quality checks in products.csv
+ORD001106,2026-09-15 08:55:37,C00118,S12,P0030,3,50.0,0,150.0,Card,CANCELLED,Web,,store_id failed quality checks in stores.csv
+ORD001411,2026-09-19 07:20:44,C00082,S07,P0027,2,448.0,20,716.8,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001624,2026-09-21 13:28:12,C00246,S04,P0071,3,336.0,5,9576.0,UPI,DELIVERED,App,32.0,Amount does not match pricing formula
+ORD001012,2026-09-14 08:06:23,C00265,S07,P0133,4,267.0,5,1014.6,UPI,RETURNED,App,23.0,store_id failed quality checks in stores.csv
+ORD000615,2026-09-09 10:05:20,C00254,S07,P0033,1,198.0,5,188.1,UPI,DELIVERED,Web,27.0,store_id failed quality checks in stores.csv
+ORD001886,2026-09-24 17:38:56,C00289,S07,P0047,1,304.0,15,258.4,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD000717,2026-09-10 14:49:17,C00177,S07,P0020,3,55.0,0,165.0,Cash on Delivery,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000030,2026-09-01 11:14:11,C00237,S07,P0001,1,107.0,15,90.95,UPI,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD000221,2026-09-03 22:09:39,C00042,S12,P0114,1,505.0,15,429.25,Cash on Delivery,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD001941,2026-09-25 12:00:03,C00150,S12,P0006,1,197.0,10,177.3,Card,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001356,2026-09-18 12:22:06,C00226,S12,P0040,2,230.0,10,414.0,Cash on Delivery,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD001110,2026-09-15 09:23:24,C00329,S13,P0068,3,649.0,5,1849.65,UPI,DELIVERED,App,9.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD001818,2026-09-23 21:36:42,C00279,S07,P0025,1,238.0,10,214.2,UPI,DELIVERED,App,23.0,store_id failed quality checks in stores.csv
+ORD002213,2026-09-28 19:18:20,C00241,S07,P0054,1,849.0,0,849.0,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001532,2026-09-20 10:07:56,,S13,P0032,1,332.0,0,332.0,Card,DELIVERED,App,19.0,Missing customer_id; Unknown customer_id
+ORD002282,2026-09-29 17:32:57,C00322,S12,P0043,1,437.0,0,437.0,Card,DELIVERED,App,19.0,store_id failed quality checks in stores.csv
+ORD001847,2026-09-24 08:01:49,C00296,S07,P0021,3,142.0,0,426.0,Card,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001124,2026-09-15 13:05:08,C00396,S06,P0108,-1,161.0,10,-144.9,UPI,CANCELLED,App,,Quantity is not positive
+ORD000022,2026-09-01 09:55:26,,S10,P0102,1,369.0,5,350.55,UPI,DELIVERED,App,31.0,Missing customer_id; Unknown customer_id
+ORD002229,2026-09-28 22:24:27,C00066,S04,P0150,1,337.0,20,269.6,Cash on Delivery,DELIVERED,App,,Delivered order has no delivery time
+ORD002176,2026-09-28 10:44:14,C00218,S12,P0079,1,227.0,0,227.0,Cash on Delivery,RETURNED,App,8.0,store_id failed quality checks in stores.csv
+ORD000134,2026-09-02 19:16:01,C00044,S14,P9822,1,219.0,10,197.1,UPI,DELIVERED,App,27.0,Unknown product_id
+ORD001156,2026-09-15 20:43:07,C00053,S07,P0107,1,567.0,10,510.3,Wallet,DELIVERED,Web,12.0,store_id failed quality checks in stores.csv
+ORD001495,2026-09-19 21:17:44,C00331,S12,P0025,3,238.0,0,714.0,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001628,2026-09-21 13:58:05,C00026,S07,P0119,1,515.0,15,437.75,Card,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD001507,2026-09-19 23:51:41,C00379,S12,P0057,1,820.0,0,820.0,UPI,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001653,2026-09-21 20:22:44,C00090,S07,P0077,1,369.0,20,295.2,UPI,DELIVERED,Web,31.0,store_id failed quality checks in stores.csv
+ORD001052,2026-09-14 16:52:20,C00024,S05,P0051,1,283.0,20,226.4,UPI,DELIVERED,App,13.0,product_id failed quality checks in products.csv
+ORD000754,2026-09-10 22:52:55,C00212,S07,P0032,2,332.0,15,564.4,UPI,RETURNED,App,21.0,store_id failed quality checks in stores.csv
+ORD000892,2026-09-12 19:43:30,C00045,S12,P0049,1,152.0,20,121.6,UPI,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD000586,2026-09-08 20:45:37,C00337,S07,P0107,2,567.0,15,963.9,Cash on Delivery,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD002180,2026-09-28 11:32:07,C00028,S12,P0110,1,42.0,10,37.8,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD002244,2026-09-29 08:38:11,C00047,S14,P0028,1,76.0,5,108.3,UPI,DELIVERED,App,30.0,Amount does not match pricing formula
+ORD000527,2026-09-08 08:42:52,C00112,S07,P0072,2,396.0,0,792.0,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD000781,2026-09-11 12:23:15,C00139,S07,P0112,1,183.0,5,173.85,UPI,RETURNED,App,32.0,store_id failed quality checks in stores.csv
+ORD001755,2026-09-23 08:45:53,C00278,S06,P0058,5,292.0,0,730.0,UPI,DELIVERED,App,26.0,Amount does not match pricing formula
+ORD000301,2026-09-05 08:11:37,C00041,S07,P0141,3,265.0,0,795.0,Card,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD000636,2026-09-09 14:55:08,C00337,S06,P0019,1,220.0,0,220.0,Wallet,DELIVERED,App,33.0,product_id failed quality checks in products.csv
+ORD000686,2026-09-10 09:32:56,C00219,S07,P0107,1,567.0,0,567.0,UPI,DELIVERED,App,15.0,store_id failed quality checks in stores.csv
+ORD001081,2026-09-14 21:17:48,C00330,S07,P0149,2,144.0,20,230.4,UPI,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD001824,2026-09-23 22:28:49,C00211,S07,P0027,4,448.0,0,1792.0,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000965,2026-09-13 15:35:31,C00156,S08,P9399,3,119.0,0,357.0,Card,DELIVERED,App,8.0,Unknown product_id
+ORD002126,2026-09-27 15:52:57,C00360,S00,P0034,1,205.0,0,205.0,Wallet,DELIVERED,App,29.0,Unknown store_id
+ORD000458,2026-09-07 09:21:53,C00126,S12,P0042,2,432.0,0,864.0,UPI,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD000076,2026-09-01 22:14:02,C00002,S07,P0057,5,820.0,5,3895.0,UPI,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001375,2026-09-18 16:30:14,C00351,S12,P0148,1,105.0,0,105.0,UPI,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD001867,2026-09-24 13:54:02,C00154,S02,P0073,2,279.0,10,502.2,UPI,DELIVERED,App,26.0,product_id failed quality checks in products.csv
+ORD001796,2026-09-23 18:44:39,C00160,S12,P0141,1,265.0,10,238.5,Cash on Delivery,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD000812,2026-09-11 19:23:15,C00067,S07,P0088,5,277.0,0,1385.0,UPI,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD002179,2026-09-28 11:13:55,C00399,S03,P9761,4,242.0,20,774.4,Card,DELIVERED,App,31.0,Unknown product_id
+ORD001597,2026-09-21 06:14:44,C00316,S06,P0074,1,350.0,0,350.0,Wallet,DELIVERED,App,23.0,product_id failed quality checks in products.csv
+ORD001217,2026-09-16 17:15:40,C00270,S07,P0001,1,107.0,5,101.65,Card,DELIVERED,Web,12.0,store_id failed quality checks in stores.csv
+ORD000488,2026-09-07 15:43:18,C00179,S12,P0126,1,416.0,15,353.6,Card,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000433,2026-09-06 21:34:30,C00095,S06,P0051,1,283.0,20,226.4,upi,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD000446,2026-09-07 06:51:09,C00384,S01,P0109,5,203.0,15,862.75,Card,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD002356,2026-09-30 13:21:51,C00249,S12,P0117,1,77.0,5,73.15,UPI ,DELIVERED,App,21.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000453,2026-09-07 07:57:49,C00025,S07,P0034,2,205.0,5,389.5,UPI,DELIVERED,App,29.0,store_id failed quality checks in stores.csv
+ORD001172,2026-09-16 06:20:57,C00390,S07,P0131,1,336.0,0,336.0,Card,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD001970,2026-09-25 16:47:23,C00082,S03,P0021,3,142.0,5,404.7,UPI,Pending??,App,32.0,Invalid order status
+ORD000539,2026-09-08 10:36:28,C00102,S13,P0001,3,107.0,10,288.9,UPI,DELIVERED,App,13.0,Duplicate order_id
+ORD001085,2026-09-14 22:57:26,C00163,S07,P0069,1,228.0,5,216.6,Card,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD000878,2026-09-12 17:33:13,C00170,S07,P0073,4,279.0,20,892.8,Wallet,DELIVERED,App,,Delivered order has no delivery time; product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD000298,2026-09-05 07:14:26,C00138,S15,P0060,1,531.0,20,424.8,Cash on Delivery,DELIVERED,Web,11.0,product_id failed quality checks in products.csv
+ORD001239,2026-09-16 21:34:44,C00355,S10,P0042,5,432.0,5,2052.0,UPI,DELIVERED,App,33.0,Duplicate order_id
+ORD001725,2027-01-01 09:00:00,C00325,S12,P0138,1,507.0,15,430.95,Card,DELIVERED,App,26.0,Future-dated order; store_id failed quality checks in stores.csv
+ORD001104,2026-09-15 08:52:25,C00236,S08,P0064,2,620.0,10,1116.0,Card,DELIVERED,App,900.0,Delivery time exceeds 120 minutes
+ORD000052,2026-09-01 17:20:19,C00157,S04,P0068,2,649.0,15,1103.3,Wallet,DELIVERED,App,23.0,product_id failed quality checks in products.csv
+ORD001633,2026-09-21 15:45:38,C00359,S10,P0074,2,350.0,0,700.0,UPI,DELIVERED,App,30.0,product_id failed quality checks in products.csv
+ORD000783,2026-09-11 12:43:06,C00267,S13,P0110,4,42.0,10,151.2,Card,DELIVERED,App,32.0,Duplicate order_id
+ORD000810,2026-09-11 18:46:45,C00039,S12,P0102,2,369.0,0,738.0,Cash on Delivery,DELIVERED,App,20.0,store_id failed quality checks in stores.csv
+ORD000838,2026-09-12 07:01:12,C00369,S03,P0051,1,283.0,0,283.0,UPI,DELIVERED,App,13.0,product_id failed quality checks in products.csv
+ORD000029,2026-09-01 11:13:15,C00185,S07,P0090,1,527.0,0,527.0,Cash on Delivery,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD000946,31/09/2026 10:00,C00186,S13,P0125,1,609.0,20,487.2,UPI,DELIVERED,App,8.0,order_ts is not a valid timestamp
+ORD001640,2026-09-21 17:25:19,C00139,S07,P0120,2,344.0,10,619.2,cod,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000945,2026-09-13 12:13:56,C00286,S07,P0061,3,819.0,10,2211.3,UPI,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD000796,2026-09-11 16:10:36,C00330,S07,P0111,1,169.0,5,160.55,Cash on Delivery,DELIVERED,App,26.0,store_id failed quality checks in stores.csv
+ORD001637,2026-09-21 16:23:31,C00122,S05,P0002,3,105.0,0,315.0,Card,Pending??,App,34.0,Invalid order status
+ORD000860,2026-09-12 13:50:36,C00137,S07,P0139,1,405.0,10,364.5,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001468,2026-09-19 16:48:14,C00278,S10,P0044,3,228.0,120,547.2,UPI,DELIVERED,App,26.0,Amount does not match pricing formula; Discount outside 0-100
+ORD001508,2026-09-19 23:54:38,C00367,S10,P0060,1,531.0,0,531.0,Card,DELIVERED,App,24.0,product_id failed quality checks in products.csv
+ORD001114,2026-09-15 10:14:00,C00112,S03,P0074,3,350.0,0,1050.0,Card,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD000539,2026-09-08 10:36:28,C00102,S13,P0001,3,107.0,10,288.9,UPI,DELIVERED,App,13.0,Duplicate order_id
+ORD002110,2026-09-27 10:40:28,C00097,S07,P0149,1,144.0,0,144.0,Card,DELIVERED,App,27.0,store_id failed quality checks in stores.csv
+ORD001773,2026-09-23 14:13:02,C00182,S07,P0025,4,238.0,0,952.0,Cash on Delivery,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD001373,2026-09-18 16:19:34,,S08,P0022,4,46.0,20,147.2,Wallet,CANCELLED,App,,Missing customer_id; Unknown customer_id
+ORD000136,2026-09-02 19:27:57,C00332,S07,P0100,1,220.0,0,220.0,Wallet,DELIVERED,App,10.0,store_id failed quality checks in stores.csv
+ORD000990,2026-09-13 19:58:37,C00064,S12,P0074,1,350.0,10,315.0,UPI,DELIVERED,App,23.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001627,2026-09-21 13:41:45,C00286,S12,P0007,1,93.0,0,93.0,UPI,DELIVERED,App,16.0,store_id failed quality checks in stores.csv
+ORD000736,2026-09-10 19:01:01,C00071,S15,P0073,1,279.0,15,237.15,UPI,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD000250,2026-09-04 14:02:01,C00283,S02,P0068,2,649.0,10,1168.2,Cash on Delivery,DELIVERED,App,30.0,product_id failed quality checks in products.csv
+ORD001368,2026-09-18 14:57:34,C00225,S12,P0012,2,137.0,15,232.9,Cash on Delivery,DELIVERED,App,25.0,store_id failed quality checks in stores.csv
+ORD001434,2026-09-19 10:55:15,C00307,S11,P0019,1,220.0,0,220.0,Card,DELIVERED,Web,20.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD001953,2026-09-25 14:05:10,C00307,S07,P0149,1,144.0,20,115.2,UPI,DELIVERED,Web,27.0,store_id failed quality checks in stores.csv
+ORD001750,2026-09-23 07:22:41,C00020,S07,P0113,3,445.0,10,1201.5,Cash on Delivery,DELIVERED,App,32.0,store_id failed quality checks in stores.csv
+ORD001102,2026-09-15 08:18:24,C00125,S10,P0019,3,220.0,10,594.0,UPI,DELIVERED,Web,23.0,product_id failed quality checks in products.csv
+ORD001326,2026-09-17 22:32:55,C00379,S12,P0146,1,337.0,15,286.45,Card,DELIVERED,App,24.0,Duplicate order_id; store_id failed quality checks in stores.csv
+ORD002384,2026-09-30 20:47:53,C00236,S12,P0149,2,144.0,20,230.4,Card,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD001804,2026-09-23 19:45:38,C00370,S07,P0053,3,609.0,15,1552.95,UPI,DELIVERED,App,14.0,store_id failed quality checks in stores.csv
+ORD001549,2026-09-20 13:07:35,C00394,S01,P0058,1,292.0,0,292.0,Cash on Delivery,DELIVERED,App,12.0,Duplicate order_id
+ORD002067,2026-09-26 18:02:22,C00338,S12,P0016,4,224.0,5,851.2,Cash on Delivery,DELIVERED,App,35.0,store_id failed quality checks in stores.csv
+ORD000961,2026-09-13 15:15:13,C00321,S12,P0040,1,230.0,20,184.0,Cash on Delivery,DELIVERED,Web,23.0,store_id failed quality checks in stores.csv
+ORD001781,2026-09-23 15:22:57,C00008,S07,P0040,2,230.0,20,368.0,UPI,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD002098,2026-09-27 07:22:45,C00183,S07,P0060,4,531.0,5,2017.8,Wallet,DELIVERED,App,25.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD002162,2026-09-28 06:53:10,C00264,S07,P0123,3,629.0,0,1887.0,Card,DELIVERED,Web,20.0,store_id failed quality checks in stores.csv
+ORD000445,2026-09-07 06:50:00,C00017,S12,P0140,1,364.0,5,345.8,Wallet,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD002170,2026-09-28 08:34:16,C00343,S12,P0106,2,380.0,10,684.0,UPI,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD001649,2026-09-21 19:11:06,C00265,S07,P0128,1,211.0,0,211.0,Card,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001763,2026-09-23 11:07:35,C00308,S12,P0049,1,152.0,5,144.4,UPI,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD001688,2026-09-22 08:59:39,C00384,S07,P0027,1,448.0,0,448.0,Wallet,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001663,2026-09-21 21:47:19,C00250,S12,P0020,1,55.0,15,46.75,Cash on Delivery,DELIVERED,Web,22.0,store_id failed quality checks in stores.csv
+ORD000643,2026-09-09 17:13:06,C00164,S12,P0082,2,338.0,5,642.2,UPI,DELIVERED,App,31.0,store_id failed quality checks in stores.csv
+ORD001370,2026-09-18 15:42:58,C00253,S07,P0018,2,186.0,15,316.2,Wallet,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD000020,2026-09-01 09:42:59,C00106,S04,P0137,1,168.0,0,168.0,Cash on Delivery,DELIVERED,App,900.0,Delivery time exceeds 120 minutes
+ORD001878,2026-09-24 15:39:16,C00171,S12,P0018,2,186.0,20,297.6,UPI,DELIVERED,App,19.0,store_id failed quality checks in stores.csv
+ORD001237,2026-09-16 21:16:50,C00140,S11,P0127,5,602.0,150,2408.0,UPI,DELIVERED,App,17.0,Amount does not match pricing formula; Discount outside 0-100
+ORD001874,2026-09-24 14:53:31,C00094,S12,P0108,4,161.0,0,644.0,UPI ,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD001564,2026-09-20 16:48:31,C00157,S11,P0074,3,350.0,0,1050.0,Card,DELIVERED,Web,24.0,product_id failed quality checks in products.csv
+ORD001920,2026-09-25 07:02:38,C00213,S12,P0086,3,23.0,0,69.0,UPI,DELIVERED,App,14.0,store_id failed quality checks in stores.csv
+ORD001870,2026-09-24 14:09:09,C00113,S01,P0051,1,283.0,5,268.85,UPI,DELIVERED,App,12.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD001122,2026-09-15 12:22:26,C00371,S12,P0073,1,279.0,10,251.1,Cash on Delivery,DELIVERED,Web,15.0,product_id failed quality checks in products.csv; store_id failed quality checks in stores.csv
+ORD001472,2026-09-19 17:28:59,C00368,S07,P0004,4,188.0,0,752.0,Cash on Delivery,DELIVERED,Web,28.0,store_id failed quality checks in stores.csv
+ORD001437,2026-09-19 11:57:25,C00003,S07,P0098,2,93.0,5,176.7,UPI,DELIVERED,App,19.0,store_id failed quality checks in stores.csv
+ORD001005,2026-09-14 06:11:16,C00090,S12,P0150,2,337.0,5,640.3,UPI,DELIVERED,App,19.0,store_id failed quality checks in stores.csv
+ORD000712,2026-09-10 14:09:22,C00079,S12,P0144,5,666.0,20,2664.0,Cash on Delivery,DELIVERED,Web,28.0,store_id failed quality checks in stores.csv
+ORD002320,2026-09-30 06:36:21,C00390,S07,P0079,2,227.0,20,363.2,Card,DELIVERED,App,19.0,store_id failed quality checks in stores.csv
+ORD001837,2026-09-23 23:50:59,C00324,S12,P0146,1,337.0,0,337.0,UPI,DELIVERED,Web,32.0,store_id failed quality checks in stores.csv
+ORD001384,2026-09-18 18:42:03,C00009,S06,P0023,-1,222.0,15,-188.7,UPI,DELIVERED,App,32.0,Quantity is not positive
+ORD000424,2026-09-06 19:16:13,C00148,S12,P0095,1,354.0,15,300.9,UPI,DELIVERED,App,480.0,Delivery time exceeds 120 minutes; store_id failed quality checks in stores.csv
+ORD000374,2026-09-06 08:04:16,C00339,S07,P0116,5,450.0,5,2137.5,UPI,CANCELLED,App,,store_id failed quality checks in stores.csv
+ORD001307,2026-09-17 18:03:21,C00123,S07,P0014,1,108.0,0,108.0,Cash on Delivery,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD002376,2026-09-30 18:39:30,C00302,S07,P0106,1,380.0,5,361.0,UPI,DELIVERED,App,33.0,store_id failed quality checks in stores.csv
+ORD001110,2026-09-15 09:23:24,C00329,S13,P0068,3,649.0,5,1849.65,UPI,DELIVERED,App,9.0,Duplicate order_id; product_id failed quality checks in products.csv
+ORD000274,2026-09-04 21:35:38,C00342,S07,P0145,1,315.0,10,283.5,UPI,DELIVERED,App,34.0,store_id failed quality checks in stores.csv
+ORD000691,2026-09-10 10:42:27,C00183,S11,P0060,1,531.0,5,504.45,upi,DELIVERED,App,20.0,product_id failed quality checks in products.csv
+ORD000535,2026-09-08 10:08:55,C00134,S14,P0073,2,279.0,0,558.0,UPI,DELIVERED,Web,28.0,product_id failed quality checks in products.csv
+ORD000347,2026-09-05 20:22:11,C00227,S12,P0056,2,663.0,15,1127.1,UPI,DELIVERED,App,24.0,store_id failed quality checks in stores.csv
+ORD000017,2026-09-01 09:38:13,C00298,S12,P0081,2,10.0,20,16.0,UPI,RETURNED,App,34.0,store_id failed quality checks in stores.csv
+ORD000332,2026-09-05 16:48:59,C00346,S12,P0035,1,67.0,0,67.0,Cash on Delivery,RETURNED,App,25.0,store_id failed quality checks in stores.csv
+ORD000822,2026-09-11 22:25:24,C00152,S02,P0060,1,531.0,0,531.0,UPI,RETURNED,App,28.0,product_id failed quality checks in products.csv
+ORD002431,2026-10-01 06:04:00,C00100,S05,P0074,2,350.0,0,700.0,Card,DELIVERED,App,8.0,product_id failed quality checks in products.csv
+ORD002410,2026-10-01 07:09:00,C00388,S07,P0047,1,304.0,0,304.0,Wallet,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD002483,2026-10-01 08:09:00,C00008,S11,P0074,1,350.0,5,332.5,Card,DELIVERED,App,19.0,product_id failed quality checks in products.csv
+ORD002537,2026-10-01 08:22:00,C00166,S07,P0085,3,137.0,10,369.9,Cash on Delivery,DELIVERED,App,8.0,store_id failed quality checks in stores.csv
+ORD002452,2026-10-01 09:49:00,C00246,S12,P0042,1,432.0,10,388.8,UPI,DELIVERED,App,11.0,store_id failed quality checks in stores.csv
+ORD002516,2026-10-01 11:36:00,C00288,S10,P0068,1,649.0,0,649.0,UPI,DELIVERED,App,23.0,product_id failed quality checks in products.csv
+ORD002523,2026-10-01 11:52:00,C00013,S12,P0096,3,395.0,10,1066.5,Cash on Delivery,DELIVERED,App,21.0,store_id failed quality checks in stores.csv
+ORD002482,2026-10-01 11:58:00,C00066,S15,P0074,1,350.0,10,315.0,Cash on Delivery,DELIVERED,App,19.0,product_id failed quality checks in products.csv
+ORD002491,2026-10-01 13:41:00,C00292,S15,P0073,2,279.0,5,530.1,Cash on Delivery,DELIVERED,App,8.0,product_id failed quality checks in products.csv
+ORD002507,2026-10-01 15:10:00,C00086,S12,P0061,2,819.0,10,1474.2,Wallet,DELIVERED,App,14.0,store_id failed quality checks in stores.csv
+ORD002542,2026-10-01 15:59:00,C00234,S01,P0068,2,649.0,5,1233.1,Cash on Delivery,DELIVERED,App,11.0,product_id failed quality checks in products.csv
+ORD002506,2026-10-01 16:08:00,C00287,S07,P0079,1,227.0,10,204.3,Card,DELIVERED,App,18.0,store_id failed quality checks in stores.csv
+ORD002411,2026-10-01 16:25:00,C00323,S05,P0019,3,220.0,10,594.0,Card,DELIVERED,App,21.0,product_id failed quality checks in products.csv
+ORD002526,2026-10-01 16:35:00,C00020,S01,P0074,3,350.0,10,945.0,Card,DELIVERED,App,19.0,product_id failed quality checks in products.csv
+ORD002477,2026-10-01 16:57:00,C00321,S14,P0117,1,77.0,10,69.3,Cash on Delivery,DELIVERED,App,8.0,product_id failed quality checks in products.csv
+ORD002465,2026-10-01 18:00:00,C00074,S02,P0109,3,203.0,5,578.55,Wallet,DELIVERED,App,17.0,product_id failed quality checks in products.csv
+ORD002544,2026-10-01 19:03:00,C00219,S10,P0051,3,283.0,0,849.0,Cash on Delivery,DELIVERED,App,28.0,product_id failed quality checks in products.csv
+ORD002525,2026-10-01 19:19:00,C00140,S12,P0055,3,684.0,0,2052.0,Card,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD002484,2026-10-01 19:46:00,C00250,S07,P0064,2,620.0,0,1240.0,Cash on Delivery,DELIVERED,App,17.0,store_id failed quality checks in stores.csv
+ORD002524,2026-10-01 19:57:00,C00174,S12,P0004,1,188.0,0,188.0,UPI,DELIVERED,App,12.0,store_id failed quality checks in stores.csv
+ORD002502,2026-10-01 20:39:00,C00293,S12,P0139,1,405.0,5,384.75,Card,DELIVERED,App,13.0,store_id failed quality checks in stores.csv
+ORD002443,2026-10-01 20:53:00,C00120,S15,P0117,3,77.0,5,219.45,Cash on Delivery,DELIVERED,App,12.0,product_id failed quality checks in products.csv
+ORD002422,2026-10-01 21:29:00,C00131,S02,P0117,1,77.0,0,77.0,UPI,DELIVERED,App,9.0,product_id failed quality checks in products.csv
+ORD002462,2026-10-01 21:53:00,C00105,S07,P0052,2,299.0,10,538.2,Card,DELIVERED,App,18.0,store_id failed quality checks in stores.csv

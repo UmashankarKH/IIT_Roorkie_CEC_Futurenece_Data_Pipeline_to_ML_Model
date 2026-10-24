@@ -1,0 +1,59 @@
+file,metric,column,value
+orders,nulls,order_ts,2
+orders,nulls,customer_id,18
+orders,nulls,delivery_minutes,164
+orders,duplicate_key_rows,order_id,24
+orders,numeric_min,quantity,-3
+orders,numeric_max,quantity,5
+orders,numeric_min,unit_price,10.0
+orders,numeric_max,unit_price,883.0
+orders,numeric_min,discount_pct,0
+orders,numeric_max,discount_pct,250
+orders,numeric_min,order_amount,-1593.0
+orders,numeric_max,order_amount,9576.0
+orders,numeric_min,delivery_minutes,8.0
+orders,numeric_max,delivery_minutes,1440.0
+orders,date_min,order_ts,2026-09-01 06:30:15
+orders,date_max,order_ts,2027-01-01 09:00:00
+orders_increment,duplicate_key_rows,order_id,0
+orders_increment,numeric_min,quantity,1
+orders_increment,numeric_max,quantity,4
+orders_increment,numeric_min,unit_price,10.0
+orders_increment,numeric_max,unit_price,883.0
+orders_increment,numeric_min,discount_pct,0
+orders_increment,numeric_max,discount_pct,20
+orders_increment,numeric_min,order_amount,11.0
+orders_increment,numeric_max,order_amount,2052.0
+orders_increment,numeric_min,delivery_minutes,8
+orders_increment,numeric_max,delivery_minutes,34
+orders_increment,date_min,order_ts,2026-09-01 09:38:13
+orders_increment,date_max,order_ts,2026-10-01 22:33:00
+payments,nulls,gateway_ref,301
+payments,duplicate_key_rows,payment_id,8
+payments,numeric_min,amount_paid,-1593.0
+payments,numeric_max,amount_paid,9576.0
+payments,date_min,payment_ts,2026-09-01 06:30:24
+payments,date_max,payment_ts,2027-01-01 09:01:46
+customers,nulls,email,4
+customers,nulls,city,6
+customers,duplicate_key_rows,customer_id,10
+customers,numeric_min,phone,9804341
+customers,numeric_max,phone,9999393305
+customers,date_min,signup_date,2024-06-01 00:00:00
+customers,date_max,signup_date,2027-01-05 00:00:00
+products,nulls,category,3
+products,duplicate_key_rows,product_id,4
+products,numeric_min,mrp,-203.0
+products,numeric_max,mrp,883.0
+products,numeric_min,cost_price,6.79
+products,numeric_max,cost_price,631.79
+products,date_min,launch_date,2023-01-03 00:00:00
+products,date_max,launch_date,2025-09-20 00:00:00
+stores,nulls,zone,1
+stores,duplicate_key_rows,store_id,0
+stores,numeric_min,pincode,560003
+stores,numeric_max,pincode,560102
+stores,numeric_min,capacity_orders_per_day,0
+stores,numeric_max,capacity_orders_per_day,600
+stores,date_min,open_date,2024-02-14 00:00:00
+stores,date_max,open_date,2025-07-28 00:00:00
