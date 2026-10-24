@@ -13,3 +13,5 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+include/warehouse_surender_singh*.duckdb
+include/quarantine/surender_singh/
