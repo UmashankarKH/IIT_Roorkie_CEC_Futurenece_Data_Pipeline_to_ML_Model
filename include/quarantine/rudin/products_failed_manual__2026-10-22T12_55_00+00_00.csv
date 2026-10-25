@@ -1,0 +1,13 @@
+product_id,product_name,category,sub_category,brand,mrp,cost_price,unit,is_perishable,launch_date,failure_reason
+P0030,Kaveri Dairy Milk 5,Dairy & Bakery,Milk,Kaveri Dairy,50,40.39,pack,True,2023-03-14,duplicate product_id
+P0140,CleanPro Detergent 15,Household,Detergent,CleanPro,364,251.46,unit,False,2024-03-27,duplicate product_id
+P0030,Kaveri Dairy Milk 5 (old),Dairy & Bakery,Milk,Kaveri Dairy,45,40.39,pack,True,2023-03-14,duplicate product_id
+P0140,CleanPro Detergent 15 (old),Household,Detergent,CleanPro,328,251.46,unit,False,2024-03-27,duplicate product_id
+P0019,Desi Farms Fresh Vegetables 19,Fruits & Vegetables,Fresh Vegetables,Desi Farms,220,264.0,kg,True,2023-07-23,cost_price exceeds mrp
+P0051,GoldenGrain Dal 1,,Dal,GoldenGrain,283,230.3,pack,False,2024-01-14,category is blank
+P0060,GoldenGrain Rice 10,,Rice,GoldenGrain,531,442.6,pack,False,2024-12-08,category is blank
+P0068,GoldenGrain Oil 18,,Oil,GoldenGrain,649,524.12,pack,False,2023-08-16,category is blank
+P0073,GoldenGrain Dal 23,Staples,Dal,GoldenGrain,279,334.8,pack,False,2024-03-20,cost_price exceeds mrp
+P0074,SunPress Dal 24,Staples,Dal,SunPress,350,420.0,pack,False,2024-06-07,cost_price exceeds mrp
+P0109,SmileBright Shampoo 9,Personal Care,Shampoo,SmileBright,-203,162.5,unit,False,2024-04-26,mrp must be positive; cost_price exceeds mrp
+P0117,HerbVeda Oral Care 17,Personal Care,Oral Care,HerbVeda,77,92.4,unit,False,2025-03-02,cost_price exceeds mrp

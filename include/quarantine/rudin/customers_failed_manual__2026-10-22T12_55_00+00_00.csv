@@ -1,0 +1,14 @@
+customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active,failure_reason
+C00103,G*** N***,ga***@example.com,********05,Bengaluru,BTM Layout,560076,2025-12-30,Bronze,Y,duplicate customer_id
+C00103,G*** N***,ga***@example.com,********67,Bengaluru,Rajajinagar,560010,2025-12-30,Bronze,Y,duplicate customer_id
+C00252,S*** R***,sh***@example.com,********05,Bengaluru,Whitefield,560066,2025-06-26,Gold,N,duplicate customer_id
+C00036,D*** D***,de***@example.com,********55,Bengaluru,Marathahalli,560037,2024-06-07,Bronze,Y,duplicate customer_id
+C00226,P*** R***,pr***@example.com,********39,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y,duplicate customer_id
+C00313,P*** H***,pr***@example.com,********82,Bengaluru,Hebbal,560024,2025-09-15,Silver,Y,duplicate customer_id
+C00252,S*** R***,sh***@example.com,********37,Bengaluru,Yelahanka,560064,2025-06-26,Gold,N,duplicate customer_id
+C00226,P*** R***,pr***@example.com,********43,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y,duplicate customer_id
+C00036,D*** D***,de***@example.com,********57,Bengaluru,RT Nagar,560032,2024-06-07,Bronze,Y,duplicate customer_id
+C00313,P*** H***,pr***@example.com,********03,Bengaluru,Basaveshwaranagar,560079,2025-09-15,Silver,Y,duplicate customer_id
+C00400,D*** P***,de***@example.com,********91,Bengaluru,Yelahanka,560064,2027-01-05,Gold,Y,signup_date is invalid or future dated
+C00398,P*** R***,pr***@example.com,********41,Bengaluru,HSR Layout,560102,2026-11-12,Silver,Y,signup_date is invalid or future dated
+C00038,G*** G***,ga***@example.com,********76,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,Y,signup_date is invalid or future dated

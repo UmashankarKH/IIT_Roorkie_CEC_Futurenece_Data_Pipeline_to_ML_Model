@@ -6,6 +6,7 @@ langchain
 langchain-openai
 slack_sdk
 apache-airflow-providers-slack
+matplotlib
 
 # Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
 

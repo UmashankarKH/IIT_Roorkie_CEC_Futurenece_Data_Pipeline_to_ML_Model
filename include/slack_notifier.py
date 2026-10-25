@@ -19,8 +19,19 @@ def send_slack_alert(message: str, webhook_url: str = None) -> bool:
     """
     Sends message to Slack. Returns True if successful.
     Falls back to console print if no webhook URL is configured (safe for demo).
+
+    The webhook URL is resolved in this order: explicit argument, Airflow
+    Variable ``SLACK_WEBHOOK_URL``, environment variable ``SLACK_WEBHOOK_URL``.
     """
-    url = webhook_url or os.getenv("SLACK_WEBHOOK_URL")
+    url = webhook_url
+    if not url:
+        try:
+            from airflow.models import Variable
+            url = Variable.get("SLACK_WEBHOOK_URL", default_var=None)
+        except Exception:
+            pass
+    if not url:
+        url = os.getenv("SLACK_WEBHOOK_URL")
 
     if not url:
         print("[Slack] No SLACK_WEBHOOK_URL set. Printing alert to console instead:")

@@ -1,0 +1,200 @@
+file,row_key,column,problem,quality_dimension,proposed_rule,severity
+orders.csv,ORD001462,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001326,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001434,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD000783,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001239,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001692,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001870,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001441,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD002129,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001549,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD001110,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD000539,order_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+payments.csv,PAY0001651,payment_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+payments.csv,PAY0000755,payment_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+payments.csv,PAY0000509,payment_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+payments.csv,PAY0002000,payment_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+customers.csv,C00103,customer_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+customers.csv,C00252,customer_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+customers.csv,C00036,customer_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+customers.csv,C00226,customer_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+customers.csv,C00313,customer_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+products.csv,P0030,product_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+products.csv,P0140,product_id,Duplicate key appears 2 times,Uniqueness,Primary key must be unique,Critical
+orders.csv,ORD002255,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001812,payment_mode,Invalid payment mode: Cashh,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD002103,discount_pct,Discount is outside 0-100,Validity,discount_pct must be between 0 and 100,Critical
+orders.csv,ORD002103,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD000469,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD002119,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD001554,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD000986,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD000701,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001800,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD000403,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD001037,delivery_minutes,Implausible delivery time: 480,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD001693,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD001058,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD002305,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001089,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD001121,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD002004,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD002101,delivery_minutes,Implausible delivery time: 480,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD001610,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD000997,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001414,payment_mode,Invalid payment mode: Cashh,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD001685,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD000455,delivery_minutes,Implausible delivery time: 1440,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD000580,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD000731,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD001277,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD001799,store_id,store_id does not exist,Consistency,Order store_id must exist in its master table,Critical
+orders.csv,ORD001046,store_id,store_id does not exist,Consistency,Order store_id must exist in its master table,Critical
+orders.csv,ORD000500,order_status,Invalid status: Pending??,Validity,"Status must be DELIVERED, CANCELLED or RETURNED",Critical
+orders.csv,ORD000845,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001296,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000964,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001459,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD002019,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD000534,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD001492,store_id,store_id does not exist,Consistency,Order store_id must exist in its master table,Critical
+orders.csv,ORD000867,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000159,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD000362,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD002262,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD002149,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD002367,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001275,store_id,store_id does not exist,Consistency,Order store_id must exist in its master table,Critical
+orders.csv,ORD000462,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD002298,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD002031,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD002360,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000326,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD002012,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD001765,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD001332,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001724,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000070,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD000801,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001918,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD002156,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD000583,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD000099,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000880,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD000790,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001364,payment_mode,Invalid payment mode: CARD,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD001515,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD000789,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD000764,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD002219,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001965,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD000596,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD001274,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD000677,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD002223,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD002128,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001624,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001532,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD001124,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000022,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD002229,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD000134,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD002244,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001755,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD000965,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD002126,store_id,store_id does not exist,Consistency,Order store_id must exist in its master table,Critical
+orders.csv,ORD002179,product_id,product_id does not exist,Consistency,Order product_id must exist in its master table,Critical
+orders.csv,ORD000433,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD001970,order_status,Invalid status: Pending??,Validity,"Status must be DELIVERED, CANCELLED or RETURNED",Critical
+orders.csv,ORD000878,delivery_minutes,Delivered order has no delivery time,Completeness,DELIVERED orders require delivery_minutes,Critical
+orders.csv,ORD001725,order_ts,Future-dated order timestamp,Timeliness,Order timestamp must not be future dated,Critical
+orders.csv,ORD001104,delivery_minutes,Implausible delivery time: 900,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD000946,order_ts,Timestamp cannot be parsed,Validity,order_ts must be a valid timestamp,Critical
+orders.csv,ORD001640,payment_mode,Invalid payment mode: cod,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD001637,order_status,Invalid status: Pending??,Validity,"Status must be DELIVERED, CANCELLED or RETURNED",Critical
+orders.csv,ORD001468,discount_pct,Discount is outside 0-100,Validity,discount_pct must be between 0 and 100,Critical
+orders.csv,ORD001468,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001373,customer_id,customer_id is blank,Completeness,Order customer_id is required,Critical
+orders.csv,ORD000020,delivery_minutes,Implausible delivery time: 900,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD001237,discount_pct,Discount is outside 0-100,Validity,discount_pct must be between 0 and 100,Critical
+orders.csv,ORD001237,order_amount,Order amount does not match the formula,Accuracy,order_amount = quantity * unit_price * (1 - discount_pct/100),Critical
+orders.csv,ORD001384,quantity,Quantity is missing or not greater than zero,Accuracy,quantity must be > 0,Critical
+orders.csv,ORD000424,delivery_minutes,Implausible delivery time: 480,Accuracy,Delivery time must be below 120 minutes,Critical
+orders.csv,ORD000934,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+orders.csv,ORD000691,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0001568,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002188,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0002219,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0000354,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0000779,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0001850,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0002220,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0000323,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0001167,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0001499,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0001954,payment_mode,Invalid payment mode: cod,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0000817,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0001359,payment_mode,Invalid payment mode: CARD,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0000909,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002223,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0000586,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0000161,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002221,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0002208,payment_mode,Invalid payment mode: upi,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0002183,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002224,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0000522,payment_mode,Invalid payment mode: Cashh,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0000044,payment_mode,Invalid payment mode: Cashh,Validity,Payment mode must be one of the allowed values,Critical
+payments.csv,PAY0000044,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0001813,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002218,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0001139,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002222,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+payments.csv,PAY0000429,amount_paid,SUCCESS payment does not equal order_amount,Consistency,A SUCCESS payment must equal its order amount,Critical
+payments.csv,PAY0002217,order_id,Payment references an unknown order,Consistency,Payment order_id must exist in orders,Critical
+customers.csv,C00337,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00307,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00132,pincode,Pincode is not exactly 6 digits,Validity,Pincode should contain 6 digits,Warning
+customers.csv,C00151,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00063,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00045,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00363,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00400,signup_date,Future-dated signup date,Timeliness,Signup date must not be future dated,Critical
+customers.csv,C00310,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00083,pincode,Pincode is not exactly 6 digits,Validity,Pincode should contain 6 digits,Warning
+customers.csv,C00240,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00095,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00166,pincode,Pincode is not exactly 6 digits,Validity,Pincode should contain 6 digits,Warning
+customers.csv,C00357,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00130,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00398,signup_date,Future-dated signup date,Timeliness,Signup date must not be future dated,Critical
+customers.csv,C00327,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00290,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00038,signup_date,Future-dated signup date,Timeliness,Signup date must not be future dated,Critical
+customers.csv,C00112,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00339,phone,Phone is not exactly 10 digits,Validity,Phone should contain 10 digits,Warning
+customers.csv,C00193,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00392,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00062,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+customers.csv,C00067,email,Email does not match expected format,Validity,Email should match a basic email pattern,Warning
+products.csv,P0019,cost_price,Cost price exceeds MRP,Accuracy,cost_price must be <= mrp,Critical
+products.csv,P0051,category,Category is blank,Completeness,Product category is required,Critical
+products.csv,P0060,category,Category is blank,Completeness,Product category is required,Critical
+products.csv,P0068,category,Category is blank,Completeness,Product category is required,Critical
+products.csv,P0073,cost_price,Cost price exceeds MRP,Accuracy,cost_price must be <= mrp,Critical
+products.csv,P0074,cost_price,Cost price exceeds MRP,Accuracy,cost_price must be <= mrp,Critical
+products.csv,P0109,mrp,MRP is missing or not positive,Accuracy,mrp must be > 0,Critical
+products.csv,P0109,cost_price,Cost price exceeds MRP,Accuracy,cost_price must be <= mrp,Critical
+products.csv,P0117,cost_price,Cost price exceeds MRP,Accuracy,cost_price must be <= mrp,Critical
+stores.csv,S07,zone,Store zone is blank,Completeness,Store zone is required for zone reporting,Critical
+orders_2026-10-01_increment.csv,ORD000017,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000271,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000332,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000337,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000584,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000708,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD000822,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD001025,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD001067,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning
+orders_2026-10-01_increment.csv,ORD001990,order_id,Existing order is an intentional correction/upsert candidate,Consistency,Merge existing order_id values during incremental load,Warning

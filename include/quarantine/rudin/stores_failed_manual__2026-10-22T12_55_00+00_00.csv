@@ -1,0 +1,2 @@
+store_id,store_name,zone,area,pincode,open_date,manager_name,capacity_orders_per_day,failure_reason
+S07,NammaMart BTM Layout,,BTM Layout,560076,2024-06-12,Sanjay Bhat,500,zone is blank

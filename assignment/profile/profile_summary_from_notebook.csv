@@ -1,0 +1,143 @@
+file,section,column,metric,value
+orders.csv,summary,__file__,row_count,2412
+orders.csv,nulls,order_id,blank_count,0
+orders.csv,nulls,order_ts,blank_count,1
+orders.csv,nulls,customer_id,blank_count,18
+orders.csv,nulls,store_id,blank_count,0
+orders.csv,nulls,product_id,blank_count,0
+orders.csv,nulls,quantity,blank_count,0
+orders.csv,nulls,unit_price,blank_count,0
+orders.csv,nulls,discount_pct,blank_count,0
+orders.csv,nulls,order_amount,blank_count,0
+orders.csv,nulls,payment_mode,blank_count,0
+orders.csv,nulls,order_status,blank_count,0
+orders.csv,nulls,channel,blank_count,0
+orders.csv,nulls,delivery_minutes,blank_count,164
+orders.csv,duplicates,order_id,duplicate_key_groups,12
+orders.csv,duplicates,order_id,duplicate_rows_beyond_first,12
+orders.csv,numeric_range,quantity,min,-3
+orders.csv,numeric_range,quantity,max,5
+orders.csv,numeric_range,unit_price,min,10.0
+orders.csv,numeric_range,unit_price,max,883.0
+orders.csv,numeric_range,discount_pct,min,0
+orders.csv,numeric_range,discount_pct,max,250
+orders.csv,numeric_range,order_amount,min,-1593.0
+orders.csv,numeric_range,order_amount,max,9576.0
+orders.csv,numeric_range,delivery_minutes,min,8.0
+orders.csv,numeric_range,delivery_minutes,max,1440.0
+orders.csv,date_range,order_ts,min,2026-09-01 06:30:15
+orders.csv,date_range,order_ts,max,2027-01-01 09:00:00
+orders.csv,distinct_values,order_status,values,CANCELLED | DELIVERED | Pending?? | RETURNED | delivered
+orders.csv,distinct_values,payment_mode,values,CARD | Card | Cash on Delivery | Cashh | UPI | UPI  | Wallet | cod | upi
+orders.csv,distinct_values,channel,values,App | Web
+payments.csv,summary,__file__,row_count,2228
+payments.csv,nulls,payment_id,blank_count,0
+payments.csv,nulls,order_id,blank_count,0
+payments.csv,nulls,payment_ts,blank_count,0
+payments.csv,nulls,payment_mode,blank_count,0
+payments.csv,nulls,amount_paid,blank_count,0
+payments.csv,nulls,payment_status,blank_count,0
+payments.csv,nulls,gateway_ref,blank_count,301
+payments.csv,duplicates,payment_id,duplicate_key_groups,4
+payments.csv,duplicates,payment_id,duplicate_rows_beyond_first,4
+payments.csv,numeric_range,amount_paid,min,-1593.0
+payments.csv,numeric_range,amount_paid,max,9576.0
+payments.csv,date_range,payment_ts,min,2026-09-01 06:30:24
+payments.csv,date_range,payment_ts,max,2027-01-01 09:01:46
+payments.csv,distinct_values,payment_mode,values,CARD | Card | Cash on Delivery | Cashh | UPI | UPI  | Wallet | cod | upi
+payments.csv,distinct_values,payment_status,values,FAILED | REFUNDED | SUCCESS
+customers.csv,summary,__file__,row_count,405
+customers.csv,nulls,customer_id,blank_count,0
+customers.csv,nulls,full_name,blank_count,0
+customers.csv,nulls,email,blank_count,0
+customers.csv,nulls,phone,blank_count,0
+customers.csv,nulls,city,blank_count,6
+customers.csv,nulls,area,blank_count,0
+customers.csv,nulls,pincode,blank_count,0
+customers.csv,nulls,signup_date,blank_count,0
+customers.csv,nulls,loyalty_tier,blank_count,0
+customers.csv,nulls,is_active,blank_count,0
+customers.csv,duplicates,customer_id,duplicate_key_groups,5
+customers.csv,duplicates,customer_id,duplicate_rows_beyond_first,5
+customers.csv,numeric_range,pincode,min,0.0
+customers.csv,numeric_range,pincode,max,560102.0
+customers.csv,date_range,signup_date,min,2024-06-01 00:00:00
+customers.csv,date_range,signup_date,max,2027-01-05 00:00:00
+customers.csv,distinct_values,city,values,Bengaluru
+customers.csv,distinct_values,area,values,BTM Layout | Banashankari | Basaveshwaranagar | HSR Layout | Hebbal | Indiranagar | JP Nagar | Jayanagar | Malleshwaram | Marathahalli | RT Nagar | Rajajinagar | Vijayanagar | Whitefield | Yelahanka
+customers.csv,distinct_values,loyalty_tier,values,BRONZE | Bronze | Gold | Platinum | SILVER | Silver | bronze
+customers.csv,distinct_values,is_active,values,N | Y
+products.csv,summary,__file__,row_count,152
+products.csv,nulls,product_id,blank_count,0
+products.csv,nulls,product_name,blank_count,0
+products.csv,nulls,category,blank_count,3
+products.csv,nulls,sub_category,blank_count,0
+products.csv,nulls,brand,blank_count,0
+products.csv,nulls,mrp,blank_count,0
+products.csv,nulls,cost_price,blank_count,0
+products.csv,nulls,unit,blank_count,0
+products.csv,nulls,is_perishable,blank_count,0
+products.csv,nulls,launch_date,blank_count,0
+products.csv,duplicates,product_id,duplicate_key_groups,2
+products.csv,duplicates,product_id,duplicate_rows_beyond_first,2
+products.csv,numeric_range,mrp,min,-203.0
+products.csv,numeric_range,mrp,max,883.0
+products.csv,numeric_range,cost_price,min,6.79
+products.csv,numeric_range,cost_price,max,631.79
+products.csv,date_range,launch_date,min,2023-01-03 00:00:00
+products.csv,date_range,launch_date,max,2025-09-20 00:00:00
+products.csv,distinct_values,category,values,Dairy & Bakery | Fruits & Vegetables | Household | Personal Care | Snacks & Beverages | Staples
+products.csv,distinct_values,sub_category,values,Atta | Biscuits | Bread | Cheese | Chips | Cleaners | Curd & Paneer | Dal | Detergent | Fresh Fruits | Fresh Vegetables | Herbs | Kitchen Supplies | Milk | Oil | Oral Care | Rice | Shampoo | Soap | Soft Drinks | Tea & Coffee
+products.csv,distinct_values,brand,values,Annapurna Mills | BrewHouse | Chandana | CleanPro | CowBell | CrunchCo | DalBazaar | Desi Farms | FarmFresh | GoldenGrain | GreenLeaf | HerbVeda | Kaveri Dairy | MilkWay | OvenCraft | PureGlow | ScrubMate | ShineAll | SmileBright | SnackSutra | SparkWash | SunPress | TeaTime
+products.csv,distinct_values,unit,values,kg | pack | unit
+products.csv,distinct_values,is_perishable,values,False | True
+stores.csv,summary,__file__,row_count,15
+stores.csv,nulls,store_id,blank_count,0
+stores.csv,nulls,store_name,blank_count,0
+stores.csv,nulls,zone,blank_count,1
+stores.csv,nulls,area,blank_count,0
+stores.csv,nulls,pincode,blank_count,0
+stores.csv,nulls,open_date,blank_count,0
+stores.csv,nulls,manager_name,blank_count,0
+stores.csv,nulls,capacity_orders_per_day,blank_count,0
+stores.csv,duplicates,store_id,duplicate_key_groups,0
+stores.csv,duplicates,store_id,duplicate_rows_beyond_first,0
+stores.csv,numeric_range,pincode,min,560003
+stores.csv,numeric_range,pincode,max,560102
+stores.csv,numeric_range,capacity_orders_per_day,min,0
+stores.csv,numeric_range,capacity_orders_per_day,max,600
+stores.csv,date_range,open_date,min,2024-02-14 00:00:00
+stores.csv,date_range,open_date,max,2025-07-28 00:00:00
+stores.csv,distinct_values,zone,values,East | North | South | West
+stores.csv,distinct_values,area,values,BTM Layout | Banashankari | Basaveshwaranagar | HSR Layout | Hebbal | Indiranagar | JP Nagar | Jayanagar | Malleshwaram | Marathahalli | RT Nagar | Rajajinagar | Vijayanagar | Whitefield | Yelahanka
+orders_2026-10-01_increment.csv,summary,__file__,row_count,160
+orders_2026-10-01_increment.csv,nulls,order_id,blank_count,0
+orders_2026-10-01_increment.csv,nulls,order_ts,blank_count,0
+orders_2026-10-01_increment.csv,nulls,customer_id,blank_count,0
+orders_2026-10-01_increment.csv,nulls,store_id,blank_count,0
+orders_2026-10-01_increment.csv,nulls,product_id,blank_count,0
+orders_2026-10-01_increment.csv,nulls,quantity,blank_count,0
+orders_2026-10-01_increment.csv,nulls,unit_price,blank_count,0
+orders_2026-10-01_increment.csv,nulls,discount_pct,blank_count,0
+orders_2026-10-01_increment.csv,nulls,order_amount,blank_count,0
+orders_2026-10-01_increment.csv,nulls,payment_mode,blank_count,0
+orders_2026-10-01_increment.csv,nulls,order_status,blank_count,0
+orders_2026-10-01_increment.csv,nulls,channel,blank_count,0
+orders_2026-10-01_increment.csv,nulls,delivery_minutes,blank_count,0
+orders_2026-10-01_increment.csv,duplicates,order_id,duplicate_key_groups,0
+orders_2026-10-01_increment.csv,duplicates,order_id,duplicate_rows_beyond_first,0
+orders_2026-10-01_increment.csv,numeric_range,quantity,min,1
+orders_2026-10-01_increment.csv,numeric_range,quantity,max,4
+orders_2026-10-01_increment.csv,numeric_range,unit_price,min,10.0
+orders_2026-10-01_increment.csv,numeric_range,unit_price,max,883.0
+orders_2026-10-01_increment.csv,numeric_range,discount_pct,min,0
+orders_2026-10-01_increment.csv,numeric_range,discount_pct,max,20
+orders_2026-10-01_increment.csv,numeric_range,order_amount,min,11.0
+orders_2026-10-01_increment.csv,numeric_range,order_amount,max,2052.0
+orders_2026-10-01_increment.csv,numeric_range,delivery_minutes,min,8
+orders_2026-10-01_increment.csv,numeric_range,delivery_minutes,max,34
+orders_2026-10-01_increment.csv,date_range,order_ts,min,2026-09-01 09:38:13
+orders_2026-10-01_increment.csv,date_range,order_ts,max,2026-10-01 22:33:00
+orders_2026-10-01_increment.csv,distinct_values,order_status,values,DELIVERED | RETURNED
+orders_2026-10-01_increment.csv,distinct_values,payment_mode,values,Card | Cash on Delivery | UPI | Wallet
+orders_2026-10-01_increment.csv,distinct_values,channel,values,App

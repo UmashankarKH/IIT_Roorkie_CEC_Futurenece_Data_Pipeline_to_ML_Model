@@ -1,0 +1,4 @@
+question
+"Should negative quantity or an order_amount mismatch be treated as a rejected data-entry error, or can either represent a return/adjustment?"
+"When an order changes from DELIVERED to RETURNED, should September revenue be restated historically, or preserved as originally reported with a separate returns view?"
+"What retention period and role-based access policy should apply to raw customer PII, quarantine files, and masked reporting tables?"
