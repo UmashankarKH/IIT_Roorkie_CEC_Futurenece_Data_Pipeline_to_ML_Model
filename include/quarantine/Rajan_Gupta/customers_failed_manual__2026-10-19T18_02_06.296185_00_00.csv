@@ -1,0 +1,12 @@
+customer_id,email,phone,pincode,loyalty_tier,is_active,failure_reason,warning_reason,dq_status
+C00132,la***@example.com,***,***,Bronze,N,pincode must contain six digits,,FAIL
+C00103,ga***@example.com,***,***,Bronze,Y,duplicate customer_id,,FAIL
+C00400,de***@example.com,***,***,Gold,Y,signup_date is in the future,,FAIL
+C00083,vi***@example.com,***,***,Silver,Y,pincode must contain six digits,,FAIL
+C00166,bh***@example.com,***,***,Bronze,N,pincode must contain six digits,,FAIL
+C00398,pr***@example.com,***,***,Silver,Y,signup_date is in the future,,FAIL
+C00252,sh***@example.com,***,***,Gold,N,duplicate customer_id,,FAIL
+C00038,ga***@example.com,***,***,Silver,Y,signup_date is in the future,,FAIL
+C00226,pr***@example.com,***,***,Silver,Y,duplicate customer_id,,FAIL
+C00036,de***@example.com,***,***,Bronze,Y,duplicate customer_id,,FAIL
+C00313,pr***@example.com,***,***,Silver,Y,duplicate customer_id,,FAIL
