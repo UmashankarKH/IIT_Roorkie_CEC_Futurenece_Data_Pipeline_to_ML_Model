@@ -1,0 +1,6 @@
+file_name,valid_rows,failed_rows
+orders.csv,2412,61
+payments.csv,2228,74
+customers.csv,405,16
+products.csv,152,8
+stores.csv,15,1
