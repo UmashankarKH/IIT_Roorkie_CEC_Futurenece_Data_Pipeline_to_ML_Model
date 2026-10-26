@@ -1,5 +1,5 @@
-pandas
-duckdb
+pandas>=2.0,<3
+duckdb==2.0.0
 scikit-learn
 langgraph
 langchain

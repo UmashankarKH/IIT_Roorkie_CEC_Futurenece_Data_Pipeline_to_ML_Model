@@ -4,5 +4,8 @@ astro
 airflow_settings.yaml
 logs/
 .venv
+include/warehouse*.duckdb
+**/__pycache__
+assignment/
 airflow.db
 airflow.cfg

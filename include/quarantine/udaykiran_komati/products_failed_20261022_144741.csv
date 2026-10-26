@@ -1,0 +1,6 @@
+product_id,product_name,category,sub_category,brand,mrp,cost_price,unit,is_perishable,launch_date,failure_reason
+P0019,Desi Farms Fresh Vegetables 19,Fruits & Vegetables,Fresh Vegetables,Desi Farms,220,264.0,kg,True,2023-07-23,cost_price exceeds mrp
+P0073,GoldenGrain Dal 23,Staples,Dal,GoldenGrain,279,334.8,pack,False,2024-03-20,cost_price exceeds mrp
+P0074,SunPress Dal 24,Staples,Dal,SunPress,350,420.0,pack,False,2024-06-07,cost_price exceeds mrp
+P0109,SmileBright Shampoo 9,Personal Care,Shampoo,SmileBright,-203,162.5,unit,False,2024-04-26,invalid mrp; cost_price exceeds mrp
+P0117,HerbVeda Oral Care 17,Personal Care,Oral Care,HerbVeda,77,92.4,unit,False,2025-03-02,cost_price exceeds mrp

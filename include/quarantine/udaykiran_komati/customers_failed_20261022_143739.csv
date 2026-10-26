@@ -1,0 +1,4 @@
+customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active,failure_reason
+C00400,Deepa Pillai,deepa.pillai400@example.com,9534430091,Bengaluru,Yelahanka,560064,2027-01-05,Gold,Y,future signup_date
+C00398,Priya Reddy,priya.reddy398@example.com,9856945441,Bengaluru,HSR Layout,560102,2026-11-12,Silver,Y,future signup_date
+C00038,Ganesh Gowda,ganesh.gowda38@example.com,9022901476,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,Y,future signup_date
