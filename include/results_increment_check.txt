@@ -1,0 +1,45 @@
+
+-- 1. ETL vs ELT totals (every row should say MATCH)
+                metric  etl_value  elt_value  difference status
+      delivered_orders    2228.00    2228.00         0.0  MATCH
+           net_revenue 1211087.30 1211087.30         0.0  MATCH
+          gross_margin  285147.56  285147.56         0.0  MATCH
+category_revenue_total 1211087.30 1211087.30        -0.0  MATCH
+orders_in_clean_tables    2460.00    2460.00         0.0  MATCH
+   reconciliation_rows     340.00     340.00         0.0  MATCH
+   unreconciled_amount  216582.05  216582.05        -0.0  MATCH
+
+-- 2. Clean orders and duplicate order_ids (duplicates must be 0)
+             pipeline  clean_orders  duplicate_ids
+             ETL fact          2460              0
+ELT stg_orders (PASS)          2460              0
+
+-- 3. ELT increment merge: corrected vs new orders (expected 10 updated, 150 inserted)
+ updated_orders  inserted_orders
+             10              150
+
+-- 4. The corrected orders: status in the original file vs now (ELT)
+ order_id status_in_orders_csv status_after_increment  order_amount
+ORD000017            DELIVERED               RETURNED          16.0
+ORD000271            DELIVERED               RETURNED         445.0
+ORD000332            DELIVERED               RETURNED          67.0
+ORD000337            DELIVERED               RETURNED        1748.0
+ORD000584            DELIVERED               RETURNED         102.6
+ORD000708            DELIVERED               RETURNED         416.0
+ORD000822            DELIVERED               RETURNED         531.0
+ORD001025            DELIVERED               RETURNED         150.0
+ORD001067            DELIVERED               RETURNED         532.8
+ORD001990            DELIVERED               RETURNED         185.3
+
+-- 5. Net revenue by month after the increment (ETL and ELT; before it, all of September was 1135628.80)
+  month  etl_net_revenue  elt_net_revenue
+2026-09        1131435.1        1131435.1
+2026-10          79652.2          79652.2
+
+-- 6. Raw table keeps every version (ELT raw_orders rows per run)
+                                  run_id                     source_file  rows
+manual__2026-10-22T15:31:30.734790+00:00                      orders.csv  2412
+manual__2026-10-22T15:43:31.925475+00:00                      orders.csv  2412
+manual__2026-10-22T15:43:31.925475+00:00 orders_2026-10-01_increment.csv   160
+manual__2026-10-22T15:51:20.638230+00:00                      orders.csv  2412
+manual__2026-10-22T15:51:20.638230+00:00 orders_2026-10-01_increment.csv   160

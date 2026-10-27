@@ -1,0 +1,124 @@
+
+-- Q1. Daily net revenue by zone and store (DELIVERED orders only, after discount)
+order_date  zone store_id                  store_name  net_revenue  delivered_orders
+2026-09-01  East      S08        NammaMart Whitefield      2984.70                 4
+2026-09-01  East      S09       NammaMart Indiranagar      2945.40                 6
+2026-09-01  East      S10      NammaMart Marathahalli      2141.60                 3
+2026-09-01  East      S11        NammaMart HSR Layout      2121.15                 6
+2026-09-01 North      S01            NammaMart Hebbal      2247.80                 4
+2026-09-01 North      S02         NammaMart Yelahanka      2385.55                 6
+2026-09-01 North      S03          NammaMart RT Nagar      4583.80                 6
+2026-09-01 South      S04         NammaMart Jayanagar      1103.30                 1
+2026-09-01 South      S05          NammaMart JP Nagar       803.00                 2
+2026-09-01 South      S06      NammaMart Banashankari      2812.00                 6
+2026-09-01 South      S07        NammaMart BTM Layout      5844.75                 9
+2026-09-01  West      S12       NammaMart Rajajinagar       316.00                 2
+2026-09-01  West      S13      NammaMart Malleshwaram      1469.10                 3
+2026-09-01  West      S14       NammaMart Vijayanagar      3095.85                 7
+2026-09-01  West      S15 NammaMart Basaveshwaranagar      1698.70                 3
+2026-09-02  East      S08        NammaMart Whitefield      1183.60                 4
+2026-09-02  East      S09       NammaMart Indiranagar      3698.20                 7
+2026-09-02  East      S10      NammaMart Marathahalli      2996.90                 4
+2026-09-02  East      S11        NammaMart HSR Layout       859.20                 2
+2026-09-02 North      S01            NammaMart Hebbal      1125.00                 3
+
+-- Q1b. Same, rolled up to zone per day
+order_date  zone  net_revenue
+2026-09-01  East     10192.85
+2026-09-01 North      9217.15
+2026-09-01 South     10563.05
+2026-09-01  West      6579.65
+2026-09-02  East      8737.90
+2026-09-02 North      3573.80
+2026-09-02 South     14862.10
+2026-09-02  West     10797.65
+2026-09-03  East     12058.40
+2026-09-03 North     13959.15
+2026-09-03 South      8492.60
+2026-09-03  West     11261.90
+
+-- Q2. Revenue and gross margin by product category
+           category   revenue  gross_margin  margin_pct  delivered_orders  orders_without_cost
+            Staples 306212.55      67470.22        23.3               348                   29
+      Personal Care 205016.80      44752.98        21.9               329                   11
+          Household 199699.45      51145.33        25.6               339                    0
+     Dairy & Bakery 169528.75      44791.84        26.4               380                    0
+ Snacks & Beverages 161886.95      37724.49        23.3               322                    0
+Fruits & Vegetables  93284.30      21096.62        24.0               370                   17
+
+-- Q3. Average delivery time per store and % of delivered orders within 15 minutes
+store_id                  store_name  avg_delivery_minutes  pct_within_15_min  delivered_orders
+     S01            NammaMart Hebbal                  20.7               30.9               136
+     S02         NammaMart Yelahanka                  21.4               28.4               141
+     S03          NammaMart RT Nagar                  20.6               30.4               138
+     S04         NammaMart Jayanagar                  21.4               27.1               133
+     S05          NammaMart JP Nagar                  21.5               30.0               130
+     S06      NammaMart Banashankari                  22.5               22.3               148
+     S07        NammaMart BTM Layout                  21.3               32.4               145
+     S08        NammaMart Whitefield                  20.5               36.0               150
+     S09       NammaMart Indiranagar                  21.3               27.1               129
+     S10      NammaMart Marathahalli                  22.1               26.3               137
+     S11        NammaMart HSR Layout                  21.1               28.7               143
+     S12       NammaMart Rajajinagar                  22.3               21.7               115
+     S13      NammaMart Malleshwaram                  21.9               27.7               141
+     S14       NammaMart Vijayanagar                  21.9               30.3               152
+     S15 NammaMart Basaveshwaranagar                  22.3               22.0               150
+
+-- Q4a. Revenue by payment mode
+    payment_mode   revenue  delivered_orders
+             UPI 620387.85              1169
+            Card 230913.90               415
+Cash on Delivery 160688.25               286
+          Wallet 123638.80               218
+
+-- Q4b. Total amount that does not reconcile with the payment gateway
+ mismatches  total_unreconciled_amount
+        180                  132736.15
+
+-- Q4c. ...broken down by reason
+                             reason  mismatches  unreconciled_amount
+         PAYMENT_FOR_REJECTED_ORDER          88             84171.98
+DELIVERED_ORDER_ONLY_FAILED_PAYMENT          42             25722.25
+     DELIVERED_ORDER_HAS_NO_PAYMENT          27             16664.35
+       ORPHAN_PAYMENT_NO_SUCH_ORDER           8              4580.57
+      RETURNED_ORDER_HAS_NO_PAYMENT           1               812.00
+                    AMOUNT_MISMATCH          14               785.00
+
+-- Q5. Top 10 customers by spend, with loyalty tier (no raw email or phone)
+ spend_rank customer_id      full_name      masked_email loyalty_tier  total_spend
+          1      C00136    Sanjay Bhat sa***@example.com       Bronze      8738.10
+          2      C00283     Nikhil Rao ni***@example.com       Bronze      7934.60
+          3      C00071  Mahesh Pillai ma***@example.com       Silver      7349.30
+          4      C00310    Kiran Patil     ki***@example       Bronze      7258.95
+          5      C00236    Sneha Naidu sn***@example.com     Platinum      7016.40
+          6      C00338   Bhavana Iyer bh***@example.com       Silver      6848.55
+          7      C00209   Kavya Pillai ka***@example.com     Platinum      6519.40
+          8      C00115   Sanjay Kumar sa***@example.com       Bronze      6483.70
+          9      C00036    Deepa Desai de***@example.com       Bronze      6466.50
+         10      C00072 Nandini Murthy na***@example.com       Silver      6433.95
+
+-- Q6. Rows rejected in the latest ELT run, by file and by reason
+  source_file                                              reason  rows_rejected
+customers.csv                                  customer_id_unique              5
+customers.csv                              signup_date_not_future              3
+   orders.csv                                customer_id_not_null             18
+   orders.csv                        order_amount_matches_formula             15
+   orders.csv                                     order_id_unique             12
+   orders.csv                                   quantity_positive             10
+   orders.csv                                product_id_in_master              9
+   orders.csv                      delivered_has_delivery_minutes              8
+   orders.csv                                 order_ts_not_future              7
+   orders.csv                          delivery_minutes_below_120              6
+   orders.csv                                      order_ts_valid              6
+   orders.csv                                  store_id_in_master              5
+   orders.csv                                  order_status_valid              3
+   orders.csv discount_pct_in_range, order_amount_matches_formula              3
+ payments.csv                                amount_paid_positive             10
+ payments.csv                                  order_id_in_orders              8
+ payments.csv                               payment_ts_not_future              7
+ payments.csv                                   payment_id_unique              4
+ products.csv                            cost_price_not_above_mrp              4
+ products.csv                                   category_not_null              3
+ products.csv                                   product_id_unique              2
+ products.csv              mrp_positive, cost_price_not_above_mrp              1
+   stores.csv                                       zone_not_null              1
