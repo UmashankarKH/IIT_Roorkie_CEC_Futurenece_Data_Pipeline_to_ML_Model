@@ -1,0 +1,4 @@
+product_id,product_name,category,sub_category,brand,mrp,cost_price,unit,is_perishable,launch_date,dq_status,failure_reason,_loaded_at,_run_id
+P0109,SmileBright Shampoo 9,Personal Care,Shampoo,SmileBright,-203.0,162.5,unit,False,2024-04-26,FAILED,accuracy:mrp_le_zero,2026-10-22T20:35:18.782687+05:30,manual__2026-10-22T15_05_15.803474_00_00
+P0140,CleanPro Detergent 15 (old),Household,Detergent,CleanPro,328.0,251.46,unit,False,2024-03-27,FAILED,uniqueness:duplicate_product_id,2026-10-22T20:35:18.782687+05:30,manual__2026-10-22T15_05_15.803474_00_00
+P0030,Kaveri Dairy Milk 5 (old),Dairy & Bakery,Milk,Kaveri Dairy,45.0,40.39,pack,True,2023-03-14,FAILED,uniqueness:duplicate_product_id,2026-10-22T20:35:18.782687+05:30,manual__2026-10-22T15_05_15.803474_00_00

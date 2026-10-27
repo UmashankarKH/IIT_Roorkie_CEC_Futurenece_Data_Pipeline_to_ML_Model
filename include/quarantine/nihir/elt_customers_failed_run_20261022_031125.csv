@@ -1,0 +1,6 @@
+customer_id,full_name,masked_email,masked_phone,city,area,pincode,signup_date,loyalty_tier,is_active,dq_status,failure_reason,_loaded_at,_run_id
+C00252,Shreya Rao,sh***@example.com,97******37,Bengaluru,Yelahanka,560064,2025-06-26,Gold,N,FAILED,uniqueness:duplicate_customer_id,2026-10-22T03:11:25.537385+05:30,run_20261022_031125
+C00103,Ganesh Naidu,ga***@example.com,91******67,Bengaluru,Rajajinagar,560010,2025-12-30,Bronze,Y,FAILED,uniqueness:duplicate_customer_id,2026-10-22T03:11:25.537385+05:30,run_20261022_031125
+C00036,Deepa Desai,de***@example.com,98******57,Bengaluru,RT Nagar,560032,2024-06-07,Bronze,Y,FAILED,uniqueness:duplicate_customer_id,2026-10-22T03:11:25.537385+05:30,run_20261022_031125
+C00226,Prakash Reddy,pr***@example.com,90******43,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y,FAILED,uniqueness:duplicate_customer_id,2026-10-22T03:11:25.537385+05:30,run_20261022_031125
+C00313,Prakash Hegde,pr***@example.com,96******03,Bengaluru,Basaveshwaranagar,560079,2025-09-15,Silver,Y,FAILED,uniqueness:duplicate_customer_id,2026-10-22T03:11:25.537385+05:30,run_20261022_031125
