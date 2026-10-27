@@ -13,3 +13,12 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# my additions
+include/tmp/
+*.duckdb.wal
+# My warehouse is NOT committed. raw_customers holds unmasked names, emails and phone
+# numbers by design (the ELT raw layer keeps every record exactly as received), and the
+# submission checklist says no unmasked customer data in the repo outside include/data/.
+# Rebuild it in seconds: cd include && python -m nammamart.run_pipelines --pipeline both --increment --reset
+include/warehouse_dinesh.duckdb

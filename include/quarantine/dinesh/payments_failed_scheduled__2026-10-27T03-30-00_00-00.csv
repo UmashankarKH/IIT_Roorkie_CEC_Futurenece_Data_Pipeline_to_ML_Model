@@ -1,0 +1,11 @@
+payment_id,order_id,payment_ts,payment_mode,amount_paid,payment_status,gateway_ref,failure_reason,quarantined_at,run_id
+PAY0001651,ORD000188,2026-09-03 13:23:25,Card,94.5,SUCCESS,GW7909341632,"Critical: duplicate payment_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0001568,ORD001031,2026-09-14 12:22:19,Card,-43.05,SUCCESS,GW1747803275,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000755,ORD000094,2026-09-02 10:58:26,Card,403.2,SUCCESS,GW2899060380,"Critical: duplicate payment_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000509,ORD002122,2026-09-27 14:57:42,UPI,148.8,SUCCESS,GW5719011844,"Critical: duplicate payment_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0002175,ORD001384,2026-09-18 18:43:20,UPI,-188.7,SUCCESS,GW9799058406,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000751,ORD001459,2026-09-19 14:50:15,UPI,-1593.0,SUCCESS,GW2576628760,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000944,ORD000462,2026-09-07 09:55:31,Card,-1279.65,SUCCESS,GW2644378059,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000791,ORD000867,2026-09-12 15:43:54,UPI,-500.65,SUCCESS,GW1428229749,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0002000,ORD000513,2026-09-07 23:16:17,Wallet,684.0,SUCCESS,GW2663042309,"Critical: duplicate payment_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+PAY0000737,ORD001296,2026-09-17 16:08:23,UPI,-394.0,SUCCESS,GW1678766266,Critical: amount_paid is negative or unreadable,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00

@@ -1,0 +1,89 @@
+order_id,order_ts,customer_id,store_id,product_id,quantity,unit_price,discount_pct,order_amount,payment_mode,order_status,channel,delivery_minutes,failure_reason,quarantined_at,run_id
+ORD001462,2026-09-19 15:32:55,C00265,S05,P0129,3,666.0,15,1698.3,Card,DELIVERED,App,8,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002255,2026-09-29 10:33:19,,S08,P0016,1,224.0,0,224.0,UPI,DELIVERED,App,33,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002103,2026-09-27 09:31:35,C00025,S03,P0093,1,492.0,250,492.0,UPI,DELIVERED,App,23,Critical: discount_pct outside 0-100 | Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000469,2026-09-07 11:52:46,C00076,S02,P0041,0,444.0,10,0.0,UPI,DELIVERED,App,18,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002119,2027-01-01 09:00:00,C00396,S05,P0103,2,300.0,0,600.0,Cash on Delivery,DELIVERED,App,9,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001554,2026-09-20 14:50:05,C00097,S09,P0092,3,297.0,0,891.0,Wallet,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001326,2026-09-17 22:32:55,C00379,S12,P0146,1,337.0,15,286.45,Card,DELIVERED,App,24,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000701,2026-09-10 11:51:18,,S01,P0080,1,518.0,5,492.1,Cash on Delivery,DELIVERED,App,8,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001800,2026-09-23 19:08:16,C00377,S11,P0147,1,242.0,0,242.0,UPI,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000403,N/A,C00152,S08,P0046,1,197.0,0,197.0,UPI,DELIVERED,App,27,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001037,2026-09-14 13:29:58,C00385,S13,P0104,1,525.0,10,472.5,UPI,DELIVERED,App,480,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001693,2026-10-21 10:15:00,C00392,S03,P0045,3,387.0,15,986.85,UPI,DELIVERED,App,18,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002305,2026-09-29 21:58:50,C00033,S14,P0141,3,265.0,15,6757.5,Cash on Delivery,DELIVERED,App,29,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001434,2026-09-19 10:55:15,C00307,S11,P0019,1,220.0,0,220.0,Card,DELIVERED,Web,20,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001089,2026-10-21 10:15:00,C00255,S07,P0079,1,227.0,15,192.95,UPI,DELIVERED,App,22,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001121,2026-11-02 18:40:00,C00133,S15,P0016,2,224.0,20,358.4,Cash on Delivery,DELIVERED,App,27,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000783,2026-09-11 12:43:06,C00267,S13,P0110,4,42.0,10,151.2,Card,DELIVERED,App,32,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002004,2026-09-26 06:10:38,C00290,S01,P0071,2,336.0,0,6720.0,Cash on Delivery,DELIVERED,App,31,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002101,2026-09-27 08:47:38,C00313,S03,P0041,2,444.0,5,843.6,UPI,DELIVERED,Web,480,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001610,2026-13-05 11:00:00,C00359,S08,P0030,1,50.0,0,50.0,UPI,DELIVERED,App,12,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000997,2026-09-13 22:07:46,,S10,P0106,1,380.0,20,304.0,Card,DELIVERED,App,28,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000455,2026-09-07 08:19:57,C00025,S09,P0147,2,242.0,15,411.4,UPI,DELIVERED,Web,1440,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000580,2026-09-08 19:46:54,,S04,P0110,5,42.0,20,168.0,Wallet,DELIVERED,App,23,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000731,2026-09-10 16:54:06,C00021,S11,P0018,1,186.0,20,148.8,Cash on Delivery,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001277,2026-09-17 11:27:29,C00221,S14,P0108,1,161.0,10,144.9,UPI,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001239,2026-09-16 21:34:44,C00355,S10,P0042,5,432.0,5,2052.0,UPI,DELIVERED,App,33,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000500,2026-09-07 18:11:10,C00197,S10,P0032,1,332.0,0,332.0,Card,Pending??,App,19,"Critical: order_status not in ['DELIVERED', 'CANCELLED', 'RETURNED']",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000845,2026-09-12 09:30:35,C00238,S12,P0101,2,248.0,5,4712.0,UPI,DELIVERED,Web,20,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001692,2026-09-22 10:27:56,C00032,S10,P0145,1,315.0,15,267.75,UPI,DELIVERED,Web,29,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001296,2026-09-17 16:07:59,C00305,S03,P0046,-2,197.0,0,-394.0,UPI,DELIVERED,App,35,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000964,2026-09-13 15:34:18,C00062,S07,P0073,3,279.0,0,8370.0,Cash on Delivery,DELIVERED,Web,10,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001459,2026-09-19 14:49:06,C00266,S15,P0060,-3,531.0,0,-1593.0,UPI,DELIVERED,App,21,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002019,2026-09-26 09:36:06,,S12,P0031,5,244.0,0,1220.0,Wallet,DELIVERED,App,20,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000534,2026-13-05 11:00:00,C00043,S15,P0073,4,279.0,0,1116.0,UPI,DELIVERED,App,21,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000867,2026-09-12 15:43:47,C00290,S13,P0090,-1,527.0,5,-500.65,UPI,DELIVERED,App,29,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000362,,C00114,S15,P0106,3,380.0,15,969.0,UPI,DELIVERED,App,26,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002262,2026-09-29 11:56:29,,S12,P0004,1,188.0,5,178.6,Wallet,DELIVERED,App,12,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002149,2026-09-27 21:33:46,,S07,P0146,3,337.0,0,1011.0,UPI,DELIVERED,App,12,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002367,2026-09-30 15:56:38,,S11,P0135,1,248.0,10,223.2,UPI,DELIVERED,Web,10,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000462,2026-09-07 09:54:28,C00303,S04,P0050,-3,449.0,5,-1279.65,Card,DELIVERED,App,29,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001870,2026-09-24 14:09:09,C00113,S01,P0051,1,283.0,5,268.85,UPI,DELIVERED,App,12,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002298,2026-09-29 19:58:53,C00398,S02,P0067,2,339.0,10,305.1,Cash on Delivery,DELIVERED,App,28,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002031,2026-09-26 11:03:30,C00223,S03,P0001,3,107.0,0,3210.0,Card,DELIVERED,App,35,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002360,2026-09-30 14:04:41,C00313,S01,P0044,0,228.0,0,0.0,Card,DELIVERED,App,22,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000326,2026-09-05 14:32:14,C00088,S13,P0083,1,125.0,0,125.0,Card,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002012,31/09/2026 10:00,C00003,S07,P0138,1,507.0,5,481.65,Card,DELIVERED,Web,16,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001441,2026-09-19 12:15:53,C00206,S02,P0090,1,527.0,0,527.0,Card,DELIVERED,App,29,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001765,2027-01-01 09:00:00,C00253,S03,P0102,1,369.0,0,369.0,Card,DELIVERED,App,26,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002129,2026-09-27 16:33:43,C00338,S04,P0106,1,380.0,10,342.0,Cash on Delivery,DELIVERED,Web,12,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001549,2026-09-20 13:07:35,C00394,S01,P0058,1,292.0,0,292.0,Cash on Delivery,DELIVERED,App,12,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001332,2026-09-17 23:49:07,,S13,P0035,1,67.0,10,60.3,UPI,RETURNED,App,9,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001724,2026-09-22 19:40:18,C00046,S11,P0026,0,205.0,20,0.0,UPI,DELIVERED,Web,11,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000801,2026-09-11 17:38:41,C00246,S11,P0063,5,729.0,0,5467.5,UPI,DELIVERED,App,16,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001918,2026-09-25 06:53:30,,S10,P0088,1,277.0,20,221.6,Wallet,DELIVERED,App,10,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002156,2026-09-27 22:51:50,,S02,P0050,1,449.0,0,449.0,UPI,DELIVERED,App,8,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000583,2026-09-08 19:54:57,,S03,P0093,5,492.0,15,2091.0,UPI,DELIVERED,App,24,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000099,2026-09-02 12:22:47,C00203,S13,P0130,0,406.0,0,0.0,UPI,DELIVERED,App,32,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000880,2026-09-12 18:22:46,C00135,S06,P0130,1,406.0,15,517.65,UPI,DELIVERED,Web,33,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000790,2026-09-11 14:12:53,,S06,P0148,1,105.0,0,105.0,UPI,DELIVERED,App,11,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001515,2026-09-20 07:31:37,C00060,S14,P0055,2,684.0,10,1231.2,UPI,DELIVERED,Web,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000764,2026-09-11 07:45:21,,S12,P0139,1,405.0,20,324.0,Card,DELIVERED,App,29,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002219,2026-09-28 21:05:16,,S05,P0098,2,93.0,0,186.0,Card,DELIVERED,App,15,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001965,2026-11-02 18:40:00,C00306,S01,P0073,1,279.0,0,279.0,Cash on Delivery,DELIVERED,App,25,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001274,2026-09-17 11:18:10,C00398,S12,P0100,1,220.0,0,110.0,UPI,DELIVERED,App,10,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000677,2026-09-10 07:18:14,C00375,S08,P0058,1,292.0,10,394.2,Card,DELIVERED,App,12,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002223,2026-09-28 21:38:40,C00332,S13,P0117,1,77.0,5,36.58,UPI,DELIVERED,App,19,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002128,2026-09-27 16:27:38,C00043,S13,P0003,1,177.0,0,265.5,UPI,DELIVERED,App,31,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001624,2026-09-21 13:28:12,C00246,S04,P0071,3,336.0,5,9576.0,UPI,DELIVERED,App,32,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001110,2026-09-15 09:23:24,C00329,S13,P0068,3,649.0,5,1849.65,UPI,DELIVERED,App,9,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001532,2026-09-20 10:07:56,,S13,P0032,1,332.0,0,332.0,Card,DELIVERED,App,19,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001124,2026-09-15 13:05:08,C00396,S06,P0108,-1,161.0,10,-144.9,UPI,CANCELLED,App,,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000022,2026-09-01 09:55:26,,S10,P0102,1,369.0,5,350.55,UPI,DELIVERED,App,31,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002229,2026-09-28 22:24:27,C00066,S04,P0150,1,337.0,20,269.6,Cash on Delivery,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD002244,2026-09-29 08:38:11,C00047,S14,P0028,1,76.0,5,108.3,UPI,DELIVERED,App,30,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001755,2026-09-23 08:45:53,C00278,S06,P0058,5,292.0,0,730.0,UPI,DELIVERED,App,26,Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001970,2026-09-25 16:47:23,C00082,S03,P0021,3,142.0,5,404.7,UPI,Pending??,App,32,"Critical: order_status not in ['DELIVERED', 'CANCELLED', 'RETURNED']",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000539,2026-09-08 10:36:28,C00102,S13,P0001,3,107.0,10,288.9,UPI,DELIVERED,App,13,"Critical: duplicate order_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000878,2026-09-12 17:33:13,C00170,S07,P0073,4,279.0,20,892.8,Wallet,DELIVERED,App,,Critical: DELIVERED order has no delivery_minutes,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001725,2027-01-01 09:00:00,C00325,S12,P0138,1,507.0,15,430.95,Card,DELIVERED,App,26,Critical: order_ts is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001104,2026-09-15 08:52:25,C00236,S08,P0064,2,620.0,10,1116.0,Card,DELIVERED,App,900,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000946,31/09/2026 10:00,C00186,S13,P0125,1,609.0,20,487.2,UPI,DELIVERED,App,8,Critical: order_ts does not parse,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001637,2026-09-21 16:23:31,C00122,S05,P0002,3,105.0,0,315.0,Card,Pending??,App,34,"Critical: order_status not in ['DELIVERED', 'CANCELLED', 'RETURNED']",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001468,2026-09-19 16:48:14,C00278,S10,P0044,3,228.0,120,547.2,UPI,DELIVERED,App,26,Critical: discount_pct outside 0-100 | Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001373,2026-09-18 16:19:34,,S08,P0022,4,46.0,20,147.2,Wallet,CANCELLED,App,,Critical: customer_id is missing,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000020,2026-09-01 09:42:59,C00106,S04,P0137,1,168.0,0,168.0,Cash on Delivery,DELIVERED,App,900,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001237,2026-09-16 21:16:50,C00140,S11,P0127,5,602.0,150,2408.0,UPI,DELIVERED,App,17,Critical: discount_pct outside 0-100 | Critical: order_amount does not match quantity x unit_price x (1 - discount),2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD001384,2026-09-18 18:42:03,C00009,S06,P0023,-1,222.0,15,-188.7,UPI,DELIVERED,App,32,Critical: quantity must be greater than zero,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+ORD000424,2026-09-06 19:16:13,C00148,S12,P0095,1,354.0,15,300.9,UPI,DELIVERED,App,480,Critical: delivery_minutes above 120,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00

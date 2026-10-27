@@ -1,0 +1,35 @@
+file,row_key,column,problem,quality_dimension,proposed_rule,severity,rows_affected
+orders.csv,ORD000362,order_ts,1 rows with no order_ts,Completeness,order_ts must be present,Warning,1
+orders.csv,"ORD002255, ORD000701, ORD000997, ORD000580 +14 more",customer_id,18 rows with no customer_id,Completeness,customer_id must be present,Critical,18
+orders.csv,"ORD000682, ORD000910, ORD001683, ORD002082 +160 more",delivery_minutes,164 rows with no delivery_minutes,Completeness,delivery_minutes must be present,Warning,164
+orders.csv,"ORD001462, ORD001326, ORD001434, ORD000783 +8 more",order_id,12 duplicated keys,Uniqueness,order_id must be unique; keep the last row by load order,Critical,24
+orders.csv,"ORD001066, ORD000500, ORD000153, ORD001970 +1 more",order_status,"5 rows outside ['CANCELLED', 'DELIVERED', 'RETURNED']: Pending??, delivered",Validity,"order_status must be DELIVERED, CANCELLED or RETURNED",Critical,5
+orders.csv,"ORD000159, ORD001364, ORD000433, ORD002356 +3 more",payment_mode,"7 rows with casing or spacing variants: ['upi', 'CARD', 'UPI ']",Consistency,trim and title-case payment_mode onto the allowed list,Warning,7
+orders.csv,"ORD001812, ORD001414, ORD001640",payment_mode,"3 rows with unmapped mode: ['Cashh', 'cod']",Validity,payment_mode must map to the allowed list,Critical,3
+orders.csv,"ORD002103, ORD001468, ORD001237",discount_pct,3 rows with discount outside 0-100 (max 250%),Validity,discount_pct must be between 0 and 100,Critical,3
+orders.csv,"ORD000469, ORD001296, ORD001459, ORD000867 +6 more",quantity,10 rows with quantity <= 0 (min -3),Accuracy,quantity must be > 0; negatives need a client ruling (return vs typo),Critical,10
+orders.csv,"ORD002103, ORD002305, ORD002004, ORD000845 +14 more",order_amount,18 rows where amount != qty*price*(1-disc) (max gap 8618.40),Accuracy,recompute order_amount from the formula and quarantine mismatches,Critical,18
+orders.csv,"ORD001037, ORD002101, ORD000455, ORD001104 +2 more",delivery_minutes,6 rows above 120 minutes (max 1440.0),Accuracy,delivery_minutes must be <= 120,Critical,6
+orders.csv,"ORD001554, ORD001800, ORD000731, ORD001277 +4 more",delivery_minutes,8 DELIVERED orders with no delivery time,Completeness,DELIVERED must carry delivery_minutes,Critical,8
+orders.csv,"ORD002119, ORD001693, ORD001089, ORD001121 +3 more",order_ts,7 orders dated after the export window (max 2027-01-01 09:00:00),Timeliness,reject future-dated orders,Critical,7
+orders.csv,"ORD000403, ORD001610, ORD000534, ORD002012 +1 more",order_ts,"5 timestamps that do not parse: N/A, 2026-13-05 11:00:00, 31/09/2026 10:00",Validity,order_ts must parse as a timestamp,Critical,5
+payments.csv,"PAY0000133, PAY0001514, PAY0001852, PAY0001437 +297 more",gateway_ref,301 rows with no gateway_ref,Completeness,gateway_ref must be present,Warning,301
+payments.csv,"PAY0001651, PAY0000755, PAY0000509, PAY0002000",payment_id,4 duplicated keys,Uniqueness,payment_id must be unique; keep the last row by load order,Critical,8
+payments.csv,"PAY0001568, PAY0002175, PAY0000751, PAY0000944 +2 more",amount_paid,6 payments with a negative amount,Accuracy,amount_paid must be >= 0,Critical,6
+customers.csv,"C00355, C00394, C00233, C00142 +2 more",city,6 rows with no city,Completeness,city must be present,Warning,6
+customers.csv,"C00103, C00252, C00036, C00226 +1 more",customer_id,5 duplicated keys,Uniqueness,customer_id must be unique; keep the last row by load order,Critical,10
+customers.csv,(all rows),loyalty_tier,"mixed casing across 7 variants: ['BRONZE', 'Bronze', 'Gold', 'Platinum', 'SILVER', 'Silver']",Consistency,upper-case loyalty_tier before load,Warning,405
+customers.csv,"C00337, C00307, C00063, C00045 +8 more",email,"12 malformed email addresses: N/A, arjun.rao307example.com, prakash.pillai63@example +6 more",Validity,warn and load; mask regardless,Warning,12
+customers.csv,"C00151, C00240, C00095, C00357 +3 more",phone,"7 phone numbers that are not 10 digits: 996292312, 90917798, 993802612 +4 more",Validity,warn and load; mask regardless,Warning,7
+customers.csv,"C00400, C00398, C00038",signup_date,3 customers signed up in the future (max 2027-01-05 00:00:00),Timeliness,reject future signup dates,Critical,3
+products.csv,"P0051, P0060, P0068",category,3 rows with no category,Completeness,category must be present,Warning,3
+products.csv,"P0030, P0140",product_id,2 duplicated keys,Uniqueness,product_id must be unique; keep the last row by load order,Critical,4
+products.csv,"P0019, P0073, P0074, P0109 +1 more",cost_price,5 products where cost_price > mrp,Accuracy,cost_price must be <= mrp,Critical,5
+products.csv,P0109,mrp,1 products with mrp <= 0,Accuracy,mrp must be > 0,Critical,1
+stores.csv,S07,zone,1 rows with no zone,Completeness,zone must be present,Warning,1
+orders.csv,"ORD000986, ORD001058, ORD001685, ORD000070 +5 more",product_id,"9 orders pointing at a product_id that does not exist: P9455, P9212, P9816 +6 more",Consistency,product_id must exist in products.csv,Critical,9
+orders.csv,"ORD001799, ORD001046, ORD001492, ORD001275 +1 more",store_id,"5 orders pointing at a store_id that does not exist: S99, S17, S00",Consistency,store_id must exist in stores.csv,Critical,5
+payments.csv,"PAY0002219, PAY0002220, PAY0002223, PAY0002221 +4 more",order_id,8 payments with no matching order,Consistency,payment must reference a known order,Critical,8
+payments.csv,"PAY0001568, PAY0000354, PAY0000779, PAY0000323 +10 more",amount_paid,14 SUCCESS payments differ from order_amount (net -785.00),Consistency,write every mismatch to a reconciliation table,Critical,14
+orders.csv,"ORD000398, ORD001113, ORD000737, ORD000518 +68 more",order_id,72 delivered orders with no successful payment,Consistency,flag on the reconciliation table for finance,Warning,72
+orders_2026-10-01_increment.csv,"ORD000017, ORD000271, ORD000332, ORD000337 +6 more",order_status,10 late status corrections to September orders,Timeliness,"MERGE on order_id so corrections overwrite, never duplicate",Critical,10

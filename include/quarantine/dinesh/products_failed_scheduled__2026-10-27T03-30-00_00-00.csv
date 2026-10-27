@@ -1,0 +1,8 @@
+product_id,product_name,category,sub_category,brand,mrp,cost_price,unit,is_perishable,launch_date,failure_reason,quarantined_at,run_id
+P0019,Desi Farms Fresh Vegetables 19,Fruits & Vegetables,Fresh Vegetables,Desi Farms,220.0,264.0,kg,True,2023-07-23,Critical: cost_price is higher than mrp,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0030,Kaveri Dairy Milk 5,Dairy & Bakery,Milk,Kaveri Dairy,50.0,40.39,pack,True,2023-03-14,"Critical: duplicate product_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0073,GoldenGrain Dal 23,Staples,Dal,GoldenGrain,279.0,334.8,pack,False,2024-03-20,Critical: cost_price is higher than mrp,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0074,SunPress Dal 24,Staples,Dal,SunPress,350.0,420.0,pack,False,2024-06-07,Critical: cost_price is higher than mrp,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0109,SmileBright Shampoo 9,Personal Care,Shampoo,SmileBright,-203.0,162.5,unit,False,2024-04-26,Critical: mrp must be greater than zero | Critical: cost_price is higher than mrp,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0117,HerbVeda Oral Care 17,Personal Care,Oral Care,HerbVeda,77.0,92.4,unit,False,2025-03-02,Critical: cost_price is higher than mrp,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+P0140,CleanPro Detergent 15,Household,Detergent,CleanPro,364.0,251.46,unit,False,2024-03-27,"Critical: duplicate product_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00

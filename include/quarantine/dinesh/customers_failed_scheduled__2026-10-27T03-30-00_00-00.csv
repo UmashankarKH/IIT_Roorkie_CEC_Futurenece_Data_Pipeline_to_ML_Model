@@ -1,0 +1,9 @@
+customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active,failure_reason,quarantined_at,run_id
+C00103,Ganesh N.,ga***@example.com,91******05,Bengaluru,BTM Layout,560076,2025-12-30,Bronze,Y,"Critical: duplicate customer_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00400,Deepa P.,de***@example.com,95******91,Bengaluru,Yelahanka,560064,2027-01-05,Gold,Y,Critical: signup_date is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00252,Shreya R.,sh***@example.com,91******05,Bengaluru,Whitefield,560066,2025-06-26,Gold,N,"Critical: duplicate customer_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00036,Deepa D.,de***@example.com,90******55,Bengaluru,Marathahalli,560037,2024-06-07,Bronze,Y,"Critical: duplicate customer_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00226,Prakash R.,pr***@example.com,98******39,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y,"Critical: duplicate customer_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00398,Priya R.,pr***@example.com,98******41,Bengaluru,HSR Layout,560102,2026-11-12,Silver,Y,Critical: signup_date is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00313,Prakash H.,pr***@example.com,95******82,Bengaluru,Hebbal,560024,2025-09-15,Silver,Y,"Critical: duplicate customer_id, later row kept",2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
+C00038,Ganesh G.,ga***@example.com,90******76,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,Y,Critical: signup_date is in the future,2026-10-27T04:24:31,scheduled__2026-10-27T03:30:00+00:00
