@@ -13,3 +13,8 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# NammaMart (smit): warehouse and quarantine files contain raw customer PII, never commit them
+include/warehouse_smit.duckdb
+include/warehouse_smit.duckdb.wal
+include/quarantine/smit/
