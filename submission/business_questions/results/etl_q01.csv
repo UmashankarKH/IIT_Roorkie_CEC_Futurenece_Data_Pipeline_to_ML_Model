@@ -1,0 +1,416 @@
+order_date,zone,store_id,store_name,net_revenue
+2026-09-01,East,S08,NammaMart Whitefield,2984.7
+2026-09-01,East,S09,NammaMart Indiranagar,2089.6
+2026-09-01,East,S10,NammaMart Marathahalli,2141.6
+2026-09-01,East,S11,NammaMart HSR Layout,2121.15
+2026-09-01,North,S01,NammaMart Hebbal,1410.8
+2026-09-01,North,S02,NammaMart Yelahanka,2385.55
+2026-09-01,North,S03,NammaMart RT Nagar,4583.8
+2026-09-01,South,S05,NammaMart JP Nagar,803.0
+2026-09-01,South,S06,NammaMart Banashankari,2812.0
+2026-09-01,West,S12,NammaMart Rajajinagar,316.0
+2026-09-01,West,S13,NammaMart Malleshwaram,1469.1
+2026-09-01,West,S14,NammaMart Vijayanagar,3095.85
+2026-09-01,West,S15,NammaMart Basaveshwaranagar,925.2
+2026-09-02,East,S08,NammaMart Whitefield,1183.6
+2026-09-02,East,S09,NammaMart Indiranagar,2944.9
+2026-09-02,East,S10,NammaMart Marathahalli,2996.9
+2026-09-02,East,S11,NammaMart HSR Layout,859.2
+2026-09-02,North,S01,NammaMart Hebbal,1125.0
+2026-09-02,North,S02,NammaMart Yelahanka,889.2
+2026-09-02,North,S03,NammaMart RT Nagar,1559.6
+2026-09-02,South,S04,NammaMart Jayanagar,4291.9
+2026-09-02,South,S05,NammaMart JP Nagar,3759.5
+2026-09-02,South,S06,NammaMart Banashankari,4371.6
+2026-09-02,West,S12,NammaMart Rajajinagar,412.0
+2026-09-02,West,S13,NammaMart Malleshwaram,1252.15
+2026-09-02,West,S14,NammaMart Vijayanagar,3762.9
+2026-09-02,West,S15,NammaMart Basaveshwaranagar,3581.3
+2026-09-03,East,S08,NammaMart Whitefield,1660.45
+2026-09-03,East,S09,NammaMart Indiranagar,2858.75
+2026-09-03,East,S10,NammaMart Marathahalli,2344.9
+2026-09-03,East,S11,NammaMart HSR Layout,5194.3
+2026-09-03,North,S01,NammaMart Hebbal,3033.0
+2026-09-03,North,S02,NammaMart Yelahanka,6597.85
+2026-09-03,North,S03,NammaMart RT Nagar,4328.3
+2026-09-03,South,S04,NammaMart Jayanagar,138.6
+2026-09-03,South,S05,NammaMart JP Nagar,2693.0
+2026-09-03,South,S06,NammaMart Banashankari,4646.8
+2026-09-03,West,S12,NammaMart Rajajinagar,935.65
+2026-09-03,West,S13,NammaMart Malleshwaram,519.3
+2026-09-03,West,S14,NammaMart Vijayanagar,4695.3
+2026-09-03,West,S15,NammaMart Basaveshwaranagar,3316.65
+2026-09-04,East,S08,NammaMart Whitefield,1772.1
+2026-09-04,East,S09,NammaMart Indiranagar,1724.7
+2026-09-04,East,S10,NammaMart Marathahalli,2793.8
+2026-09-04,East,S11,NammaMart HSR Layout,3590.4
+2026-09-04,North,S01,NammaMart Hebbal,427.0
+2026-09-04,North,S02,NammaMart Yelahanka,1026.4
+2026-09-04,North,S03,NammaMart RT Nagar,1094.4
+2026-09-04,South,S04,NammaMart Jayanagar,3335.3
+2026-09-04,South,S05,NammaMart JP Nagar,2157.95
+2026-09-04,South,S06,NammaMart Banashankari,743.8
+2026-09-04,West,S12,NammaMart Rajajinagar,537.5
+2026-09-04,West,S13,NammaMart Malleshwaram,3238.2
+2026-09-04,West,S14,NammaMart Vijayanagar,4294.3
+2026-09-04,West,S15,NammaMart Basaveshwaranagar,1087.4
+2026-09-05,East,S08,NammaMart Whitefield,1460.7
+2026-09-05,East,S09,NammaMart Indiranagar,5045.55
+2026-09-05,East,S10,NammaMart Marathahalli,416.0
+2026-09-05,East,S11,NammaMart HSR Layout,228.0
+2026-09-05,North,S01,NammaMart Hebbal,1419.55
+2026-09-05,North,S02,NammaMart Yelahanka,184.45
+2026-09-05,North,S03,NammaMart RT Nagar,1123.05
+2026-09-05,South,S04,NammaMart Jayanagar,1286.4
+2026-09-05,South,S05,NammaMart JP Nagar,3292.0
+2026-09-05,South,S06,NammaMart Banashankari,1211.0
+2026-09-05,West,S12,NammaMart Rajajinagar,3043.05
+2026-09-05,West,S13,NammaMart Malleshwaram,1973.2
+2026-09-05,West,S14,NammaMart Vijayanagar,1239.1
+2026-09-05,West,S15,NammaMart Basaveshwaranagar,2093.05
+2026-09-06,East,S08,NammaMart Whitefield,3398.6
+2026-09-06,East,S09,NammaMart Indiranagar,3148.4
+2026-09-06,East,S10,NammaMart Marathahalli,1650.15
+2026-09-06,East,S11,NammaMart HSR Layout,3322.4
+2026-09-06,North,S01,NammaMart Hebbal,3443.8
+2026-09-06,North,S02,NammaMart Yelahanka,1013.7
+2026-09-06,North,S03,NammaMart RT Nagar,5812.4
+2026-09-06,South,S04,NammaMart Jayanagar,4964.65
+2026-09-06,South,S05,NammaMart JP Nagar,3585.0
+2026-09-06,South,S06,NammaMart Banashankari,2630.4
+2026-09-06,West,S12,NammaMart Rajajinagar,924.9
+2026-09-06,West,S13,NammaMart Malleshwaram,3087.0
+2026-09-06,West,S14,NammaMart Vijayanagar,307.45
+2026-09-06,West,S15,NammaMart Basaveshwaranagar,8227.7
+2026-09-07,East,S08,NammaMart Whitefield,2039.0
+2026-09-07,East,S10,NammaMart Marathahalli,2433.45
+2026-09-07,East,S11,NammaMart HSR Layout,1160.6
+2026-09-07,North,S01,NammaMart Hebbal,1711.5
+2026-09-07,North,S02,NammaMart Yelahanka,492.0
+2026-09-07,North,S03,NammaMart RT Nagar,4380.4
+2026-09-07,South,S04,NammaMart Jayanagar,2488.4
+2026-09-07,South,S05,NammaMart JP Nagar,3645.15
+2026-09-07,South,S06,NammaMart Banashankari,4557.65
+2026-09-07,West,S12,NammaMart Rajajinagar,1455.0
+2026-09-07,West,S13,NammaMart Malleshwaram,4869.1
+2026-09-07,West,S14,NammaMart Vijayanagar,1632.55
+2026-09-07,West,S15,NammaMart Basaveshwaranagar,1750.9
+2026-09-08,East,S08,NammaMart Whitefield,1949.45
+2026-09-08,East,S09,NammaMart Indiranagar,643.15
+2026-09-08,East,S10,NammaMart Marathahalli,358.4
+2026-09-08,East,S11,NammaMart HSR Layout,1378.35
+2026-09-08,North,S01,NammaMart Hebbal,3028.2
+2026-09-08,North,S02,NammaMart Yelahanka,3009.25
+2026-09-08,North,S03,NammaMart RT Nagar,1513.1
+2026-09-08,South,S04,NammaMart Jayanagar,1204.0
+2026-09-08,South,S05,NammaMart JP Nagar,2877.1
+2026-09-08,South,S06,NammaMart Banashankari,4592.7
+2026-09-08,West,S12,NammaMart Rajajinagar,667.8
+2026-09-08,West,S13,NammaMart Malleshwaram,536.75
+2026-09-08,West,S14,NammaMart Vijayanagar,2000.3
+2026-09-08,West,S15,NammaMart Basaveshwaranagar,3497.25
+2026-09-09,East,S08,NammaMart Whitefield,2912.5
+2026-09-09,East,S09,NammaMart Indiranagar,1569.85
+2026-09-09,East,S10,NammaMart Marathahalli,2607.1
+2026-09-09,East,S11,NammaMart HSR Layout,1452.45
+2026-09-09,North,S01,NammaMart Hebbal,2663.8
+2026-09-09,North,S02,NammaMart Yelahanka,3922.95
+2026-09-09,North,S03,NammaMart RT Nagar,137.0
+2026-09-09,South,S04,NammaMart Jayanagar,1204.7
+2026-09-09,South,S05,NammaMart JP Nagar,2035.45
+2026-09-09,South,S06,NammaMart Banashankari,4084.8
+2026-09-09,West,S12,NammaMart Rajajinagar,794.2
+2026-09-09,West,S13,NammaMart Malleshwaram,1870.4
+2026-09-09,West,S14,NammaMart Vijayanagar,2153.8
+2026-09-09,West,S15,NammaMart Basaveshwaranagar,3411.6
+2026-09-10,East,S08,NammaMart Whitefield,3589.8
+2026-09-10,East,S09,NammaMart Indiranagar,1917.6
+2026-09-10,East,S10,NammaMart Marathahalli,2026.05
+2026-09-10,East,S11,NammaMart HSR Layout,2466.15
+2026-09-10,North,S01,NammaMart Hebbal,4023.95
+2026-09-10,North,S02,NammaMart Yelahanka,3889.35
+2026-09-10,North,S03,NammaMart RT Nagar,6143.7
+2026-09-10,South,S04,NammaMart Jayanagar,1564.6
+2026-09-10,South,S05,NammaMart JP Nagar,1431.8
+2026-09-10,South,S06,NammaMart Banashankari,1921.0
+2026-09-10,West,S12,NammaMart Rajajinagar,4040.0
+2026-09-10,West,S13,NammaMart Malleshwaram,1750.4
+2026-09-10,West,S15,NammaMart Basaveshwaranagar,1519.6
+2026-09-11,East,S08,NammaMart Whitefield,3830.95
+2026-09-11,East,S09,NammaMart Indiranagar,3679.9
+2026-09-11,East,S10,NammaMart Marathahalli,3619.15
+2026-09-11,East,S11,NammaMart HSR Layout,1113.6
+2026-09-11,North,S01,NammaMart Hebbal,688.0
+2026-09-11,North,S02,NammaMart Yelahanka,1822.7
+2026-09-11,North,S03,NammaMart RT Nagar,4035.75
+2026-09-11,South,S04,NammaMart Jayanagar,2741.25
+2026-09-11,South,S06,NammaMart Banashankari,1392.5
+2026-09-11,West,S12,NammaMart Rajajinagar,6569.2
+2026-09-11,West,S13,NammaMart Malleshwaram,2252.8
+2026-09-11,West,S14,NammaMart Vijayanagar,67.0
+2026-09-11,West,S15,NammaMart Basaveshwaranagar,2918.35
+2026-09-12,East,S08,NammaMart Whitefield,1137.15
+2026-09-12,East,S09,NammaMart Indiranagar,4337.05
+2026-09-12,East,S10,NammaMart Marathahalli,488.35
+2026-09-12,East,S11,NammaMart HSR Layout,2494.2
+2026-09-12,North,S01,NammaMart Hebbal,2037.5
+2026-09-12,North,S02,NammaMart Yelahanka,514.4
+2026-09-12,North,S03,NammaMart RT Nagar,2095.8
+2026-09-12,South,S04,NammaMart Jayanagar,2780.05
+2026-09-12,South,S05,NammaMart JP Nagar,1801.0
+2026-09-12,South,S06,NammaMart Banashankari,1088.0
+2026-09-12,West,S12,NammaMart Rajajinagar,720.7
+2026-09-12,West,S13,NammaMart Malleshwaram,5736.3
+2026-09-12,West,S14,NammaMart Vijayanagar,2916.95
+2026-09-12,West,S15,NammaMart Basaveshwaranagar,5380.95
+2026-09-13,East,S08,NammaMart Whitefield,5568.15
+2026-09-13,East,S09,NammaMart Indiranagar,2163.8
+2026-09-13,East,S10,NammaMart Marathahalli,1084.8
+2026-09-13,East,S11,NammaMart HSR Layout,4176.7
+2026-09-13,North,S01,NammaMart Hebbal,2625.0
+2026-09-13,North,S02,NammaMart Yelahanka,1245.4
+2026-09-13,North,S03,NammaMart RT Nagar,1648.5
+2026-09-13,South,S04,NammaMart Jayanagar,3371.35
+2026-09-13,South,S05,NammaMart JP Nagar,3416.8
+2026-09-13,South,S06,NammaMart Banashankari,1310.0
+2026-09-13,West,S12,NammaMart Rajajinagar,1675.85
+2026-09-13,West,S13,NammaMart Malleshwaram,2486.0
+2026-09-13,West,S14,NammaMart Vijayanagar,2737.0
+2026-09-13,West,S15,NammaMart Basaveshwaranagar,944.75
+2026-09-14,East,S08,NammaMart Whitefield,986.4
+2026-09-14,East,S09,NammaMart Indiranagar,5531.7
+2026-09-14,East,S10,NammaMart Marathahalli,6544.9
+2026-09-14,East,S11,NammaMart HSR Layout,938.45
+2026-09-14,North,S01,NammaMart Hebbal,3276.25
+2026-09-14,North,S02,NammaMart Yelahanka,2203.6
+2026-09-14,North,S03,NammaMart RT Nagar,3047.1
+2026-09-14,South,S04,NammaMart Jayanagar,1239.0
+2026-09-14,South,S05,NammaMart JP Nagar,1172.0
+2026-09-14,South,S06,NammaMart Banashankari,1385.95
+2026-09-14,West,S12,NammaMart Rajajinagar,1950.9
+2026-09-14,West,S13,NammaMart Malleshwaram,3203.4
+2026-09-14,West,S14,NammaMart Vijayanagar,645.2
+2026-09-14,West,S15,NammaMart Basaveshwaranagar,1605.0
+2026-09-15,East,S08,NammaMart Whitefield,701.5
+2026-09-15,East,S09,NammaMart Indiranagar,3549.0
+2026-09-15,East,S10,NammaMart Marathahalli,984.3
+2026-09-15,East,S11,NammaMart HSR Layout,2470.8
+2026-09-15,North,S01,NammaMart Hebbal,4583.05
+2026-09-15,North,S02,NammaMart Yelahanka,1630.3
+2026-09-15,North,S03,NammaMart RT Nagar,1787.8
+2026-09-15,South,S04,NammaMart Jayanagar,1882.0
+2026-09-15,South,S05,NammaMart JP Nagar,411.0
+2026-09-15,South,S06,NammaMart Banashankari,1470.2
+2026-09-15,West,S12,NammaMart Rajajinagar,2584.2
+2026-09-15,West,S13,NammaMart Malleshwaram,1841.8
+2026-09-15,West,S14,NammaMart Vijayanagar,3378.4
+2026-09-15,West,S15,NammaMart Basaveshwaranagar,2743.45
+2026-09-16,East,S08,NammaMart Whitefield,2866.55
+2026-09-16,East,S09,NammaMart Indiranagar,2256.55
+2026-09-16,East,S10,NammaMart Marathahalli,1712.0
+2026-09-16,East,S11,NammaMart HSR Layout,2403.2
+2026-09-16,North,S01,NammaMart Hebbal,1805.05
+2026-09-16,North,S02,NammaMart Yelahanka,2698.0
+2026-09-16,North,S03,NammaMart RT Nagar,2674.85
+2026-09-16,South,S04,NammaMart Jayanagar,1231.3
+2026-09-16,South,S05,NammaMart JP Nagar,2857.55
+2026-09-16,South,S06,NammaMart Banashankari,6657.2
+2026-09-16,West,S12,NammaMart Rajajinagar,739.05
+2026-09-16,West,S13,NammaMart Malleshwaram,1530.0
+2026-09-16,West,S14,NammaMart Vijayanagar,2000.05
+2026-09-16,West,S15,NammaMart Basaveshwaranagar,873.9
+2026-09-17,East,S08,NammaMart Whitefield,2400.2
+2026-09-17,East,S09,NammaMart Indiranagar,1686.9
+2026-09-17,East,S10,NammaMart Marathahalli,1584.9
+2026-09-17,East,S11,NammaMart HSR Layout,2132.25
+2026-09-17,North,S01,NammaMart Hebbal,3614.6
+2026-09-17,North,S02,NammaMart Yelahanka,1549.95
+2026-09-17,North,S03,NammaMart RT Nagar,2497.0
+2026-09-17,South,S04,NammaMart Jayanagar,3609.5
+2026-09-17,South,S05,NammaMart JP Nagar,1344.6
+2026-09-17,South,S06,NammaMart Banashankari,5989.15
+2026-09-17,West,S12,NammaMart Rajajinagar,1943.4
+2026-09-17,West,S13,NammaMart Malleshwaram,3202.3
+2026-09-17,West,S14,NammaMart Vijayanagar,3680.0
+2026-09-17,West,S15,NammaMart Basaveshwaranagar,3376.0
+2026-09-18,East,S08,NammaMart Whitefield,3016.6
+2026-09-18,East,S09,NammaMart Indiranagar,9.0
+2026-09-18,East,S10,NammaMart Marathahalli,6683.0
+2026-09-18,East,S11,NammaMart HSR Layout,1973.8
+2026-09-18,North,S01,NammaMart Hebbal,1684.6
+2026-09-18,North,S02,NammaMart Yelahanka,1559.7
+2026-09-18,North,S03,NammaMart RT Nagar,766.0
+2026-09-18,South,S04,NammaMart Jayanagar,2164.25
+2026-09-18,South,S05,NammaMart JP Nagar,3661.2
+2026-09-18,South,S06,NammaMart Banashankari,217.0
+2026-09-18,West,S12,NammaMart Rajajinagar,1710.7
+2026-09-18,West,S13,NammaMart Malleshwaram,2700.8
+2026-09-18,West,S14,NammaMart Vijayanagar,2469.0
+2026-09-18,West,S15,NammaMart Basaveshwaranagar,3494.6
+2026-09-19,East,S08,NammaMart Whitefield,1341.85
+2026-09-19,East,S09,NammaMart Indiranagar,1374.85
+2026-09-19,East,S10,NammaMart Marathahalli,1606.25
+2026-09-19,East,S11,NammaMart HSR Layout,2986.8
+2026-09-19,North,S01,NammaMart Hebbal,4641.05
+2026-09-19,North,S02,NammaMart Yelahanka,9205.0
+2026-09-19,North,S03,NammaMart RT Nagar,4103.4
+2026-09-19,South,S04,NammaMart Jayanagar,1572.2
+2026-09-19,South,S05,NammaMart JP Nagar,1252.5
+2026-09-19,South,S06,NammaMart Banashankari,3268.1
+2026-09-19,West,S12,NammaMart Rajajinagar,1735.6
+2026-09-19,West,S13,NammaMart Malleshwaram,7889.7
+2026-09-19,West,S14,NammaMart Vijayanagar,5163.9
+2026-09-19,West,S15,NammaMart Basaveshwaranagar,3824.0
+2026-09-20,East,S08,NammaMart Whitefield,2986.75
+2026-09-20,East,S09,NammaMart Indiranagar,933.25
+2026-09-20,East,S10,NammaMart Marathahalli,4258.6
+2026-09-20,East,S11,NammaMart HSR Layout,1882.65
+2026-09-20,North,S01,NammaMart Hebbal,5768.4
+2026-09-20,North,S02,NammaMart Yelahanka,1357.2
+2026-09-20,North,S03,NammaMart RT Nagar,98.8
+2026-09-20,South,S04,NammaMart Jayanagar,2911.8
+2026-09-20,South,S05,NammaMart JP Nagar,4013.1
+2026-09-20,South,S06,NammaMart Banashankari,1080.4
+2026-09-20,West,S12,NammaMart Rajajinagar,549.2
+2026-09-20,West,S13,NammaMart Malleshwaram,3267.0
+2026-09-20,West,S14,NammaMart Vijayanagar,864.35
+2026-09-20,West,S15,NammaMart Basaveshwaranagar,1929.8
+2026-09-21,East,S08,NammaMart Whitefield,2931.2
+2026-09-21,East,S09,NammaMart Indiranagar,1919.75
+2026-09-21,East,S10,NammaMart Marathahalli,3938.1
+2026-09-21,East,S11,NammaMart HSR Layout,230.0
+2026-09-21,North,S01,NammaMart Hebbal,629.85
+2026-09-21,North,S02,NammaMart Yelahanka,1736.1
+2026-09-21,North,S03,NammaMart RT Nagar,1172.2
+2026-09-21,South,S04,NammaMart Jayanagar,2122.3
+2026-09-21,South,S05,NammaMart JP Nagar,1022.2
+2026-09-21,South,S06,NammaMart Banashankari,2690.1
+2026-09-21,West,S12,NammaMart Rajajinagar,3685.45
+2026-09-21,West,S13,NammaMart Malleshwaram,2035.35
+2026-09-21,West,S14,NammaMart Vijayanagar,2146.5
+2026-09-21,West,S15,NammaMart Basaveshwaranagar,3578.05
+2026-09-22,East,S08,NammaMart Whitefield,1896.55
+2026-09-22,East,S09,NammaMart Indiranagar,1873.6
+2026-09-22,East,S10,NammaMart Marathahalli,1378.7
+2026-09-22,East,S11,NammaMart HSR Layout,2095.85
+2026-09-22,North,S02,NammaMart Yelahanka,2942.75
+2026-09-22,North,S03,NammaMart RT Nagar,1659.25
+2026-09-22,South,S04,NammaMart Jayanagar,759.8
+2026-09-22,South,S05,NammaMart JP Nagar,541.7
+2026-09-22,South,S06,NammaMart Banashankari,1949.8
+2026-09-22,West,S12,NammaMart Rajajinagar,1719.0
+2026-09-22,West,S13,NammaMart Malleshwaram,1343.9
+2026-09-22,West,S14,NammaMart Vijayanagar,2996.4
+2026-09-22,West,S15,NammaMart Basaveshwaranagar,413.7
+2026-09-23,East,S08,NammaMart Whitefield,3685.4
+2026-09-23,East,S09,NammaMart Indiranagar,1037.2
+2026-09-23,East,S10,NammaMart Marathahalli,411.0
+2026-09-23,East,S11,NammaMart HSR Layout,672.3
+2026-09-23,North,S01,NammaMart Hebbal,2255.4
+2026-09-23,North,S02,NammaMart Yelahanka,641.9
+2026-09-23,North,S03,NammaMart RT Nagar,1999.95
+2026-09-23,South,S04,NammaMart Jayanagar,2737.0
+2026-09-23,South,S05,NammaMart JP Nagar,2447.45
+2026-09-23,South,S06,NammaMart Banashankari,2416.6
+2026-09-23,West,S12,NammaMart Rajajinagar,3576.2
+2026-09-23,West,S13,NammaMart Malleshwaram,2725.45
+2026-09-23,West,S14,NammaMart Vijayanagar,3924.6
+2026-09-23,West,S15,NammaMart Basaveshwaranagar,1235.65
+2026-09-24,East,S08,NammaMart Whitefield,2161.5
+2026-09-24,East,S09,NammaMart Indiranagar,696.35
+2026-09-24,East,S10,NammaMart Marathahalli,2114.3
+2026-09-24,East,S11,NammaMart HSR Layout,1204.8
+2026-09-24,North,S01,NammaMart Hebbal,2636.0
+2026-09-24,North,S02,NammaMart Yelahanka,3552.45
+2026-09-24,North,S03,NammaMart RT Nagar,1449.25
+2026-09-24,South,S04,NammaMart Jayanagar,999.25
+2026-09-24,South,S05,NammaMart JP Nagar,5233.7
+2026-09-24,South,S06,NammaMart Banashankari,2009.95
+2026-09-24,West,S12,NammaMart Rajajinagar,2125.4
+2026-09-24,West,S13,NammaMart Malleshwaram,2085.85
+2026-09-24,West,S14,NammaMart Vijayanagar,2941.8
+2026-09-24,West,S15,NammaMart Basaveshwaranagar,274.3
+2026-09-25,East,S08,NammaMart Whitefield,1918.3
+2026-09-25,East,S09,NammaMart Indiranagar,1102.2
+2026-09-25,East,S10,NammaMart Marathahalli,3030.8
+2026-09-25,East,S11,NammaMart HSR Layout,633.15
+2026-09-25,North,S01,NammaMart Hebbal,1040.15
+2026-09-25,North,S02,NammaMart Yelahanka,3464.45
+2026-09-25,North,S03,NammaMart RT Nagar,505.0
+2026-09-25,South,S04,NammaMart Jayanagar,2920.0
+2026-09-25,South,S05,NammaMart JP Nagar,1076.0
+2026-09-25,South,S06,NammaMart Banashankari,4602.65
+2026-09-25,West,S12,NammaMart Rajajinagar,690.9
+2026-09-25,West,S13,NammaMart Malleshwaram,3164.2
+2026-09-25,West,S14,NammaMart Vijayanagar,2108.25
+2026-09-25,West,S15,NammaMart Basaveshwaranagar,1197.0
+2026-09-26,East,S08,NammaMart Whitefield,2621.55
+2026-09-26,East,S09,NammaMart Indiranagar,1018.15
+2026-09-26,East,S10,NammaMart Marathahalli,2908.4
+2026-09-26,East,S11,NammaMart HSR Layout,6688.1
+2026-09-26,North,S01,NammaMart Hebbal,2495.4
+2026-09-26,North,S02,NammaMart Yelahanka,2358.15
+2026-09-26,North,S03,NammaMart RT Nagar,3854.75
+2026-09-26,South,S04,NammaMart Jayanagar,2081.1
+2026-09-26,South,S05,NammaMart JP Nagar,7751.2
+2026-09-26,South,S06,NammaMart Banashankari,6268.5
+2026-09-26,West,S12,NammaMart Rajajinagar,1825.0
+2026-09-26,West,S13,NammaMart Malleshwaram,841.25
+2026-09-26,West,S14,NammaMart Vijayanagar,923.3
+2026-09-26,West,S15,NammaMart Basaveshwaranagar,901.0
+2026-09-27,East,S08,NammaMart Whitefield,4433.6
+2026-09-27,East,S09,NammaMart Indiranagar,1812.2
+2026-09-27,East,S10,NammaMart Marathahalli,2405.2
+2026-09-27,East,S11,NammaMart HSR Layout,1627.2
+2026-09-27,North,S01,NammaMart Hebbal,865.55
+2026-09-27,North,S03,NammaMart RT Nagar,2189.2
+2026-09-27,South,S04,NammaMart Jayanagar,3110.3
+2026-09-27,South,S05,NammaMart JP Nagar,831.4
+2026-09-27,South,S06,NammaMart Banashankari,2772.2
+2026-09-27,West,S12,NammaMart Rajajinagar,119.0
+2026-09-27,West,S13,NammaMart Malleshwaram,2549.25
+2026-09-27,West,S14,NammaMart Vijayanagar,2610.45
+2026-09-27,West,S15,NammaMart Basaveshwaranagar,3638.6
+2026-09-28,East,S08,NammaMart Whitefield,1134.3
+2026-09-28,East,S09,NammaMart Indiranagar,727.2
+2026-09-28,East,S10,NammaMart Marathahalli,4400.0
+2026-09-28,East,S11,NammaMart HSR Layout,352.0
+2026-09-28,North,S01,NammaMart Hebbal,4294.9
+2026-09-28,North,S02,NammaMart Yelahanka,1189.2
+2026-09-28,North,S03,NammaMart RT Nagar,1541.65
+2026-09-28,South,S04,NammaMart Jayanagar,1302.0
+2026-09-28,South,S05,NammaMart JP Nagar,575.6
+2026-09-28,South,S06,NammaMart Banashankari,1499.5
+2026-09-28,West,S12,NammaMart Rajajinagar,2821.7
+2026-09-28,West,S13,NammaMart Malleshwaram,1872.3
+2026-09-28,West,S14,NammaMart Vijayanagar,2011.8
+2026-09-28,West,S15,NammaMart Basaveshwaranagar,1127.25
+2026-09-29,East,S08,NammaMart Whitefield,288.15
+2026-09-29,East,S09,NammaMart Indiranagar,4510.15
+2026-09-29,East,S10,NammaMart Marathahalli,1136.0
+2026-09-29,East,S11,NammaMart HSR Layout,3250.85
+2026-09-29,North,S01,NammaMart Hebbal,3793.4
+2026-09-29,North,S02,NammaMart Yelahanka,3520.9
+2026-09-29,North,S03,NammaMart RT Nagar,5327.05
+2026-09-29,South,S04,NammaMart Jayanagar,6159.6
+2026-09-29,South,S05,NammaMart JP Nagar,3943.95
+2026-09-29,South,S06,NammaMart Banashankari,992.0
+2026-09-29,West,S12,NammaMart Rajajinagar,2932.05
+2026-09-29,West,S13,NammaMart Malleshwaram,315.0
+2026-09-29,West,S14,NammaMart Vijayanagar,637.3
+2026-09-29,West,S15,NammaMart Basaveshwaranagar,4746.45
+2026-09-30,East,S08,NammaMart Whitefield,557.8
+2026-09-30,East,S09,NammaMart Indiranagar,52.25
+2026-09-30,East,S10,NammaMart Marathahalli,3073.7
+2026-09-30,East,S11,NammaMart HSR Layout,4858.8
+2026-09-30,North,S01,NammaMart Hebbal,1976.0
+2026-09-30,North,S02,NammaMart Yelahanka,2206.4
+2026-09-30,North,S03,NammaMart RT Nagar,214.0
+2026-09-30,South,S04,NammaMart Jayanagar,1673.1
+2026-09-30,South,S05,NammaMart JP Nagar,3823.35
+2026-09-30,South,S06,NammaMart Banashankari,2493.5
+2026-09-30,West,S12,NammaMart Rajajinagar,2197.9
+2026-09-30,West,S13,NammaMart Malleshwaram,1301.6
+2026-09-30,West,S14,NammaMart Vijayanagar,582.45
+2026-09-30,West,S15,NammaMart Basaveshwaranagar,357.0
+2026-10-21,North,S03,NammaMart RT Nagar,986.85

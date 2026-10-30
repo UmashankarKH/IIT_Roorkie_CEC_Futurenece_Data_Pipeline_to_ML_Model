@@ -1,5 +1,5 @@
 pandas
-duckdb
+duckdb>=1.4.0
 scikit-learn
 langgraph
 langchain
@@ -8,4 +8,3 @@ slack_sdk
 apache-airflow-providers-slack
 
 # Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
-

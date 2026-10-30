@@ -1,0 +1,28 @@
+file_name,failure_reason,rejected_rows
+customers.csv,signup_date is in the future,3.0
+orders.csv,DELIVERED order requires delivery_minutes,8.0
+orders.csv,customer_id is missing,18.0
+orders.csv,customer_id is not present in a usable customer dimension,18.0
+orders.csv,delivery_minutes is outside plausible 0..120 range,6.0
+orders.csv,discount_pct must be from 0 to 100,3.0
+orders.csv,duplicate order_id in selected source file,24.0
+orders.csv,invalid order_status,3.0
+orders.csv,invalid payment_mode,2.0
+orders.csv,order_amount does not match the discounted quantity x unit_price formula,18.0
+orders.csv,order_ts is in the future,5.0
+orders.csv,order_ts is missing or invalid,6.0
+orders.csv,product_id is not present in a usable product dimension,134.0
+orders.csv,quantity must be positive,10.0
+orders.csv,store_id is not present in a usable store dimension,181.0
+orders_2026-10-01_increment.csv,customer_id is not present in a usable customer dimension,1.0
+orders_2026-10-01_increment.csv,product_id is not present in a usable product dimension,14.0
+orders_2026-10-01_increment.csv,store_id is not present in a usable store dimension,5.0
+payments.csv,SUCCESS payment amount does not equal order_amount,12.0
+payments.csv,amount_paid must be non-negative,6.0
+payments.csv,duplicate payment_id in source file,8.0
+payments.csv,invalid payment_mode,2.0
+payments.csv,order_id is not present in a usable order record,373.0
+products.csv,category is missing,3.0
+products.csv,cost_price exceeds mrp,5.0
+products.csv,mrp must be positive,1.0
+stores.csv,invalid zone,1.0

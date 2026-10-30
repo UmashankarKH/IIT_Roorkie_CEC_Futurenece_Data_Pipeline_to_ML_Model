@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="72" y="30" font-family="sans-serif" font-size="20" font-weight="bold">DQ trend — nammamart_etl_sol</text>
+<line x1="72" y1="326.0" x2="972" y2="326.0" stroke="#ddd"/>
+<text x="60" y="330.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">0</text>
+<line x1="72" y1="257.5" x2="972" y2="257.5" stroke="#ddd"/>
+<text x="60" y="261.5" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">7</text>
+<line x1="72" y1="189.0" x2="972" y2="189.0" stroke="#ddd"/>
+<text x="60" y="193.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">14</text>
+<line x1="72" y1="120.5" x2="972" y2="120.5" stroke="#ddd"/>
+<text x="60" y="124.5" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">22</text>
+<line x1="72" y1="52.0" x2="972" y2="52.0" stroke="#ddd"/>
+<text x="60" y="56.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">29</text>
+<polyline fill="none" stroke="#c0392b" stroke-width="3" points="72.0,61.4 141.2,61.4 210.5,61.4 279.7,61.4 348.9,61.4 418.2,52.0 487.4,184.3 556.6,61.4 625.8,89.8 695.1,61.4 764.3,61.4 833.5,61.4 902.8,61.4 972.0,61.4"/>
+<polyline fill="none" stroke="#d68910" stroke-width="3" points="72.0,278.8 141.2,278.8 210.5,278.8 279.7,278.8 348.9,278.8 418.2,278.8 487.4,269.3 556.6,278.8 625.8,278.8 695.1,278.8 764.3,278.8 833.5,278.8 902.8,278.8 972.0,269.3"/>
+<circle cx="72.0" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="72.0" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(72.0,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">293534_00_00</text>
+<circle cx="141.2" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="141.2" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(141.2,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">850392_00_00</text>
+<circle cx="210.5" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="210.5" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(210.5,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">084313_00_00</text>
+<circle cx="279.7" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="279.7" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(279.7,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">505295_00_00</text>
+<circle cx="348.9" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="348.9" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(348.9,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">736117_00_00</text>
+<circle cx="418.2" cy="52.0" r="4" fill="#c0392b"/>
+<circle cx="418.2" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(418.2,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">254947_00_00</text>
+<circle cx="487.4" cy="184.3" r="4" fill="#c0392b"/>
+<circle cx="487.4" cy="269.3" r="4" fill="#d68910"/>
+<text transform="translate(487.4,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">220252_00_00</text>
+<circle cx="556.6" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="556.6" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(556.6,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">166845_00_00</text>
+<circle cx="625.8" cy="89.8" r="4" fill="#c0392b"/>
+<circle cx="625.8" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(625.8,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">839451_00_00</text>
+<circle cx="695.1" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="695.1" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(695.1,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">_30_00_00_00</text>
+<circle cx="764.3" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="764.3" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(764.3,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">632445_00_00</text>
+<circle cx="833.5" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="833.5" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(833.5,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">128975_00_00</text>
+<circle cx="902.8" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="902.8" cy="278.8" r="4" fill="#d68910"/>
+<text transform="translate(902.8,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">733226_00_00</text>
+<circle cx="972.0" cy="61.4" r="4" fill="#c0392b"/>
+<circle cx="972.0" cy="269.3" r="4" fill="#d68910"/>
+<text transform="translate(972.0,344) rotate(45)" font-family="sans-serif" font-size="9" fill="#555">382311_00_00</text>
+<line x1="72" y1="326" x2="972" y2="326" stroke="#555"/>
+<text x="72" y="400" font-family="sans-serif" font-size="12" fill="#c0392b">Failed checks</text>
+<text x="202" y="400" font-family="sans-serif" font-size="12" fill="#d68910">Warning checks</text>
+<text x="972" y="400" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">Most recent 14 runs (oldest to newest)</text>
+</svg>

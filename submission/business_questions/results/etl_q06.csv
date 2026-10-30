@@ -1,0 +1,42 @@
+file_name,failure_reason,rejected_rows
+customers.csv,duplicate customer_id; a canonical dimension row is retained where applicable,5
+customers.csv,signup_date is after the current business date 2026-10-22,3
+orders.csv,DELIVERED order requires delivery_minutes,7
+orders.csv,DELIVERED order requires delivery_minutes; product_id is not present in the validated products.csv dimension; store_id is not present in the validated stores.csv dimension,1
+orders.csv,customer_id is not present in the validated customers.csv dimension,14
+orders.csv,customer_id is not present in the validated customers.csv dimension; product_id is not present in the validated products.csv dimension,1
+orders.csv,customer_id is not present in the validated customers.csv dimension; store_id is not present in the validated stores.csv dimension,1
+orders.csv,customer_id is required,17
+orders.csv,customer_id is required; store_id is not present in the validated stores.csv dimension,1
+orders.csv,delivery_minutes is outside the plausible 0..120 minute range,6
+orders.csv,discount_pct must be between 0 and 100; order_amount does not match the discounted quantity x unit_price formula,3
+orders.csv,duplicate order_id; a canonical dimension row is retained where applicable,18
+orders.csv,duplicate order_id; a canonical dimension row is retained where applicable; product_id is not present in the validated products.csv dimension,6
+orders.csv,invalid order_status,3
+orders.csv,invalid payment_mode,2
+orders.csv,order_amount does not match the discounted quantity x unit_price formula,11
+orders.csv,order_amount does not match the discounted quantity x unit_price formula; customer_id is not present in the validated customers.csv dimension,2
+orders.csv,order_amount does not match the discounted quantity x unit_price formula; product_id is not present in the validated products.csv dimension,1
+orders.csv,order_amount does not match the discounted quantity x unit_price formula; product_id is not present in the validated products.csv dimension; store_id is not present in the validated stores.csv dimension,1
+orders.csv,order_ts is after the current business date 2026-10-22,4
+orders.csv,order_ts is after the current business date 2026-10-22; product_id is not present in the validated products.csv dimension,1
+orders.csv,order_ts is missing or invalid,3
+orders.csv,order_ts is missing or invalid; product_id is not present in the validated products.csv dimension,1
+orders.csv,order_ts is missing or invalid; store_id is not present in the validated stores.csv dimension,1
+orders.csv,order_ts is required; order_ts is missing or invalid,1
+orders.csv,product_id is not present in the validated products.csv dimension,113
+orders.csv,product_id is not present in the validated products.csv dimension; store_id is not present in the validated stores.csv dimension,9
+orders.csv,quantity must be numeric and greater than zero,9
+orders.csv,quantity must be numeric and greater than zero; product_id is not present in the validated products.csv dimension,1
+orders.csv,store_id is not present in the validated stores.csv dimension,167
+payments.csv,SUCCESS payment amount does not equal the validated order_amount,11
+payments.csv,amount_paid must be a non-negative number; SUCCESS payment amount does not equal the validated order_amount,1
+payments.csv,amount_paid must be a non-negative number; order_id is not present in the validated orders,5
+payments.csv,duplicate payment_id; a canonical dimension row is retained where applicable,8
+payments.csv,invalid payment_mode; order_id is not present in the validated orders,2
+payments.csv,order_id is not present in the validated orders,366
+products.csv,category is required,3
+products.csv,cost_price exceeds mrp,4
+products.csv,duplicate product_id; a canonical dimension row is retained where applicable,2
+products.csv,mrp must be numeric and greater than zero; cost_price exceeds mrp,1
+stores.csv,"zone is required; zone is not one of North, South, East, West",1

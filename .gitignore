@@ -3,6 +3,10 @@
 .DS_Store
 airflow_settings.yaml
 __pycache__/
+.nammamart_etl_work/
+include/warehouse*.duckdb
+include/warehouse*.duckdb.*
+include/quarantine/
 astro
 .venv
 .astro/standalone/
