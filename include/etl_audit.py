@@ -16,7 +16,15 @@ def _upsert(df, table, dag_id, run_id):
 
 
 def write_dq_results(results, dag_id, run_id):
-    _upsert(pd.DataFrame(results), "dq_results", dag_id, run_id)
+    """Replace only the checks being written, so rows added by other steps (the volume gate) survive."""
+    df = pd.DataFrame(results)
+    con = duckdb.connect(str(WAREHOUSE))
+    con.register("src", df)
+    con.execute("CREATE TABLE IF NOT EXISTS dq_results AS SELECT * FROM src WHERE 1=0")
+    con.execute("DELETE FROM dq_results WHERE run_id = ? AND dag_id = ? "
+                "AND check_name IN (SELECT check_name FROM src)", [run_id, dag_id])
+    con.execute("INSERT INTO dq_results BY NAME SELECT * FROM src")
+    con.close()
 
 
 def write_pipeline_run(dag_id, run_id, start_time, end_time, rows_extracted,
@@ -26,3 +34,13 @@ def write_pipeline_run(dag_id, run_id, start_time, end_time, rows_extracted,
                              rows_loaded=int(rows_loaded), rows_quarantined=int(rows_quarantined),
                              status=status)])
     _upsert(row, "pipeline_runs", dag_id, run_id)
+
+def append_dq_results(results, dag_id, run_id):
+    """Adds extra check rows to a run without wiping the run's other dq_results."""
+    df = pd.DataFrame(results)
+    con = duckdb.connect(str(WAREHOUSE))
+    con.register("src", df)
+    con.execute("DELETE FROM dq_results WHERE run_id = ? AND dag_id = ? "
+                "AND check_name LIKE 'orders_increment.%'", [run_id, dag_id])
+    con.execute("INSERT INTO dq_results BY NAME SELECT * FROM src")
+    con.close()

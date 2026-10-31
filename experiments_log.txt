@@ -1,0 +1,222 @@
+##########################################################################################
+run_experiments.py started 2026-10-25 22:49:56  experiments: [2, 3, 5, 6, 7, 8, 9]
+==========================================================================================
+EXPERIMENT 2: re-run (idempotency). Same DAGs triggered again, data unchanged
+  before: etl_fact=2459 raw_orders=17684 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=13 dq_rows=770
+  ETL: dags test -> success in 5.6s
+      log: audit: extracted=5372 loaded=3022 quarantined=152 status=SUCCESS
+  ELT: dags test -> success in 5.4s
+      log: audit: extracted=5372 loaded_raw=5372 rejected_in_staging=136 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5372 loaded=3022 set_aside=152
+  ELT audit row (NEW): status=SUCCESS extracted=5372 loaded=5372 set_aside=136
+  after : etl_fact=2459 raw_orders=20256 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=15 dq_rows=883
+  CHANGE: etl_fact +0 | raw_orders +2572 | stg_orders +0 | pipeline_runs +2 | dq_results rows +113
+==========================================================================================
+EXPERIMENT 3: incremental load (orders_2026-10-01_increment.csv)
+  the increment holds 160 rows; 10 of them correct existing orders
+  step 1: run WITHOUT the increment file (September only)
+  APPLIED experiment 3: increment file removed (September-only load; restore brings it back)
+  ETL: dags test -> success in 5.1s
+      log: audit: extracted=5212 loaded=2862 quarantined=152 status=SUCCESS
+  ELT: dags test -> success in 5.3s
+      log: audit: extracted=5212 loaded_raw=5212 rejected_in_staging=136 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5212 loaded=2862 set_aside=152
+  ELT audit row (NEW): status=SUCCESS extracted=5212 loaded=5212 set_aside=136
+  after step 1: etl_fact=2309 stg_orders=2400  | the 10 corrected orders: ETL=[('DELIVERED', 10)] ELT=[('DELIVERED', 10)]
+  step 2: put the increment file back and run again
+  ETL: dags test -> success in 5.1s
+      log: increment: 160 rows, 160 clean, 0 quarantined; upsert on order_id: 10 updated, 150 inserted
+      log: audit: extracted=5372 loaded=3022 quarantined=152 status=SUCCESS
+  ELT: dags test -> success in 5.7s
+      log: increment: 160 rows -> raw; MERGE on order_id: 10 updated, 150 inserted
+      log: audit: extracted=5372 loaded_raw=5372 rejected_in_staging=136 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5372 loaded=3022 set_aside=152
+  ELT audit row (NEW): status=SUCCESS extracted=5372 loaded=5372 set_aside=136
+  after step 2: etl_fact=2459 stg_orders=2550  | the 10 corrected orders: ETL=[('RETURNED', 10)] ELT=[('RETURNED', 10)]
+  duplicates: ETL=0 ELT=None
+==========================================================================================
+EXPERIMENT 5: new bad data (5 planted orders: null customer, negative quantity, unknown store, SHIPPED, 2027)
+  APPLIED experiment 5: 5 bad rows added to orders.csv (null customer, negative quantity, unknown store, SHIPPED, 2027 timestamp)
+  ETL: dags test -> success in 5.1s
+      log: audit: extracted=5377 loaded=3022 quarantined=157 status=SUCCESS
+  ELT: dags test -> success in 5.5s
+      log: audit: extracted=5377 loaded_raw=5377 rejected_in_staging=141 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5377 loaded=3022 set_aside=157
+  ELT audit row (NEW): status=SUCCESS extracted=5377 loaded=5377 set_aside=141
+  ETL quarantine file orders_failed_manual__2026-10-25T17_20_31_736610_00_00.csv: 5 planted rows found
+      ORDTEST1: customer_id_not_null
+      ORDTEST2: quantity_positive
+      ORDTEST3: store_id_exists
+      ORDTEST4: order_status_allowed
+      ORDTEST5: order_ts_not_future
+  ELT stg_orders: 5 planted rows found
+      ORDTEST1: REJECTED | customer_id_not_null
+      ORDTEST2: REJECTED | quantity_positive
+      ORDTEST3: REJECTED | store_id_exists
+      ORDTEST4: REJECTED | order_status_allowed
+      ORDTEST5: REJECTED | order_ts_not_future
+  leaked into reporting? ETL fact=0   ELT stg (not rejected)=0
+  dq_results (ETL) rows_failed before -> after:
+      orders.customer_id_not_null: 18 -> 19
+      orders.quantity_positive: 10 -> 11
+      orders.store_id_exists: 5 -> 6
+      orders.order_status_allowed: 3 -> 4
+      orders.order_ts_not_future: 5 -> 6
+  dq_results (ELT) rows_failed before -> after:
+      orders.customer_id_not_null: 18 -> 19
+      orders.quantity_positive: 10 -> 11
+      orders.store_id_exists: 5 -> 6
+      orders.order_status_allowed: 3 -> 4
+      orders.order_ts_not_future: 5 -> 6
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (5.1s)
+  rebuild ELT: success (5.6s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 6: schema change (order_amount renamed to total in orders.csv)
+  APPLIED experiment 6: orders.csv column order_amount renamed to total (schema change)
+  ETL: dags test -> success in 248.0s
+      log: audit: extracted=5212 loaded=0 quarantined=0 status=FAILED
+  ELT: dags test -> success in 5.8s
+      log: audit: extracted=5372 loaded_raw=5372 rejected_in_staging=136 status=SUCCESS
+  ETL audit row (NEW): status=FAILED extracted=5212 loaded=0 set_aside=0
+  ELT audit row (NEW): status=SUCCESS extracted=5372 loaded=5372 set_aside=136
+  before: etl_fact=2459 raw_orders=30389 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=23 dq_rows=1314
+  after : etl_fact=2459 raw_orders=32961 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=25 dq_rows=1360
+  CHANGE: raw_orders +2572  etl_fact +0  stg_orders +0  ELT revenue 1210981.9 -> 1210981.9
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (128.8s)
+  rebuild ELT: failed (5.7s)
+  back to normal: ETL revenue=1215175.6  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 7: volume anomaly (orders.csv cut from 2412 to 50 rows)
+  APPLIED experiment 7: orders.csv cut to 50 orders (volume anomaly)
+  ETL: dags test -> success in 5.1s
+      log: audit: extracted=3010 loaded=761 quarantined=2203 status=SUCCESS
+  ELT: dags test -> success in 5.6s
+      log: audit: extracted=3010 loaded_raw=3010 rejected_in_staging=2190 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=3010 loaded=761 set_aside=2203
+  ELT audit row (NEW): status=SUCCESS extracted=3010 loaded=3010 set_aside=2190
+  before: etl_fact=2459 raw_orders=35373 stg_orders=2550 etl_revenue=1215175.6 elt_revenue=1210981.9 pipeline_runs=26 dq_rows=1406
+  after : etl_fact=2459 raw_orders=35583 stg_orders=209 etl_revenue=1210981.9 elt_revenue=102755.8 pipeline_runs=28 dq_rows=1519
+  ETL volume check in dq_results: NONE: nothing warned about the 98% drop
+  ELT volume check in dq_results: NONE: nothing warned about the 98% drop
+  ETL vs ELT revenue now: 1210981.9 vs 102755.8
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (5.2s)
+  rebuild ELT: success (5.9s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 8: distribution drift (unit_price x100 for store S05 in orders.csv)
+  orders changed for store S05: 144
+  ETL: dags test -> success in 5.3s
+      log: audit: extracted=5372 loaded=2882 quarantined=292 status=SUCCESS
+  ELT: dags test -> success in 5.7s
+      log: audit: extracted=5372 loaded_raw=5372 rejected_in_staging=275 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5372 loaded=2882 set_aside=292
+  ELT audit row (NEW): status=SUCCESS extracted=5372 loaded=5372 set_aside=275
+  store S05 revenue  ETL: 86163.65 -> 86163.65   ELT: 86163.65 -> 8785.2
+  check orders.order_amount_matches_formula rows_failed  ETL: (18, 'FAIL') -> (162, 'FAIL')   ELT: (18, 'FAIL') -> (160, 'FAIL')
+  total revenue  ETL: 1210981.9 -> 1210981.9   ELT: 1210981.9 -> 1133603.45
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (5.4s)
+  rebuild ELT: success (5.8s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 9: freshness (latest order is 30 days old; increment removed)
+  latest valid order is now: 2026-10-07 08:25:00
+  ETL: dags test -> success in 5.8s
+      log: audit: extracted=5212 loaded=2864 quarantined=150 status=SUCCESS
+  ELT: dags test -> success in 5.9s
+      log: audit: extracted=5212 loaded_raw=5212 rejected_in_staging=134 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5212 loaded=2864 set_aside=150
+  ELT audit row (NEW): status=SUCCESS extracted=5212 loaded=5212 set_aside=134
+  orders.latest_order_not_stale (rows_failed, status)  ETL: (0, 'PASS') -> (0, 'PASS')   ELT: (0, 'PASS') -> (0, 'PASS')
+  newest valid order_ts  ETL fact: 2026-10-07 08:25:00   ELT stg: 2026-10-07 08:25:00
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (5.6s)
+  rebuild ELT: success (6.1s)
+  back to normal: ETL revenue=1211619.3  ELT revenue=1210981.9  etl_fact=2461
+==========================================================================================
+ALL DONE. Data folder: original data
+##########################################################################################
+run_experiments.py started 2026-10-27 10:51:19  experiments: [6, 7, 8, 9, 4]
+==========================================================================================
+EXPERIMENT 6: schema change (order_amount renamed to total in orders.csv)
+  APPLIED experiment 6: orders.csv column order_amount renamed to total (schema change)
+##########################################################################################
+run_experiments.py started 2026-10-27 10:54:49  experiments: [6, 7, 8, 9, 4]
+==========================================================================================
+EXPERIMENT 6: schema change (order_amount renamed to total in orders.csv)
+  APPLIED experiment 6: orders.csv column order_amount renamed to total (schema change)
+  ETL: dags test -> failed in 9.0s | last task started: extract_products | error: Error: command exited with code 1
+  ELT: dags test -> failed in 14.6s | last task started: run_audit | error: Error: command exited with code 1
+      log: audit: extracted=2800 loaded_raw=0 rejected_in_staging=136 status=FAILED
+  ETL audit row (NEW): status=FAILED extracted=2800 loaded=0 set_aside=0
+  ELT audit row (NEW): status=FAILED extracted=2800 loaded=0 set_aside=136
+  before: etl_fact=2459 raw_orders=55999 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=46 dq_rows=2539
+  after : etl_fact=2459 raw_orders=55999 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=48 dq_rows=2539
+  CHANGE: raw_orders +0  etl_fact +0  stg_orders +0  ELT revenue 1210981.9 -> 1210981.9
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (6.8s)
+  rebuild ELT: success (8.1s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 7: volume anomaly (orders.csv cut from 2412 to 50 rows)
+  APPLIED experiment 7: orders.csv cut to 50 orders (volume anomaly)
+  ETL: dags test -> failed in 8.5s | last task started: run_audit | error: Error: command exited with code 1
+      log: audit: extracted=2850 loaded=0 quarantined=0 status=FAILED
+  ELT: dags test -> failed in 13.5s | last task started: volume_gate | error: Error: command exited with code 1
+  ETL audit row (NEW): status=FAILED extracted=2850 loaded=0 set_aside=0
+  ELT audit row (NEW): status=FAILED extracted=2850 loaded=2850 set_aside=136
+  before: etl_fact=2459 raw_orders=58571 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=50 dq_rows=2701
+  after : etl_fact=2459 raw_orders=58621 stg_orders=2550 etl_revenue=1210981.9 elt_revenue=1210981.9 pipeline_runs=53 dq_rows=2724
+  ETL volume check in dq_results: [('orders.volume_vs_recent_runs', 'FAIL', 1)]
+  ELT volume check in dq_results: [('orders.volume_vs_recent_runs', 'FAIL', 1)]
+  ETL vs ELT revenue now: 1210981.9 vs 1210981.9
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (6.5s)
+  rebuild ELT: success (7.6s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 8: distribution drift (unit_price x100 for store S05 in orders.csv)
+  orders changed for store S05: 144
+  ETL: dags test -> success in 6.5s
+      log: audit: extracted=5372 loaded=2882 quarantined=292 status=SUCCESS
+  ELT: dags test -> success in 7.1s
+      log: audit: extracted=5372 loaded_raw=5372 rejected_in_staging=275 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5372 loaded=2882 set_aside=292
+  ELT audit row (NEW): status=SUCCESS extracted=5372 loaded=5372 set_aside=275
+  store S05 revenue  ETL: 86163.65 -> 8785.2   ELT: 86163.65 -> 8785.2
+  check orders.order_amount_matches_formula rows_failed  ETL: (18, 'FAIL') -> (162, 'FAIL')   ELT: (18, 'FAIL') -> (160, 'FAIL')
+  total revenue  ETL: 1210981.9 -> 1133603.45   ELT: 1210981.9 -> 1133603.45
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (6.4s)
+  rebuild ELT: success (7.1s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 9: freshness (latest order is 30 days old; increment removed)
+  latest valid order is now: 2026-10-09 08:25:00
+  ETL: dags test -> success in 6.4s
+      log: audit: extracted=5212 loaded=2864 quarantined=150 status=SUCCESS
+  ELT: dags test -> success in 6.9s
+      log: audit: extracted=5212 loaded_raw=5212 rejected_in_staging=134 status=SUCCESS
+  ETL audit row (NEW): status=SUCCESS extracted=5212 loaded=2864 set_aside=150
+  ELT audit row (NEW): status=SUCCESS extracted=5212 loaded=5212 set_aside=134
+  orders.latest_order_not_stale (rows_failed, status)  ETL: (1, 'WARN') -> (1, 'WARN')   ELT: (1, 'WARN') -> (1, 'WARN')
+  newest valid order_ts  ETL fact: 2026-10-09 08:25:00   ELT stg: 2026-10-09 08:25:00
+  RESTORED original files: ['customers.csv', 'orders.csv', 'orders_2026-10-01_increment.csv', 'payments.csv', 'p
+  rebuild ETL: success (6.5s)
+  rebuild ELT: success (7.2s)
+  back to normal: ETL revenue=1210981.9  ELT revenue=1210981.9  etl_fact=2459
+==========================================================================================
+EXPERIMENT 4: missing source file (products.csv renamed). Retries take about 4 minutes per DAG
+  APPLIED experiment 4: products.csv renamed to products.csv.hidden (missing source file)
+  ETL: dags test -> crashed (no DagRun Finished line) in 248.9s | last task started: extract_products | error: Error: command exited with code 1
+  ELT: dags test -> crashed (no DagRun Finished line) in 251.5s | last task started: extract_products | error: Error: command exited with code 1
+  ETL audit row (NEW): status=FAILED extracted=5060 loaded=0 set_aside=0
+  ELT audit row (NO NEW AUDIT ROW): status=SUCCESS extracted=5372 loaded=5372 set_aside=136
+  files restored. NEXT = experiment 10 (recovery): in the Airflow UI open the FAILED run of each DAG,
+  click the failed task extract_products -> Clear Task (keep Downstream ticked) and watch it recover.
+==========================================================================================
+ALL DONE. Data folder: original data

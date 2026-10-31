@@ -123,7 +123,7 @@ def orders_checks(ctx):
         # Timeliness
         Check("order_ts_not_future", "Timeliness", "Critical", lambda d: ts(d, "order_ts") > now),
         Check("latest_order_not_stale", "Timeliness", "Warning",
-              lambda d: bool((now - ts(d, "order_ts").max()) > pd.Timedelta(days=1)),
+              lambda d: bool((now - ts(d, "order_ts")[ts(d, "order_ts") <= now].max()) > pd.Timedelta(days=1)),
               scope="dataset"),
     ]
 

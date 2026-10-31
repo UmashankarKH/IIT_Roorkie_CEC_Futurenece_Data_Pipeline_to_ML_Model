@@ -21,3 +21,10 @@ LOYALTY_TIERS = {"Bronze", "Silver", "Gold", "Platinum"}
 ZONES = {"North", "South", "East", "West"}
 MAX_DELIVERY_MIN = 120
 SLA_MIN = 15
+FILES = {
+    "orders": "orders.csv",
+    "payments": "payments.csv",
+    "customers": "customers.csv",
+    "products": "products.csv",
+    "stores": "stores.csv",
+}
