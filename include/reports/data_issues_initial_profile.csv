@@ -1,0 +1,977 @@
+file,row_key,column,problem,quality_dimension,proposed_rule,severity
+orders.csv,ORD001462,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001326,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001462,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001434,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD000783,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001239,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001692,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001870,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001441,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001441,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD002129,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001549,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001692,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD002129,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001110,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD000539,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001239,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD000783,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD000539,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001434,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001326,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001549,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001870,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+orders.csv,ORD001110,order_id,Duplicate order_id; key appears 2 times,Uniqueness,Require one row per order_id,Critical
+payments.csv,PAY0001651,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0000755,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0000509,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0000509,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0002000,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0001651,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0002000,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+payments.csv,PAY0000755,payment_id,Duplicate payment_id; key appears 2 times,Uniqueness,Require one row per payment_id,Critical
+customers.csv,C00103,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00103,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00252,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00036,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00226,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00313,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00252,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00226,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00036,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+customers.csv,C00313,customer_id,Duplicate customer_id; key appears 2 times,Uniqueness,Require one row per customer_id,Critical
+products.csv,P0030,product_id,Duplicate product_id; key appears 2 times,Uniqueness,Require one row per product_id,Critical
+products.csv,P0140,product_id,Duplicate product_id; key appears 2 times,Uniqueness,Require one row per product_id,Critical
+products.csv,P0030,product_id,Duplicate product_id; key appears 2 times,Uniqueness,Require one row per product_id,Critical
+products.csv,P0140,product_id,Duplicate product_id; key appears 2 times,Uniqueness,Require one row per product_id,Critical
+orders.csv,ORD002255,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001812,payment_mode,Value outside allowed payment-mode list,Validity,Standardise valid modes; quarantine unknown modes,Critical
+orders.csv,ORD002103,discount_pct,Discount is outside 0–100,Validity,Require discount_pct between 0 and 100,Critical
+orders.csv,ORD002103,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD000469,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD002119,order_ts,Timestamp is in the future,Timeliness,Reject future order timestamps,Critical
+orders.csv,ORD001554,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD000986,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD000701,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001800,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD000403,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD001037,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+orders.csv,ORD001058,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD002305,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001121,order_ts,Timestamp is in the future,Timeliness,Reject future order timestamps,Critical
+orders.csv,ORD002004,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD002101,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+orders.csv,ORD001610,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD000997,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001414,payment_mode,Value outside allowed payment-mode list,Validity,Standardise valid modes; quarantine unknown modes,Critical
+orders.csv,ORD001685,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD000455,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+orders.csv,ORD000580,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD000731,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD001277,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD001799,store_id,Store key not found in stores.csv,Consistency,Require a matching store master key,Critical
+orders.csv,ORD001046,store_id,Store key not found in stores.csv,Consistency,Require a matching store master key,Critical
+orders.csv,ORD000500,order_status,Value outside allowed order-status list,Validity,"Allow DELIVERED, CANCELLED, RETURNED",Critical
+orders.csv,ORD000845,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001296,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000964,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001459,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD002019,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD000534,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD001492,store_id,Store key not found in stores.csv,Consistency,Require a matching store master key,Critical
+orders.csv,ORD000867,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000362,order_ts,Required field is blank,Completeness,order_ts must be present,Critical
+orders.csv,ORD000362,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD002262,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD002149,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD002367,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001275,store_id,Store key not found in stores.csv,Consistency,Require a matching store master key,Critical
+orders.csv,ORD000462,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD002298,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD002031,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD002360,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000326,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD002012,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD001765,order_ts,Timestamp is in the future,Timeliness,Reject future order timestamps,Critical
+orders.csv,ORD001332,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001724,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000070,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD000801,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001918,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD002156,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD000583,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD000099,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000880,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD000790,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001515,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD000789,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD000764,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD002219,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001965,order_ts,Timestamp is in the future,Timeliness,Reject future order timestamps,Critical
+orders.csv,ORD000596,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD001274,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD000677,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD002223,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD002128,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001624,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001532,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD001124,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000022,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD002229,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD000134,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD002244,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001755,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD000965,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD002126,store_id,Store key not found in stores.csv,Consistency,Require a matching store master key,Critical
+orders.csv,ORD002179,product_id,Product key not found in products.csv,Consistency,Require a matching product master key,Critical
+orders.csv,ORD001970,order_status,Value outside allowed order-status list,Validity,"Allow DELIVERED, CANCELLED, RETURNED",Critical
+orders.csv,ORD000878,delivery_minutes,Delivered order has no delivery duration,Completeness,Delivered orders require delivery_minutes,Critical
+orders.csv,ORD001725,order_ts,Timestamp is in the future,Timeliness,Reject future order timestamps,Critical
+orders.csv,ORD001104,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+orders.csv,ORD000946,order_ts,Timestamp is missing or cannot be parsed,Validity,order_ts must parse as timestamp,Critical
+orders.csv,ORD001640,payment_mode,Value outside allowed payment-mode list,Validity,Standardise valid modes; quarantine unknown modes,Critical
+orders.csv,ORD001637,order_status,Value outside allowed order-status list,Validity,"Allow DELIVERED, CANCELLED, RETURNED",Critical
+orders.csv,ORD001468,discount_pct,Discount is outside 0–100,Validity,Require discount_pct between 0 and 100,Critical
+orders.csv,ORD001468,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001373,customer_id,Required field is blank,Completeness,customer_id must be present,Critical
+orders.csv,ORD000020,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+orders.csv,ORD001237,discount_pct,Discount is outside 0–100,Validity,Require discount_pct between 0 and 100,Critical
+orders.csv,ORD001237,order_amount,Amount differs from quantity × unit price × (1 − discount/100),Accuracy,Recompute amount; allow rounding tolerance <= 0.02,Critical
+orders.csv,ORD001384,quantity,Quantity is not greater than zero,Accuracy,Require quantity > 0,Critical
+orders.csv,ORD000424,delivery_minutes,Delivery duration is at least 120 minutes,Accuracy,Flag delivered durations >= 120 minutes,Critical
+payments.csv,PAY0000133,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001514,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001852,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001437,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000009,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000263,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001650,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001983,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000330,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001450,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001450,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001097,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001260,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001131,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000810,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000367,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001617,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001568,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0000326,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000880,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000412,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001141,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000559,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002195,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001771,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001689,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000977,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001274,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000396,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002191,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000959,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000956,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000753,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001072,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001778,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001043,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002219,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0001210,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001053,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000591,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000622,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002106,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000902,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000167,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000995,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000440,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000642,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000988,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001583,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001842,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001846,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000797,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001628,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001942,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000531,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001280,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002046,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000659,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000614,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000127,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001888,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001684,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000316,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001858,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002122,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001451,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002175,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0001511,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002112,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000265,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001900,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001477,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000681,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000668,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001315,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001828,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000048,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001311,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001416,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001460,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002154,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000762,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000751,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0000701,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002114,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000234,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000084,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000949,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001608,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001044,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001256,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000833,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002155,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000944,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0001991,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000547,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000679,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001025,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000495,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000453,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000610,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001633,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000497,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001685,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001821,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001860,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001135,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001105,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000185,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000196,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000791,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0001951,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000094,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001866,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000452,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002172,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000676,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000389,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002179,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002220,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0000998,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002029,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001360,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000789,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002127,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000515,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000865,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001146,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001167,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001557,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001557,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000741,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001745,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001415,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001415,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000602,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001579,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002062,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001352,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001817,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001954,payment_mode,Value outside allowed payment-mode list,Validity,Standardise allowed payment modes,Critical
+payments.csv,PAY0001542,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001627,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002003,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001869,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001379,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000520,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000990,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001251,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000437,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001600,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001098,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001592,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001592,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001877,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001368,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001963,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001149,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001149,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001367,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000087,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001236,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001761,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000349,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000349,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002223,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0001585,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001334,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002081,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001527,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001890,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000281,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001435,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000617,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000227,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002162,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000146,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001191,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000030,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000028,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002023,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000106,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000410,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001032,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000380,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001596,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001498,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001004,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000471,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001066,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001799,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001739,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000538,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001320,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000577,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002017,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001561,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001615,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002221,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0001118,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001318,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001630,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001744,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000588,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002024,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001634,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001918,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000155,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001466,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001449,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000328,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000178,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000544,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002152,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002136,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000542,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000847,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000504,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000626,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001045,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001938,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001492,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001737,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001560,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001214,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000823,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000973,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000883,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001080,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000251,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001156,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000505,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000289,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000885,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001186,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002008,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000160,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000098,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002206,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001902,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000224,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001765,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000725,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002190,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001292,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000433,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000385,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002196,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001391,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001948,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002049,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002224,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0000383,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000382,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000522,payment_mode,Value outside allowed payment-mode list,Validity,Standardise allowed payment modes,Critical
+payments.csv,PAY0000386,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001349,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000415,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001069,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001067,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001409,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000870,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001194,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001779,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000518,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002082,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000605,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000696,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002173,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000165,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000527,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001381,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000402,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001903,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001632,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001185,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000935,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001217,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001524,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001229,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000713,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000044,payment_mode,Value outside allowed payment-mode list,Validity,Standardise allowed payment modes,Critical
+payments.csv,PAY0001323,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000217,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002209,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001317,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002153,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000796,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001472,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001488,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001574,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000012,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001755,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000549,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000882,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000190,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001397,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000209,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002181,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000208,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001240,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001763,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000411,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000570,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001060,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001202,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000416,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002143,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001855,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001494,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001494,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000744,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000774,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001984,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000863,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000469,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001404,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000100,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000747,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001522,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002059,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002218,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0000187,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001147,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000920,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000154,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002189,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001306,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001719,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001691,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001691,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001178,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000812,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001252,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000163,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0002079,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001754,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001780,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000445,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001268,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001825,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001467,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000675,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001580,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002169,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001431,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000624,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000436,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000436,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001463,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002222,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0000848,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001873,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000579,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001063,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002132,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001193,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0000654,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000288,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002100,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002130,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000305,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002203,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000500,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001150,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000842,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001106,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001994,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000721,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001998,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000881,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000557,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002145,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001753,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000737,amount_paid,Payment amount is negative,Accuracy,Require non-negative payment amount unless a refund is represented explicitly,Critical
+payments.csv,PAY0002137,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001497,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000078,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002011,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0000680,payment_status,Value outside expected payment-status list,Validity,Map/handle statuses with Finance; explicitly account for REFUNDED,Critical
+payments.csv,PAY0001335,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001772,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001432,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0002217,order_id,Payment references an order not found in orders.csv,Consistency,Reconcile unknown order keys against source and increment feed,Critical
+payments.csv,PAY0002028,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+payments.csv,PAY0001928,gateway_ref,Gateway reference is blank,Completeness,Require gateway reference for traceable payment; confirm exceptions with Finance,Warning
+customers.csv,C00182,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00355,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00355,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00222,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00138,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00094,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00161,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00345,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00159,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00321,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00168,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00040,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00374,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00051,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00299,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00337,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00337,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00224,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00202,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00030,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00078,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00311,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00389,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00307,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00307,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00391,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00282,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00163,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00204,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00180,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00103,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00017,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00220,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00232,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00265,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00124,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00013,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00209,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00132,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00366,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00169,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00098,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00276,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00201,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00103,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00320,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00176,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00205,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00156,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00241,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00053,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00032,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00396,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00362,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00395,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00296,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00184,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00212,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00151,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00151,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00137,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00288,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00248,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00359,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00368,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00174,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00198,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00025,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00346,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00270,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00181,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00294,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00350,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00340,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00253,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00218,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00068,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00128,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00063,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00063,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00289,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00045,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00045,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00363,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00363,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00384,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00177,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00160,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00400,signup_date,Signup date is in the future,Timeliness,Flag future signup dates,Critical
+customers.csv,C00400,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00323,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00216,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00382,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00200,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00261,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00310,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00310,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00315,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00075,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00153,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00183,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00287,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00131,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00031,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00043,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00018,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00300,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00275,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00196,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00175,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00210,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00271,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00252,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00083,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00197,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00111,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00115,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00006,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00080,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00266,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00194,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00240,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00240,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00269,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00369,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00114,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00047,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00367,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00145,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00191,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00066,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00388,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00325,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00140,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00135,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00341,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00273,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00344,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00342,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00154,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00170,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00390,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00302,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00245,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00001,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00144,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00095,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00095,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00048,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00370,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00036,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00347,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00235,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00007,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00349,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00332,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00079,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00166,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00005,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00357,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00357,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00227,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00207,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00226,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00034,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00336,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00105,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00188,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00143,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00022,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00352,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00127,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00116,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00254,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00373,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00101,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00109,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00221,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00130,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00130,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00338,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00011,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00012,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00293,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00002,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00147,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00039,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00192,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00208,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00149,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00239,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00084,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00247,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00064,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00358,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00281,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00330,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00217,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00119,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00122,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00152,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00237,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00126,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00134,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00398,signup_date,Signup date is in the future,Timeliness,Flag future signup dates,Critical
+customers.csv,C00398,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00274,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00327,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00327,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00292,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00148,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00394,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00394,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00236,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00164,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00203,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00041,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00308,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00076,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00246,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00313,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00195,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00044,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00279,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00230,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00252,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00029,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00318,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00072,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00016,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00361,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00178,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00334,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00353,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00086,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00319,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00070,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00329,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00162,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00383,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00185,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00258,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00035,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00096,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00290,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00290,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00309,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00117,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00157,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00056,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00038,signup_date,Signup date is in the future,Timeliness,Flag future signup dates,Critical
+customers.csv,C00038,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00112,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00112,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00263,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00014,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00343,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00150,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00267,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00226,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00257,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00229,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00097,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00339,phone,Phone length is outside accepted digit lengths,Validity,Validate phone format; never expose raw phone in marts,Warning
+customers.csv,C00339,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00278,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00322,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00189,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00301,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00385,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00376,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00259,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00057,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00118,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00262,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00102,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00312,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00365,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00228,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00379,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00036,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00060,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00264,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00249,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00015,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00397,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00285,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00027,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00054,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00283,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00233,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00233,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00354,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00129,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00223,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00108,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00326,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00187,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00291,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00023,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00082,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00091,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00375,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00243,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00077,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00058,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00100,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00028,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00142,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00142,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00107,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00238,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00372,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00260,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00277,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00186,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00049,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00272,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00061,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00099,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00121,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00286,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00003,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00215,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00179,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00155,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00328,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00328,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00256,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00093,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00306,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00020,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00381,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00090,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00123,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00211,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00231,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00268,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00139,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00074,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00106,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00065,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00244,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00214,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00146,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00356,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00046,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00331,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00004,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00042,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00250,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00009,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00081,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00193,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00193,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00314,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00386,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00052,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00069,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00021,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00298,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00392,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00392,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00225,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00085,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00284,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00190,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00087,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00213,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00399,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00141,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00364,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00371,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00172,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00387,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00304,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00393,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00110,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00165,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00071,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00280,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00295,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00351,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00062,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00062,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00167,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00206,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00348,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00173,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00219,city,City is blank,Completeness,Require city or explicitly allow unknown city,Warning
+customers.csv,C00219,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00104,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00378,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00113,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00316,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00305,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00255,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00059,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00055,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00033,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00303,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00088,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00313,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00234,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00050,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00158,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00026,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00324,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00089,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00008,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00067,email,Email does not match basic email pattern,Validity,Validate email format and mask in reporting,Warning
+customers.csv,C00067,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00333,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00360,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00125,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00024,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00317,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00242,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00010,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00335,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00251,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00073,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00377,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00019,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00037,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00120,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00297,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+customers.csv,C00380,loyalty_tier,Loyalty-tier casing is inconsistent,Consistency,Standardise loyalty tier casing,Warning
+products.csv,P0019,cost_price,Cost price exceeds MRP,Accuracy,Review catalogue pricing; require cost_price <= mrp or approved exception,Critical
+products.csv,P0051,category,Category is blank,Completeness,Require a non-empty product category,Critical
+products.csv,P0060,category,Category is blank,Completeness,Require a non-empty product category,Critical
+products.csv,P0068,category,Category is blank,Completeness,Require a non-empty product category,Critical
+products.csv,P0073,cost_price,Cost price exceeds MRP,Accuracy,Review catalogue pricing; require cost_price <= mrp or approved exception,Critical
+products.csv,P0074,cost_price,Cost price exceeds MRP,Accuracy,Review catalogue pricing; require cost_price <= mrp or approved exception,Critical
+products.csv,P0109,mrp,MRP is not positive,Accuracy,Require MRP > 0,Critical
+products.csv,P0109,cost_price,Cost price exceeds MRP,Accuracy,Review catalogue pricing; require cost_price <= mrp or approved exception,Critical
+products.csv,P0117,cost_price,Cost price exceeds MRP,Accuracy,Review catalogue pricing; require cost_price <= mrp or approved exception,Critical
+stores.csv,S07,zone,Store zone is blank,Completeness,"Require one of North, South, East, West",Critical
+stores.csv,S12,capacity_orders_per_day,Daily capacity is not positive,Accuracy,Require positive daily order capacity,Critical
+orders_2026-10-01_increment.csv,ORD000017,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000271,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000332,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000337,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000584,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000708,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD000822,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD001025,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD001067,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info
+orders_2026-10-01_increment.csv,ORD001990,order_status,Incremental status correction: DELIVERED -> RETURNED,Consistency,Apply latest order version in current-state staging; retain both versions in raw history,Info

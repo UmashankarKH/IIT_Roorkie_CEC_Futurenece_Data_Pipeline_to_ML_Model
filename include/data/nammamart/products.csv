@@ -1,0 +1,153 @@
+product_id,product_name,category,sub_category,brand,mrp,cost_price,unit,is_perishable,launch_date
+P0001,Desi Farms Fresh Vegetables 1,Fruits & Vegetables,Fresh Vegetables,Desi Farms,107.0,85.62,kg,True,2023-06-16
+P0002,Desi Farms Fresh Fruits 2,Fruits & Vegetables,Fresh Fruits,Desi Farms,105.0,66.16,kg,True,2025-08-17
+P0003,Desi Farms Fresh Fruits 3,Fruits & Vegetables,Fresh Fruits,Desi Farms,177.0,131.07,kg,True,2024-06-30
+P0004,GreenLeaf Fresh Fruits 4,Fruits & Vegetables,Fresh Fruits,GreenLeaf,188.0,124.8,kg,True,2025-08-05
+P0005,FarmFresh Herbs 5,Fruits & Vegetables,Herbs,FarmFresh,167.0,126.15,kg,True,2025-05-13
+P0006,FarmFresh Fresh Fruits 6,Fruits & Vegetables,Fresh Fruits,FarmFresh,197.0,156.92,kg,True,2025-04-04
+P0007,FarmFresh Fresh Vegetables 7,Fruits & Vegetables,Fresh Vegetables,FarmFresh,93.0,57.04,kg,True,2025-08-23
+P0008,GreenLeaf Herbs 8,Fruits & Vegetables,Herbs,GreenLeaf,150.0,92.07,kg,True,2024-05-26
+P0009,GreenLeaf Herbs 9,Fruits & Vegetables,Herbs,GreenLeaf,111.0,65.81,kg,True,2023-05-23
+P0010,Desi Farms Herbs 10,Fruits & Vegetables,Herbs,Desi Farms,77.0,48.42,kg,True,2024-08-21
+P0011,GreenLeaf Herbs 11,Fruits & Vegetables,Herbs,GreenLeaf,119.0,78.37,kg,True,2023-05-22
+P0012,FarmFresh Fresh Fruits 12,Fruits & Vegetables,Fresh Fruits,FarmFresh,137.0,110.74,kg,True,2023-06-06
+P0013,GreenLeaf Herbs 13,Fruits & Vegetables,Herbs,GreenLeaf,164.0,119.54,kg,True,2024-01-30
+P0014,Desi Farms Fresh Vegetables 14,Fruits & Vegetables,Fresh Vegetables,Desi Farms,108.0,67.55,kg,True,2024-07-20
+P0015,Desi Farms Fresh Fruits 15,Fruits & Vegetables,Fresh Fruits,Desi Farms,218.0,167.04,kg,True,2024-11-29
+P0016,Desi Farms Fresh Vegetables 16,Fruits & Vegetables,Fresh Vegetables,Desi Farms,224.0,146.06,kg,True,2023-10-28
+P0017,FarmFresh Fresh Vegetables 17,Fruits & Vegetables,Fresh Vegetables,FarmFresh,120.0,100.34,kg,True,2025-06-15
+P0018,FarmFresh Herbs 18,Fruits & Vegetables,Herbs,FarmFresh,186.0,130.63,kg,True,2023-04-19
+P0019,Desi Farms Fresh Vegetables 19,Fruits & Vegetables,Fresh Vegetables,Desi Farms,220.0,264.0,kg,True,2023-07-23
+P0020,Desi Farms Fresh Fruits 20,Fruits & Vegetables,Fresh Fruits,Desi Farms,55.0,45.98,kg,True,2025-08-02
+P0021,Desi Farms Fresh Fruits 21,Fruits & Vegetables,Fresh Fruits,Desi Farms,142.0,91.91,kg,True,2023-01-20
+P0022,GreenLeaf Fresh Vegetables 22,Fruits & Vegetables,Fresh Vegetables,GreenLeaf,46.0,28.6,kg,True,2023-09-04
+P0023,FarmFresh Fresh Fruits 23,Fruits & Vegetables,Fresh Fruits,FarmFresh,222.0,170.85,kg,True,2025-04-15
+P0024,FarmFresh Herbs 24,Fruits & Vegetables,Herbs,FarmFresh,36.0,21.19,kg,True,2024-05-01
+P0025,GreenLeaf Fresh Fruits 25,Fruits & Vegetables,Fresh Fruits,GreenLeaf,238.0,168.58,kg,True,2024-09-13
+P0026,CowBell Curd & Paneer 1,Dairy & Bakery,Curd & Paneer,CowBell,205.0,156.6,pack,True,2024-02-13
+P0027,OvenCraft Bread 2,Dairy & Bakery,Bread,OvenCraft,448.0,367.31,pack,True,2024-04-07
+P0028,Kaveri Dairy Curd & Paneer 3,Dairy & Bakery,Curd & Paneer,Kaveri Dairy,76.0,49.51,pack,True,2024-08-25
+P0029,Kaveri Dairy Curd & Paneer 4,Dairy & Bakery,Curd & Paneer,Kaveri Dairy,260.0,148.54,pack,True,2024-10-08
+P0030,Kaveri Dairy Milk 5,Dairy & Bakery,Milk,Kaveri Dairy,50.0,40.39,pack,True,2023-03-14
+P0031,OvenCraft Bread 6,Dairy & Bakery,Bread,OvenCraft,244.0,149.88,pack,True,2023-05-16
+P0032,CowBell Cheese 7,Dairy & Bakery,Cheese,CowBell,332.0,260.75,pack,True,2025-04-06
+P0033,Kaveri Dairy Milk 8,Dairy & Bakery,Milk,Kaveri Dairy,198.0,148.04,pack,True,2023-12-29
+P0034,Kaveri Dairy Cheese 9,Dairy & Bakery,Cheese,Kaveri Dairy,205.0,154.16,pack,True,2024-10-23
+P0035,MilkWay Cheese 10,Dairy & Bakery,Cheese,MilkWay,67.0,52.94,pack,True,2023-04-22
+P0036,OvenCraft Curd & Paneer 11,Dairy & Bakery,Curd & Paneer,OvenCraft,131.0,77.56,pack,True,2023-07-07
+P0037,Kaveri Dairy Curd & Paneer 12,Dairy & Bakery,Curd & Paneer,Kaveri Dairy,143.0,97.66,pack,True,2025-06-01
+P0038,Kaveri Dairy Milk 13,Dairy & Bakery,Milk,Kaveri Dairy,389.0,290.06,pack,True,2024-07-07
+P0039,CowBell Milk 14,Dairy & Bakery,Milk,CowBell,380.0,227.96,pack,True,2024-05-12
+P0040,Kaveri Dairy Cheese 15,Dairy & Bakery,Cheese,Kaveri Dairy,230.0,137.86,pack,True,2023-01-03
+P0041,OvenCraft Bread 16,Dairy & Bakery,Bread,OvenCraft,444.0,282.2,pack,True,2024-12-14
+P0042,CowBell Cheese 17,Dairy & Bakery,Cheese,CowBell,432.0,262.21,pack,True,2023-08-11
+P0043,MilkWay Milk 18,Dairy & Bakery,Milk,MilkWay,437.0,247.84,pack,True,2024-08-21
+P0044,Kaveri Dairy Curd & Paneer 19,Dairy & Bakery,Curd & Paneer,Kaveri Dairy,228.0,191.12,pack,True,2023-03-24
+P0045,Kaveri Dairy Milk 20,Dairy & Bakery,Milk,Kaveri Dairy,387.0,291.24,pack,True,2023-08-29
+P0046,Kaveri Dairy Curd & Paneer 21,Dairy & Bakery,Curd & Paneer,Kaveri Dairy,197.0,144.96,pack,True,2024-03-05
+P0047,MilkWay Bread 22,Dairy & Bakery,Bread,MilkWay,304.0,185.83,pack,True,2025-01-03
+P0048,OvenCraft Bread 23,Dairy & Bakery,Bread,OvenCraft,159.0,93.69,pack,True,2024-10-22
+P0049,Kaveri Dairy Bread 24,Dairy & Bakery,Bread,Kaveri Dairy,152.0,84.02,pack,True,2024-09-28
+P0050,Kaveri Dairy Milk 25,Dairy & Bakery,Milk,Kaveri Dairy,449.0,319.37,pack,True,2024-06-02
+P0051,GoldenGrain Dal 1,,Dal,GoldenGrain,283.0,230.3,pack,False,2024-01-14
+P0052,DalBazaar Oil 2,Staples,Oil,DalBazaar,299.0,219.32,pack,False,2025-04-06
+P0053,DalBazaar Rice 3,Staples,Rice,DalBazaar,609.0,505.18,pack,False,2023-04-17
+P0054,DalBazaar Atta 4,Staples,Atta,DalBazaar,849.0,496.35,pack,False,2023-04-20
+P0055,DalBazaar Atta 5,Staples,Atta,DalBazaar,684.0,434.02,pack,False,2023-08-04
+P0056,DalBazaar Atta 6,Staples,Atta,DalBazaar,663.0,465.18,pack,False,2023-09-15
+P0057,GoldenGrain Rice 7,Staples,Rice,GoldenGrain,820.0,607.03,pack,False,2025-04-29
+P0058,DalBazaar Rice 8,Staples,Rice,DalBazaar,292.0,228.15,pack,False,2024-10-14
+P0059,SunPress Atta 9,Staples,Atta,SunPress,883.0,631.79,pack,False,2024-03-13
+P0060,GoldenGrain Rice 10,,Rice,GoldenGrain,531.0,442.6,pack,False,2024-12-08
+P0061,DalBazaar Rice 11,Staples,Rice,DalBazaar,819.0,593.57,pack,False,2023-06-01
+P0062,DalBazaar Rice 12,Staples,Rice,DalBazaar,421.0,277.61,pack,False,2025-08-13
+P0063,DalBazaar Rice 13,Staples,Rice,DalBazaar,729.0,446.89,pack,False,2023-09-13
+P0064,SunPress Dal 14,Staples,Dal,SunPress,620.0,522.13,pack,False,2025-02-06
+P0065,Annapurna Mills Atta 15,Staples,Atta,Annapurna Mills,190.0,160.14,pack,False,2025-04-10
+P0066,GoldenGrain Oil 16,Staples,Oil,GoldenGrain,209.0,126.2,pack,False,2025-08-04
+P0067,Annapurna Mills Oil 17,Staples,Oil,Annapurna Mills,339.0,213.58,pack,False,2025-03-17
+P0068,GoldenGrain Oil 18,,Oil,GoldenGrain,649.0,524.12,pack,False,2023-08-16
+P0069,DalBazaar Oil 19,Staples,Oil,DalBazaar,228.0,146.28,pack,False,2025-03-25
+P0070,GoldenGrain Atta 20,Staples,Atta,GoldenGrain,792.0,592.42,pack,False,2024-02-13
+P0071,DalBazaar Rice 21,Staples,Rice,DalBazaar,336.0,220.2,pack,False,2024-06-05
+P0072,GoldenGrain Dal 22,Staples,Dal,GoldenGrain,396.0,231.5,pack,False,2025-09-20
+P0073,GoldenGrain Dal 23,Staples,Dal,GoldenGrain,279.0,334.8,pack,False,2024-03-20
+P0074,SunPress Dal 24,Staples,Dal,SunPress,350.0,420.0,pack,False,2024-06-07
+P0075,DalBazaar Atta 25,Staples,Atta,DalBazaar,157.0,88.44,pack,False,2024-03-22
+P0076,BrewHouse Biscuits 1,Snacks & Beverages,Biscuits,BrewHouse,11.0,7.47,pack,False,2025-08-29
+P0077,BrewHouse Soft Drinks 2,Snacks & Beverages,Soft Drinks,BrewHouse,369.0,276.39,pack,False,2023-05-08
+P0078,BrewHouse Soft Drinks 3,Snacks & Beverages,Soft Drinks,BrewHouse,399.0,299.28,pack,False,2023-12-01
+P0079,TeaTime Soft Drinks 4,Snacks & Beverages,Soft Drinks,TeaTime,227.0,137.91,pack,False,2024-11-11
+P0080,BrewHouse Biscuits 5,Snacks & Beverages,Biscuits,BrewHouse,518.0,348.0,pack,False,2025-05-03
+P0081,TeaTime Soft Drinks 6,Snacks & Beverages,Soft Drinks,TeaTime,10.0,6.79,pack,False,2024-08-16
+P0082,SnackSutra Soft Drinks 7,Snacks & Beverages,Soft Drinks,SnackSutra,338.0,230.7,pack,False,2024-11-22
+P0083,TeaTime Tea & Coffee 8,Snacks & Beverages,Tea & Coffee,TeaTime,125.0,93.46,pack,False,2023-10-18
+P0084,CrunchCo Soft Drinks 9,Snacks & Beverages,Soft Drinks,CrunchCo,288.0,229.11,pack,False,2025-02-08
+P0085,TeaTime Soft Drinks 10,Snacks & Beverages,Soft Drinks,TeaTime,137.0,108.5,pack,False,2023-05-31
+P0086,SnackSutra Biscuits 11,Snacks & Beverages,Biscuits,SnackSutra,23.0,16.87,pack,False,2025-02-25
+P0087,TeaTime Tea & Coffee 12,Snacks & Beverages,Tea & Coffee,TeaTime,49.0,37.51,pack,False,2024-01-29
+P0088,TeaTime Biscuits 13,Snacks & Beverages,Biscuits,TeaTime,277.0,206.87,pack,False,2023-01-06
+P0089,SnackSutra Chips 14,Snacks & Beverages,Chips,SnackSutra,492.0,302.9,pack,False,2025-04-03
+P0090,CrunchCo Tea & Coffee 15,Snacks & Beverages,Tea & Coffee,CrunchCo,527.0,377.98,pack,False,2025-07-28
+P0091,TeaTime Tea & Coffee 16,Snacks & Beverages,Tea & Coffee,TeaTime,468.0,369.92,pack,False,2024-11-14
+P0092,SnackSutra Soft Drinks 17,Snacks & Beverages,Soft Drinks,SnackSutra,297.0,217.94,pack,False,2025-01-06
+P0093,SnackSutra Tea & Coffee 18,Snacks & Beverages,Tea & Coffee,SnackSutra,492.0,403.03,pack,False,2025-01-31
+P0094,BrewHouse Tea & Coffee 19,Snacks & Beverages,Tea & Coffee,BrewHouse,475.0,368.38,pack,False,2025-05-10
+P0095,TeaTime Tea & Coffee 20,Snacks & Beverages,Tea & Coffee,TeaTime,354.0,223.86,pack,False,2023-03-21
+P0096,BrewHouse Biscuits 21,Snacks & Beverages,Biscuits,BrewHouse,395.0,257.05,pack,False,2025-07-03
+P0097,TeaTime Biscuits 22,Snacks & Beverages,Biscuits,TeaTime,302.0,187.05,pack,False,2024-12-11
+P0098,CrunchCo Biscuits 23,Snacks & Beverages,Biscuits,CrunchCo,93.0,62.72,pack,False,2023-12-05
+P0099,CrunchCo Tea & Coffee 24,Snacks & Beverages,Tea & Coffee,CrunchCo,303.0,185.45,pack,False,2024-03-06
+P0100,SnackSutra Chips 25,Snacks & Beverages,Chips,SnackSutra,220.0,152.48,pack,False,2025-08-23
+P0101,Chandana Shampoo 1,Personal Care,Shampoo,Chandana,248.0,176.44,unit,False,2025-01-22
+P0102,HerbVeda Oral Care 2,Personal Care,Oral Care,HerbVeda,369.0,257.0,unit,False,2023-10-07
+P0103,Chandana Soap 3,Personal Care,Soap,Chandana,300.0,195.25,unit,False,2024-11-26
+P0104,HerbVeda Oral Care 4,Personal Care,Oral Care,HerbVeda,525.0,421.13,unit,False,2025-07-30
+P0105,PureGlow Oral Care 5,Personal Care,Oral Care,PureGlow,109.0,89.61,unit,False,2024-08-29
+P0106,PureGlow Soap 6,Personal Care,Soap,PureGlow,380.0,282.27,unit,False,2023-05-19
+P0107,PureGlow Soap 7,Personal Care,Soap,PureGlow,567.0,356.1,unit,False,2023-12-02
+P0108,SmileBright Shampoo 8,Personal Care,Shampoo,SmileBright,161.0,125.32,unit,False,2024-01-24
+P0109,SmileBright Shampoo 9,Personal Care,Shampoo,SmileBright,-203.0,162.5,unit,False,2024-04-26
+P0110,PureGlow Oral Care 10,Personal Care,Oral Care,PureGlow,42.0,35.7,unit,False,2023-12-25
+P0111,PureGlow Soap 11,Personal Care,Soap,PureGlow,169.0,131.19,unit,False,2025-08-30
+P0112,HerbVeda Soap 12,Personal Care,Soap,HerbVeda,183.0,113.75,unit,False,2024-04-29
+P0113,HerbVeda Oral Care 13,Personal Care,Oral Care,HerbVeda,445.0,306.83,unit,False,2023-09-20
+P0114,PureGlow Soap 14,Personal Care,Soap,PureGlow,505.0,395.59,unit,False,2023-06-17
+P0115,PureGlow Soap 15,Personal Care,Soap,PureGlow,628.0,520.4,unit,False,2024-08-12
+P0116,Chandana Shampoo 16,Personal Care,Shampoo,Chandana,450.0,374.6,unit,False,2023-07-23
+P0117,HerbVeda Oral Care 17,Personal Care,Oral Care,HerbVeda,77.0,92.4,unit,False,2025-03-02
+P0118,PureGlow Oral Care 18,Personal Care,Oral Care,PureGlow,217.0,171.18,unit,False,2024-08-02
+P0119,Chandana Shampoo 19,Personal Care,Shampoo,Chandana,515.0,385.46,unit,False,2023-03-12
+P0120,PureGlow Shampoo 20,Personal Care,Shampoo,PureGlow,344.0,276.88,unit,False,2025-04-22
+P0121,SmileBright Shampoo 21,Personal Care,Shampoo,SmileBright,334.0,247.39,unit,False,2025-04-28
+P0122,Chandana Soap 22,Personal Care,Soap,Chandana,315.0,189.89,unit,False,2024-06-18
+P0123,Chandana Shampoo 23,Personal Care,Shampoo,Chandana,629.0,433.67,unit,False,2025-04-25
+P0124,SmileBright Shampoo 24,Personal Care,Shampoo,SmileBright,483.0,389.06,unit,False,2025-04-30
+P0125,Chandana Shampoo 25,Personal Care,Shampoo,Chandana,609.0,379.5,unit,False,2024-04-20
+P0126,ScrubMate Kitchen Supplies 1,Household,Kitchen Supplies,ScrubMate,416.0,270.78,unit,False,2024-05-21
+P0127,ScrubMate Detergent 2,Household,Detergent,ScrubMate,602.0,369.41,unit,False,2025-03-27
+P0128,CleanPro Cleaners 3,Household,Cleaners,CleanPro,211.0,151.23,unit,False,2024-06-13
+P0129,ShineAll Detergent 4,Household,Detergent,ShineAll,666.0,510.17,unit,False,2024-05-15
+P0130,ScrubMate Detergent 5,Household,Detergent,ScrubMate,406.0,301.97,unit,False,2024-05-17
+P0131,SparkWash Detergent 6,Household,Detergent,SparkWash,336.0,214.46,unit,False,2024-02-19
+P0132,CleanPro Cleaners 7,Household,Cleaners,CleanPro,497.0,343.91,unit,False,2024-06-27
+P0133,CleanPro Kitchen Supplies 8,Household,Kitchen Supplies,CleanPro,267.0,175.03,unit,False,2024-04-09
+P0134,ShineAll Cleaners 9,Household,Cleaners,ShineAll,219.0,128.38,unit,False,2023-07-17
+P0135,ShineAll Kitchen Supplies 10,Household,Kitchen Supplies,ShineAll,248.0,150.65,unit,False,2025-01-26
+P0136,CleanPro Kitchen Supplies 11,Household,Kitchen Supplies,CleanPro,360.0,303.9,unit,False,2025-05-02
+P0137,CleanPro Detergent 12,Household,Detergent,CleanPro,168.0,101.44,unit,False,2023-01-15
+P0138,CleanPro Detergent 13,Household,Detergent,CleanPro,507.0,285.77,unit,False,2023-02-25
+P0139,ShineAll Kitchen Supplies 14,Household,Kitchen Supplies,ShineAll,405.0,300.25,unit,False,2025-02-09
+P0140,CleanPro Detergent 15,Household,Detergent,CleanPro,364.0,251.46,unit,False,2024-03-27
+P0141,CleanPro Detergent 16,Household,Detergent,CleanPro,265.0,220.56,unit,False,2024-05-04
+P0142,ScrubMate Detergent 17,Household,Detergent,ScrubMate,115.0,80.22,unit,False,2024-08-13
+P0143,ShineAll Detergent 18,Household,Detergent,ShineAll,455.0,270.62,unit,False,2024-07-30
+P0144,ShineAll Detergent 19,Household,Detergent,ShineAll,666.0,389.97,unit,False,2025-02-21
+P0145,ShineAll Kitchen Supplies 20,Household,Kitchen Supplies,ShineAll,315.0,246.55,unit,False,2024-01-25
+P0146,CleanPro Cleaners 21,Household,Cleaners,CleanPro,337.0,272.31,unit,False,2024-03-15
+P0147,SparkWash Kitchen Supplies 22,Household,Kitchen Supplies,SparkWash,242.0,177.36,unit,False,2025-01-27
+P0148,ShineAll Detergent 23,Household,Detergent,ShineAll,105.0,66.09,unit,False,2023-03-25
+P0149,SparkWash Detergent 24,Household,Detergent,SparkWash,144.0,85.96,unit,False,2024-02-23
+P0150,ScrubMate Kitchen Supplies 25,Household,Kitchen Supplies,ScrubMate,337.0,214.8,unit,False,2023-08-26
+P0030,Kaveri Dairy Milk 5 (old),Dairy & Bakery,Milk,Kaveri Dairy,45.0,40.39,pack,True,2023-03-14
+P0140,CleanPro Detergent 15 (old),Household,Detergent,CleanPro,328.0,251.46,unit,False,2024-03-27

@@ -1,45 +1,73 @@
-Overview
-========
+# NammaMart ETL & ELT Data Pipeline
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+**IIT Roorkee · Forward Deployed AI Engineering · Module 2**  
+**Author:** Surbhi Soni  
+**Submission branch:** `namamart-assignment-work`
 
-Project Contents
-================
+This project compares two Airflow pipelines for the NammaMart quick-commerce dataset:
 
-Your Astro project contains the following files and folders:
+- **ETL** validates and transforms source records in Python before loading a DuckDB star schema; rejected order records are written to quarantine with a `failure_reason`.
+- **ELT** preserves source data in raw DuckDB tables, performs SQL transformations in staging, and builds reporting marts.
+- Both pipelines include quality scorecards, run-audit records, source-volume/freshness/distribution checks, and payment reconciliation.
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+## Start here
 
-Deploy Your Project Locally
-===========================
+1. Read the [assignment-aligned submission](SUBMISSION.md).
+2. Review the [row-keyed initial data issues log](include/reports/data_issues_initial_profile.csv).
+3. Review the [six source CSV files](include/data/nammamart/).
+4. Review the [screenshots and run evidence](screenshots/).
 
-Start Airflow on your local machine by running 'astro dev start'.
+## Source data
 
-This command will spin up five Docker containers on your machine, each for a different Airflow component:
+The six trainer-provided CSVs are stored in `include/data/nammamart/`:
 
-- Postgres: Airflow's Metadata Database
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- DAG Processor: The Airflow component responsible for parsing DAGs
-- API Server: The Airflow component responsible for serving the Airflow UI and API
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+- `orders.csv`
+- `payments.csv`
+- `customers.csv`
+- `products.csv`
+- `stores.csv`
+- `orders_2026-10-01_increment.csv`
 
-When all five containers are ready the command will open the browser to the Airflow UI at http://localhost:8080/. You should also be able to access your Postgres Database at 'localhost:5432/postgres' with username 'postgres' and password 'postgres'.
+Treat these as immutable inputs. Use temporary copies for fault-injection experiments and restore the originals afterward. The source files are part of the assignment dataset; do not move unmasked source customer data into other repository paths.
 
-Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
+## DAGs and schedule
 
-Deploy Your Project to Astronomer
-=================================
+| DAG ID | Purpose | Schedule |
+|---|---|---|
+| `nammamart_etl_surbhi` | Validate, quarantine, mask PII, load facts/dimensions, reconcile payments | `0 9 * * 1-6` |
+| `nammamart_elt_surbhi` | Preserve raw inputs, transform with SQL, upsert increment versions, build marts | `0 9 * * 1-6` |
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
+The cron schedule is timezone-aware using `Asia/Kolkata` (09:00 IST = 03:30 UTC), with `catchup=False`, retries, retry delay, and an execution timeout. A local scheduler cannot run while the host/Docker is off.
 
-Contact
-=======
+## Project layout
 
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+- `dags/nammamart_etl_surbhi.py` — ETL Airflow DAG
+- `dags/nammamart_elt_surbhi.py` — ELT Airflow DAG
+- `include/nammamart_pipeline.py` — shared validation, masking, loading, scorecard, observability, and audit logic
+- `include/sql/elt_staging_dimensions.sql` — dimension staging
+- `include/sql/elt_staging_orders.sql` — order staging and quality rules
+- `include/sql/elt_marts.sql` — reporting marts
+- `include/sql/business_questions.sql` — paired ETL/ELT queries for the six business questions
+- `include/reports/data_issues_initial_profile.csv` — issue log from the initial source profile
+- `screenshots/` — Airflow graph, schedule, quarantine, scorecard, audit, and reconciliation evidence
+- `SUBMISSION.md` — profiling, schedule answers, governance, observability, business questions, recommendation, and evidence crosswalk
+
+The live DuckDB warehouse and generated run-specific reports are local runtime artifacts and are not substitutes for committed code or screenshots. See `SUBMISSION.md` for which experiment results are directly evidenced and which controlled runs were not separately recorded.
+
+## Local execution
+
+Use the course-provided Astro CLI/Docker setup. From the repository root:
+
+```bash
+astro dev start
+astro dev run dags list-import-errors
+```
+
+Then open the local Airflow UI at `http://localhost:8080`, confirm both DAGs parse, and trigger them only when needed. Query the local DuckDB tables using the SQL in `include/sql/business_questions.sql`. Do not commit the live warehouse database, credentials, webhook URLs, or local secrets.
+
+## Evidence
+
+- [Submission document](SUBMISSION.md)
+- [ETL/ELT screenshots](screenshots/)
+- [Business-question SQL](include/sql/business_questions.sql)
+- [Initial profiling issue log](include/reports/data_issues_initial_profile.csv)
