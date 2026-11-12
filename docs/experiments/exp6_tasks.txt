@@ -1,0 +1,33 @@
+== etl
+('extract_stores'  'success'  1
+('extract_orders'  'failed'  1
+('extract_payments'  'success'  1
+('extract_products'  'success'  1
+('extract_customers'  'success'  1
+('validate_orders'  'upstream_failed'  0
+('validate_payments'  'failed'  1
+('validate_products'  'success'  1
+('validate_stores'  'success'  1
+('validate_customers'  'success'  1
+('load'  'upstream_failed'  0
+('transform'  'upstream_failed'  0
+('reconcile'  'upstream_failed'  0
+('report'  'upstream_failed'  0
+('run_audit'  'failed'  1
+== elt
+('extract_payments'  'success'  1
+('extract_orders'  'failed'  1
+('extract_products'  'success'  1
+('extract_customers'  'success'  1
+('extract_stores'  'success'  1
+('load_raw'  'upstream_failed'  0
+('check_schema'  'upstream_failed'  0
+('stg_stores'  'upstream_failed'  0
+('stg_products'  'upstream_failed'  0
+('stg_customers'  'upstream_failed'  0
+('stg_orders'  'upstream_failed'  0
+('stg_payments'  'upstream_failed'  0
+('dq_results'  'upstream_failed'  0
+('build_marts'  'upstream_failed'  0
+('report'  'upstream_failed'  0
+('run_audit'  'failed'  1

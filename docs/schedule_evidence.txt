@@ -1,0 +1,2 @@
+nammamart_elt_mohanrajs 0 9 * * 1-6 At 09:00, Monday through Saturday next: 2026-10-22T03:30:00Z paused: False
+nammamart_etl_mohanrajs 0 9 * * 1-6 At 09:00, Monday through Saturday next: 2026-10-22T03:30:00Z paused: False

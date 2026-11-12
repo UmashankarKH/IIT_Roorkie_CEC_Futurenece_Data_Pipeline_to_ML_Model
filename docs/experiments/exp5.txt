@@ -1,0 +1,15 @@
+ETL quarantine log (new keys):
+  ('ORD990001', 'orders_customer_id_not_null')
+  ('ORD990002', 'orders_quantity_positive')
+  ('ORD990003', 'orders_store_in_clean_stores')
+  ('ORD990004', 'orders_status_valid')
+  ('ORD990005', 'orders_order_ts_not_future')
+ELT stg_orders flags:
+  ('ORD990001', 'FAIL', 'orders_customer_id_not_null')
+  ('ORD990002', 'FAIL', 'orders_quantity_positive')
+  ('ORD990003', 'FAIL', 'orders_store_in_clean_stores')
+  ('ORD990004', 'FAIL', 'orders_status_valid')
+  ('ORD990005', 'FAIL', 'orders_order_ts_not_future')
+in ETL fact: (0,)  in ELT marts: (0,)
+nammamart_etl_mohanrajs dq_results delta vs exp2 baseline: {'orders_customer_id_not_null': (18, '->', 19), 'orders_status_valid': (3, '->', 4), 'orders_quantity_positive': (10, '->', 11), 'orders_store_in_clean_stores': (181, '->', 182), 'orders_order_ts_not_future': (7, '->', 8)}
+nammamart_elt_mohanrajs dq_results delta vs exp2 baseline: {'orders_order_ts_not_future': (7, '->', 8), 'orders_quantity_positive': (10, '->', 11), 'orders_status_valid': (3, '->', 4), 'orders_store_in_clean_stores': (181, '->', 182), 'orders_customer_id_not_null': (18, '->', 19)}

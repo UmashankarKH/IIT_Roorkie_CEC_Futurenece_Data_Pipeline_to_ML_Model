@@ -5,6 +5,7 @@ airflow_settings.yaml
 __pycache__/
 astro
 .venv
+venv/
 .astro/standalone/
 airflow-webserver.pid
 webserver_config.py
@@ -13,3 +14,11 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# NammaMart assignment: runtime artefacts. The warehouse holds raw (unmasked) customer data, so it never goes to GitHub.
+include/warehouse_*.duckdb*
+include/work/
+include/quarantine/mohanrajs/
+include/exp/
+logs/
+simple_auth_manager_passwords.json.generated
