@@ -13,3 +13,11 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# NammaMart assignment (divya): local warehouse holds raw unmasked PII, keep out of git
+include/warehouse_divya.duckdb*
+include/tmp/
+include/quarantine/divya/**
+!include/quarantine/divya/etl/
+!include/quarantine/divya/etl/orders_failed_etl_final_baseline.csv
+~$*.docx
