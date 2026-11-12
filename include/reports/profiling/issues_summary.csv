@@ -1,0 +1,53 @@
+file,column,problem,dimension,severity,rows_affected,sample_keys,proposed_rule
+customers.csv,customer_id,same customer_id appears with different values (conflicting duplicate),Uniqueness,Critical,10,"C00103, C00252, C00036, C00226, C00313",customer_id must be unique; ask client which version is correct
+customers.csv,signup_date,signup_date is in the future,Timeliness,Critical,3,"C00400, C00398, C00038",signup_date must be before 2026-10-02
+customers.csv,email,email format invalid,Validity,Warning,8,"C00307, C00063, C00363, C00310, C00112",email must look like name@domain.tld
+customers.csv,loyalty_tier,inconsistent spelling/casing of a category value,Consistency,Warning,8,"C00199, C00171, C00133, C00032, C00031",standardise loyalty_tier to one spelling
+customers.csv,phone,phone is not a valid 10-digit Indian mobile,Validity,Warning,7,"C00151, C00240, C00095, C00357, C00130",10 digits starting 6-9 after removing +91/0
+customers.csv,city,city missing,Completeness,Warning,6,"C00355, C00394, C00233, C00142, C00328",city should be filled
+customers.csv,email,email missing,Completeness,Warning,4,"C00337, C00045, C00327, C00193",email should be filled
+customers.csv,email,null written as a text placeholder,Completeness,Warning,4,"C00337, C00045, C00327, C00193","treat 'NULL', 'N/A', '-' as missing"
+customers.csv,pincode,pincode is not 6 digits,Validity,Warning,3,"C00132, C00083, C00166",pincode must be exactly 6 digits
+customers.csv,signup_date,signup_date is after the customer's first order,Consistency,Warning,3,"C00400, C00398, C00038",signup_date <= first order_ts
+customers.csv,pincode,pincode outside Bengaluru (56xxxx),Consistency,Warning,2,"C00395, C00342",Bengaluru pincodes start with 56
+orders.csv,order_id,DELIVERED order has no SUCCESS payment,Consistency,Critical,72,"ORD000398, ORD001113, ORD000737, ORD000518, ORD000747",every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,customer_id,required value missing,Completeness,Critical,18,"ORD002255, ORD000701, ORD000997, ORD000580, ORD002019",customer_id must not be null
+orders.csv,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),Accuracy,Critical,18,"ORD002103, ORD002305, ORD002004, ORD000845, ORD000964","recompute and compare, tolerance 0.01"
+orders.csv,order_id,exact duplicate row (whole row repeated),Uniqueness,Critical,12,"ORD001462, ORD001441, ORD001692, ORD002129, ORD001239","keep the first occurrence, quarantine repeats"
+orders.csv,quantity,quantity is zero or negative,Accuracy,Critical,10,"ORD000469, ORD001296, ORD001459, ORD000867, ORD000462",quantity > 0 (ask: is a negative a return?)
+orders.csv,product_id,product_id not found in products.csv,Consistency,Critical,9,"ORD000986, ORD001058, ORD001685, ORD000070, ORD000789",product_id must exist in products.csv
+orders.csv,delivery_minutes,DELIVERED order has no delivery_minutes,Completeness,Critical,8,"ORD001554, ORD001800, ORD000731, ORD001277, ORD000326",DELIVERED orders must have delivery_minutes
+orders.csv,order_ts,order_ts is in the future,Timeliness,Critical,7,"ORD002119, ORD001693, ORD001089, ORD001121, ORD001765",order_ts must be before 2026-10-02
+orders.csv,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),Accuracy,Critical,6,"ORD001037, ORD002101, ORD000455, ORD001104, ORD000020",delivery_minutes < 120
+orders.csv,order_amount,order_amount is negative,Accuracy,Critical,6,"ORD001296, ORD001459, ORD000867, ORD000462, ORD001124",order_amount >= 0
+orders.csv,store_id,store_id not found in stores.csv,Consistency,Critical,5,"ORD001799, ORD001046, ORD001492, ORD001275, ORD002126",store_id must exist in stores.csv
+orders.csv,order_ts,order_ts cannot be parsed as a date/time,Validity,Critical,4,"ORD001610, ORD000534, ORD002012, ORD000946",order_ts must be a valid ISO-8601 date/time
+orders.csv,discount_pct,discount_pct outside 0-100,Validity,Critical,3,"ORD002103, ORD001468, ORD001237",0 <= discount_pct <= 100
+orders.csv,order_status,order_status not in allowed list,Validity,Critical,3,"ORD000500, ORD001970, ORD001637","allowed: DELIVERED, CANCELLED, RETURNED"
+orders.csv,order_ts,required value missing,Completeness,Critical,2,"ORD000403, ORD000362",order_ts must not be null
+orders.csv,payment_mode,payment_mode not in allowed list,Validity,Critical,2,"ORD001812, ORD001414","allowed: UPI, Card, Cash on Delivery, Wallet"
+orders.csv,order_amount,statistical outlier (beyond 3x IQR),Accuracy,Warning,61,"ORD001249, ORD001923, ORD000918, ORD002381, ORD000733","review; typical range about -1,273.25 to 2,176.00"
+orders.csv,unit_price,unit_price is above the product's MRP,Consistency,Warning,11,"ORD001295, ORD000331, ORD000957, ORD000023, ORD000352",unit_price <= products.mrp
+orders.csv,payment_mode,non-standard payment_mode spelling,Validity,Warning,6,"ORD000159, ORD001364, ORD000433, ORD001640, ORD000934",map variants to the canonical value
+orders.csv,order_status,order_status needs upper-casing,Validity,Warning,2,"ORD001066, ORD000153",standardise to upper case
+orders.csv,payment_mode,leading/trailing whitespace,Validity,Warning,2,"ORD002356, ORD001874",trim all text values
+orders.csv,quantity,statistical outlier (beyond 3x IQR),Accuracy,Warning,2,"ORD001459, ORD000462",review; typical range about -2.00 to 5.00
+orders.csv,order_ts,null written as a text placeholder,Completeness,Warning,1,ORD000403,"treat 'NULL', 'N/A', '-' as missing"
+orders_2026-10-01_increment.csv,unit_price,unit_price is above the product's MRP,Consistency,Warning,1,ORD002465,unit_price <= products.mrp
+payments.csv,amount_paid,SUCCESS payment amount does not equal order_amount,Consistency,Critical,14,"PAY0001568, PAY0000354, PAY0000779, PAY0000323, PAY0001167",SUCCESS amount_paid = orders.order_amount
+payments.csv,amount_paid,amount_paid zero or negative,Accuracy,Critical,10,"PAY0001568, PAY0002175, PAY0000116, PAY0000751, PAY0000944",amount_paid > 0
+payments.csv,order_id,more than one SUCCESS payment for the same order (double charge?),Uniqueness,Critical,8,"PAY0001651, PAY0000755, PAY0000509, PAY0002000",one SUCCESS payment per order
+payments.csv,order_id,payment for an order_id not in orders.csv,Consistency,Critical,8,"PAY0002219, PAY0002220, PAY0002223, PAY0002221, PAY0002224",payments.order_id must exist in orders
+payments.csv,payment_ts,payment_ts is in the future,Timeliness,Critical,7,"PAY0000396, PAY0000127, PAY0001908, PAY0001037, PAY0000337",payment_ts must be before 2026-10-02
+payments.csv,payment_id,exact duplicate row (whole row repeated),Uniqueness,Critical,4,"PAY0000509, PAY0001651, PAY0002000, PAY0000755","keep the first occurrence, quarantine repeats"
+payments.csv,payment_mode,payment_mode not in allowed list,Validity,Critical,2,"PAY0000522, PAY0000044","allowed: UPI, Card, Cash on Delivery, Wallet"
+payments.csv,gateway_ref,SUCCESS payment has no gateway_ref,Completeness,Warning,285,"PAY0000133, PAY0001514, PAY0001852, PAY0001437, PAY0000009",SUCCESS payments need a gateway_ref
+payments.csv,amount_paid,statistical outlier (beyond 3x IQR),Accuracy,Warning,57,"PAY0001308, PAY0000858, PAY0001190, PAY0000665, PAY0000440","review; typical range about -1,248.60 to 2,135.20"
+payments.csv,payment_mode,non-standard payment_mode spelling,Validity,Warning,6,"PAY0002188, PAY0001850, PAY0001954, PAY0000817, PAY0001359",map variants to the canonical value
+payments.csv,payment_mode,leading/trailing whitespace,Validity,Warning,2,"PAY0002113, PAY0001862",trim all text values
+products.csv,cost_price,cost_price is higher than mrp,Accuracy,Critical,5,"P0019, P0073, P0074, P0109, P0117",cost_price <= mrp
+products.csv,product_id,same product_id appears with different values (conflicting duplicate),Uniqueness,Critical,4,"P0030, P0140",product_id must be unique; ask client which version is correct
+products.csv,category,category missing,Completeness,Critical,3,"P0051, P0060, P0068",category must not be null
+products.csv,mrp,mrp zero or negative,Accuracy,Critical,1,P0109,mrp > 0
+stores.csv,capacity_orders_per_day,capacity zero or negative,Accuracy,Critical,1,S12,capacity_orders_per_day > 0
+stores.csv,zone,zone missing,Completeness,Critical,1,S07,zone must not be null

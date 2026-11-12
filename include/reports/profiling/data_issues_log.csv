@@ -1,0 +1,748 @@
+file,source_row,row_key,column,problem,detail,dimension,severity,proposed_rule
+customers.csv,30,C00103,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,46,C00103,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,108,C00252,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,144,C00036,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,156,C00226,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,210,C00313,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,215,C00252,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,246,C00226,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,266,C00036,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,382,C00313,customer_id,same customer_id appears with different values (conflicting duplicate),,Uniqueness,Critical,customer_id must be unique; ask client which version is correct
+customers.csv,86,C00400,signup_date,signup_date is in the future,2027-01-05,Timeliness,Critical,signup_date must be before 2026-10-02
+customers.csv,197,C00398,signup_date,signup_date is in the future,2026-11-12,Timeliness,Critical,signup_date must be before 2026-10-02
+customers.csv,239,C00038,signup_date,signup_date is in the future,2026-12-20,Timeliness,Critical,signup_date must be before 2026-10-02
+customers.csv,4,C00355,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,202,C00394,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,276,C00233,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,293,C00142,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,310,C00328,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,370,C00219,city,city missing,,Completeness,Warning,city should be filled
+customers.csv,24,C00307,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,79,C00063,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,82,C00363,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,92,C00310,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,240,C00112,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,344,C00392,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,365,C00062,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,390,C00067,email,email format invalid,,Validity,Warning,email must look like name@domain.tld
+customers.csv,17,C00337,email,email missing,,Completeness,Warning,email should be filled
+customers.csv,81,C00045,email,email missing,,Completeness,Warning,email should be filled
+customers.csv,199,C00327,email,email missing,,Completeness,Warning,email should be filled
+customers.csv,337,C00193,email,email missing,,Completeness,Warning,email should be filled
+customers.csv,17,C00337,email,null written as a text placeholder,,Completeness,Warning,"treat 'NULL', 'N/A', '-' as missing"
+customers.csv,81,C00045,email,null written as a text placeholder,,Completeness,Warning,"treat 'NULL', 'N/A', '-' as missing"
+customers.csv,199,C00327,email,null written as a text placeholder,,Completeness,Warning,"treat 'NULL', 'N/A', '-' as missing"
+customers.csv,337,C00193,email,null written as a text placeholder,,Completeness,Warning,"treat 'NULL', 'N/A', '-' as missing"
+customers.csv,2,C00199,loyalty_tier,inconsistent spelling/casing of a category value,SILVER -> Silver,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,40,C00171,loyalty_tier,inconsistent spelling/casing of a category value,SILVER -> Silver,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,43,C00133,loyalty_tier,inconsistent spelling/casing of a category value,BRONZE -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,53,C00032,loyalty_tier,inconsistent spelling/casing of a category value,bronze -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,99,C00031,loyalty_tier,inconsistent spelling/casing of a category value,bronze -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,104,C00196,loyalty_tier,inconsistent spelling/casing of a category value,bronze -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,169,C00136,loyalty_tier,inconsistent spelling/casing of a category value,BRONZE -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,330,C00092,loyalty_tier,inconsistent spelling/casing of a category value,BRONZE -> Bronze,Consistency,Warning,standardise loyalty_tier to one spelling
+customers.csv,60,C00151,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 9,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,117,C00240,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 8,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,141,C00095,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 9,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,153,C00357,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 9,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,172,C00130,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 9,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,234,C00290,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 7,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,250,C00339,phone,phone is not a valid 10-digit Indian mobile,digits after cleaning: 9,Validity,Warning,10 digits starting 6-9 after removing +91/0
+customers.csv,38,C00132,pincode,pincode is not 6 digits,5600XX,Validity,Warning,pincode must be exactly 6 digits
+customers.csv,109,C00083,pincode,pincode is not 6 digits,5600XX,Validity,Warning,pincode must be exactly 6 digits
+customers.csv,151,C00166,pincode,pincode is not 6 digits,5600XX,Validity,Warning,pincode must be exactly 6 digits
+customers.csv,56,C00395,pincode,pincode outside Bengaluru (56xxxx),000000,Consistency,Warning,Bengaluru pincodes start with 56
+customers.csv,133,C00342,pincode,pincode outside Bengaluru (56xxxx),000000,Consistency,Warning,Bengaluru pincodes start with 56
+customers.csv,86,C00400,signup_date,signup_date is after the customer's first order,2027-01-05,Consistency,Warning,signup_date <= first order_ts
+customers.csv,197,C00398,signup_date,signup_date is after the customer's first order,2026-11-12,Consistency,Warning,signup_date <= first order_ts
+customers.csv,239,C00038,signup_date,signup_date is after the customer's first order,2026-12-20,Consistency,Warning,signup_date <= first order_ts
+orders.csv,36,ORD002255,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,251,ORD000701,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,550,ORD000997,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,635,ORD000580,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,821,ORD002019,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,940,ORD002262,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,970,ORD002149,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,989,ORD002367,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1192,ORD001332,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1342,ORD001918,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1389,ORD002156,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1399,ORD000583,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1461,ORD000790,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1583,ORD000764,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1597,ORD002219,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1814,ORD001532,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,1823,ORD000022,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,2150,ORD001373,customer_id,required value missing,,Completeness,Critical,customer_id must not be null
+orders.csv,162,ORD001554,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,253,ORD001800,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,652,ORD000731,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,716,ORD001277,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,1090,ORD000326,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,1524,ORD001515,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,1826,ORD002229,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,2035,ORD000878,delivery_minutes,DELIVERED order has no delivery_minutes,,Completeness,Critical,DELIVERED orders must have delivery_minutes
+orders.csv,275,ORD001037,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),480.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,511,ORD002101,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),480.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,626,ORD000455,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),1440.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,2075,ORD001104,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),900.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,2279,ORD000020,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),900.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,2368,ORD000424,delivery_minutes,delivery_minutes >= 120 (implausible: hours or seconds?),480.0,Accuracy,Critical,delivery_minutes < 120
+orders.csv,66,ORD002103,discount_pct,discount_pct outside 0-100,250,Validity,Critical,0 <= discount_pct <= 100
+orders.csv,2131,ORD001468,discount_pct,discount_pct outside 0-100,120,Validity,Critical,0 <= discount_pct <= 100
+orders.csv,2292,ORD001237,discount_pct,discount_pct outside 0-100,150,Validity,Critical,0 <= discount_pct <= 100
+orders.csv,66,ORD002103,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 492.0 vs expected -738.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,312,ORD002305,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 6757.5 vs expected 675.75,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,480,ORD002004,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 6720.0 vs expected 672.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,771,ORD000845,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 4712.0 vs expected 471.2,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,812,ORD000964,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 8370.0 vs expected 837.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1027,ORD002298,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 305.1 vs expected 610.2,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1029,ORD002031,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 3210.0 vs expected 321.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1285,ORD000801,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 5467.5 vs expected 3645.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1439,ORD000880,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 517.65 vs expected 345.1,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1641,ORD001274,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 110.0 vs expected 220.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1644,ORD000677,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 394.2 vs expected 262.8,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1717,ORD002223,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 36.58 vs expected 73.15,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1720,ORD002128,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 265.5 vs expected 177.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1748,ORD001624,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 9576.0 vs expected 957.6,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1903,ORD002244,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 108.3 vs expected 72.2,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,1927,ORD001755,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 730.0 vs expected 1460.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,2131,ORD001468,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 547.2 vs expected -136.8,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,2292,ORD001237,order_amount,order_amount does not match quantity x unit_price x (1 - discount_pct/100),reported 2408.0 vs expected -1505.0,Accuracy,Critical,"recompute and compare, tolerance 0.01"
+orders.csv,801,ORD001296,order_amount,order_amount is negative,-394.0,Accuracy,Critical,order_amount >= 0
+orders.csv,816,ORD001459,order_amount,order_amount is negative,-1593.0,Accuracy,Critical,order_amount >= 0
+orders.csv,860,ORD000867,order_amount,order_amount is negative,-500.65,Accuracy,Critical,order_amount >= 0
+orders.csv,1021,ORD000462,order_amount,order_amount is negative,-1279.65,Accuracy,Critical,order_amount >= 0
+orders.csv,1821,ORD001124,order_amount,order_amount is negative,-144.9,Accuracy,Critical,order_amount >= 0
+orders.csv,2365,ORD001384,order_amount,order_amount is negative,-188.7,Accuracy,Critical,order_amount >= 0
+orders.csv,68,ORD000398,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,77,ORD001113,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,103,ORD000737,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,144,ORD000518,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,192,ORD000747,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,252,ORD002235,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,264,ORD000896,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,277,ORD001398,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,278,ORD000666,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,296,ORD001300,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,321,ORD002078,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,461,ORD001570,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,474,ORD000106,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,526,ORD001613,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,548,ORD000994,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,598,ORD001842,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,601,ORD000564,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,635,ORD000580,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,658,ORD000751,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,665,ORD000984,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,683,ORD000090,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,721,ORD000504,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,813,ORD001371,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,827,ORD001954,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,831,ORD001492,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,839,ORD001881,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,922,ORD000899,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,978,ORD000525,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1024,ORD000805,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1035,ORD001848,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1039,ORD001543,order_id,DELIVERED order has no SUCCESS payment,Wallet,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1108,ORD002264,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1113,ORD000606,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1145,ORD002129,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1167,ORD001474,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1171,ORD001103,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1213,ORD000633,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1248,ORD001218,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1263,ORD001292,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1270,ORD002178,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1309,ORD001695,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1340,ORD001730,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1350,ORD001131,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1379,ORD002242,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1438,ORD000652,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1474,ORD000085,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1482,ORD001788,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1494,ORD001982,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1542,ORD001225,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1543,ORD001714,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1628,ORD000566,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1642,ORD002129,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1727,ORD000895,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1730,ORD001351,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1845,ORD000381,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1870,ORD000187,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1944,ORD000506,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,1989,ORD002106,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2021,ORD001645,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2051,ORD002212,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2069,ORD000466,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2138,ORD000501,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2176,ORD000543,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2193,ORD002252,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2218,ORD000961,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2223,ORD000673,order_id,DELIVERED order has no SUCCESS payment,Cash on Delivery,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2237,ORD002326,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2239,ORD000057,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2267,ORD000127,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2270,ORD000389,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2293,ORD000707,order_id,DELIVERED order has no SUCCESS payment,Card,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,2350,ORD001284,order_id,DELIVERED order has no SUCCESS payment,UPI,Consistency,Critical,every DELIVERED order needs a SUCCESS payment (ask: how is COD recorded?)
+orders.csv,271,ORD001462,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,1121,ORD001441,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,1318,ORD001692,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,1642,ORD002129,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2059,ORD001239,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2088,ORD000783,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2146,ORD000539,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2182,ORD001434,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2204,ORD001326,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2213,ORD001549,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2328,ORD001870,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,2395,ORD001110,order_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+orders.csv,747,ORD000500,order_status,order_status not in allowed list,Pending??,Validity,Critical,"allowed: DELIVERED, CANCELLED, RETURNED"
+orders.csv,2027,ORD001970,order_status,order_status not in allowed list,Pending??,Validity,Critical,"allowed: DELIVERED, CANCELLED, RETURNED"
+orders.csv,2129,ORD001637,order_status,order_status not in allowed list,Pending??,Validity,Critical,"allowed: DELIVERED, CANCELLED, RETURNED"
+orders.csv,513,ORD001610,order_ts,order_ts cannot be parsed as a date/time,2026-13-05 11:00:00,Validity,Critical,order_ts must be a valid ISO-8601 date/time
+orders.csv,825,ORD000534,order_ts,order_ts cannot be parsed as a date/time,2026-13-05 11:00:00,Validity,Critical,order_ts must be a valid ISO-8601 date/time
+orders.csv,1100,ORD002012,order_ts,order_ts cannot be parsed as a date/time,31/09/2026 10:00,Validity,Critical,order_ts must be a valid ISO-8601 date/time
+orders.csv,2114,ORD000946,order_ts,order_ts cannot be parsed as a date/time,31/09/2026 10:00,Validity,Critical,order_ts must be a valid ISO-8601 date/time
+orders.csv,140,ORD002119,order_ts,order_ts is in the future,2027-01-01 09:00:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,288,ORD001693,order_ts,order_ts is in the future,2026-10-21 10:15:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,363,ORD001089,order_ts,order_ts is in the future,2026-10-21 10:15:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,426,ORD001121,order_ts,order_ts is in the future,2026-11-02 18:40:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,1122,ORD001765,order_ts,order_ts is in the future,2027-01-01 09:00:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,1607,ORD001965,order_ts,order_ts is in the future,2026-11-02 18:40:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,2067,ORD001725,order_ts,order_ts is in the future,2027-01-01 09:00:00,Timeliness,Critical,order_ts must be before 2026-10-02
+orders.csv,273,ORD000403,order_ts,required value missing,,Completeness,Critical,order_ts must not be null
+orders.csv,899,ORD000362,order_ts,required value missing,,Completeness,Critical,order_ts must not be null
+orders.csv,48,ORD001812,payment_mode,payment_mode not in allowed list,Cashh,Validity,Critical,"allowed: UPI, Card, Cash on Delivery, Wallet"
+orders.csv,563,ORD001414,payment_mode,payment_mode not in allowed list,Cashh,Validity,Critical,"allowed: UPI, Card, Cash on Delivery, Wallet"
+orders.csv,207,ORD000986,product_id,product_id not found in products.csv,P9455,Consistency,Critical,product_id must exist in products.csv
+orders.csv,305,ORD001058,product_id,product_id not found in products.csv,P9212,Consistency,Critical,product_id must exist in products.csv
+orders.csv,590,ORD001685,product_id,product_id not found in products.csv,P9816,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1218,ORD000070,product_id,product_id not found in products.csv,P9893,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1546,ORD000789,product_id,product_id not found in products.csv,P9989,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1640,ORD000596,product_id,product_id not found in products.csv,P9784,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1834,ORD000134,product_id,product_id not found in products.csv,P9822,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1954,ORD000965,product_id,product_id not found in products.csv,P9399,Consistency,Critical,product_id must exist in products.csv
+orders.csv,1982,ORD002179,product_id,product_id not found in products.csv,P9761,Consistency,Critical,product_id must exist in products.csv
+orders.csv,127,ORD000469,quantity,quantity is zero or negative,0,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,801,ORD001296,quantity,quantity is zero or negative,-2,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,816,ORD001459,quantity,quantity is zero or negative,-3,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,860,ORD000867,quantity,quantity is zero or negative,-1,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,1021,ORD000462,quantity,quantity is zero or negative,-3,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,1032,ORD002360,quantity,quantity is zero or negative,0,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,1198,ORD001724,quantity,quantity is zero or negative,0,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,1429,ORD000099,quantity,quantity is zero or negative,0,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,1821,ORD001124,quantity,quantity is zero or negative,-1,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,2365,ORD001384,quantity,quantity is zero or negative,-1,Accuracy,Critical,quantity > 0 (ask: is a negative a return?)
+orders.csv,735,ORD001799,store_id,store_id not found in stores.csv,S99,Consistency,Critical,store_id must exist in stores.csv
+orders.csv,742,ORD001046,store_id,store_id not found in stores.csv,S17,Consistency,Critical,store_id must exist in stores.csv
+orders.csv,831,ORD001492,store_id,store_id not found in stores.csv,S17,Consistency,Critical,store_id must exist in stores.csv
+orders.csv,1011,ORD001275,store_id,store_id not found in stores.csv,S17,Consistency,Critical,store_id must exist in stores.csv
+orders.csv,1955,ORD002126,store_id,store_id not found in stores.csv,S00,Consistency,Critical,store_id must exist in stores.csv
+orders.csv,13,ORD001249,order_amount,statistical outlier (beyond 3x IQR),3762.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,130,ORD001923,order_amount,statistical outlier (beyond 3x IQR),2225.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,151,ORD000918,order_amount,statistical outlier (beyond 3x IQR),2512.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,200,ORD002381,order_amount,statistical outlier (beyond 3x IQR),2214.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,258,ORD000733,order_amount,statistical outlier (beyond 3x IQR),2436.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,286,ORD000777,order_amount,statistical outlier (beyond 3x IQR),3112.2,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,312,ORD002305,order_amount,statistical outlier (beyond 3x IQR),6757.5,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,330,ORD001253,order_amount,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,410,ORD001273,order_amount,statistical outlier (beyond 3x IQR),2264.4,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,417,ORD002391,order_amount,statistical outlier (beyond 3x IQR),2223.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,474,ORD000106,order_amount,statistical outlier (beyond 3x IQR),2332.8,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,480,ORD002004,order_amount,statistical outlier (beyond 3x IQR),6720.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,500,ORD000864,order_amount,statistical outlier (beyond 3x IQR),2332.8,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,592,ORD002136,order_amount,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,600,ORD000431,order_amount,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,771,ORD000845,order_amount,statistical outlier (beyond 3x IQR),4712.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,792,ORD000231,order_amount,statistical outlier (beyond 3x IQR),2254.2,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,812,ORD000964,order_amount,statistical outlier (beyond 3x IQR),8370.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,816,ORD001459,order_amount,statistical outlier (beyond 3x IQR),-1593.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,875,ORD001452,order_amount,statistical outlier (beyond 3x IQR),2457.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,929,ORD001363,order_amount,statistical outlier (beyond 3x IQR),4095.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,997,ORD001241,order_amount,statistical outlier (beyond 3x IQR),3645.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,999,ORD000509,order_amount,statistical outlier (beyond 3x IQR),2547.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1018,ORD000443,order_amount,statistical outlier (beyond 3x IQR),2596.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1021,ORD000462,order_amount,statistical outlier (beyond 3x IQR),-1279.65,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1029,ORD002031,order_amount,statistical outlier (beyond 3x IQR),3210.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1038,ORD001849,order_amount,statistical outlier (beyond 3x IQR),2516.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1074,ORD000162,order_amount,statistical outlier (beyond 3x IQR),2575.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1143,ORD000785,order_amount,statistical outlier (beyond 3x IQR),2892.75,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1199,ORD000408,order_amount,statistical outlier (beyond 3x IQR),3009.6,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1222,ORD000697,order_amount,statistical outlier (beyond 3x IQR),2655.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1247,ORD000846,order_amount,statistical outlier (beyond 3x IQR),2334.15,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1275,ORD001422,order_amount,statistical outlier (beyond 3x IQR),3396.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1285,ORD000801,order_amount,statistical outlier (beyond 3x IQR),5467.5,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1403,ORD000879,order_amount,statistical outlier (beyond 3x IQR),4245.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1414,ORD000401,order_amount,statistical outlier (beyond 3x IQR),2460.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1445,ORD000471,order_amount,statistical outlier (beyond 3x IQR),2419.65,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1453,ORD002099,order_amount,statistical outlier (beyond 3x IQR),2337.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1595,ORD001154,order_amount,statistical outlier (beyond 3x IQR),2314.2,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1652,ORD001034,order_amount,statistical outlier (beyond 3x IQR),2948.4,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1659,ORD000383,order_amount,statistical outlier (beyond 3x IQR),2232.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1678,ORD000575,order_amount,statistical outlier (beyond 3x IQR),2188.75,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1704,ORD000541,order_amount,statistical outlier (beyond 3x IQR),2256.75,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1724,ORD001133,order_amount,statistical outlier (beyond 3x IQR),2325.6,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1725,ORD000180,order_amount,statistical outlier (beyond 3x IQR),3276.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1738,ORD001579,order_amount,statistical outlier (beyond 3x IQR),2223.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1748,ORD001624,order_amount,statistical outlier (beyond 3x IQR),9576.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1853,ORD000800,order_amount,statistical outlier (beyond 3x IQR),2250.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1962,ORD000076,order_amount,statistical outlier (beyond 3x IQR),3895.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,1967,ORD001074,order_amount,statistical outlier (beyond 3x IQR),2375.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2004,ORD001388,order_amount,statistical outlier (beyond 3x IQR),2480.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2071,ORD000414,order_amount,statistical outlier (beyond 3x IQR),2835.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2122,ORD000945,order_amount,statistical outlier (beyond 3x IQR),2211.3,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2155,ORD001891,order_amount,statistical outlier (beyond 3x IQR),3163.5,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2179,ORD000794,order_amount,statistical outlier (beyond 3x IQR),2460.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2199,ORD001298,order_amount,statistical outlier (beyond 3x IQR),3112.2,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2292,ORD001237,order_amount,statistical outlier (beyond 3x IQR),2408.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2334,ORD000198,order_amount,statistical outlier (beyond 3x IQR),3276.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2338,ORD002015,order_amount,statistical outlier (beyond 3x IQR),2652.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2352,ORD000712,order_amount,statistical outlier (beyond 3x IQR),2664.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,2388,ORD000960,order_amount,statistical outlier (beyond 3x IQR),2625.0,Accuracy,Warning,"review; typical range about -1,273.25 to 2,176.00"
+orders.csv,143,ORD001066,order_status,order_status needs upper-casing,delivered,Validity,Warning,standardise to upper case
+orders.csv,1881,ORD000153,order_status,order_status needs upper-casing,delivered,Validity,Warning,standardise to upper case
+orders.csv,273,ORD000403,order_ts,null written as a text placeholder,N/A,Completeness,Warning,"treat 'NULL', 'N/A', '-' as missing"
+orders.csv,2017,ORD002356,payment_mode,leading/trailing whitespace,,Validity,Warning,trim all text values
+orders.csv,2296,ORD001874,payment_mode,leading/trailing whitespace,,Validity,Warning,trim all text values
+orders.csv,886,ORD000159,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+orders.csv,1473,ORD001364,payment_mode,non-standard payment_mode spelling,CARD -> Card,Validity,Warning,map variants to the canonical value
+orders.csv,2003,ORD000433,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+orders.csv,2116,ORD001640,payment_mode,non-standard payment_mode spelling,cod -> Cash on Delivery,Validity,Warning,map variants to the canonical value
+orders.csv,2382,ORD000934,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+orders.csv,2404,ORD000691,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+orders.csv,816,ORD001459,quantity,statistical outlier (beyond 3x IQR),-3,Accuracy,Warning,review; typical range about -2.00 to 5.00
+orders.csv,1021,ORD000462,quantity,statistical outlier (beyond 3x IQR),-3,Accuracy,Warning,review; typical range about -2.00 to 5.00
+orders.csv,116,ORD001295,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,342,ORD000331,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,392,ORD000957,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,424,ORD000023,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,596,ORD000352,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,983,ORD001360,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,1117,ORD001748,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,1123,ORD000616,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,1347,ORD000871,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,1463,ORD002023,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders.csv,2005,ORD000446,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+orders_2026-10-01_increment.csv,127,ORD002465,unit_price,unit_price is above the product's MRP,203.0 > MRP -203.0,Consistency,Warning,unit_price <= products.mrp
+payments.csv,71,PAY0001568,amount_paid,SUCCESS payment amount does not equal order_amount,paid -43.05 vs order 56.95,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,306,PAY0000354,amount_paid,SUCCESS payment amount does not equal order_amount,paid 455.0 vs order 505.0,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,431,PAY0000779,amount_paid,SUCCESS payment amount does not equal order_amount,paid 2.6 vs order 102.6,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,697,PAY0000323,amount_paid,SUCCESS payment amount does not equal order_amount,paid 182.95 vs order 192.95,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,768,PAY0001167,amount_paid,SUCCESS payment amount does not equal order_amount,paid 452.35 vs order 502.35,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,772,PAY0001499,amount_paid,SUCCESS payment amount does not equal order_amount,paid 349.3 vs order 374.3,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,933,PAY0000909,amount_paid,SUCCESS payment amount does not equal order_amount,paid 103.0 vs order 203.0,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,994,PAY0000586,amount_paid,SUCCESS payment amount does not equal order_amount,paid 2.6 vs order 102.6,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1110,PAY0000161,amount_paid,SUCCESS payment amount does not equal order_amount,paid 232.2 vs order 282.2,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1411,PAY0002183,amount_paid,SUCCESS payment amount does not equal order_amount,paid 955.4 vs order 980.4,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1625,PAY0000044,amount_paid,SUCCESS payment amount does not equal order_amount,paid 353.0 vs order 378.0,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1651,PAY0001813,amount_paid,SUCCESS payment amount does not equal order_amount,paid 402.4 vs order 502.4,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1924,PAY0001139,amount_paid,SUCCESS payment amount does not equal order_amount,paid 353.0 vs order 378.0,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,1984,PAY0000429,amount_paid,SUCCESS payment amount does not equal order_amount,paid 218.2 vs order 243.2,Consistency,Critical,SUCCESS amount_paid = orders.order_amount
+payments.csv,71,PAY0001568,amount_paid,amount_paid zero or negative,-43.05,Accuracy,Critical,amount_paid > 0
+payments.csv,346,PAY0002175,amount_paid,amount_paid zero or negative,-188.7,Accuracy,Critical,amount_paid > 0
+payments.csv,373,PAY0000116,amount_paid,amount_paid zero or negative,0.0,Accuracy,Critical,amount_paid > 0
+payments.csv,434,PAY0000751,amount_paid,amount_paid zero or negative,-1593.0,Accuracy,Critical,amount_paid > 0
+payments.csv,529,PAY0000944,amount_paid,amount_paid zero or negative,-1279.65,Accuracy,Critical,amount_paid > 0
+payments.csv,653,PAY0000791,amount_paid,amount_paid zero or negative,-500.65,Accuracy,Critical,amount_paid > 0
+payments.csv,861,PAY0001111,amount_paid,amount_paid zero or negative,0.0,Accuracy,Critical,amount_paid > 0
+payments.csv,1263,PAY0001322,amount_paid,amount_paid zero or negative,0.0,Accuracy,Critical,amount_paid > 0
+payments.csv,1782,PAY0000954,amount_paid,amount_paid zero or negative,0.0,Accuracy,Critical,amount_paid > 0
+payments.csv,2173,PAY0000737,amount_paid,amount_paid zero or negative,-394.0,Accuracy,Critical,amount_paid > 0
+payments.csv,21,PAY0001651,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000188,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,147,PAY0000755,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000094,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,263,PAY0000509,order_id,more than one SUCCESS payment for the same order (double charge?),ORD002122,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,1032,PAY0000509,order_id,more than one SUCCESS payment for the same order (double charge?),ORD002122,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,1348,PAY0002000,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000513,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,1855,PAY0001651,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000188,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,1877,PAY0002000,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000513,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,2119,PAY0000755,order_id,more than one SUCCESS payment for the same order (double charge?),ORD000094,Uniqueness,Critical,one SUCCESS payment per order
+payments.csv,188,PAY0002219,order_id,payment for an order_id not in orders.csv,ORD970544,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,689,PAY0002220,order_id,payment for an order_id not in orders.csv,ORD968496,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,966,PAY0002223,order_id,payment for an order_id not in orders.csv,ORD988106,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,1149,PAY0002221,order_id,payment for an order_id not in orders.csv,ORD941071,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,1447,PAY0002224,order_id,payment for an order_id not in orders.csv,ORD981600,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,1790,PAY0002218,order_id,payment for an order_id not in orders.csv,ORD997176,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,1974,PAY0002222,order_id,payment for an order_id not in orders.csv,ORD953136,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,2216,PAY0002217,order_id,payment for an order_id not in orders.csv,ORD966342,Consistency,Critical,payments.order_id must exist in orders
+payments.csv,1032,PAY0000509,payment_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+payments.csv,1855,PAY0001651,payment_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+payments.csv,1877,PAY0002000,payment_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+payments.csv,2119,PAY0000755,payment_id,exact duplicate row (whole row repeated),,Uniqueness,Critical,"keep the first occurrence, quarantine repeats"
+payments.csv,1454,PAY0000522,payment_mode,payment_mode not in allowed list,Cashh,Validity,Critical,"allowed: UPI, Card, Cash on Delivery, Wallet"
+payments.csv,1625,PAY0000044,payment_mode,payment_mode not in allowed list,Cashh,Validity,Critical,"allowed: UPI, Card, Cash on Delivery, Wallet"
+payments.csv,146,PAY0000396,payment_ts,payment_ts is in the future,2026-11-02 18:40:52,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,309,PAY0000127,payment_ts,payment_ts is in the future,2027-01-01 09:01:37,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,411,PAY0001908,payment_ts,payment_ts is in the future,2027-01-01 09:01:46,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,988,PAY0001037,payment_ts,payment_ts is in the future,2027-01-01 09:01:02,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,1262,PAY0000337,payment_ts,payment_ts is in the future,2026-10-21 10:15:38,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,1640,PAY0001488,payment_ts,payment_ts is in the future,2026-11-02 18:41:31,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,1851,PAY0000267,payment_ts,payment_ts is in the future,2026-10-21 10:16:40,Timeliness,Critical,payment_ts must be before 2026-10-02
+payments.csv,31,PAY0001308,amount_paid,statistical outlier (beyond 3x IQR),2460.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,69,PAY0000858,amount_paid,statistical outlier (beyond 3x IQR),4095.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,161,PAY0001190,amount_paid,statistical outlier (beyond 3x IQR),5467.5,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,230,PAY0000665,amount_paid,statistical outlier (beyond 3x IQR),2154.6,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,234,PAY0000440,amount_paid,statistical outlier (beyond 3x IQR),2332.8,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,320,PAY0001182,amount_paid,statistical outlier (beyond 3x IQR),3396.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,358,PAY0000265,amount_paid,statistical outlier (beyond 3x IQR),3112.2,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,419,PAY0000806,amount_paid,statistical outlier (beyond 3x IQR),2457.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,434,PAY0000751,amount_paid,statistical outlier (beyond 3x IQR),-1593.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,449,PAY0000924,amount_paid,statistical outlier (beyond 3x IQR),2547.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,484,PAY0002031,amount_paid,statistical outlier (beyond 3x IQR),3112.2,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,497,PAY0001989,amount_paid,statistical outlier (beyond 3x IQR),3163.5,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,505,PAY0000711,amount_paid,statistical outlier (beyond 3x IQR),4712.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,527,PAY0000306,amount_paid,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,529,PAY0000944,amount_paid,statistical outlier (beyond 3x IQR),-1279.65,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,564,PAY0001578,amount_paid,statistical outlier (beyond 3x IQR),2256.75,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,586,PAY0002151,amount_paid,statistical outlier (beyond 3x IQR),2652.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,632,PAY0001112,amount_paid,statistical outlier (beyond 3x IQR),3009.6,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,644,PAY0000185,amount_paid,statistical outlier (beyond 3x IQR),2214.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,659,PAY0001535,amount_paid,statistical outlier (beyond 3x IQR),2232.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,681,PAY0001911,amount_paid,statistical outlier (beyond 3x IQR),2835.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,713,PAY0000388,amount_paid,statistical outlier (beyond 3x IQR),2223.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,742,PAY0001614,amount_paid,statistical outlier (beyond 3x IQR),9576.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,819,PAY0001817,amount_paid,statistical outlier (beyond 3x IQR),2375.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,958,PAY0002109,amount_paid,statistical outlier (beyond 3x IQR),2408.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,989,PAY0001342,amount_paid,statistical outlier (beyond 3x IQR),2337.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1035,PAY0002162,amount_paid,statistical outlier (beyond 3x IQR),2664.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1089,PAY0001606,amount_paid,statistical outlier (beyond 3x IQR),2223.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1106,PAY0001058,amount_paid,statistical outlier (beyond 3x IQR),2892.75,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1156,PAY0001593,amount_paid,statistical outlier (beyond 3x IQR),2325.6,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1166,PAY0001528,amount_paid,statistical outlier (beyond 3x IQR),2948.4,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1207,PAY0000138,amount_paid,statistical outlier (beyond 3x IQR),2512.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1314,PAY0000951,amount_paid,statistical outlier (beyond 3x IQR),3210.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1323,PAY0000465,amount_paid,statistical outlier (beyond 3x IQR),2332.8,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1350,PAY0000381,amount_paid,statistical outlier (beyond 3x IQR),2264.4,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1353,PAY0000289,amount_paid,statistical outlier (beyond 3x IQR),6757.5,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1374,PAY0000960,amount_paid,statistical outlier (beyond 3x IQR),2516.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1377,PAY0001157,amount_paid,statistical outlier (beyond 3x IQR),2334.15,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1391,PAY0001960,amount_paid,statistical outlier (beyond 3x IQR),2211.3,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1392,PAY0000729,amount_paid,statistical outlier (beyond 3x IQR),2254.2,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1452,PAY0000922,amount_paid,statistical outlier (beyond 3x IQR),3645.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1493,PAY0002193,amount_paid,statistical outlier (beyond 3x IQR),2625.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1560,PAY0002013,amount_paid,statistical outlier (beyond 3x IQR),2460.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1653,PAY0000012,amount_paid,statistical outlier (beyond 3x IQR),3762.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1656,PAY0000549,amount_paid,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1674,PAY0001132,amount_paid,statistical outlier (beyond 3x IQR),2655.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1738,PAY0000994,amount_paid,statistical outlier (beyond 3x IQR),2575.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1773,PAY0000747,amount_paid,statistical outlier (beyond 3x IQR),8370.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1826,PAY0001552,amount_paid,statistical outlier (beyond 3x IQR),2188.75,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1831,PAY0000942,amount_paid,statistical outlier (beyond 3x IQR),2596.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1895,PAY0000445,amount_paid,statistical outlier (beyond 3x IQR),6720.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,1927,PAY0000241,amount_paid,statistical outlier (beyond 3x IQR),2436.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,2016,PAY0001812,amount_paid,statistical outlier (beyond 3x IQR),3895.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,2056,PAY0001476,amount_paid,statistical outlier (beyond 3x IQR),2314.2,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,2108,PAY0001594,amount_paid,statistical outlier (beyond 3x IQR),3276.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,2156,PAY0000557,amount_paid,statistical outlier (beyond 3x IQR),2187.0,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,2203,PAY0001335,amount_paid,statistical outlier (beyond 3x IQR),2419.65,Accuracy,Warning,"review; typical range about -1,248.60 to 2,135.20"
+payments.csv,4,PAY0000133,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,8,PAY0001514,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,11,PAY0001852,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,13,PAY0001437,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,14,PAY0000009,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,19,PAY0000263,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,20,PAY0001650,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,27,PAY0001983,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,28,PAY0000330,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,44,PAY0001097,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,46,PAY0001260,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,49,PAY0001131,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,51,PAY0000810,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,60,PAY0000367,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,63,PAY0001617,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,76,PAY0000326,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,81,PAY0000412,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,83,PAY0001141,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,92,PAY0002195,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,93,PAY0001771,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,111,PAY0000977,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,137,PAY0001274,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,146,PAY0000396,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,158,PAY0000959,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,170,PAY0000753,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,172,PAY0001072,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,185,PAY0001778,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,186,PAY0001043,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,196,PAY0001210,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,197,PAY0001053,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,199,PAY0000591,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,202,PAY0000622,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,208,PAY0002106,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,211,PAY0000902,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,228,PAY0000167,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,232,PAY0000995,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,242,PAY0000642,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,248,PAY0001583,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,259,PAY0001842,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,264,PAY0001846,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,266,PAY0000797,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,279,PAY0001628,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,286,PAY0000531,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,299,PAY0002046,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,301,PAY0000659,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,308,PAY0000614,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,309,PAY0000127,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,316,PAY0001888,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,317,PAY0001684,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,321,PAY0000316,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,339,PAY0002122,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,342,PAY0001451,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,352,PAY0001511,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,358,PAY0000265,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,365,PAY0001477,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,369,PAY0000681,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,375,PAY0000668,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,376,PAY0001315,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,386,PAY0001828,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,390,PAY0000048,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,400,PAY0001311,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,407,PAY0001416,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,421,PAY0001460,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,429,PAY0002154,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,440,PAY0000701,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,447,PAY0002114,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,450,PAY0000234,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,455,PAY0000084,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,461,PAY0000949,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,463,PAY0001608,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,502,PAY0001256,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,504,PAY0000833,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,519,PAY0002155,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,533,PAY0001991,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,535,PAY0000547,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,542,PAY0000679,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,554,PAY0000495,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,565,PAY0000453,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,571,PAY0001633,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,576,PAY0000497,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,579,PAY0001685,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,597,PAY0001821,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,608,PAY0001860,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,616,PAY0001135,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,646,PAY0000196,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,660,PAY0001951,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,664,PAY0000094,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,672,PAY0001866,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,676,PAY0000452,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,677,PAY0002172,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,684,PAY0000389,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,686,PAY0002179,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,696,PAY0000998,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,702,PAY0002029,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,703,PAY0001360,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,709,PAY0000789,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,725,PAY0002127,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,747,PAY0000865,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,768,PAY0001167,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,784,PAY0000741,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,788,PAY0001745,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,791,PAY0000602,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,795,PAY0001579,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,808,PAY0002062,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,810,PAY0001352,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,819,PAY0001817,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,831,PAY0001542,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,834,PAY0001627,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,836,PAY0002003,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,839,PAY0001869,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,849,PAY0000520,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,866,PAY0000990,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,868,PAY0001251,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,874,PAY0000437,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,890,PAY0001098,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,905,PAY0001877,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,909,PAY0001368,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,913,PAY0001963,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,940,PAY0000087,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,954,PAY0001761,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,976,PAY0001585,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,977,PAY0001334,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,991,PAY0001527,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,995,PAY0001890,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1010,PAY0001435,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1021,PAY0000617,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1035,PAY0002162,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1036,PAY0000146,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1041,PAY0000030,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1051,PAY0002023,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1059,PAY0000410,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1064,PAY0001032,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1066,PAY0000380,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1073,PAY0001596,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1077,PAY0001498,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1085,PAY0001004,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1091,PAY0000471,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1099,PAY0001066,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1111,PAY0001799,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1117,PAY0000538,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1123,PAY0001320,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1127,PAY0000577,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1131,PAY0002017,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1136,PAY0001561,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1153,PAY0001118,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1155,PAY0001318,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1165,PAY0001630,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1175,PAY0001744,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1188,PAY0000588,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1190,PAY0002024,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1201,PAY0001634,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1204,PAY0001918,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1205,PAY0000155,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1218,PAY0001449,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1220,PAY0000328,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1225,PAY0000178,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1245,PAY0000544,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1248,PAY0002152,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1252,PAY0002136,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1258,PAY0000542,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1279,PAY0000504,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1280,PAY0000626,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1286,PAY0001045,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1290,PAY0001938,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1292,PAY0001492,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1297,PAY0001737,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1311,PAY0001560,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1312,PAY0001214,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1317,PAY0000883,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1321,PAY0001080,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1343,PAY0000251,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1346,PAY0001156,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1351,PAY0000505,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1353,PAY0000289,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1368,PAY0000885,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1371,PAY0001186,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1378,PAY0002008,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1383,PAY0000160,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1388,PAY0000098,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1400,PAY0001902,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1405,PAY0000224,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1407,PAY0000725,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1409,PAY0002190,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1416,PAY0001292,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1420,PAY0000433,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1423,PAY0000385,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1424,PAY0002196,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1439,PAY0001391,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1442,PAY0001948,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1443,PAY0002049,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1450,PAY0000382,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1455,PAY0000386,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1457,PAY0001349,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1459,PAY0000415,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1503,PAY0001409,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1507,PAY0000870,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1543,PAY0000518,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1544,PAY0002082,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1545,PAY0000605,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1551,PAY0000696,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1556,PAY0000165,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1577,PAY0000402,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1585,PAY0001903,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1597,PAY0001632,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1598,PAY0001185,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1602,PAY0000935,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1608,PAY0001217,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1610,PAY0001524,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1616,PAY0001229,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1618,PAY0000713,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1629,PAY0000217,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1630,PAY0002209,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1634,PAY0001317,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1635,PAY0002153,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1637,PAY0000796,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1640,PAY0001488,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1654,PAY0001755,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1661,PAY0000882,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1664,PAY0000190,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1669,PAY0001397,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1672,PAY0000209,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1680,PAY0002181,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1683,PAY0000208,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1684,PAY0001240,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1686,PAY0000411,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1687,PAY0000570,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1718,PAY0001202,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1722,PAY0002143,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1728,PAY0001855,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1735,PAY0000744,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1741,PAY0001984,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1750,PAY0000863,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1759,PAY0000469,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1761,PAY0001404,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1772,PAY0000100,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1773,PAY0000747,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1775,PAY0001522,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1779,PAY0002059,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1801,PAY0000187,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1803,PAY0001147,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1810,PAY0000920,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1813,PAY0000154,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1815,PAY0002189,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1828,PAY0001719,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1839,PAY0001178,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1846,PAY0000812,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1871,PAY0002079,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1873,PAY0001754,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1876,PAY0001780,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1895,PAY0000445,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1901,PAY0001268,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1908,PAY0001825,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1940,PAY0001580,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1943,PAY0001431,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1948,PAY0000624,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1971,PAY0001463,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1998,PAY0000848,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2007,PAY0001873,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2024,PAY0001063,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2026,PAY0002132,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2043,PAY0000654,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2045,PAY0000288,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2049,PAY0002100,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2059,PAY0002130,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2078,PAY0000305,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2082,PAY0002203,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2089,PAY0000500,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2095,PAY0001150,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2096,PAY0000842,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2109,PAY0001994,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2117,PAY0000721,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2129,PAY0001998,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2140,PAY0000881,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2156,PAY0000557,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2161,PAY0002145,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2169,PAY0001753,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2175,PAY0002137,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2177,PAY0001497,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2195,PAY0000078,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2199,PAY0002011,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2203,PAY0001335,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2204,PAY0001772,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2206,PAY0001432,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2222,PAY0002028,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,2227,PAY0001928,gateway_ref,SUCCESS payment has no gateway_ref,,Completeness,Warning,SUCCESS payments need a gateway_ref
+payments.csv,1367,PAY0002113,payment_mode,leading/trailing whitespace,,Validity,Warning,trim all text values
+payments.csv,1419,PAY0001862,payment_mode,leading/trailing whitespace,,Validity,Warning,trim all text values
+payments.csv,96,PAY0002188,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+payments.csv,609,PAY0001850,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+payments.csv,822,PAY0001954,payment_mode,non-standard payment_mode spelling,cod -> Cash on Delivery,Validity,Warning,map variants to the canonical value
+payments.csv,896,PAY0000817,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+payments.csv,910,PAY0001359,payment_mode,non-standard payment_mode spelling,CARD -> Card,Validity,Warning,map variants to the canonical value
+payments.csv,1320,PAY0002208,payment_mode,non-standard payment_mode spelling,upi -> UPI,Validity,Warning,map variants to the canonical value
+products.csv,52,P0051,category,category missing,,Completeness,Critical,category must not be null
+products.csv,61,P0060,category,category missing,,Completeness,Critical,category must not be null
+products.csv,69,P0068,category,category missing,,Completeness,Critical,category must not be null
+products.csv,20,P0019,cost_price,cost_price is higher than mrp,cost 264.0 > mrp 220.0,Accuracy,Critical,cost_price <= mrp
+products.csv,74,P0073,cost_price,cost_price is higher than mrp,cost 334.8 > mrp 279.0,Accuracy,Critical,cost_price <= mrp
+products.csv,75,P0074,cost_price,cost_price is higher than mrp,cost 420.0 > mrp 350.0,Accuracy,Critical,cost_price <= mrp
+products.csv,110,P0109,cost_price,cost_price is higher than mrp,cost 162.5 > mrp -203.0,Accuracy,Critical,cost_price <= mrp
+products.csv,118,P0117,cost_price,cost_price is higher than mrp,cost 92.4 > mrp 77.0,Accuracy,Critical,cost_price <= mrp
+products.csv,110,P0109,mrp,mrp zero or negative,-203.0,Accuracy,Critical,mrp > 0
+products.csv,31,P0030,product_id,same product_id appears with different values (conflicting duplicate),,Uniqueness,Critical,product_id must be unique; ask client which version is correct
+products.csv,141,P0140,product_id,same product_id appears with different values (conflicting duplicate),,Uniqueness,Critical,product_id must be unique; ask client which version is correct
+products.csv,152,P0030,product_id,same product_id appears with different values (conflicting duplicate),,Uniqueness,Critical,product_id must be unique; ask client which version is correct
+products.csv,153,P0140,product_id,same product_id appears with different values (conflicting duplicate),,Uniqueness,Critical,product_id must be unique; ask client which version is correct
+stores.csv,13,S12,capacity_orders_per_day,capacity zero or negative,0,Accuracy,Critical,capacity_orders_per_day > 0
+stores.csv,8,S07,zone,zone missing,,Completeness,Critical,zone must not be null

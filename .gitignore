@@ -13,3 +13,12 @@ airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
 test_api.py 
+
+# --- NammaMart assignment: generated, may contain personal data ---
+*.duckdb
+*.duckdb.wal
+include/quarantine/
+include/tmp/
+include/reports/profiling/data_issues_log.csv
+logs/
+include/data/.nammamart_original/
