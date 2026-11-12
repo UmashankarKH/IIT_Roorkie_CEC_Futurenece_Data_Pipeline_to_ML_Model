@@ -1,0 +1,319 @@
+file,row_key,source_line,column,problem,dimension,severity,proposed_rule,handling
+customers.csv,C00199,2,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00355,4,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00337,17,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00307,24,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00132,38,pincode,invalid pincode,Validity,Warning,pincode is 6 digits,"Loaded, warning logged"
+customers.csv,C00171,40,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00133,43,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00103,46,customer_id,duplicate customer_id,Uniqueness,Critical,one row per customer_id; keep the first,Quarantined
+customers.csv,C00032,53,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00151,60,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00063,79,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00045,81,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00363,82,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00400,86,signup_date,signup_date in the future,Timeliness,Critical,signup_date not in the future,Quarantined
+customers.csv,C00310,92,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00031,99,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00196,104,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00083,109,pincode,invalid pincode,Validity,Warning,pincode is 6 digits,"Loaded, warning logged"
+customers.csv,C00240,117,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00095,141,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00166,151,pincode,invalid pincode,Validity,Warning,pincode is 6 digits,"Loaded, warning logged"
+customers.csv,C00357,153,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00136,169,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00130,172,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00398,197,signup_date,signup_date in the future,Timeliness,Critical,signup_date not in the future,Quarantined
+customers.csv,C00327,199,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00394,202,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00252,215,customer_id,duplicate customer_id,Uniqueness,Critical,one row per customer_id; keep the first,Quarantined
+customers.csv,C00290,234,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00038,239,signup_date,signup_date in the future,Timeliness,Critical,signup_date not in the future,Quarantined
+customers.csv,C00112,240,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00226,246,customer_id,duplicate customer_id,Uniqueness,Critical,one row per customer_id; keep the first,Quarantined
+customers.csv,C00339,250,phone,invalid phone,Validity,Warning,phone is 10 digits,"Loaded, warning logged"
+customers.csv,C00036,266,customer_id,duplicate customer_id,Uniqueness,Critical,one row per customer_id; keep the first,Quarantined
+customers.csv,C00233,276,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00142,293,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00328,310,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00092,330,loyalty_tier,loyalty_tier casing,Consistency,Warning,standardise to Title case,"Loaded, warning logged"
+customers.csv,C00193,337,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00392,344,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00062,365,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+customers.csv,C00219,370,city,city missing,Completeness,Warning,city present,"Loaded, warning logged"
+customers.csv,C00313,382,customer_id,duplicate customer_id,Uniqueness,Critical,one row per customer_id; keep the first,Quarantined
+customers.csv,C00067,390,email,invalid email,Validity,Warning,email pattern,"Loaded, warning logged"
+orders.csv,ORD002255,36,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001812,48,payment_mode,payment_mode not in allowed list,Validity,Critical,"payment_mode in UPI, Card, Cash on Delivery, Wallet",Quarantined
+orders.csv,ORD002225,58,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002103,66,discount_pct,discount_pct outside 0-100,Validity,Critical,0 <= discount_pct <= 100,Quarantined
+orders.csv,ORD002103,66,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000432,83,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000891,109,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001295,116,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000469,127,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000379,139,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002119,140,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD000157,141,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001066,143,order_status,'delivered' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD000039,152,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001554,162,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000115,163,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001409,187,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD002167,195,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000986,207,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001359,234,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000701,251,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001800,253,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD001462,271,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD000403,273,order_ts,order_ts not a valid timestamp,Validity,Critical,order_ts parses as YYYY-MM-DD HH:MM:SS,Quarantined
+orders.csv,ORD001037,275,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD001693,288,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD001058,305,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002061,307,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD002305,312,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000331,342,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001434,357,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002135,361,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001089,363,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD000957,392,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000972,399,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000023,424,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001121,426,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD001501,433,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000104,473,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002004,480,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000185,483,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002101,511,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD001610,513,order_ts,order_ts not a valid timestamp,Validity,Critical,order_ts parses as YYYY-MM-DD HH:MM:SS,Quarantined
+orders.csv,ORD001551,523,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000997,550,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000358,561,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001414,563,payment_mode,payment_mode not in allowed list,Validity,Critical,"payment_mode in UPI, Card, Cash on Delivery, Wallet",Quarantined
+orders.csv,ORD002351,577,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001902,585,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002344,588,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001685,590,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001065,595,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000352,596,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000455,626,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD000580,635,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000808,650,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000731,652,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000772,660,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001634,714,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001277,716,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD001799,735,store_id,store_id not in validated stores,Consistency,Critical,key exists in validated stores,Quarantined
+orders.csv,ORD001046,742,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001046,742,store_id,store_id not in validated stores,Consistency,Critical,key exists in validated stores,Quarantined
+orders.csv,ORD000500,747,order_status,order_status not in allowed list,Validity,Critical,"status in DELIVERED, CANCELLED, RETURNED",Quarantined
+orders.csv,ORD000845,771,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002294,796,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001296,801,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD001955,808,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000964,812,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000964,812,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001459,816,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD002019,821,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000534,825,order_ts,order_ts not a valid timestamp,Validity,Critical,order_ts parses as YYYY-MM-DD HH:MM:SS,Quarantined
+orders.csv,ORD000534,825,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001492,831,store_id,store_id not in validated stores,Consistency,Critical,key exists in validated stores,Quarantined
+orders.csv,ORD000867,860,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000551,872,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000159,886,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD000362,899,order_ts,order_ts missing,Completeness,Critical,order_ts not null,Quarantined
+orders.csv,ORD000483,913,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002262,940,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000889,950,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002371,966,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD002371,966,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002149,970,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001360,983,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000752,986,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002367,989,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001000,1000,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001275,1011,store_id,store_id not in validated stores,Consistency,Critical,key exists in validated stores,Quarantined
+orders.csv,ORD000462,1021,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD002298,1027,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD002298,1027,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002031,1029,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002360,1032,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000639,1037,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000326,1090,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000967,1091,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002012,1100,order_ts,order_ts not a valid timestamp,Validity,Critical,order_ts parses as YYYY-MM-DD HH:MM:SS,Quarantined
+orders.csv,ORD001748,1117,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001441,1121,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001765,1122,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD000616,1123,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001499,1140,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002094,1147,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000302,1154,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001332,1192,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001724,1198,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD002353,1209,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000070,1218,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000304,1226,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000811,1243,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000801,1285,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD001692,1318,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001918,1342,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000871,1347,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000088,1358,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002187,1380,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002156,1389,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000583,1399,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001247,1416,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000099,1429,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000880,1439,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000151,1440,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000790,1461,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD002023,1463,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000437,1471,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001364,1473,payment_mode,'CARD' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD000399,1483,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001315,1507,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001353,1514,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001515,1524,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000730,1530,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001245,1540,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000789,1546,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002394,1551,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000954,1553,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001355,1577,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000764,1583,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD002035,1587,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD002219,1597,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001965,1607,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD001965,1607,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000596,1640,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001274,1641,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001274,1641,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002129,1642,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001928,1643,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000677,1644,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD001034,1652,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000066,1654,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002286,1680,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002223,1717,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002223,1717,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002128,1720,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000268,1734,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001624,1748,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD001532,1814,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD001124,1821,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000022,1823,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD002229,1826,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000134,1834,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002096,1841,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD000153,1881,order_status,'delivered' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD002244,1903,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD002008,1914,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders.csv,ORD001755,1927,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD000636,1929,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000965,1954,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002126,1955,store_id,store_id not in validated stores,Consistency,Critical,key exists in validated stores,Quarantined
+orders.csv,ORD001867,1970,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002179,1982,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001597,1983,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000433,2003,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD000446,2005,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD002356,2017,payment_mode,'UPI ' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD002356,2017,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001970,2027,order_status,order_status not in allowed list,Validity,Critical,"status in DELIVERED, CANCELLED, RETURNED",Quarantined
+orders.csv,ORD000878,2035,delivery_minutes,DELIVERED order without delivery_minutes,Completeness,Critical,DELIVERED needs delivery_minutes,Quarantined
+orders.csv,ORD000878,2035,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001239,2059,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001725,2067,order_ts,order_ts in the future,Timeliness,Critical,order_ts not later than the extract date or run date,Quarantined
+orders.csv,ORD001104,2075,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD001633,2081,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000783,2088,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD000946,2114,order_ts,order_ts not a valid timestamp,Validity,Critical,order_ts parses as YYYY-MM-DD HH:MM:SS,Quarantined
+orders.csv,ORD001640,2116,payment_mode,'cod' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD001637,2129,order_status,order_status not in allowed list,Validity,Critical,"status in DELIVERED, CANCELLED, RETURNED",Quarantined
+orders.csv,ORD001468,2131,discount_pct,discount_pct outside 0-100,Validity,Critical,0 <= discount_pct <= 100,Quarantined
+orders.csv,ORD001468,2131,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD001114,2143,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000539,2146,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001373,2150,customer_id,customer_id missing,Completeness,Critical,customer_id not null,Quarantined
+orders.csv,ORD000990,2158,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD000736,2171,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001434,2182,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001434,2182,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001102,2202,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001326,2204,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001549,2213,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD000020,2279,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD001237,2292,discount_pct,discount_pct outside 0-100,Validity,Critical,0 <= discount_pct <= 100,Quarantined
+orders.csv,ORD001237,2292,order_amount,order_amount does not match quantity x unit_price x (1 - discount),Accuracy,Critical,recompute and compare within 0.01,Quarantined
+orders.csv,ORD001874,2296,payment_mode,'UPI ' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD001564,2302,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001870,2328,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD001122,2329,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders.csv,ORD001384,2365,quantity,quantity not positive,Accuracy,Critical,quantity > 0,Quarantined
+orders.csv,ORD000424,2368,delivery_minutes,delivery_minutes 120 or more,Accuracy,Critical,delivery_minutes < 120,Quarantined
+orders.csv,ORD000934,2382,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD001110,2395,order_id,duplicate order_id,Uniqueness,Critical,order_id unique; keep the first row,Quarantined
+orders.csv,ORD000691,2404,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+orders.csv,ORD000535,2407,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002431,13,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002483,29,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002482,56,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002491,75,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002411,104,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002526,106,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002477,113,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002486,116,customer_id,customer_id not in validated customers,Consistency,Critical,key exists in validated customers,Quarantined
+orders_2026-10-01_increment.csv,ORD002465,127,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002443,153,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+orders_2026-10-01_increment.csv,ORD002422,157,product_id,product_id not in validated products,Consistency,Critical,key exists in validated products,Quarantined
+payments.csv,PAY0001568,71,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0002188,96,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0000396,146,payment_ts,payment_ts in the future,Timeliness,Critical,payment_ts not in the future,Quarantined
+payments.csv,PAY0002219,188,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0000127,309,payment_ts,payment_ts in the future,Timeliness,Critical,payment_ts not in the future,Quarantined
+payments.csv,PAY0002175,346,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0000116,373,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0001908,411,payment_ts,payment_ts in the future,Timeliness,Critical,payment_ts not in the future,Quarantined
+payments.csv,PAY0000751,434,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0000944,529,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0001850,609,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0000791,653,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0002220,689,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0001954,822,payment_mode,'cod' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0001111,861,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0000817,896,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0001359,910,payment_mode,'CARD' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0002223,966,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0001037,988,payment_ts,payment_ts in the future,Timeliness,Critical,payment_ts not in the future,Quarantined
+payments.csv,PAY0000509,1032,payment_id,duplicate payment_id,Uniqueness,Critical,payment_id unique; keep the first row,Quarantined
+payments.csv,PAY0002221,1149,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0001322,1263,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0002208,1320,payment_mode,'upi' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0002113,1367,payment_mode,'UPI ' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0001862,1419,payment_mode,'UPI ' needs standardising,Consistency,Warning,trim and map to the canonical value,Standardised in transform
+payments.csv,PAY0002224,1447,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0000522,1454,payment_mode,payment_mode not in allowed list,Validity,Critical,"payment_mode in UPI, Card, Cash on Delivery, Wallet",Quarantined
+payments.csv,PAY0000044,1625,payment_mode,payment_mode not in allowed list,Validity,Critical,"payment_mode in UPI, Card, Cash on Delivery, Wallet",Quarantined
+payments.csv,PAY0001488,1640,payment_ts,payment_ts in the future,Timeliness,Critical,payment_ts not in the future,Quarantined
+payments.csv,PAY0000954,1782,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0002218,1790,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0001651,1855,payment_id,duplicate payment_id,Uniqueness,Critical,payment_id unique; keep the first row,Quarantined
+payments.csv,PAY0002000,1877,payment_id,duplicate payment_id,Uniqueness,Critical,payment_id unique; keep the first row,Quarantined
+payments.csv,PAY0002222,1974,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+payments.csv,PAY0000755,2119,payment_id,duplicate payment_id,Uniqueness,Critical,payment_id unique; keep the first row,Quarantined
+payments.csv,PAY0000737,2173,amount_paid,amount_paid not positive,Accuracy,Critical,amount_paid > 0,Quarantined
+payments.csv,PAY0002217,2216,order_id,order_id not found in orders,Consistency,Warning,load; show as PAYMENT_FOR_UNKNOWN_ORDER in the reconciliation,"Loaded, warning logged"
+products.csv,P0019,20,cost_price,cost_price above mrp,Accuracy,Critical,cost_price <= mrp,Quarantined
+products.csv,P0051,52,category,category missing,Completeness,Warning,load as UNKNOWN and log a Warning,"Loaded, warning logged"
+products.csv,P0060,61,category,category missing,Completeness,Warning,load as UNKNOWN and log a Warning,"Loaded, warning logged"
+products.csv,P0068,69,category,category missing,Completeness,Warning,load as UNKNOWN and log a Warning,"Loaded, warning logged"
+products.csv,P0073,74,cost_price,cost_price above mrp,Accuracy,Critical,cost_price <= mrp,Quarantined
+products.csv,P0074,75,cost_price,cost_price above mrp,Accuracy,Critical,cost_price <= mrp,Quarantined
+products.csv,P0109,110,cost_price,cost_price above mrp,Accuracy,Critical,cost_price <= mrp,Quarantined
+products.csv,P0109,110,mrp,mrp not positive,Accuracy,Critical,mrp > 0,Quarantined
+products.csv,P0117,118,cost_price,cost_price above mrp,Accuracy,Critical,cost_price <= mrp,Quarantined
+products.csv,P0030,152,product_id,duplicate product_id,Uniqueness,Critical,one row per product_id; keep the first,Quarantined
+products.csv,P0140,153,product_id,duplicate product_id,Uniqueness,Critical,one row per product_id; keep the first,Quarantined
+stores.csv,S07,8,zone,zone missing,Completeness,Warning,load as UNKNOWN and log a Warning,"Loaded, warning logged"
+stores.csv,S12,13,capacity_orders_per_day,capacity not positive,Accuracy,Warning,capacity > 0,"Loaded, warning logged"
