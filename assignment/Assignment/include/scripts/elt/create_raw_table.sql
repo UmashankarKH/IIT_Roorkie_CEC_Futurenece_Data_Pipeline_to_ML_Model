@@ -1,0 +1,1 @@
+CREATE OR REPLACE TABLE raw_{table} AS SELECT * FROM src;

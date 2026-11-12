@@ -1,0 +1,1 @@
+SELECT COUNT(*), SUM(CASE WHEN is_valid THEN 0 ELSE 1 END) FROM {table};

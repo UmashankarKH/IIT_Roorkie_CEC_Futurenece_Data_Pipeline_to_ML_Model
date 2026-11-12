@@ -1,0 +1,17 @@
+{"timestamp": "2026-10-21T01:48:53.743548+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "EXTRACT", "level": "INFO", "message": "products: extracted 152 rows from products.csv"}
+{"timestamp": "2026-10-21T01:48:53.746192+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "EXTRACT", "level": "INFO", "message": "payments: extracted 2228 rows from payments.csv"}
+{"timestamp": "2026-10-21T01:48:53.750121+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "EXTRACT", "level": "INFO", "message": "customers: extracted 405 rows from customers.csv"}
+{"timestamp": "2026-10-21T01:48:53.780080+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "EXTRACT", "level": "INFO", "message": "orders: extracted 2412 rows from orders.csv"}
+{"timestamp": "2026-10-21T01:48:53.797098+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "EXTRACT", "level": "INFO", "message": "stores: extracted 15 rows from stores.csv"}
+{"timestamp": "2026-10-21T01:48:54.713913+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "VALIDATE", "level": "INFO", "message": "stores: checked=15, valid=15, failed=0"}
+{"timestamp": "2026-10-21T01:48:54.721911+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "VALIDATE", "level": "INFO", "message": "products: checked=152, valid=142, failed=10"}
+{"timestamp": "2026-10-21T01:48:54.727460+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "VALIDATE", "level": "INFO", "message": "payments: checked=2228, valid=2218, failed=10"}
+{"timestamp": "2026-10-21T01:48:54.731811+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "VALIDATE", "level": "INFO", "message": "customers: checked=405, valid=400, failed=5"}
+{"timestamp": "2026-10-21T01:48:54.734663+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "VALIDATE", "level": "INFO", "message": "orders: checked=2412, valid=2342, failed=70"}
+{"timestamp": "2026-10-21T01:48:55.732243+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "QUARANTINE", "level": "INFO", "message": "products: saved 10 failed rows"}
+{"timestamp": "2026-10-21T01:48:55.731216+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "QUARANTINE", "level": "INFO", "message": "customers: saved 5 failed rows"}
+{"timestamp": "2026-10-21T01:48:55.776373+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "QUARANTINE", "level": "INFO", "message": "stores: no failed rows"}
+{"timestamp": "2026-10-21T01:48:55.781462+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "QUARANTINE", "level": "INFO", "message": "payments: saved 10 failed rows"}
+{"timestamp": "2026-10-21T01:48:55.782334+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "QUARANTINE", "level": "INFO", "message": "orders: saved 70 failed rows"}
+{"timestamp": "2026-10-21T01:48:56.743407+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "TRANSFORM", "level": "INFO", "message": "Transformed 2342 order rows"}
+{"timestamp": "2026-10-21T01:48:57.743957+05:30", "run_id": "manual__2026-10-20T20:18:52.768639+00:00", "phase": "LOAD", "level": "INFO", "message": "Warehouse load complete. Total fact rows=2342"}

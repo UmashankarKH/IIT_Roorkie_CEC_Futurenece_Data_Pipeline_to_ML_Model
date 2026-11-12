@@ -1,0 +1,9 @@
+CREATE OR REPLACE TABLE stg_customers AS
+SELECT * REPLACE (
+ CASE WHEN email IS NULL OR TRIM(CAST(email AS VARCHAR))='' THEN email
+ WHEN STRPOS(CAST(email AS VARCHAR),'@')>1 THEN
+ SUBSTR(CAST(email AS VARCHAR),1,2)||'***@'||SUBSTR(CAST(email AS VARCHAR),STRPOS(CAST(email AS VARCHAR),'@')+1)
+ ELSE '***' END AS email,
+ CASE WHEN phone IS NULL OR TRIM(CAST(phone AS VARCHAR))='' THEN phone
+ ELSE '******'||RIGHT(REGEXP_REPLACE(CAST(phone AS VARCHAR),'[^0-9]','','g'),4) END AS phone
+) FROM stg_customers;

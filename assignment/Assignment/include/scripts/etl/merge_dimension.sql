@@ -1,0 +1,7 @@
+CREATE OR REPLACE TABLE {table}_merged AS
+SELECT * FROM {table}
+WHERE CAST({key} AS VARCHAR) NOT IN (
+  SELECT CAST({key} AS VARCHAR) FROM incoming
+)
+UNION ALL BY NAME
+SELECT * FROM incoming;
