@@ -9,3 +9,10 @@ apache-airflow-providers-slack
 
 # Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
 
+
+# ARM64 compatibility workaround for cryptography native-extension SIGILL
+cryptography==46.0.7
+pyOpenSSL==25.3.0
+asyncssh==2.21.1
+
+pyarrow>=23,<25

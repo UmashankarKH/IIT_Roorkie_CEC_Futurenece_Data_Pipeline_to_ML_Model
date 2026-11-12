@@ -12,4 +12,29 @@ airflow.cfg
 airflow.db
 .astro/*.local.yml
 .astro/*.local.yaml
-test_api.py 
+test_api.py
+
+# Python and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated NammaMart ETL outputs
+include/output/nammamart/
+include/output/nammamart_elt/
+
+# Run-scoped ETL extracts, quarantine files and local DuckDB warehouse
+include/output/etl_extracts/
+include/quarantine/
+include/warehouse_gowtham.duckdb*
+
+# Generated NammaMart pipeline output and local databases
+/include/output/
+
+# Temporary source-code backups
+*.bak
+*.before_audit
+*.before_idempotency_*
+*.before_sql_layers
+*.before_sql_integration
+*.pre_raw_layer_backup*

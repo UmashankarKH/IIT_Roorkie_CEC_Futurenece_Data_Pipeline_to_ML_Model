@@ -1,0 +1,406 @@
+customer_id,full_name,email,phone,city,area,pincode,signup_date,loyalty_tier,is_active
+C00199,Priya Hegde,priya.hegde199@example.com,9774349021,Bengaluru,Whitefield,560066,2024-08-27,SILVER,Y
+C00182,Nikhil Bhat,nikhil.bhat182@example.com,9253244720,Bengaluru,Hebbal,560024,2026-02-19,Silver,Y
+C00355,Nikhil Desai,nikhil.desai355@example.com,9602592222,,RT Nagar,560032,2026-07-28,Silver,Y
+C00222,Divya Gowda,divya.gowda222@example.com,9044789856,Bengaluru,JP Nagar,560078,2026-05-05,Platinum,Y
+C00138,Rohan Bhat,rohan.bhat138@example.com,9101438889,Bengaluru,Malleshwaram,560003,2026-05-06,Silver,Y
+C00094,Sanjay Naidu,sanjay.naidu94@example.com,9120826773,Bengaluru,Banashankari,560070,2026-07-15,Platinum,Y
+C00161,Pooja Pillai,pooja.pillai161@example.com,9311219656,Bengaluru,Basaveshwaranagar,560079,2025-04-19,Silver,Y
+C00345,Shreya Kumar,shreya.kumar345@example.com,9248262925,Bengaluru,Marathahalli,560037,2024-08-09,Silver,N
+C00159,Sanjay Menon,sanjay.menon159@example.com,9162713611,Bengaluru,Hebbal,560024,2024-09-14,Bronze,Y
+C00321,Prakash Joshi,prakash.joshi321@example.com,9387829456,Bengaluru,Indiranagar,560038,2026-03-19,Bronze,Y
+C00168,Divya Murthy,divya.murthy168@example.com,9241056481,Bengaluru,JP Nagar,560078,2025-02-25,Silver,Y
+C00040,Arjun Kumar,arjun.kumar40@example.com,9432445107,Bengaluru,Hebbal,560024,2026-07-05,Bronze,Y
+C00374,Suresh Iyer,suresh.iyer374@example.com,9493214958,Bengaluru,Banashankari,560070,2025-08-29,Bronze,Y
+C00051,Shreya Joshi,shreya.joshi51@example.com,9528168505,Bengaluru,JP Nagar,560078,2025-04-13,Bronze,Y
+C00299,Ritu Menon,ritu.menon299@example.com,9455884506,Bengaluru,Whitefield,560066,2024-10-03,Bronze,Y
+C00337,Asha Pillai,N/A,9927033521,Bengaluru,Banashankari,560070,2024-09-24,Silver,Y
+C00224,Harish Sharma,harish.sharma224@example.com,9648909010,Bengaluru,Rajajinagar,560010,2024-07-20,Silver,Y
+C00202,Priya Bhat,priya.bhat202@example.com,9163294511,Bengaluru,RT Nagar,560032,2025-07-03,Silver,Y
+C00030,Lakshmi Joshi,lakshmi.joshi30@example.com,9617711592,Bengaluru,Hebbal,560024,2024-08-07,Bronze,Y
+C00078,Meera Pillai,meera.pillai78@example.com,9102767735,Bengaluru,BTM Layout,560076,2026-02-12,Bronze,Y
+C00311,Divya Reddy,divya.reddy311@example.com,9442703120,Bengaluru,Hebbal,560024,2025-10-19,Bronze,Y
+C00389,Bhavana Desai,bhavana.desai389@example.com,9950097519,Bengaluru,BTM Layout,560076,2025-10-07,Platinum,Y
+C00307,Arjun Rao,arjun.rao307example.com,9825478077,Bengaluru,JP Nagar,560078,2025-04-03,Bronze,Y
+C00391,Deepa Desai,deepa.desai391@example.com,9949058077,Bengaluru,Yelahanka,560064,2025-11-07,Gold,Y
+C00282,Swathi Reddy,swathi.reddy282@example.com,9372138658,Bengaluru,RT Nagar,560032,2026-02-19,Silver,Y
+C00163,Harish Sharma,harish.sharma163@example.com,9376137918,Bengaluru,JP Nagar,560078,2024-06-13,Platinum,N
+C00204,Bhavana Reddy,bhavana.reddy204@example.com,9914856467,Bengaluru,Yelahanka,560064,2026-01-07,Silver,Y
+C00180,Sneha Rao,sneha.rao180@example.com,9032365199,Bengaluru,RT Nagar,560032,2025-02-21,Gold,Y
+C00103,Ganesh Naidu,ganesh.naidu103@example.com,9184787005,Bengaluru,BTM Layout,560076,2025-12-30,Bronze,Y
+C00017,Harish Bhat,harish.bhat17@example.com,9474367136,Bengaluru,JP Nagar,560078,2026-01-07,Bronze,Y
+C00220,Divya Nair,divya.nair220@example.com,9712966667,Bengaluru,Malleshwaram,560003,2025-06-28,Bronze,Y
+C00232,Kavya Rao,kavya.rao232@example.com,9277167014,Bengaluru,Malleshwaram,560003,2026-04-02,Bronze,Y
+C00265,Vikram Hegde,vikram.hegde265@example.com,9110809969,Bengaluru,Indiranagar,560038,2025-01-04,Gold,Y
+C00124,Ganesh Naidu,ganesh.naidu124@example.com,9401489025,Bengaluru,Basaveshwaranagar,560079,2024-06-17,Platinum,Y
+C00013,Nikhil Gowda,nikhil.gowda13@example.com,9586578091,Bengaluru,Rajajinagar,560010,2025-01-27,Silver,N
+C00209,Kavya Pillai,kavya.pillai209@example.com,9861035797,Bengaluru,JP Nagar,560078,2024-11-29,Platinum,Y
+C00132,Lakshmi Gowda,lakshmi.gowda132@example.com,9543799371,Bengaluru,JP Nagar,5600XX,2024-10-17,Bronze,N
+C00366,Lakshmi Naidu,lakshmi.naidu366@example.com,9027278576,Bengaluru,HSR Layout,560102,2026-07-01,Bronze,Y
+C00171,Shreya Bhat,shreya.bhat171@example.com,9353654195,Bengaluru,Hebbal,560024,2024-10-01,SILVER,N
+C00169,Lakshmi Pillai,lakshmi.pillai169@example.com,9850792524,Bengaluru,Yelahanka,560064,2026-08-01,Bronze,Y
+C00098,Deepa Kumar,deepa.kumar98@example.com,9296685161,Bengaluru,Marathahalli,560037,2024-12-07,Platinum,Y
+C00133,Prakash Joshi,prakash.joshi133@example.com,9575692459,Bengaluru,Banashankari,560070,2026-05-13,BRONZE,Y
+C00276,Swathi Kulkarni,swathi.kulkarni276@example.com,9629127990,Bengaluru,Indiranagar,560038,2025-11-27,Silver,Y
+C00201,Sanjay Sharma,sanjay.sharma201@example.com,9898992172,Bengaluru,Vijayanagar,560040,2024-11-19,Platinum,Y
+C00103,Ganesh Naidu,ganesh.naidu103@example.com,9187072867,Bengaluru,Rajajinagar,560010,2025-12-30,Bronze,Y
+C00320,Kavya Pillai,kavya.pillai320@example.com,9086209593,Bengaluru,Indiranagar,560038,2025-04-25,Silver,Y
+C00176,Rahul Sharma,rahul.sharma176@example.com,9623445655,Bengaluru,BTM Layout,560076,2025-09-07,Bronze,Y
+C00205,Nikhil Iyer,nikhil.iyer205@example.com,9996065307,Bengaluru,JP Nagar,560078,2025-03-03,Gold,Y
+C00156,Nandini Menon,nandini.menon156@example.com,9001701277,Bengaluru,Whitefield,560066,2024-06-01,Platinum,Y
+C00241,Pooja Naidu,pooja.naidu241@example.com,9829221699,Bengaluru,Basaveshwaranagar,560079,2025-04-26,Silver,Y
+C00053,Kiran Joshi,kiran.joshi53@example.com,9222927065,Bengaluru,Marathahalli,560037,2026-04-24,Silver,N
+C00032,Varun Desai,varun.desai32@example.com,9367365766,Bengaluru,Basaveshwaranagar,560079,2026-06-18,bronze,Y
+C00396,Ganesh Murthy,ganesh.murthy396@example.com,9041027674,Bengaluru,Jayanagar,560041,2025-10-01,Silver,Y
+C00362,Lakshmi Patil,lakshmi.patil362@example.com,9695489952,Bengaluru,Yelahanka,560064,2026-02-20,Silver,Y
+C00395,Swathi Sharma,swathi.sharma395@example.com,9512927663,Bengaluru,Indiranagar,000000,2026-04-08,Bronze,Y
+C00296,Pooja Murthy,pooja.murthy296@example.com,9564729293,Bengaluru,Jayanagar,560041,2024-09-11,Silver,Y
+C00184,Nandini Desai,nandini.desai184@example.com,9065787598,Bengaluru,HSR Layout,560102,2025-04-26,Bronze,Y
+C00212,Sanjay Hegde,sanjay.hegde212@example.com,9665743748,Bengaluru,JP Nagar,560078,2026-03-01,Bronze,Y
+C00151,Ritu Murthy,ritu.murthy151@example.com,996292312,Bengaluru,Malleshwaram,560003,2025-05-26,Silver,Y
+C00137,Sanjay Desai,sanjay.desai137@example.com,9911352909,Bengaluru,Banashankari,560070,2026-03-23,Silver,Y
+C00288,Rahul Kulkarni,rahul.kulkarni288@example.com,9451848947,Bengaluru,Indiranagar,560038,2025-06-22,Silver,Y
+C00248,Kavya Desai,kavya.desai248@example.com,9933472122,Bengaluru,HSR Layout,560102,2026-06-23,Silver,Y
+C00359,Bhavana Gowda,bhavana.gowda359@example.com,9016224999,Bengaluru,Banashankari,560070,2025-12-28,Bronze,Y
+C00368,Harish Desai,harish.desai368@example.com,9299629145,Bengaluru,BTM Layout,560076,2026-05-28,Bronze,Y
+C00174,Shreya Murthy,shreya.murthy174@example.com,9050641383,Bengaluru,Jayanagar,560041,2025-08-04,Bronze,Y
+C00198,Lakshmi Reddy,lakshmi.reddy198@example.com,9467741862,Bengaluru,Yelahanka,560064,2025-06-15,Gold,Y
+C00025,Manoj Shetty,manoj.shetty25@example.com,9515850643,Bengaluru,Whitefield,560066,2024-10-04,Gold,Y
+C00346,Divya Menon,divya.menon346@example.com,9205664742,Bengaluru,Yelahanka,560064,2026-08-07,Bronze,Y
+C00270,Kavya Gowda,kavya.gowda270@example.com,9846386557,Bengaluru,BTM Layout,560076,2025-10-07,Gold,Y
+C00181,Vikram Pillai,vikram.pillai181@example.com,9215107029,Bengaluru,Yelahanka,560064,2025-08-18,Gold,Y
+C00294,Priya Kulkarni,priya.kulkarni294@example.com,9562718750,Bengaluru,Indiranagar,560038,2024-06-13,Silver,Y
+C00350,Priya Joshi,priya.joshi350@example.com,9569998808,Bengaluru,Malleshwaram,560003,2024-09-20,Bronze,Y
+C00340,Sanjay Hegde,sanjay.hegde340@example.com,9070164510,Bengaluru,Malleshwaram,560003,2025-03-27,Gold,Y
+C00253,Suresh Desai,suresh.desai253@example.com,9408588770,Bengaluru,BTM Layout,560076,2025-03-31,Gold,Y
+C00218,Priya Gowda,priya.gowda218@example.com,9738168460,Bengaluru,Whitefield,560066,2024-11-02,Bronze,Y
+C00068,Swathi Pillai,swathi.pillai68@example.com,9021355690,Bengaluru,RT Nagar,560032,2026-02-10,Bronze,Y
+C00128,Asha Patil,asha.patil128@example.com,9311426265,Bengaluru,Malleshwaram,560003,2025-06-05,Bronze,Y
+C00063,Prakash Pillai,prakash.pillai63@example,9722170430,Bengaluru,RT Nagar,560032,2024-12-22,Gold,Y
+C00289,Rohan Pillai,rohan.pillai289@example.com,9790714163,Bengaluru,Malleshwaram,560003,2026-04-25,Silver,Y
+C00045,Varun Naidu,N/A,9799799552,Bengaluru,RT Nagar,560032,2025-08-25,Bronze,Y
+C00363,Lakshmi Naidu,lakshmi.naidu363example.com,9293430107,Bengaluru,HSR Layout,560102,2026-03-03,Silver,Y
+C00384,Bhavana Patil,bhavana.patil384@example.com,9651909862,Bengaluru,Malleshwaram,560003,2025-03-29,Bronze,N
+C00177,Kiran Reddy,kiran.reddy177@example.com,9212775618,Bengaluru,Jayanagar,560041,2025-06-02,Platinum,Y
+C00160,Nikhil Iyer,nikhil.iyer160@example.com,9218909275,Bengaluru,RT Nagar,560032,2026-06-10,Bronze,Y
+C00400,Deepa Pillai,deepa.pillai400@example.com,9534430091,Bengaluru,Yelahanka,560064,2027-01-05,Gold,Y
+C00323,Aditya Hegde,aditya.hegde323@example.com,9053910371,Bengaluru,Whitefield,560066,2025-09-23,Gold,Y
+C00216,Kavya Kulkarni,kavya.kulkarni216@example.com,9428241724,Bengaluru,HSR Layout,560102,2026-06-13,Gold,Y
+C00382,Asha Reddy,asha.reddy382@example.com,9965701329,Bengaluru,Yelahanka,560064,2026-07-14,Silver,Y
+C00200,Varun Shetty,varun.shetty200@example.com,9806868793,Bengaluru,BTM Layout,560076,2025-10-01,Bronze,Y
+C00261,Swathi Sharma,swathi.sharma261@example.com,9878141413,Bengaluru,Marathahalli,560037,2026-06-14,Silver,N
+C00310,Kiran Patil,kiran.patil310@example,9179749735,Bengaluru,RT Nagar,560032,2024-06-20,Bronze,N
+C00315,Priya Kumar,priya.kumar315@example.com,9136502491,Bengaluru,Basaveshwaranagar,560079,2025-07-11,Silver,Y
+C00075,Rohan Shetty,rohan.shetty75@example.com,9584143842,Bengaluru,RT Nagar,560032,2026-03-03,Bronze,Y
+C00153,Kiran Menon,kiran.menon153@example.com,9367294667,Bengaluru,Jayanagar,560041,2024-08-17,Silver,Y
+C00183,Lakshmi Bhat,lakshmi.bhat183@example.com,9870146263,Bengaluru,JP Nagar,560078,2026-03-21,Gold,Y
+C00287,Ganesh Murthy,ganesh.murthy287@example.com,9543937690,Bengaluru,Basaveshwaranagar,560079,2025-02-23,Bronze,Y
+C00131,Ganesh Kulkarni,ganesh.kulkarni131@example.com,9262244472,Bengaluru,Jayanagar,560041,2024-08-04,Bronze,Y
+C00031,Shreya Menon,shreya.menon31@example.com,9698478961,Bengaluru,Marathahalli,560037,2026-05-20,bronze,Y
+C00043,Ganesh Joshi,ganesh.joshi43@example.com,9816453521,Bengaluru,BTM Layout,560076,2025-11-05,Silver,Y
+C00018,Meera Rao,meera.rao18@example.com,9640909743,Bengaluru,Rajajinagar,560010,2026-02-12,Gold,Y
+C00300,Vikram Desai,vikram.desai300@example.com,9245587716,Bengaluru,Marathahalli,560037,2026-02-19,Bronze,Y
+C00275,Divya Kulkarni,divya.kulkarni275@example.com,9425799136,Bengaluru,Malleshwaram,560003,2025-06-30,Bronze,Y
+C00196,Rohan Kumar,rohan.kumar196@example.com,9368844431,Bengaluru,Yelahanka,560064,2024-07-21,bronze,Y
+C00175,Sanjay Hegde,sanjay.hegde175@example.com,9103865719,Bengaluru,RT Nagar,560032,2024-09-06,Silver,Y
+C00210,Kavya Murthy,kavya.murthy210@example.com,9241406029,Bengaluru,Indiranagar,560038,2026-08-08,Platinum,Y
+C00271,Kiran Pillai,kiran.pillai271@example.com,9231843222,Bengaluru,Basaveshwaranagar,560079,2025-06-06,Silver,Y
+C00252,Shreya Rao,shreya.rao252@example.com,9157399305,Bengaluru,Whitefield,560066,2025-06-26,Gold,N
+C00083,Vikram Murthy,vikram.murthy83@example.com,9841687849,Bengaluru,Indiranagar,5600XX,2026-04-28,Silver,Y
+C00197,Kiran Sharma,kiran.sharma197@example.com,9506149731,Bengaluru,Whitefield,560066,2024-06-27,Bronze,Y
+C00111,Divya Bhat,divya.bhat111@example.com,9870568566,Bengaluru,Basaveshwaranagar,560079,2024-10-31,Bronze,Y
+C00115,Sanjay Kumar,sanjay.kumar115@example.com,9638546785,Bengaluru,Jayanagar,560041,2025-04-12,Bronze,Y
+C00006,Asha Naidu,asha.naidu6@example.com,9703482477,Bengaluru,Banashankari,560070,2024-10-03,Bronze,Y
+C00080,Priya Patil,priya.patil80@example.com,9696325953,Bengaluru,Yelahanka,560064,2026-07-22,Bronze,N
+C00266,Mahesh Desai,mahesh.desai266@example.com,9725639427,Bengaluru,Indiranagar,560038,2025-10-27,Silver,Y
+C00194,Nandini Shetty,nandini.shetty194@example.com,9271040541,Bengaluru,Whitefield,560066,2024-08-15,Bronze,Y
+C00240,Sneha Bhat,sneha.bhat240@example.com,90917798,Bengaluru,Banashankari,560070,2024-06-05,Silver,Y
+C00269,Nikhil Naidu,nikhil.naidu269@example.com,9700518449,Bengaluru,Banashankari,560070,2025-12-10,Silver,Y
+C00369,Mahesh Shetty,mahesh.shetty369@example.com,9574384215,Bengaluru,Whitefield,560066,2024-07-09,Silver,N
+C00114,Varun Desai,varun.desai114@example.com,9373540331,Bengaluru,Malleshwaram,560003,2026-07-05,Platinum,Y
+C00047,Swathi Gowda,swathi.gowda47@example.com,9998679807,Bengaluru,HSR Layout,560102,2026-01-07,Silver,Y
+C00367,Ritu Menon,ritu.menon367@example.com,9880395512,Bengaluru,Marathahalli,560037,2025-03-15,Gold,Y
+C00145,Ganesh Gowda,ganesh.gowda145@example.com,9251341252,Bengaluru,Marathahalli,560037,2025-11-06,Bronze,Y
+C00191,Ritu Rao,ritu.rao191@example.com,9969029593,Bengaluru,RT Nagar,560032,2026-03-17,Silver,N
+C00066,Divya Desai,divya.desai66@example.com,9451154479,Bengaluru,Vijayanagar,560040,2026-06-05,Bronze,Y
+C00388,Prakash Pillai,prakash.pillai388@example.com,9653269097,Bengaluru,Indiranagar,560038,2026-06-19,Bronze,Y
+C00325,Ananya Desai,ananya.desai325@example.com,9633839288,Bengaluru,Rajajinagar,560010,2025-07-31,Silver,Y
+C00140,Nandini Kumar,nandini.kumar140@example.com,9875717751,Bengaluru,Whitefield,560066,2025-04-04,Bronze,Y
+C00135,Deepa Desai,deepa.desai135@example.com,9073741672,Bengaluru,RT Nagar,560032,2026-03-11,Bronze,Y
+C00341,Nikhil Kulkarni,nikhil.kulkarni341@example.com,9157981238,Bengaluru,Jayanagar,560041,2025-09-12,Silver,Y
+C00273,Divya Iyer,divya.iyer273@example.com,9809202428,Bengaluru,Marathahalli,560037,2025-07-21,Silver,Y
+C00344,Deepa Shetty,deepa.shetty344@example.com,9639264957,Bengaluru,Indiranagar,560038,2025-12-08,Bronze,Y
+C00342,Ananya Kulkarni,ananya.kulkarni342@example.com,9457620555,Bengaluru,Hebbal,000000,2026-03-03,Bronze,N
+C00154,Nikhil Kulkarni,nikhil.kulkarni154@example.com,9457759017,Bengaluru,Yelahanka,560064,2026-03-13,Silver,Y
+C00170,Sneha Shetty,sneha.shetty170@example.com,9800030756,Bengaluru,Rajajinagar,560010,2024-11-01,Bronze,N
+C00390,Ritu Kulkarni,ritu.kulkarni390@example.com,9478189137,Bengaluru,Rajajinagar,560010,2026-03-08,Silver,N
+C00302,Suresh Joshi,suresh.joshi302@example.com,9475987622,Bengaluru,Rajajinagar,560010,2024-06-24,Bronze,Y
+C00245,Nikhil Iyer,nikhil.iyer245@example.com,9003424420,Bengaluru,Hebbal,560024,2026-05-09,Silver,Y
+C00001,Harish Iyer,harish.iyer1@example.com,9421024994,Bengaluru,Jayanagar,560041,2025-08-24,Bronze,Y
+C00144,Rohan Joshi,rohan.joshi144@example.com,9969155792,Bengaluru,HSR Layout,560102,2026-04-21,Silver,Y
+C00095,Priya Gowda,priya.gowda95@example.com,993802612,Bengaluru,HSR Layout,560102,2025-10-21,Bronze,Y
+C00048,Aditya Iyer,aditya.iyer48@example.com,9071518203,Bengaluru,Whitefield,560066,2026-05-26,Bronze,Y
+C00370,Aditya Rao,aditya.rao370@example.com,9782357845,Bengaluru,Whitefield,560066,2024-10-25,Silver,Y
+C00036,Deepa Desai,deepa.desai36@example.com,9094024455,Bengaluru,Marathahalli,560037,2024-06-07,Bronze,Y
+C00347,Varun Hegde,varun.hegde347@example.com,9999393305,Bengaluru,Hebbal,560024,2024-08-21,Silver,Y
+C00235,Priya Kulkarni,priya.kulkarni235@example.com,9386631779,Bengaluru,JP Nagar,560078,2025-09-02,Bronze,Y
+C00007,Ananya Nair,ananya.nair7@example.com,9480861317,Bengaluru,Malleshwaram,560003,2024-09-29,Silver,Y
+C00349,Suresh Bhat,suresh.bhat349@example.com,9333127975,Bengaluru,Basaveshwaranagar,560079,2025-09-12,Gold,Y
+C00332,Kavya Bhat,kavya.bhat332@example.com,9613906012,Bengaluru,Banashankari,560070,2024-07-13,Bronze,Y
+C00079,Ritu Murthy,ritu.murthy79@example.com,9625881537,Bengaluru,Banashankari,560070,2024-10-04,Bronze,Y
+C00166,Bhavana Kumar,bhavana.kumar166@example.com,9285691463,Bengaluru,Indiranagar,5600XX,2024-07-30,Bronze,N
+C00005,Priya Pillai,priya.pillai5@example.com,9154516808,Bengaluru,Indiranagar,560038,2025-09-17,Bronze,Y
+C00357,Arjun Naidu,arjun.naidu357@example.com,933977612,Bengaluru,Malleshwaram,560003,2026-02-05,Bronze,Y
+C00227,Kavya Bhat,kavya.bhat227@example.com,9420873753,Bengaluru,Jayanagar,560041,2024-06-03,Bronze,Y
+C00207,Vikram Pillai,vikram.pillai207@example.com,9367850821,Bengaluru,Yelahanka,560064,2025-04-15,Silver,Y
+C00226,Prakash Reddy,prakash.reddy226@example.com,9891411739,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y
+C00034,Shreya Menon,shreya.menon34@example.com,9165604945,Bengaluru,Indiranagar,560038,2024-09-15,Silver,Y
+C00336,Deepa Gowda,deepa.gowda336@example.com,9166553559,Bengaluru,Banashankari,560070,2026-04-03,Bronze,Y
+C00105,Mahesh Gowda,mahesh.gowda105@example.com,9704622656,Bengaluru,Basaveshwaranagar,560079,2025-09-03,Gold,N
+C00188,Ananya Rao,ananya.rao188@example.com,9870593252,Bengaluru,Marathahalli,560037,2025-04-28,Bronze,Y
+C00143,Varun Gowda,varun.gowda143@example.com,9918255371,Bengaluru,JP Nagar,560078,2025-02-24,Silver,Y
+C00022,Deepa Hegde,deepa.hegde22@example.com,9965137098,Bengaluru,Rajajinagar,560010,2025-05-02,Gold,Y
+C00352,Prakash Patil,prakash.patil352@example.com,9726490827,Bengaluru,Malleshwaram,560003,2026-03-24,Bronze,Y
+C00127,Rohan Rao,rohan.rao127@example.com,9477358662,Bengaluru,Malleshwaram,560003,2026-04-28,Silver,Y
+C00116,Manoj Reddy,manoj.reddy116@example.com,9753556093,Bengaluru,Whitefield,560066,2026-06-30,Bronze,Y
+C00254,Rahul Reddy,rahul.reddy254@example.com,9288013361,Bengaluru,Indiranagar,560038,2024-12-28,Silver,Y
+C00373,Manoj Reddy,manoj.reddy373@example.com,9422410988,Bengaluru,Malleshwaram,560003,2024-09-13,Bronze,Y
+C00101,Kiran Pillai,kiran.pillai101@example.com,9956878339,Bengaluru,Whitefield,560066,2024-08-23,Silver,Y
+C00136,Sanjay Bhat,sanjay.bhat136@example.com,9617979688,Bengaluru,RT Nagar,560032,2026-05-10,BRONZE,Y
+C00109,Ritu Sharma,ritu.sharma109@example.com,9673830284,Bengaluru,Jayanagar,560041,2025-01-26,Gold,Y
+C00221,Kavya Rao,kavya.rao221@example.com,9583003354,Bengaluru,Rajajinagar,560010,2024-10-11,Bronze,Y
+C00130,Shreya Gowda,shreya.gowda130@example.com,999560412,Bengaluru,Banashankari,560070,2026-06-13,Gold,N
+C00338,Bhavana Iyer,bhavana.iyer338@example.com,9405147705,Bengaluru,Marathahalli,560037,2025-01-01,Silver,Y
+C00011,Ananya Bhat,ananya.bhat11@example.com,9057662702,Bengaluru,BTM Layout,560076,2025-10-28,Platinum,Y
+C00012,Swathi Pillai,swathi.pillai12@example.com,9187026217,Bengaluru,Yelahanka,560064,2026-08-10,Platinum,Y
+C00293,Mahesh Hegde,mahesh.hegde293@example.com,9728463920,Bengaluru,Basaveshwaranagar,560079,2025-11-21,Silver,Y
+C00002,Nikhil Hegde,nikhil.hegde2@example.com,9887719065,Bengaluru,Rajajinagar,560010,2026-02-09,Bronze,Y
+C00147,Swathi Murthy,swathi.murthy147@example.com,9072368876,Bengaluru,Hebbal,560024,2026-05-03,Bronze,Y
+C00039,Varun Kulkarni,varun.kulkarni39@example.com,9156149712,Bengaluru,Jayanagar,560041,2024-07-17,Bronze,N
+C00192,Rohan Gowda,rohan.gowda192@example.com,9355215704,Bengaluru,RT Nagar,560032,2025-01-01,Bronze,Y
+C00208,Swathi Kulkarni,swathi.kulkarni208@example.com,9902330307,Bengaluru,Malleshwaram,560003,2024-07-22,Gold,Y
+C00149,Varun Naidu,varun.naidu149@example.com,9881914858,Bengaluru,Rajajinagar,560010,2026-07-15,Bronze,Y
+C00239,Lakshmi Iyer,lakshmi.iyer239@example.com,9614933163,Bengaluru,RT Nagar,560032,2025-09-12,Gold,Y
+C00084,Nikhil Murthy,nikhil.murthy84@example.com,9585239868,Bengaluru,Yelahanka,560064,2024-07-12,Bronze,Y
+C00247,Nikhil Joshi,nikhil.joshi247@example.com,9658004397,Bengaluru,Basaveshwaranagar,560079,2025-01-17,Gold,Y
+C00064,Aditya Joshi,aditya.joshi64@example.com,9874034505,Bengaluru,JP Nagar,560078,2025-03-07,Bronze,Y
+C00358,Asha Desai,asha.desai358@example.com,9302205020,Bengaluru,JP Nagar,560078,2026-04-15,Silver,Y
+C00281,Nandini Desai,nandini.desai281@example.com,9725887449,Bengaluru,Indiranagar,560038,2025-05-19,Silver,Y
+C00330,Kiran Hegde,kiran.hegde330@example.com,9593344196,Bengaluru,RT Nagar,560032,2026-01-04,Gold,Y
+C00217,Deepa Menon,deepa.menon217@example.com,9135346554,Bengaluru,RT Nagar,560032,2026-01-21,Bronze,Y
+C00119,Priya Gowda,priya.gowda119@example.com,9006231203,Bengaluru,Indiranagar,560038,2025-10-31,Bronze,Y
+C00122,Rahul Murthy,rahul.murthy122@example.com,9679334101,Bengaluru,BTM Layout,560076,2025-07-21,Bronze,Y
+C00152,Rohan Patil,rohan.patil152@example.com,9494812604,Bengaluru,RT Nagar,560032,2026-04-03,Bronze,Y
+C00237,Aditya Desai,aditya.desai237@example.com,9375503758,Bengaluru,Basaveshwaranagar,560079,2026-07-26,Silver,Y
+C00126,Ritu Gowda,ritu.gowda126@example.com,9850163159,Bengaluru,Rajajinagar,560010,2026-07-28,Silver,Y
+C00134,Rohan Patil,rohan.patil134@example.com,9793564651,Bengaluru,BTM Layout,560076,2025-12-30,Bronze,N
+C00398,Priya Reddy,priya.reddy398@example.com,9856945441,Bengaluru,HSR Layout,560102,2026-11-12,Silver,Y
+C00274,Mahesh Patil,mahesh.patil274@example.com,9137977236,Bengaluru,Hebbal,560024,2026-02-06,Bronze,Y
+C00327,Mahesh Menon,N/A,9855665939,Bengaluru,Banashankari,560070,2025-12-11,Bronze,Y
+C00292,Kiran Reddy,kiran.reddy292@example.com,9117908075,Bengaluru,Banashankari,560070,2026-02-26,Bronze,Y
+C00148,Lakshmi Nair,lakshmi.nair148@example.com,9190340438,Bengaluru,Whitefield,560066,2025-03-23,Bronze,Y
+C00394,Suresh Rao,suresh.rao394@example.com,9192927524,,Vijayanagar,560040,2026-05-19,Bronze,Y
+C00236,Sneha Naidu,sneha.naidu236@example.com,9016608801,Bengaluru,Banashankari,560070,2026-02-09,Platinum,Y
+C00164,Nikhil Bhat,nikhil.bhat164@example.com,9582710910,Bengaluru,RT Nagar,560032,2025-02-24,Bronze,N
+C00203,Suresh Kulkarni,suresh.kulkarni203@example.com,9709986162,Bengaluru,Vijayanagar,560040,2024-10-30,Silver,Y
+C00041,Sanjay Shetty,sanjay.shetty41@example.com,9885160607,Bengaluru,Indiranagar,560038,2024-08-19,Gold,Y
+C00308,Asha Shetty,asha.shetty308@example.com,9085368663,Bengaluru,JP Nagar,560078,2024-11-15,Silver,Y
+C00076,Harish Nair,harish.nair76@example.com,9992299590,Bengaluru,Indiranagar,560038,2024-06-30,Bronze,N
+C00246,Priya Murthy,priya.murthy246@example.com,9719838638,Bengaluru,Indiranagar,560038,2026-05-14,Bronze,Y
+C00313,Prakash Hegde,prakash.hegde313@example.com,9506138782,Bengaluru,Hebbal,560024,2025-09-15,Silver,Y
+C00195,Ritu Gowda,ritu.gowda195@example.com,9815997062,Bengaluru,RT Nagar,560032,2026-02-12,Gold,Y
+C00044,Mahesh Murthy,mahesh.murthy44@example.com,9523124329,Bengaluru,Jayanagar,560041,2024-11-04,Silver,Y
+C00279,Suresh Kumar,suresh.kumar279@example.com,9009818063,Bengaluru,BTM Layout,560076,2026-05-06,Gold,Y
+C00230,Manoj Hegde,manoj.hegde230@example.com,9155216674,Bengaluru,Basaveshwaranagar,560079,2025-06-30,Silver,Y
+C00252,Shreya Rao,shreya.rao252@example.com,9732030937,Bengaluru,Yelahanka,560064,2025-06-26,Gold,N
+C00029,Varun Murthy,varun.murthy29@example.com,9891783908,Bengaluru,Whitefield,560066,2025-04-05,Bronze,N
+C00318,Ritu Kumar,ritu.kumar318@example.com,9065240778,Bengaluru,Whitefield,560066,2025-03-29,Silver,Y
+C00072,Nandini Murthy,nandini.murthy72@example.com,9831323705,Bengaluru,RT Nagar,560032,2025-12-20,Silver,Y
+C00016,Ananya Pillai,ananya.pillai16@example.com,9474074821,Bengaluru,RT Nagar,560032,2025-08-27,Gold,N
+C00361,Suresh Menon,suresh.menon361@example.com,9868339019,Bengaluru,Vijayanagar,560040,2026-06-18,Platinum,Y
+C00178,Manoj Hegde,manoj.hegde178@example.com,9112490352,Bengaluru,JP Nagar,560078,2024-09-02,Silver,N
+C00334,Rohan Gowda,rohan.gowda334@example.com,9790864168,Bengaluru,RT Nagar,560032,2025-08-19,Silver,Y
+C00353,Divya Desai,divya.desai353@example.com,9266570279,Bengaluru,Yelahanka,560064,2026-05-31,Gold,Y
+C00086,Meera Menon,meera.menon86@example.com,9888794705,Bengaluru,Vijayanagar,560040,2025-05-06,Silver,N
+C00319,Divya Desai,divya.desai319@example.com,9557498218,Bengaluru,Marathahalli,560037,2024-11-06,Bronze,Y
+C00070,Nikhil Desai,nikhil.desai70@example.com,9144739473,Bengaluru,Indiranagar,560038,2024-10-04,Bronze,Y
+C00329,Meera Shetty,meera.shetty329@example.com,9350488899,Bengaluru,Hebbal,560024,2024-11-06,Bronze,Y
+C00162,Rahul Shetty,rahul.shetty162@example.com,9899940438,Bengaluru,HSR Layout,560102,2026-02-12,Silver,Y
+C00383,Deepa Iyer,deepa.iyer383@example.com,9784699733,Bengaluru,RT Nagar,560032,2026-04-29,Gold,Y
+C00185,Asha Shetty,asha.shetty185@example.com,9040785932,Bengaluru,Banashankari,560070,2024-09-11,Bronze,Y
+C00258,Nikhil Rao,nikhil.rao258@example.com,9728326842,Bengaluru,BTM Layout,560076,2025-04-02,Silver,N
+C00035,Lakshmi Shetty,lakshmi.shetty35@example.com,9158514936,Bengaluru,HSR Layout,560102,2025-12-27,Platinum,Y
+C00096,Bhavana Patil,bhavana.patil96@example.com,9004991547,Bengaluru,Vijayanagar,560040,2026-03-19,Silver,Y
+C00290,Kavya Kulkarni,kavya.kulkarni290@example.com,9804341,Bengaluru,BTM Layout,560076,2025-12-20,Gold,Y
+C00309,Nikhil Shetty,nikhil.shetty309@example.com,9416389448,Bengaluru,Vijayanagar,560040,2025-03-03,Bronze,Y
+C00117,Ganesh Bhat,ganesh.bhat117@example.com,9423536937,Bengaluru,Basaveshwaranagar,560079,2025-12-16,Silver,Y
+C00157,Bhavana Iyer,bhavana.iyer157@example.com,9424154152,Bengaluru,Rajajinagar,560010,2024-07-24,Bronze,Y
+C00056,Meera Gowda,meera.gowda56@example.com,9247826137,Bengaluru,Yelahanka,560064,2025-05-24,Gold,Y
+C00038,Ganesh Gowda,ganesh.gowda38@example.com,9022901476,Bengaluru,Malleshwaram,560003,2026-12-20,Silver,Y
+C00112,Lakshmi Shetty,lakshmi.shetty112@example,9342708668,Bengaluru,Indiranagar,560038,2025-11-25,Bronze,Y
+C00263,Ganesh Murthy,ganesh.murthy263@example.com,9562053364,Bengaluru,RT Nagar,560032,2025-06-04,Bronze,Y
+C00014,Ritu Gowda,ritu.gowda14@example.com,9611724005,Bengaluru,Jayanagar,560041,2024-07-28,Bronze,Y
+C00343,Suresh Sharma,suresh.sharma343@example.com,9460843256,Bengaluru,Indiranagar,560038,2026-04-04,Bronze,Y
+C00150,Vikram Bhat,vikram.bhat150@example.com,9134074517,Bengaluru,Indiranagar,560038,2024-09-29,Silver,Y
+C00267,Arjun Shetty,arjun.shetty267@example.com,9928272299,Bengaluru,Indiranagar,560038,2026-04-07,Gold,Y
+C00226,Prakash Reddy,prakash.reddy226@example.com,9015851743,Bengaluru,BTM Layout,560076,2024-12-22,Silver,Y
+C00257,Asha Gowda,asha.gowda257@example.com,9901581449,Bengaluru,Rajajinagar,560010,2024-08-28,Bronze,N
+C00229,Swathi Sharma,swathi.sharma229@example.com,9455611002,Bengaluru,RT Nagar,560032,2026-04-11,Silver,Y
+C00097,Swathi Kulkarni,swathi.kulkarni97@example.com,9743152742,Bengaluru,RT Nagar,560032,2024-06-15,Silver,Y
+C00339,Aditya Hegde,aditya.hegde339@example.com,987920612,Bengaluru,Indiranagar,560038,2025-02-17,Bronze,Y
+C00278,Varun Joshi,varun.joshi278@example.com,9599162473,Bengaluru,Malleshwaram,560003,2024-08-25,Bronze,Y
+C00322,Rahul Sharma,rahul.sharma322@example.com,9220317310,Bengaluru,HSR Layout,560102,2026-01-06,Silver,Y
+C00189,Bhavana Iyer,bhavana.iyer189@example.com,9185156915,Bengaluru,Rajajinagar,560010,2025-04-06,Bronze,N
+C00301,Swathi Nair,swathi.nair301@example.com,9569961125,Bengaluru,RT Nagar,560032,2025-01-20,Bronze,Y
+C00385,Arjun Desai,arjun.desai385@example.com,9514036965,Bengaluru,Hebbal,560024,2026-05-30,Bronze,Y
+C00376,Kavya Patil,kavya.patil376@example.com,9538179217,Bengaluru,Marathahalli,560037,2024-09-08,Bronze,Y
+C00259,Swathi Murthy,swathi.murthy259@example.com,9088210099,Bengaluru,Malleshwaram,560003,2025-07-09,Silver,N
+C00057,Aditya Murthy,aditya.murthy57@example.com,9361530512,Bengaluru,BTM Layout,560076,2024-10-28,Bronze,Y
+C00118,Varun Naidu,varun.naidu118@example.com,9772522872,Bengaluru,JP Nagar,560078,2025-12-08,Platinum,N
+C00262,Kiran Shetty,kiran.shetty262@example.com,9149135775,Bengaluru,Banashankari,560070,2026-02-22,Silver,Y
+C00102,Rahul Reddy,rahul.reddy102@example.com,9088398225,Bengaluru,Banashankari,560070,2025-11-15,Bronze,Y
+C00312,Nandini Naidu,nandini.naidu312@example.com,9570512046,Bengaluru,Malleshwaram,560003,2024-08-13,Silver,Y
+C00365,Shreya Menon,shreya.menon365@example.com,9015569902,Bengaluru,Indiranagar,560038,2024-12-16,Bronze,Y
+C00228,Prakash Naidu,prakash.naidu228@example.com,9218114374,Bengaluru,Yelahanka,560064,2025-02-26,Bronze,Y
+C00379,Kiran Kulkarni,kiran.kulkarni379@example.com,9161581487,Bengaluru,Marathahalli,560037,2025-07-16,Silver,Y
+C00036,Deepa Desai,deepa.desai36@example.com,9806346157,Bengaluru,RT Nagar,560032,2024-06-07,Bronze,Y
+C00060,Arjun Kulkarni,arjun.kulkarni60@example.com,9932460953,Bengaluru,Indiranagar,560038,2026-01-06,Bronze,Y
+C00264,Lakshmi Pillai,lakshmi.pillai264@example.com,9754781291,Bengaluru,Basaveshwaranagar,560079,2025-03-15,Gold,Y
+C00249,Suresh Desai,suresh.desai249@example.com,9422940572,Bengaluru,BTM Layout,560076,2024-07-11,Bronze,Y
+C00015,Ananya Kulkarni,ananya.kulkarni15@example.com,9692221969,Bengaluru,RT Nagar,560032,2026-05-01,Bronze,N
+C00397,Ananya Joshi,ananya.joshi397@example.com,9674286047,Bengaluru,Indiranagar,560038,2025-06-27,Silver,N
+C00285,Meera Kumar,meera.kumar285@example.com,9098839205,Bengaluru,Indiranagar,560038,2025-01-31,Silver,N
+C00027,Swathi Shetty,swathi.shetty27@example.com,9529042284,Bengaluru,Vijayanagar,560040,2024-11-26,Bronze,Y
+C00054,Meera Pillai,meera.pillai54@example.com,9383473597,Bengaluru,Marathahalli,560037,2025-09-16,Silver,Y
+C00283,Nikhil Rao,nikhil.rao283@example.com,9127961143,Bengaluru,RT Nagar,560032,2025-06-15,Bronze,Y
+C00233,Aditya Shetty,aditya.shetty233@example.com,9588916375,,HSR Layout,560102,2026-04-11,Silver,Y
+C00354,Suresh Menon,suresh.menon354@example.com,9211175186,Bengaluru,Yelahanka,560064,2026-06-15,Silver,Y
+C00129,Manoj Murthy,manoj.murthy129@example.com,9412126788,Bengaluru,JP Nagar,560078,2025-11-07,Bronze,Y
+C00223,Lakshmi Murthy,lakshmi.murthy223@example.com,9326033230,Bengaluru,Basaveshwaranagar,560079,2026-01-25,Silver,Y
+C00108,Priya Bhat,priya.bhat108@example.com,9903311907,Bengaluru,Yelahanka,560064,2026-02-03,Silver,Y
+C00326,Kavya Pillai,kavya.pillai326@example.com,9612286852,Bengaluru,Marathahalli,560037,2025-11-29,Platinum,Y
+C00187,Sanjay Murthy,sanjay.murthy187@example.com,9992937842,Bengaluru,Hebbal,560024,2025-10-16,Bronze,Y
+C00291,Vikram Hegde,vikram.hegde291@example.com,9237333433,Bengaluru,Banashankari,560070,2024-12-25,Gold,Y
+C00023,Harish Pillai,harish.pillai23@example.com,9461200471,Bengaluru,Yelahanka,560064,2024-09-08,Bronze,Y
+C00082,Mahesh Naidu,mahesh.naidu82@example.com,9480162456,Bengaluru,Marathahalli,560037,2025-06-10,Bronze,Y
+C00091,Meera Kumar,meera.kumar91@example.com,9757584419,Bengaluru,Malleshwaram,560003,2026-04-24,Silver,Y
+C00375,Deepa Sharma,deepa.sharma375@example.com,9160166299,Bengaluru,Basaveshwaranagar,560079,2026-03-07,Gold,Y
+C00243,Sanjay Desai,sanjay.desai243@example.com,9583339452,Bengaluru,Vijayanagar,560040,2026-05-29,Silver,N
+C00077,Ganesh Hegde,ganesh.hegde77@example.com,9396907844,Bengaluru,Malleshwaram,560003,2025-10-08,Bronze,Y
+C00058,Lakshmi Iyer,lakshmi.iyer58@example.com,9779010432,Bengaluru,Vijayanagar,560040,2025-12-14,Gold,Y
+C00100,Priya Reddy,priya.reddy100@example.com,9742684145,Bengaluru,Jayanagar,560041,2026-02-20,Bronze,N
+C00028,Arjun Murthy,arjun.murthy28@example.com,9395024026,Bengaluru,RT Nagar,560032,2025-11-21,Bronze,Y
+C00142,Harish Nair,harish.nair142@example.com,9266093796,,BTM Layout,560076,2025-07-04,Bronze,Y
+C00107,Deepa Desai,deepa.desai107@example.com,9686337524,Bengaluru,Whitefield,560066,2024-12-11,Gold,Y
+C00238,Kavya Pillai,kavya.pillai238@example.com,9113055488,Bengaluru,HSR Layout,560102,2025-06-18,Silver,Y
+C00372,Manoj Sharma,manoj.sharma372@example.com,9184094353,Bengaluru,Banashankari,560070,2024-12-15,Bronze,Y
+C00260,Vikram Murthy,vikram.murthy260@example.com,9368222394,Bengaluru,JP Nagar,560078,2024-12-16,Bronze,Y
+C00277,Deepa Iyer,deepa.iyer277@example.com,9980686508,Bengaluru,Whitefield,560066,2025-08-14,Bronze,Y
+C00186,Prakash Sharma,prakash.sharma186@example.com,9396522395,Bengaluru,Indiranagar,560038,2026-06-26,Silver,N
+C00049,Asha Nair,asha.nair49@example.com,9554665905,Bengaluru,Indiranagar,560038,2024-08-07,Bronze,Y
+C00272,Ananya Bhat,ananya.bhat272@example.com,9517773926,Bengaluru,HSR Layout,560102,2024-06-23,Bronze,Y
+C00061,Aditya Murthy,aditya.murthy61@example.com,9188888067,Bengaluru,Yelahanka,560064,2024-07-15,Silver,N
+C00099,Ananya Rao,ananya.rao99@example.com,9463745499,Bengaluru,Basaveshwaranagar,560079,2024-06-12,Bronze,Y
+C00121,Aditya Bhat,aditya.bhat121@example.com,9211823398,Bengaluru,Hebbal,560024,2025-02-14,Gold,Y
+C00286,Suresh Joshi,suresh.joshi286@example.com,9566938011,Bengaluru,Yelahanka,560064,2025-12-15,Bronze,Y
+C00003,Prakash Rao,prakash.rao3@example.com,9490278742,Bengaluru,HSR Layout,560102,2026-01-21,Bronze,Y
+C00215,Suresh Bhat,suresh.bhat215@example.com,9660993538,Bengaluru,JP Nagar,560078,2026-03-16,Silver,N
+C00179,Aditya Sharma,aditya.sharma179@example.com,9442067883,Bengaluru,BTM Layout,560076,2024-09-05,Bronze,Y
+C00155,Nandini Desai,nandini.desai155@example.com,9636374545,Bengaluru,Yelahanka,560064,2025-12-13,Silver,Y
+C00328,Ritu Hegde,ritu.hegde328@example.com,9577600490,,Basaveshwaranagar,560079,2025-11-13,Bronze,Y
+C00256,Prakash Shetty,prakash.shetty256@example.com,9466766506,Bengaluru,Marathahalli,560037,2026-04-21,Bronze,Y
+C00093,Shreya Hegde,shreya.hegde93@example.com,9219933083,Bengaluru,Basaveshwaranagar,560079,2026-03-16,Bronze,Y
+C00306,Harish Bhat,harish.bhat306@example.com,9884578317,Bengaluru,Whitefield,560066,2025-04-12,Bronze,Y
+C00020,Divya Kumar,divya.kumar20@example.com,9285884247,Bengaluru,BTM Layout,560076,2025-03-30,Silver,Y
+C00381,Deepa Gowda,deepa.gowda381@example.com,9971997581,Bengaluru,HSR Layout,560102,2025-08-30,Bronze,N
+C00090,Rohan Desai,rohan.desai90@example.com,9549733484,Bengaluru,Indiranagar,560038,2025-01-17,Gold,N
+C00123,Harish Rao,harish.rao123@example.com,9217659180,Bengaluru,Hebbal,560024,2025-01-22,Bronze,Y
+C00211,Ananya Kumar,ananya.kumar211@example.com,9468007229,Bengaluru,HSR Layout,560102,2024-06-09,Bronze,Y
+C00231,Harish Nair,harish.nair231@example.com,9120216979,Bengaluru,BTM Layout,560076,2026-04-26,Bronze,Y
+C00268,Lakshmi Murthy,lakshmi.murthy268@example.com,9037314530,Bengaluru,Rajajinagar,560010,2026-04-16,Bronze,N
+C00139,Manoj Kulkarni,manoj.kulkarni139@example.com,9250714611,Bengaluru,BTM Layout,560076,2026-06-18,Bronze,Y
+C00074,Manoj Kulkarni,manoj.kulkarni74@example.com,9528922680,Bengaluru,Whitefield,560066,2024-10-06,Silver,Y
+C00106,Rahul Desai,rahul.desai106@example.com,9251286823,Bengaluru,BTM Layout,560076,2024-06-04,Silver,N
+C00065,Nikhil Pillai,nikhil.pillai65@example.com,9652775841,Bengaluru,Basaveshwaranagar,560079,2026-06-15,Bronze,Y
+C00244,Shreya Menon,shreya.menon244@example.com,9158799684,Bengaluru,Indiranagar,560038,2025-08-07,Gold,Y
+C00214,Harish Patil,harish.patil214@example.com,9328309652,Bengaluru,JP Nagar,560078,2026-06-09,Bronze,Y
+C00146,Nikhil Bhat,nikhil.bhat146@example.com,9278282742,Bengaluru,Marathahalli,560037,2024-12-09,Bronze,Y
+C00356,Ritu Pillai,ritu.pillai356@example.com,9421230940,Bengaluru,JP Nagar,560078,2025-09-13,Bronze,Y
+C00046,Nandini Hegde,nandini.hegde46@example.com,9905814770,Bengaluru,JP Nagar,560078,2024-07-29,Bronze,Y
+C00092,Prakash Murthy,prakash.murthy92@example.com,9240415747,Bengaluru,BTM Layout,560076,2025-01-06,BRONZE,Y
+C00331,Rohan Naidu,rohan.naidu331@example.com,9279194096,Bengaluru,Rajajinagar,560010,2024-08-20,Silver,N
+C00004,Lakshmi Murthy,lakshmi.murthy4@example.com,9655125674,Bengaluru,Yelahanka,560064,2026-04-10,Gold,Y
+C00042,Nikhil Bhat,nikhil.bhat42@example.com,9416052975,Bengaluru,Marathahalli,560037,2024-08-30,Bronze,Y
+C00250,Varun Patil,varun.patil250@example.com,9798515832,Bengaluru,Hebbal,560024,2025-11-16,Bronze,Y
+C00009,Mahesh Iyer,mahesh.iyer9@example.com,9146584044,Bengaluru,Rajajinagar,560010,2026-01-23,Silver,Y
+C00081,Lakshmi Patil,lakshmi.patil81@example.com,9701687339,Bengaluru,Whitefield,560066,2025-05-28,Bronze,Y
+C00193,Nandini Reddy,N/A,9006762676,Bengaluru,JP Nagar,560078,2025-05-26,Silver,Y
+C00314,Vikram Naidu,vikram.naidu314@example.com,9645208814,Bengaluru,HSR Layout,560102,2025-10-06,Silver,Y
+C00386,Vikram Nair,vikram.nair386@example.com,9723865624,Bengaluru,Indiranagar,560038,2026-04-18,Bronze,Y
+C00052,Lakshmi Kumar,lakshmi.kumar52@example.com,9322141888,Bengaluru,Malleshwaram,560003,2024-07-09,Silver,Y
+C00069,Kavya Pillai,kavya.pillai69@example.com,9192856543,Bengaluru,Banashankari,560070,2024-09-25,Bronze,Y
+C00021,Manoj Gowda,manoj.gowda21@example.com,9236851604,Bengaluru,Yelahanka,560064,2025-12-02,Bronze,Y
+C00298,Lakshmi Patil,lakshmi.patil298@example.com,9489061203,Bengaluru,Malleshwaram,560003,2025-02-16,Bronze,Y
+C00392,Pooja Murthy,pooja.murthy392example.com,9442094940,Bengaluru,Banashankari,560070,2026-03-07,Bronze,Y
+C00225,Sneha Desai,sneha.desai225@example.com,9472304618,Bengaluru,BTM Layout,560076,2025-03-04,Silver,Y
+C00085,Nandini Naidu,nandini.naidu85@example.com,9872982595,Bengaluru,Banashankari,560070,2024-11-14,Bronze,Y
+C00284,Bhavana Joshi,bhavana.joshi284@example.com,9984902770,Bengaluru,BTM Layout,560076,2024-12-24,Gold,N
+C00190,Pooja Naidu,pooja.naidu190@example.com,9528953926,Bengaluru,Rajajinagar,560010,2025-04-11,Silver,Y
+C00087,Meera Rao,meera.rao87@example.com,9974993097,Bengaluru,Marathahalli,560037,2024-11-22,Silver,Y
+C00213,Deepa Murthy,deepa.murthy213@example.com,9899441715,Bengaluru,Indiranagar,560038,2025-03-11,Silver,Y
+C00399,Deepa Shetty,deepa.shetty399@example.com,9938525800,Bengaluru,Malleshwaram,560003,2024-08-09,Bronze,Y
+C00141,Swathi Menon,swathi.menon141@example.com,9123828258,Bengaluru,Hebbal,560024,2025-08-11,Platinum,Y
+C00364,Nandini Bhat,nandini.bhat364@example.com,9605583034,Bengaluru,Jayanagar,560041,2025-02-16,Silver,Y
+C00371,Deepa Iyer,deepa.iyer371@example.com,9307681040,Bengaluru,Indiranagar,560038,2026-05-05,Gold,Y
+C00172,Ananya Kulkarni,ananya.kulkarni172@example.com,9061744518,Bengaluru,RT Nagar,560032,2025-09-11,Bronze,Y
+C00387,Arjun Iyer,arjun.iyer387@example.com,9762126796,Bengaluru,HSR Layout,560102,2026-03-01,Bronze,Y
+C00304,Sneha Hegde,sneha.hegde304@example.com,9921643347,Bengaluru,Yelahanka,560064,2026-03-04,Bronze,Y
+C00393,Deepa Patil,deepa.patil393@example.com,9904712814,Bengaluru,Hebbal,560024,2025-02-14,Bronze,Y
+C00110,Ganesh Menon,ganesh.menon110@example.com,9342836440,Bengaluru,Banashankari,560070,2025-12-23,Gold,Y
+C00165,Nikhil Kulkarni,nikhil.kulkarni165@example.com,9486661889,Bengaluru,Malleshwaram,560003,2024-11-04,Bronze,Y
+C00071,Mahesh Pillai,mahesh.pillai71@example.com,9155188442,Bengaluru,RT Nagar,560032,2026-05-30,Silver,Y
+C00280,Kiran Bhat,kiran.bhat280@example.com,9944869594,Bengaluru,Yelahanka,560064,2026-04-28,Bronze,Y
+C00295,Rohan Murthy,rohan.murthy295@example.com,9942843479,Bengaluru,Yelahanka,560064,2025-05-18,Bronze,Y
+C00351,Mahesh Shetty,mahesh.shetty351@example.com,9886086803,Bengaluru,Hebbal,560024,2025-03-26,Bronze,Y
+C00062,Ritu Rao,ritu.rao62example.com,9515319520,Bengaluru,JP Nagar,560078,2025-05-27,Silver,Y
+C00167,Manoj Sharma,manoj.sharma167@example.com,9421020275,Bengaluru,Yelahanka,560064,2025-11-18,Silver,Y
+C00206,Nandini Patil,nandini.patil206@example.com,9447132475,Bengaluru,Vijayanagar,560040,2025-03-03,Silver,Y
+C00348,Swathi Naidu,swathi.naidu348@example.com,9526772233,Bengaluru,Indiranagar,560038,2024-07-04,Bronze,N
+C00173,Nandini Patil,nandini.patil173@example.com,9937597383,Bengaluru,Marathahalli,560037,2024-11-02,Bronze,Y
+C00219,Ganesh Pillai,ganesh.pillai219@example.com,9252175250,,BTM Layout,560076,2024-06-05,Bronze,Y
+C00104,Meera Rao,meera.rao104@example.com,9640391065,Bengaluru,Malleshwaram,560003,2026-05-19,Bronze,N
+C00378,Mahesh Menon,mahesh.menon378@example.com,9770171577,Bengaluru,Vijayanagar,560040,2024-11-22,Bronze,Y
+C00113,Rohan Gowda,rohan.gowda113@example.com,9751830469,Bengaluru,Jayanagar,560041,2026-02-08,Bronze,Y
+C00316,Ganesh Naidu,ganesh.naidu316@example.com,9925132719,Bengaluru,Hebbal,560024,2025-05-13,Gold,N
+C00305,Arjun Sharma,arjun.sharma305@example.com,9557784872,Bengaluru,RT Nagar,560032,2026-05-16,Silver,Y
+C00255,Varun Bhat,varun.bhat255@example.com,9120750110,Bengaluru,Rajajinagar,560010,2024-11-30,Silver,Y
+C00059,Sneha Patil,sneha.patil59@example.com,9341036971,Bengaluru,BTM Layout,560076,2024-09-22,Gold,Y
+C00055,Aditya Bhat,aditya.bhat55@example.com,9239240758,Bengaluru,Indiranagar,560038,2024-09-14,Silver,Y
+C00033,Suresh Murthy,suresh.murthy33@example.com,9271111615,Bengaluru,HSR Layout,560102,2024-10-12,Silver,Y
+C00303,Ritu Gowda,ritu.gowda303@example.com,9326111780,Bengaluru,JP Nagar,560078,2024-06-27,Silver,Y
+C00088,Prakash Joshi,prakash.joshi88@example.com,9230913075,Bengaluru,Malleshwaram,560003,2025-08-03,Bronze,Y
+C00313,Prakash Hegde,prakash.hegde313@example.com,9601367303,Bengaluru,Basaveshwaranagar,560079,2025-09-15,Silver,Y
+C00234,Prakash Desai,prakash.desai234@example.com,9900287721,Bengaluru,Vijayanagar,560040,2026-07-10,Bronze,Y
+C00050,Meera Hegde,meera.hegde50@example.com,9925192546,Bengaluru,BTM Layout,560076,2024-10-11,Silver,N
+C00158,Varun Shetty,varun.shetty158@example.com,9611037129,Bengaluru,Rajajinagar,560010,2025-01-18,Silver,Y
+C00026,Deepa Kumar,deepa.kumar26@example.com,9900532931,Bengaluru,Yelahanka,560064,2026-07-24,Silver,Y
+C00324,Ritu Bhat,ritu.bhat324@example.com,9509480141,Bengaluru,Indiranagar,560038,2025-01-08,Platinum,Y
+C00089,Aditya Naidu,aditya.naidu89@example.com,9028385786,Bengaluru,BTM Layout,560076,2025-04-18,Platinum,Y
+C00008,Sanjay Patil,sanjay.patil8@example.com,9846773782,Bengaluru,Basaveshwaranagar,560079,2025-06-28,Bronze,Y
+C00067,Manoj Sharma,manoj.sharma67example.com,9596401658,Bengaluru,Banashankari,560070,2026-07-08,Silver,N
+C00333,Aditya Shetty,aditya.shetty333@example.com,9206799813,Bengaluru,Banashankari,560070,2025-08-17,Bronze,Y
+C00360,Kavya Sharma,kavya.sharma360@example.com,9145561681,Bengaluru,Marathahalli,560037,2025-03-27,Bronze,Y
+C00125,Prakash Joshi,prakash.joshi125@example.com,9142939685,Bengaluru,Malleshwaram,560003,2025-06-29,Silver,Y
+C00024,Manoj Murthy,manoj.murthy24@example.com,9869261796,Bengaluru,BTM Layout,560076,2025-03-14,Bronze,Y
+C00317,Priya Sharma,priya.sharma317@example.com,9528127358,Bengaluru,HSR Layout,560102,2026-03-23,Silver,Y
+C00242,Bhavana Shetty,bhavana.shetty242@example.com,9465472269,Bengaluru,Marathahalli,560037,2026-05-18,Gold,Y
+C00010,Kiran Pillai,kiran.pillai10@example.com,9875588675,Bengaluru,Vijayanagar,560040,2024-12-11,Platinum,Y
+C00335,Lakshmi Desai,lakshmi.desai335@example.com,9376938983,Bengaluru,RT Nagar,560032,2025-02-04,Bronze,Y
+C00251,Shreya Desai,shreya.desai251@example.com,9615335554,Bengaluru,BTM Layout,560076,2025-01-10,Platinum,Y
+C00073,Kiran Gowda,kiran.gowda73@example.com,9146786691,Bengaluru,Indiranagar,560038,2024-10-07,Platinum,Y
+C00377,Varun Pillai,varun.pillai377@example.com,9733294562,Bengaluru,Rajajinagar,560010,2026-05-18,Gold,Y
+C00019,Asha Hegde,asha.hegde19@example.com,9210470952,Bengaluru,Jayanagar,560041,2024-09-01,Gold,Y
+C00037,Nikhil Gowda,nikhil.gowda37@example.com,9201836675,Bengaluru,HSR Layout,560102,2024-11-09,Bronze,Y
+C00120,Deepa Naidu,deepa.naidu120@example.com,9700886008,Bengaluru,HSR Layout,560102,2026-06-10,Bronze,N
+C00297,Pooja Joshi,pooja.joshi297@example.com,9322702672,Bengaluru,Indiranagar,560038,2026-03-08,Silver,Y
+C00380,Shreya Nair,shreya.nair380@example.com,9761539669,Bengaluru,Jayanagar,560041,2025-05-17,Silver,Y
