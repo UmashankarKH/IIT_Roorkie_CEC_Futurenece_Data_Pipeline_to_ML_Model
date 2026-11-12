@@ -1,0 +1,433 @@
+[
+  {
+    "number": 1,
+    "experiment": "Happy path",
+    "expected": "Both DAGs succeed; every file is counted; rejected rows are quarantined with a reason.",
+    "observed": "ETL 0.179s loaded 2310 fact rows and quarantined 152; ELT 0.226s loaded 2310 PASS rows. Revenue is identical in both marts.",
+    "where_i_saw_it": "pipeline_runs table, dq_results table, task logs, quarantine CSV files",
+    "what_i_would_change": "Publish the per-file counts as an Airflow metric so a drop is visible without opening the table.",
+    "detail": {
+      "per_file": [
+        {
+          "dataset": "customers",
+          "rows_in": 405,
+          "critical_failures": 5.0,
+          "warnings": 31.0
+        },
+        {
+          "dataset": "orders",
+          "rows_in": 2412,
+          "critical_failures": 105.0,
+          "warnings": 3.0
+        },
+        {
+          "dataset": "payments",
+          "rows_in": 2228,
+          "critical_failures": 43.0,
+          "warnings": 2.0
+        },
+        {
+          "dataset": "products",
+          "rows_in": 152,
+          "critical_failures": 3.0,
+          "warnings": 8.0
+        },
+        {
+          "dataset": "stores",
+          "rows_in": 15,
+          "critical_failures": 0.0,
+          "warnings": 2.0
+        }
+      ],
+      "pipeline_runs": [
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "rows_extracted": 5212,
+          "rows_loaded": 2310,
+          "rows_quarantined": 152,
+          "status": "SUCCESS",
+          "seconds": 0.159
+        },
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "rows_extracted": 5212,
+          "rows_loaded": 2310,
+          "rows_quarantined": 136,
+          "status": "SUCCESS",
+          "seconds": 0.171
+        }
+      ],
+      "etl_seconds": 0.179,
+      "elt_seconds": 0.226,
+      "parallel_tasks": "ETL extract_orders/payments/customers/products/stores run in parallel; ELT raw loads are chained because DuckDB allows one writer"
+    }
+  },
+  {
+    "number": 2,
+    "experiment": "Re-run (idempotency)",
+    "expected": "Fact and mart row counts stay the same; the ELT raw layer grows, which is correct.",
+    "observed": "ETL fact stayed at 2310.0 rows (0 inserted, 2310 updated); ELT PASS rows stayed at 2310.0 and the MERGE reported 0 inserts; raw_orders grew from 2412.0 to 4824.0 rows by design (append-only audit log).",
+    "where_i_saw_it": "warehouse row counts; MERGE log line; pipeline_runs has one row per run",
+    "what_i_would_change": "Add an assertion task that fails the DAG if the fact count changes on a pure re-run.",
+    "detail": {
+      "before": {
+        "etl_fact": 2310.0,
+        "etl_revenue": 1135628.8,
+        "raw_orders": 2412.0,
+        "elt_pass": 2310.0,
+        "elt_revenue": 1135628.8
+      },
+      "after": {
+        "etl_fact": 2310.0,
+        "etl_revenue": 1135628.8,
+        "raw_orders": 4824.0,
+        "elt_pass": 2310.0,
+        "elt_revenue": 1135628.8
+      }
+    }
+  },
+  {
+    "number": 3,
+    "experiment": "Incremental load",
+    "expected": "150 new orders inserted, 10 existing orders updated to RETURNED, no duplicates.",
+    "observed": "ELT MERGE reported 150 inserted and 10 updated; ETL upsert inserted 150 and updated 2310; fact grew from 2310 to 2460 rows with 2460 distinct order_ids; all 10 corrected orders now show ['RETURNED'] and their revenue became 0.",
+    "where_i_saw_it": "MERGE log line, etl_fact_orders upsert log, stg_orders dq_status = SUPERSEDED rows",
+    "what_i_would_change": "Keep the superseded version as an SCD Type 2 row in the ETL fact as well, so finance can still see the September figure that was reported at the time.",
+    "detail": {
+      "merge": {
+        "source_file": "orders_2026-10-01_increment.csv",
+        "source_rows": 160,
+        "inserted": 150,
+        "updated": 10,
+        "total_rows": 2550
+      },
+      "fact_rows": {
+        "rows": 2460,
+        "ids": 2460
+      },
+      "corrected_orders": [
+        {
+          "order_id": "ORD000017",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000271",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000332",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000337",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000584",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000708",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD000822",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD001025",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD001067",
+          "order_status": "RETURNED"
+        },
+        {
+          "order_id": "ORD001990",
+          "order_status": "RETURNED"
+        }
+      ]
+    }
+  },
+  {
+    "number": 4,
+    "experiment": "Missing source file",
+    "expected": "The task fails immediately with a clear error; downstream tasks do not run; the run audit records the failure.",
+    "observed": "ETL failed in read_source_csv() with FileNotFoundError; ELT failed in load_raw() with FileNotFoundError. Both wrote a FAILED row to pipeline_runs. In Airflow the task would retry twice at 2-minute intervals (default_args) and then go to 'failed', leaving downstream tasks 'upstream_failed'.",
+    "where_i_saw_it": "task log, pipeline_runs.status = FAILED, Airflow Grid view colours",
+    "what_i_would_change": "Add a lightweight 'all five files present' sensor task before the extracts so the failure is reported once, not five times.",
+    "detail": {
+      "etl": {
+        "status": "FAILED",
+        "error_type": "FileNotFoundError",
+        "error_message": "Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv",
+        "failed_step": "read_source_csv",
+        "seconds": 0.019
+      },
+      "elt": {
+        "status": "FAILED",
+        "error_type": "FileNotFoundError",
+        "error_message": "Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv",
+        "failed_step": "load_raw",
+        "seconds": 0.088
+      },
+      "pipeline_runs": [
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "status": "FAILED",
+          "notes": "FileNotFoundError: Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv"
+        },
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "status": "FAILED",
+          "notes": "FileNotFoundError: Source file not found: /Users/irfan_shaik@optum.com/Downloads/IIT Roorkee/Assignment_2/IIT_Roorkie_CEC_Futurenece_Data_Pipeline_to_ML_Model/include/staging/experiments/exp04_missing_file/data/products.csv"
+        }
+      ],
+      "manual_check_required": "retry count and up_for_retry / upstream_failed states are visible only in the Airflow UI"
+    }
+  },
+  {
+    "number": 5,
+    "experiment": "New bad data",
+    "expected": "All five planted rows are quarantined with the right rule and none reaches the fact table.",
+    "observed": "All 5 rows were caught by both pipelines with the expected rule (RULE-006 null customer, RULE-009 negative quantity, RULE-008 unknown store, RULE-012 status SHIPPED, RULE-005 2027 timestamp) and none appears in etl_fact_orders; dq_results recorded every one.",
+    "where_i_saw_it": "quarantine CSV, etl_quarantine table, stg_orders.failure_reason, dq_results",
+    "what_i_would_change": "Add a 'planted row' smoke test to CI so the rules keep working after a refactor.",
+    "detail": {
+      "rows": [
+        {
+          "order_id": "ORD900001",
+          "expected_rule": "RULE-006",
+          "etl_quarantined": true,
+          "etl_rule_matched": true,
+          "elt_status": "QUARANTINED",
+          "elt_rule_matched": true,
+          "in_etl_fact": 0
+        },
+        {
+          "order_id": "ORD900002",
+          "expected_rule": "RULE-009",
+          "etl_quarantined": true,
+          "etl_rule_matched": true,
+          "elt_status": "QUARANTINED",
+          "elt_rule_matched": true,
+          "in_etl_fact": 0
+        },
+        {
+          "order_id": "ORD900003",
+          "expected_rule": "RULE-008",
+          "etl_quarantined": true,
+          "etl_rule_matched": true,
+          "elt_status": "QUARANTINED",
+          "elt_rule_matched": true,
+          "in_etl_fact": 0
+        },
+        {
+          "order_id": "ORD900004",
+          "expected_rule": "RULE-012",
+          "etl_quarantined": true,
+          "etl_rule_matched": true,
+          "elt_status": "QUARANTINED",
+          "elt_rule_matched": true,
+          "in_etl_fact": 0
+        },
+        {
+          "order_id": "ORD900005",
+          "expected_rule": "RULE-005",
+          "etl_quarantined": true,
+          "etl_rule_matched": true,
+          "elt_status": "QUARANTINED",
+          "elt_rule_matched": true,
+          "in_etl_fact": 0
+        }
+      ],
+      "dq_results": [
+        {
+          "rule_id": "RULE-005",
+          "dataset": "orders",
+          "severity": "Critical",
+          "failed": 16.0
+        },
+        {
+          "rule_id": "RULE-006",
+          "dataset": "orders",
+          "severity": "Critical",
+          "failed": 38.0
+        },
+        {
+          "rule_id": "RULE-008",
+          "dataset": "orders",
+          "severity": "Critical",
+          "failed": 12.0
+        },
+        {
+          "rule_id": "RULE-009",
+          "dataset": "orders",
+          "severity": "Critical",
+          "failed": 22.0
+        },
+        {
+          "rule_id": "RULE-012",
+          "dataset": "orders",
+          "severity": "Critical",
+          "failed": 8.0
+        }
+      ]
+    }
+  },
+  {
+    "number": 6,
+    "experiment": "Schema change (order_amount renamed to total)",
+    "expected": "Both pipelines stop with a clear message naming the missing column; nothing is loaded.",
+    "observed": "ETL failed in assert_schema() with SchemaError: \"orders: missing expected column(s) ['order_amount']. Columns received: ['channel', 'customer_id', 'delivery_minutes', 'discount_pct', 'order_id', 'order_status', 'order_ts', 'payment_mode', 'product_id', 'quantity', 'store_id', 'total', 'unit_price']\". ELT failed in run_sql_file() with BinderException: \"Binder Error: Referenced column \"order_amount\" not found in FROM clause!\". Neither loaded a single row, so the failure is loud, not silent.",
+    "where_i_saw_it": "task log and the FAILED row in pipeline_runs",
+    "what_i_would_change": "Publish the expected column list as a contract document and notify the source team automatically when it changes.",
+    "detail": {
+      "etl": {
+        "status": "FAILED",
+        "error_type": "SchemaError",
+        "error_message": "orders: missing expected column(s) ['order_amount']. Columns received: ['channel', 'customer_id', 'delivery_minutes', 'discount_pct', 'order_id', 'order_status', 'order_ts', 'payment_mode', 'product_id', 'quantity', 'store_id', 'total', 'unit_price']",
+        "failed_step": "assert_schema",
+        "seconds": 0.039
+      },
+      "elt": {
+        "status": "FAILED",
+        "error_type": "BinderException",
+        "error_message": "Binder Error: Referenced column \"order_amount\" not found in FROM clause!",
+        "failed_step": "run_sql_file",
+        "seconds": 0.034
+      }
+    }
+  },
+  {
+    "number": 7,
+    "experiment": "Volume anomaly (only 50 orders)",
+    "expected": "A volume check warns that the file lost more than 90% of its rows.",
+    "observed": "RULE-034 fired in both pipelines with status WARN: expected~2412 rows, received 50 rows. The run still succeeded, which is intended - a volume drop is a warning for a human, not a reason to withhold the 9 AM report.",
+    "where_i_saw_it": "dq_results rows where rule_id = 'RULE-034'; the WARNING line in the task log",
+    "what_i_would_change": "Promote the volume check to Critical once the client confirms a minimum daily volume, and send the warning to Slack rather than only to the table.",
+    "detail": {
+      "volume_checks": [
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "rule_id": "RULE-034",
+          "status": "WARN",
+          "rows_checked": 50,
+          "rows_failed": 1,
+          "detail": "expected~2412 rows, received 50 rows"
+        },
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "rule_id": "RULE-034",
+          "status": "WARN",
+          "rows_checked": 50,
+          "rows_failed": 1,
+          "detail": "expected~2412 rows, received 50 rows (97.9% below baseline)"
+        }
+      ]
+    }
+  },
+  {
+    "number": 8,
+    "experiment": "Distribution drift (unit_price x 100 for store S01)",
+    "expected": "A price explosion in one store should be noticed before it reaches the mart.",
+    "observed": "Variant A (unit_price only, as instructed): RULE-011 'order_amount must match the formula' failed for 176 rows in both pipelines, so every affected order was quarantined and store S01 kept only 0 rows in the fact table. Variant B (unit_price and order_amount both multiplied, so the arithmetic still agrees): no Critical rule fired, and S01 revenue moved from 76,552.35 to 7,655,235.00 (100x) with the data loading cleanly.",
+    "where_i_saw_it": "dq_results (RULE-011), mart_daily_store_kpis revenue per store",
+    "what_i_would_change": "Add a distribution check that compares today's average order value per store with the trailing 7-day average and warns on a move larger than, say, 3 standard deviations. Rule-based checks catch broken arithmetic, not believable-but-wrong values.",
+    "detail": {
+      "variant_a_rule_011": [
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "rows_failed": 176
+        },
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "rows_failed": 178
+        }
+      ],
+      "variant_a_s01_fact_rows": 0,
+      "variant_b_baseline_revenue": 76552.35,
+      "variant_b_drifted_revenue": 7655235.0,
+      "variant_b_critical_failures": 287
+    }
+  },
+  {
+    "number": 9,
+    "experiment": "Freshness (newest order 30 days old)",
+    "expected": "The timeliness check warns that the data is stale.",
+    "observed": "RULE-035 returned status WARN in both pipelines. ETL detail: \"latest order_ts = 2026-09-22 18:57, 30.0 day(s) old\". ELT detail: \"latest order_ts = 2026-09-22 18:57, 30.0 day(s) old\".",
+    "where_i_saw_it": "dq_results rows where rule_id = 'RULE-035'",
+    "what_i_would_change": "Fail the DAG (not just warn) when the newest order is more than 2 days old, because a stale 9 AM report is worse than no report.",
+    "detail": {
+      "freshness_checks": [
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "status": "WARN",
+          "rows_failed": 1,
+          "detail": "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old"
+        },
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "status": "WARN",
+          "rows_failed": 1,
+          "detail": "latest order_ts = 2026-09-22 18:57, 30.0 day(s) old"
+        }
+      ]
+    }
+  },
+  {
+    "number": 10,
+    "experiment": "Recovery after fixing the cause",
+    "expected": "After the cause is fixed, re-running produces the correct numbers with no duplicates.",
+    "observed": "With stores.csv missing both pipelines failed (FileNotFoundError) and wrote FAILED rows to pipeline_runs. After restoring the file, both runs succeeded and loaded 2310 ETL fact rows / 2310 ELT PASS rows - the same numbers as a clean run, because the loads are idempotent. In the Airflow UI, pressing Clear on the failed task re-runs only that task and everything downstream of it; the already successful extract tasks are not repeated.",
+    "where_i_saw_it": "pipeline_runs (FAILED then SUCCESS), warehouse row counts; Airflow Grid view for Clear",
+    "what_i_would_change": "Keep the quarantine and audit tables keyed by run_id so a partially failed day can be replayed without deleting yesterday's evidence.",
+    "detail": {
+      "failed_run": {
+        "etl": "FileNotFoundError",
+        "elt": "FileNotFoundError"
+      },
+      "recovered": {
+        "etl": "SUCCESS",
+        "elt": "SUCCESS"
+      },
+      "audit_after_failure": [
+        {
+          "dag_id": "nammamart_etl_waseem",
+          "status": "FAILED"
+        },
+        {
+          "dag_id": "nammamart_elt_waseem",
+          "status": "FAILED"
+        }
+      ],
+      "audit_after_recovery": [
+        {
+          "run_id": "exp10_fail_etl",
+          "dag_id": "nammamart_etl_waseem",
+          "status": "FAILED",
+          "rows_loaded": 0
+        },
+        {
+          "run_id": "exp10_fail_elt",
+          "dag_id": "nammamart_elt_waseem",
+          "status": "FAILED",
+          "rows_loaded": 0
+        },
+        {
+          "run_id": "exp10_recover_etl",
+          "dag_id": "nammamart_etl_waseem",
+          "status": "SUCCESS",
+          "rows_loaded": 2310
+        },
+        {
+          "run_id": "exp10_recover_elt",
+          "dag_id": "nammamart_elt_waseem",
+          "status": "SUCCESS",
+          "rows_loaded": 2310
+        }
+      ],
+      "manual_check_required": "the behaviour of the Clear button is an Airflow UI action"
+    }
+  }
+]

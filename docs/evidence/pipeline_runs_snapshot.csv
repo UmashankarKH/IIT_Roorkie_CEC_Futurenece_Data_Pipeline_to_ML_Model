@@ -1,0 +1,5 @@
+run_id,dag_id,start_time,end_time,duration_seconds,rows_extracted,rows_loaded,rows_quarantined,status,notes
+elt_sep,nammamart_elt_waseem,2026-10-22 18:54:36.863911,2026-10-22 18:54:37.035114,0.171203,5212,2310,136,SUCCESS,increment=False
+etl_sep,nammamart_etl_waseem,2026-10-22 18:54:37.461124,2026-10-22 18:54:37.617469,0.156345,5212,2310,152,SUCCESS,increment=False
+elt_inc,nammamart_elt_waseem,2026-10-22 18:54:38.017032,2026-10-22 18:54:38.236944,0.219912,5372,2460,136,SUCCESS,increment=True
+etl_inc,nammamart_etl_waseem,2026-10-22 18:54:38.645914,2026-10-22 18:54:38.809798,0.163884,5362,2460,152,SUCCESS,increment=True

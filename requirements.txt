@@ -1,5 +1,7 @@
 pandas
-duckdb
+duckdb>=1.4,<2   # 2.0 raises ResourceInUseException on unfinished results
+pendulum        # timezone-aware DAG start_date (Asia/Kolkata)
+pytest          # test suite in tests/nammamart
 scikit-learn
 langgraph
 langchain
